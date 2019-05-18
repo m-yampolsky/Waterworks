@@ -1,13 +1,17 @@
 import javafx.animation.AnimationTimer;
-import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
-public class SplashScreen
+public class SplashScreen extends Window
 {
-    public SplashScreen(GraphicsContext gc, StackPane root) {
-        gc.setFill(Color.WHITE);
+
+    public SplashScreen (Stage stg) {
+        super(stg, "Splash Screen");
+    }
+
+    public void display () {
+        gc().setFill(Color.WHITE);
 
         AnimatedImage splashscreen = new AnimatedImage();
         Image[] imageArray = new Image[180];
@@ -25,12 +29,12 @@ public class SplashScreen
                 double x = 232 + 128 * Math.cos(t);
                 double y = 232 + 128 * Math.sin(t);
 
-                gc.fillRect(0, 0, 1000, 750);
-                gc.drawImage(splashscreen.getFrame(t), 0, 0);
+                gc().fillRect(0, 0, 1000, 750);
+                gc().drawImage(splashscreen.getFrame(t), 0, 0);
 
                 if (t > 19) {
                     stop();
-                    new Menu(gc, root);
+                    hideStage();
                 }
             }
         }.start();
