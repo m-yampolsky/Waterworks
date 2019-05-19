@@ -28,6 +28,7 @@ public class Menu extends Window
         ImageView menuLearnBtn = new ImageView("elements/menus/menuLearnBtn.png");
         ImageView menuQuizBtn = new ImageView("elements/menus/menuQuizBtn.png");
         ImageView menuPlayBtn = new ImageView("elements/menus/menuPlayBtn.png");
+        ImageView menuExitBtn = new ImageView("elements/menus/menuExitBtn.png");
         Image menuInstructionsBtn = new Image("elements/menus/menuInstructionsBtn.png");
         Image menuHighscoresBtn = new Image("elements/menus/menuHighscoresBtn.png");
 
@@ -43,10 +44,14 @@ public class Menu extends Window
             refresh();
             choice = 1;
         });
+        menuExitBtn.setOnMouseClicked(e -> {
+            choice = -1;
+        });
 
-        drawImage(menuLearnBtn, 40, 0);
-        drawImage(menuQuizBtn, 0, 105);
-        drawImage(menuPlayBtn, 20, 210);
+        drawImage(menuLearnBtn, 40, -50);
+        drawImage(menuQuizBtn, 0, 50);
+        drawImage(menuPlayBtn, 20, 150);
+        drawImage(menuExitBtn, -40, 235);
 
         AnimatedImage standing = new AnimatedImage();
         Image[] imageArray = new Image[180];
@@ -68,7 +73,7 @@ public class Menu extends Window
                 drawImage(menuBackgroundLog, 0, 690);
                 drawImage(menuTitle, 50, 50);
                 drawImage(menuInstructionsBtn, 60, 200);
-                drawImage(menuHighscoresBtn, 700, 700);
+                drawImage(menuHighscoresBtn, 670, 700);
                 drawImage(standing.getFrame(t), -90, 275);
 
                 if (choice != 0) {
