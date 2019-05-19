@@ -26,7 +26,7 @@ public class Game extends Window {
         Image ontarioBackground = new Image( "elements/game/ontarioBack.png" );
         Image ontarioToronto = new Image( "elements/game/ontarioToronto.png" );
         Image lake = new Image( "elements/game/lake.png" );
-        Image ontarioLogImg = new Image ("elements/game/ontarioLogLine.png");
+        LogLine ontarioLogImg = new LogLine ("elements/game/ontarioLogLine.png");
         ImageView ontarioLogLine = new ImageView(ontarioLogImg);
 
         Water w = new Water(1);
