@@ -1,3 +1,5 @@
+import javafx.scene.image.Image;
+
 public class GameChar 
 {
   int xCoord, yCoord; //coordinates of top left corner
