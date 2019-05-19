@@ -1,6 +1,6 @@
 import javafx.scene.image.Image;
 
-public class GameChar 
+public class GameChar extends Image
 {
   int xCoord, yCoord; //coordinates of top left corner
   final int WIDTH;
