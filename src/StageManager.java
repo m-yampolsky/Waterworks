@@ -52,7 +52,7 @@ public class StageManager extends Application {
                 if (lvl == -1)
                     continue;
                 else if (lvl >= 1 && lvl <= 3) {
-                    Game g = new Game (stage);
+                    Game g = new Game (stage, lvl);
                     try {
                         g.getScore();
                     } catch (Exception e) {
