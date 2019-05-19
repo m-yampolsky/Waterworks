@@ -1,4 +1,8 @@
-public class LogLine 
+import javafx.scene.image.Image;
+import javafx.scene.paint.Color;
+import javafx.scene.image.PixelReader;
+
+public class LogLine extends Image
 {
   boolean[][] isColoured;
   int xCoord, yCoord; //coordinates of the top left corner
