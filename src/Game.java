@@ -1,5 +1,7 @@
 import javafx.animation.AnimationTimer;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.File;
@@ -14,10 +16,12 @@ public class Game extends Window {
         Image ontarioBackground = new Image( "elements/game/ontarioBack.png" );
         Image ontarioToronto = new Image( "elements/game/ontarioToronto.png" );
         Image lake = new Image( "elements/game/lake.png" );
-        Image ontarioLogLine = new Image( "elements/game/ontarioLogLine.png" );
+        ImageView ontarioLogLine = new ImageView( "elements/game/ontarioLogLine.png" );
 
         Water w = new Water(1);
         Music m = new Music("src/elements/oxfordComma.wav");
+
+        drawImage( ontarioLogLine, 0, w.getYValue()-30 );
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer()
@@ -34,7 +38,11 @@ public class Game extends Window {
                 drawImage( ontarioBackground, 0, 0 );
                 drawImage( ontarioToronto, 480-(int)(t*3), 245 );
                 drawImage( lake, 1, w.getYValue() );
-                drawImage( ontarioLogLine, -(int)(t*40), w.getYValue()-30 );
+
+                Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000+(int)(t*40), 75);
+                ontarioLogLine.setViewport(viewportRect);
+                refresh();
+                drawImage( ontarioLogLine, 0, w.getYValue()-370 );
             }
         }.start();
     }
