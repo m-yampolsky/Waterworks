@@ -23,11 +23,11 @@ public class LevelSelect extends Window {
     public void display()
     {
         Image background = new Image ("elements/menus/background.png");
+        Image playTitle = new Image ("elements/menus/playTitle.png");
         Image menuBackgroundLog = new Image("elements/menus/backgroundLog.png");
         ImageView lakeOntario = new ImageView ("elements/menus/playLakeOntarioBtn.png");
         ImageView lakeErie = new ImageView ("elements/menus/playLakeErieBtn.png");
         ImageView lakeSuperior = new ImageView ("elements/menus/playLakeSuperiorBtn.png");
-        Image playTitle = new Image ("elements/menus/playTitle.png");
         ImageView backButton = new ImageView ("elements/menus/backBtn.png");
 
 
@@ -48,6 +48,11 @@ public class LevelSelect extends Window {
             choice = 3;
         });
 
+        drawImage(lakeOntario, -30, 100);
+        drawImage(lakeErie, 170, 100);
+        drawImage(lakeSuperior, 370, 100);
+        drawImage(backButton, -380, -160);
+
         AnimatedImage standing = new AnimatedImage();
         Image[] imageArray = new Image[180];
         for (int i = 1; i <= 180; i++)
@@ -67,10 +72,6 @@ public class LevelSelect extends Window {
                 drawImage(background, 0, 0);
                 drawImage(menuBackgroundLog, 0, 690);
                 drawImage(playTitle, 40, 30);
-                drawImage(backButton, -380, -160);
-                drawImage(lakeOntario, -30, 100);
-                drawImage(lakeErie, 170, 100);
-                drawImage(lakeSuperior, 370, 100);
                 drawImage(standing.getFrame(t), -90, 275);
 
                 if (choice != 0) {

@@ -7,9 +7,19 @@ import javafx.stage.Stage;
 import java.io.File;
 
 public class Game extends Window {
+    int score;
+
 
     public Game (Stage stg) {
         super(stg, "Lake Ontario");
+        score = 1000;
+    }
+
+    public int getScore() throws Exception {
+        display();
+        showAndWait();
+        refresh();
+        return score;
     }
 
     public void display () {

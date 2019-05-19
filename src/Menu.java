@@ -14,9 +14,10 @@ public class Menu extends Window
         choice = 0;
     }
 
-    public int getChoice() throws Exception {
+    public int getChoice() {
         display();
         showAndWait();
+        refresh();
         return choice;
     }
 

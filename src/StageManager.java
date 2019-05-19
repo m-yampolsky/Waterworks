@@ -5,6 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class StageManager extends Application {
 
@@ -18,6 +19,10 @@ public class StageManager extends Application {
         Canvas canvas = new Canvas(1000, 750);
         root.getChildren().add(canvas);
 
+        stage.setOnCloseRequest((WindowEvent event1) -> {
+            System.exit(0);
+        });
+
         stage.setScene(scene);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
@@ -25,9 +30,9 @@ public class StageManager extends Application {
         s.display();
         stage.showAndWait();
 
-       while (true) {
-            Menu m = new Menu(stage);
-            int c = 0;
+        Menu m = new Menu(stage);
+        int c = 0;
+        while (c != -1) {
             try {
                 c = m.getChoice();
             } catch (Exception e) {
@@ -46,13 +51,17 @@ public class StageManager extends Application {
                 }
                 if (lvl == -1)
                     continue;
-                else if (lvl >= 1 && lvl <= 3){
+                else if (lvl >= 1 && lvl <= 3) {
                     Game g = new Game (stage);
-                    g.display();
-                    break;}
+                    try {
+                        g.getScore();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                }
             }
         }
-    }
-    }
 
+        stage.close();
+    }
 }

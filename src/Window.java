@@ -43,7 +43,7 @@ public abstract class Window {
     public void drawImage (ImageView i, int x, int y) {
         i.setTranslateX(x);
         i.setTranslateY(y);
-        root.getChildren().addAll(i);
+        root.getChildren().add(i);
     }
 
     public void drawImage (Image i, int x, int y) {

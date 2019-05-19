@@ -38,5 +38,6 @@ public class SplashScreen extends Window
                 }
             }
         }.start();
+        refresh();
     }
 }
