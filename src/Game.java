@@ -8,11 +8,13 @@ import java.io.File;
 
 public class Game extends Window {
     int score;
+    static String[] names = {"Lake Ontario", "Lake Erie", "Lake Superior"};
+    int level;
 
-
-    public Game (Stage stg) {
-        super(stg, "Lake Ontario");
+    public Game (Stage stg, int lvl) {
+        super(stg, names [lvl - 1]);
         score = 1000;
+        level = lvl;
     }
 
     public int getScore() throws Exception {
@@ -23,16 +25,38 @@ public class Game extends Window {
     }
 
     public void display () {
-        Image ontarioBackground = new Image( "elements/game/ontarioBack.png" );
-        Image ontarioToronto = new Image( "elements/game/ontarioToronto.png" );
+        Image lakeBackground;
+        Image cityBack;
         Image lake = new Image( "elements/game/lake.png" );
-        LogLine ontarioLogImg = new LogLine ("elements/game/ontarioLogLine.png");
-        ImageView ontarioLogLine = new ImageView(ontarioLogImg);
+        LogLine logImg;
+        ImageView logLine;
 
+        if (level == 1)
+        {
+            lakeBackground = new Image("elements/game/ontarioBack.png");
+            cityBack = new Image("elements/game/ontarioToronto.png");
+            logImg = new LogLine("elements/game/ontarioLogLine.png");
+            logLine = new ImageView(logImg);
+        }
+        else if (level == 2)
+        {
+            lakeBackground = new Image("elements/game/ontarioBack.png");
+            cityBack = new Image("elements/game/ontarioToronto.png");
+            logImg = new LogLine("elements/game/ontarioLogLine.png");
+            logLine = new ImageView(logImg);
+        }
+        else
+        {
+            lakeBackground = new Image("elements/game/ontarioBack.png");
+            cityBack = new Image("elements/game/ontarioToronto.png");
+            logImg = new LogLine("elements/game/ontarioLogLine.png");
+            logLine = new ImageView(logImg);
+        }
+        
         Water w = new Water(1);
         Music m = new Music("src/elements/oxfordComma.wav");
 
-        drawImage( ontarioLogLine, 0, w.getYValue()-30 );
+         drawImage( logLine, 0, w.getYValue()-30 );
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer()
@@ -46,14 +70,14 @@ public class Game extends Window {
                 double y = 232 + 128 * Math.sin(t);
 
                 // background image clears canvas
-                drawImage( ontarioBackground, 0, 0 );
-                drawImage( ontarioToronto, 480-(int)(t*3), 245 );
+                drawImage( lakeBackground, 0, 0 );
+                drawImage( cityBack, 480-(int)(t*3), 245 );
                 drawImage( lake, 1, w.getYValue() );
 
                 Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000+(int)(t*40), 75);
-                ontarioLogLine.setViewport(viewportRect);
+                logLine.setViewport(viewportRect);
                 refresh();
-                drawImage( ontarioLogLine, 0, w.getYValue()-370 );
+                drawImage( logLine, 0, w.getYValue()-370 );
             }
         }.start();
     }
