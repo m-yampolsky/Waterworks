@@ -25,17 +25,34 @@ public class StageManager extends Application {
         s.display();
         stage.showAndWait();
 
-        Menu m = new Menu(stage);
-        int c = 0;
-        try {
-            c = m.getChoice();
-        } catch (Exception e) { e.printStackTrace(); }
+       while (true) {
+            Menu m = new Menu(stage);
+            int c = 0;
+            try {
+                c = m.getChoice();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
-        if (c == 1) {
-            Game g = new Game(stage);
-            g.display();
-            stage.showAndWait();
+            if (c == 1) {
+                LevelSelect l = new LevelSelect(stage);
+                l.display();
+                stage.showAndWait();
+                int lvl = 0;
+                try {
+                    lvl = l.getChoice();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                if (lvl == -1)
+                    continue;
+                else if (lvl >= 1 && lvl <= 3){
+                    Game g = new Game (stage);
+                    g.display();
+                    break;}
+            }
         }
+    }
     }
 
 }
