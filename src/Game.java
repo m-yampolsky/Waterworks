@@ -30,7 +30,11 @@ public class Game extends Window {
         Image lake = new Image( "elements/game/lake.png" );
         LogLine logImg;
         ImageView logLine;
-
+        GameChar avatarImg = new GameChar ("elements/game/backgroundChar.png" );
+        ImageView avatar = new ImageView (avatarImg);
+        avatar.setPreserveRatio(true);
+        avatar.setFitHeight(260);
+        
         if (level == 1)
         {
             lakeBackground = new Image("elements/game/ontarioBack.png");
@@ -57,6 +61,7 @@ public class Game extends Window {
         Music m = new Music("src/elements/oxfordComma.wav");
 
          drawImage( logLine, 0, w.getYValue()-30 );
+        drawImage (avatar, 0, w.getYValue()-30 );
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer()
@@ -78,6 +83,10 @@ public class Game extends Window {
                 logLine.setViewport(viewportRect);
                 refresh();
                 drawImage( logLine, 0, w.getYValue()-370 );
+                drawImage( avatar, -380, w.getYValue()-490 );
+
+                if (w.getYValue() == 750)
+                    stop();
             }
         }.start();
     }
