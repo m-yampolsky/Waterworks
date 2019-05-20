@@ -5,15 +5,27 @@ import javafx.scene.image.ImageView;
 
 import javax.swing.*;
 
+/**
+ *
+ */
 public class LevelSelect extends Window {
 
+    /**
+     * The choice selected for the game level that the user wishes to play.
+     */
     private int choice;
 
+    /**
+     * @param stg The JavaFX Stage to display to.
+     */
     public LevelSelect(Stage stg) {
         super(stg, "Main Menu");
         choice = 0;
     }
 
+    /**
+     * @return The level that the user has chosen to play.
+     */
     public int getChoice() {
         display();
         showAndWait();
@@ -21,6 +33,9 @@ public class LevelSelect extends Window {
         return choice;
     }
 
+    /**
+     *
+     */
     public void display()
     {
         Image background = (Image)(Resources.get("menuBackground"));

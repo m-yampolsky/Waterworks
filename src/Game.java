@@ -4,24 +4,48 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+/**
+ *
+ */
 public class Game extends Window {
+    /**
+     * The user's current level score.
+     */
     int score;
+
+    /**
+     * The level names.
+     */
     static String[] names = {"Lake Ontario", "Lake Erie", "Lake Superior"};
+
+    /**
+     * The current level selected.
+     */
     int level;
 
+    /**
+     * @param stg The JavaFX Stage to display to.
+     * @param lvl The selected game level.
+     */
     public Game (Stage stg, int lvl) {
         super(stg, names [lvl - 1]);
         score = 1000;
         level = lvl;
     }
 
-    public int getScore() throws Exception {
+    /**
+     * @return The user's score at the end of the game.
+     */
+    public int getScore() {
         display();
         showAndWait();
         refresh();
         return score;
     }
 
+    /**
+     *
+     */
     public void display () {
         Image lakeBackground;
         Image cityBack;
@@ -30,6 +54,11 @@ public class Game extends Window {
         LogLine logLine;
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
         ImageView avatar = (ImageView)(Resources.get("avatar"));
+
+        Water w = new Water(1);
+        Music m = (Music)(Resources.get("oxfordComma"));
+
+
         avatar.setPreserveRatio(true);
         avatar.setFitHeight(260);
 
@@ -57,9 +86,6 @@ public class Game extends Window {
             logImg = (ImageView)(Resources.get("ontarioLogImg"));
             logLine = (LogLine)(Resources.get("ontarioLogLine"));
         }
-
-        Water w = new Water(1);
-        Music m = (Music)(Resources.get("oxfordComma"));
 
         drawImage( logLine, 0, w.getYValue()-30 );
         drawImage (avatar, 0, w.getYValue()-30 );

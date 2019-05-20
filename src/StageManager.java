@@ -13,18 +13,14 @@ public class StageManager extends Application {
 
     public void start(Stage stg) {
         // load resources
-        AnimatedImage splashscreen = new AnimatedImage();
         Image[] imageArray = new Image[180];
         for (int i = 1; i <= 170; i++)
             imageArray[i - 1] = new Image("elements/splash/splash (" + i + ").png");
-        splashscreen.frames = imageArray;
-        splashscreen.duration = 0.100;
-        AnimatedImage standing = new AnimatedImage();
+        AnimatedImage splashscreen = new AnimatedImage(imageArray, 0.100);
         imageArray = new Image[180];
         for (int i = 1; i <= 180; i++)
             imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
-        standing.frames = imageArray;
-        standing.duration = 0.100;
+        AnimatedImage standing = new AnimatedImage(imageArray, 0.100);
         Resources.add("splashscreen", splashscreen);
         Resources.add("standing", standing);
         Resources.add("menuBackground", new Image("elements/menus/background.png"));
@@ -49,7 +45,6 @@ public class StageManager extends Application {
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
         Resources.add("oxfordComma", new Music("src/elements/oxfordComma.wav"));
-
 
 
 

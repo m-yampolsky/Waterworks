@@ -2,11 +2,24 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.image.PixelReader;
 
+/**
+ *
+ */
 public class LogLine extends Image
 {
-  boolean[][] isColoured;
-  int xCoord, yCoord; //coordinates of the top left corner
-  
+  /**
+   *
+   */
+  private boolean[][] isColoured;
+
+  /**
+   *
+   */
+  private int xCoord, yCoord; //coordinates of the top left corner
+
+  /**
+   * @param pic
+   */
   public LogLine (String pic)
   {
     super (pic);
@@ -20,5 +33,14 @@ public class LogLine extends Image
           isColoured[y][x] = true;
       }
     }
+  }
+
+  /**
+   * @param x
+   * @param y
+   * @return
+   */
+  public boolean isColoured (int x, int y) {
+    return isColoured[x][y];
   }
 }

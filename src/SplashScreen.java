@@ -2,15 +2,23 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+/**
+ *
+ */
 public class SplashScreen extends Window
 {
 
+    /**
+     * @param stg The JavaFX Stage to display to.
+     */
     public SplashScreen (Stage stg) {
         super(stg, "Splash Screen");
     }
 
+    /**
+     *
+     */
     public void display () {
-        gc().setFill(Color.WHITE);
 
         AnimatedImage splashscreen = ((AnimatedImage)Resources.get("splashscreen"));
 
@@ -23,8 +31,8 @@ public class SplashScreen extends Window
                 double x = 232 + 128 * Math.cos(t);
                 double y = 232 + 128 * Math.sin(t);
 
-                gc().fillRect(0, 0, 1000, 750);
-                gc().drawImage(splashscreen.getFrame(t), 0, 0);
+                clean();
+                drawImage(splashscreen.getFrame(t), 0, 0);
 
                 if (t > 19) {
                     stop();

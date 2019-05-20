@@ -5,15 +5,27 @@ import javafx.stage.Stage;
 
 import javax.swing.*;
 
+/**
+ *
+ */
 public class Menu extends Window
 {
+    /**
+     * The chosen menu option.
+     */
     private int choice;
 
+    /**
+     * @param stg The JavaFX Stage to display to.
+     */
     public Menu (Stage stg) {
         super(stg, "Main Menu");
         choice = 0;
     }
 
+    /**
+     * @return The menu option chosen by the user.
+     */
     public int getChoice() {
         display();
         showAndWait();
@@ -21,6 +33,9 @@ public class Menu extends Window
         return choice;
     }
 
+    /**
+     *
+     */
     public void display() {
 
         Image menuBackground = (Image)(Resources.get("menuBackground"));
