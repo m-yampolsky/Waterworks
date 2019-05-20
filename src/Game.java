@@ -28,8 +28,8 @@ public class Game extends Window {
         Image lake;
         ImageView logImg;
         LogLine logLine;
-        GameChar avatarImg = new GameChar ("elements/game/backgroundChar.png" );
-        ImageView avatar = new ImageView (avatarImg);
+        GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
+        ImageView avatar = (ImageView)(Resources.get("avatar"));
         avatar.setPreserveRatio(true);
         avatar.setFitHeight(260);
 

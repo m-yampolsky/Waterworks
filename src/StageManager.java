@@ -46,6 +46,8 @@ public class StageManager extends Application {
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
         Resources.add("ontarioLogImg", new ImageView( "elements/game/ontarioLogLine.png" ));
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+        Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
+        Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
         Resources.add("oxfordComma", new Music("src/elements/oxfordComma.wav"));
 
 
