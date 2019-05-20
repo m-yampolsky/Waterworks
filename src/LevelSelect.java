@@ -14,21 +14,22 @@ public class LevelSelect extends Window {
         choice = 0;
     }
 
-    public int getChoice() throws Exception {
+    public int getChoice() {
         display();
         showAndWait();
+        refresh();
         return choice;
     }
 
     public void display()
     {
-        Image background = new Image ("elements/menus/background.png");
-        Image playTitle = new Image ("elements/menus/playTitle.png");
-        Image menuBackgroundLog = new Image("elements/menus/backgroundLog.png");
-        ImageView lakeOntario = new ImageView ("elements/menus/playLakeOntarioBtn.png");
-        ImageView lakeErie = new ImageView ("elements/menus/playLakeErieBtn.png");
-        ImageView lakeSuperior = new ImageView ("elements/menus/playLakeSuperiorBtn.png");
-        ImageView backButton = new ImageView ("elements/menus/backBtn.png");
+        Image background = (Image)(Resources.get("menuBackground"));
+        Image playTitle = (Image)(Resources.get("playTitle"));
+        Image menuBackgroundLog = (Image)(Resources.get("backLog"));
+        ImageView lakeOntario = (ImageView)(Resources.get("lakeOntario"));
+        ImageView lakeErie = (ImageView)(Resources.get("lakeErie"));
+        ImageView lakeSuperior = (ImageView)(Resources.get("lakeSuperior"));
+        ImageView backButton = (ImageView)(Resources.get("backButton"));
 
 
         backButton.setOnMouseClicked(e -> {
@@ -53,12 +54,7 @@ public class LevelSelect extends Window {
         drawImage(lakeSuperior, 370, 100);
         drawImage(backButton, -380, -160);
 
-        AnimatedImage standing = new AnimatedImage();
-        Image[] imageArray = new Image[180];
-        for (int i = 1; i <= 180; i++)
-            imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
-        standing.frames = imageArray;
-        standing.duration = 0.100;
+        AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer() {

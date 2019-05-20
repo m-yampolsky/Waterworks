@@ -4,8 +4,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.io.File;
-
 public class Game extends Window {
     int score;
     static String[] names = {"Lake Ontario", "Lake Erie", "Lake Superior"};
@@ -27,36 +25,37 @@ public class Game extends Window {
     public void display () {
         Image lakeBackground;
         Image cityBack;
-        Image lake = new Image( "elements/game/lake.png" );
-        LogLine logImg;
-        ImageView logLine;
+        Image lake;
+        ImageView logImg;
+        LogLine logLine;
 
         if (level == 1)
         {
-            lakeBackground = new Image("elements/game/ontarioBack.png");
-            cityBack = new Image("elements/game/ontarioToronto.png");
-            logImg = new LogLine("elements/game/ontarioLogLine.png");
-            logLine = new ImageView(logImg);
+            lakeBackground = (Image)(Resources.get("ontarioBack"));
+            cityBack = (Image)(Resources.get("ontarioToronto"));
+            lake = (Image)(Resources.get("ontarioLake"));
+            logImg = (ImageView)(Resources.get("ontarioLogImg"));
+            logLine = (LogLine)(Resources.get("ontarioLogLine"));
         }
         else if (level == 2)
         {
-            lakeBackground = new Image("elements/game/ontarioBack.png");
-            cityBack = new Image("elements/game/ontarioToronto.png");
-            logImg = new LogLine("elements/game/ontarioLogLine.png");
-            logLine = new ImageView(logImg);
+            lakeBackground = (Image)(Resources.get("ontarioBack"));
+            cityBack = (Image)(Resources.get("ontarioToronto"));
+            lake = (Image)(Resources.get("ontarioLake"));
+            logImg = (ImageView)(Resources.get("ontarioLogImg"));
+            logLine = (LogLine)(Resources.get("ontarioLogLine"));
         }
         else
         {
-            lakeBackground = new Image("elements/game/ontarioBack.png");
-            cityBack = new Image("elements/game/ontarioToronto.png");
-            logImg = new LogLine("elements/game/ontarioLogLine.png");
-            logLine = new ImageView(logImg);
+            lakeBackground = (Image)(Resources.get("ontarioBack"));
+            cityBack = (Image)(Resources.get("ontarioToronto"));
+            lake = (Image)(Resources.get("ontarioLake"));
+            logImg = (ImageView)(Resources.get("ontarioLogImg"));
+            logLine = (LogLine)(Resources.get("ontarioLogLine"));
         }
         
         Water w = new Water(1);
-        Music m = new Music("src/elements/oxfordComma.wav");
-
-         drawImage( logLine, 0, w.getYValue()-30 );
+        Music m = (Music)(Resources.get("oxfordComma"));
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer()
@@ -75,9 +74,9 @@ public class Game extends Window {
                 drawImage( lake, 1, w.getYValue() );
 
                 Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000+(int)(t*40), 75);
-                logLine.setViewport(viewportRect);
+                logImg.setViewport(viewportRect);
                 refresh();
-                drawImage( logLine, 0, w.getYValue()-370 );
+                drawImage( logImg, 0, w.getYValue()-370 );
             }
         }.start();
     }

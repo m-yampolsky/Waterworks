@@ -37,6 +37,7 @@ public abstract class Window {
     }
 
     public void showAndWait () {
+        stage.hide();
         stage.showAndWait();
     }
 

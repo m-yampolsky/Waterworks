@@ -1,5 +1,4 @@
 import javafx.animation.AnimationTimer;
-import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -13,12 +12,7 @@ public class SplashScreen extends Window
     public void display () {
         gc().setFill(Color.WHITE);
 
-        AnimatedImage splashscreen = new AnimatedImage();
-        Image[] imageArray = new Image[180];
-        for (int i = 1; i <= 170; i++)
-            imageArray[i - 1] = new Image("elements/splash/splash (" + i + ").png");
-        splashscreen.frames = imageArray;
-        splashscreen.duration = 0.100;
+        AnimatedImage splashscreen = ((AnimatedImage)Resources.get("splashscreen"));
 
         final long startNanoTime = System.nanoTime();
 

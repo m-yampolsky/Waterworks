@@ -23,15 +23,15 @@ public class Menu extends Window
 
     public void display() {
 
-        Image menuBackground = new Image("elements/menus/background.png");
-        Image menuBackgroundLog = new Image("elements/menus/backgroundLog.png");
-        Image menuTitle = new Image("elements/menus/menuLogo.png");
-        ImageView menuLearnBtn = new ImageView("elements/menus/menuLearnBtn.png");
-        ImageView menuQuizBtn = new ImageView("elements/menus/menuQuizBtn.png");
-        ImageView menuPlayBtn = new ImageView("elements/menus/menuPlayBtn.png");
-        ImageView menuExitBtn = new ImageView("elements/menus/menuExitBtn.png");
-        Image menuInstructionsBtn = new Image("elements/menus/menuInstructionsBtn.png");
-        Image menuHighscoresBtn = new Image("elements/menus/menuHighscoresBtn.png");
+        Image menuBackground = (Image)(Resources.get("menuBackground"));
+        Image menuBackgroundLog = (Image)(Resources.get("backLog"));
+        Image menuTitle = (Image)(Resources.get("menuTitle"));
+        ImageView menuLearnBtn = (ImageView)(Resources.get("learnBtn"));
+        ImageView menuQuizBtn = (ImageView)(Resources.get("quizBtn"));
+        ImageView menuPlayBtn = (ImageView)(Resources.get("playBtn"));
+        ImageView menuExitBtn = (ImageView)(Resources.get("exitBtn"));
+        Image menuInstructionsBtn = (Image)(Resources.get("instrcutionsBtn"));
+        Image menuHighscoresBtn = (Image)(Resources.get("highscoresBtn"));
 
 
         // Listener for MouseClick
@@ -54,12 +54,7 @@ public class Menu extends Window
         drawImage(menuPlayBtn, 20, 150);
         drawImage(menuExitBtn, -40, 235);
 
-        AnimatedImage standing = new AnimatedImage();
-        Image[] imageArray = new Image[180];
-        for (int i = 1; i <= 180; i++)
-            imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
-        standing.frames = imageArray;
-        standing.duration = 0.100;
+        AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer() {

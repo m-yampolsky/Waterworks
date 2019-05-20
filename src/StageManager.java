@@ -2,6 +2,8 @@ import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -10,6 +12,45 @@ import javafx.stage.WindowEvent;
 public class StageManager extends Application {
 
     public void start(Stage stg) {
+        // load resources
+        AnimatedImage splashscreen = new AnimatedImage();
+        Image[] imageArray = new Image[180];
+        for (int i = 1; i <= 170; i++)
+            imageArray[i - 1] = new Image("elements/splash/splash (" + i + ").png");
+        splashscreen.frames = imageArray;
+        splashscreen.duration = 0.100;
+        AnimatedImage standing = new AnimatedImage();
+        imageArray = new Image[180];
+        for (int i = 1; i <= 180; i++)
+            imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
+        standing.frames = imageArray;
+        standing.duration = 0.100;
+        Resources.add("splashscreen", splashscreen);
+        Resources.add("standing", standing);
+        Resources.add("menuBackground", new Image("elements/menus/background.png"));
+        Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
+        Resources.add("menuTitle", new Image("elements/menus/menuLogo.png"));
+        Resources.add("learnBtn", new ImageView("elements/menus/menuLearnBtn.png"));
+        Resources.add("quizBtn", new ImageView("elements/menus/menuQuizBtn.png"));
+        Resources.add("playBtn", new ImageView("elements/menus/menuPlayBtn.png"));
+        Resources.add("exitBtn", new ImageView("elements/menus/menuExitBtn.png"));
+        Resources.add("instructionsBtn", new Image("elements/menus/menuInstructionsBtn.png"));
+        Resources.add("highscoresBtn", new Image("elements/menus/menuHighscoresBtn.png"));Image background = new Image ("elements/menus/background.png");
+        Resources.add("playTitle", new Image("elements/menus/playTitle.png"));
+        Resources.add("lakeOntario", new ImageView("elements/menus/playLakeOntarioBtn.png"));
+        Resources.add("lakeErie", new ImageView("elements/menus/playLakeErieBtn.png"));
+        Resources.add("lakeSuperior", new ImageView("elements/menus/playLakeSuperiorBtn.png"));
+        Resources.add("backButton", new ImageView("elements/menus/backBtn.png"));
+        Resources.add("ontarioLake", new Image( "elements/game/lake.png" ));
+        Resources.add("ontarioBack", new Image( "elements/game/ontarioBack.png" ));
+        Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
+        Resources.add("ontarioLogImg", new ImageView( "elements/game/ontarioLogLine.png" ));
+        Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+        Resources.add("oxfordComma", new Music("src/elements/oxfordComma.wav"));
+
+
+
+
         Stage stage = new Stage();
         stage.setTitle("Waterworks");
 
@@ -27,6 +68,7 @@ public class StageManager extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
         SplashScreen s = new SplashScreen(stage);
+        stage.hide();
         s.display();
         stage.showAndWait();
 
@@ -41,8 +83,6 @@ public class StageManager extends Application {
 
             if (c == 1) {
                 LevelSelect l = new LevelSelect(stage);
-                l.display();
-                stage.showAndWait();
                 int lvl = 0;
                 try {
                     lvl = l.getChoice();
