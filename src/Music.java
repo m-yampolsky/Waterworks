@@ -4,7 +4,10 @@ import javafx.scene.media.MediaPlayer;
 import java.nio.file.Paths;
 
 /**
- *
+ * The Music class
+ * This class represents the music objects that will be played during the program.
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
  */
 public class Music {
     /**
@@ -26,21 +29,21 @@ public class Music {
     }
 
     /**
-     *
+     * This method plays the music
      */
     public void play () {
         player.play();
     }
 
     /**
-     *
+     * This method pauses the music
      */
     public void pause () {
         player.pause();
     }
 
     /**
-     *
+     * This method stops the music
      */
     public void stop () {
         player.stop();
