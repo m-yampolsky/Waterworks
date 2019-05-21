@@ -1,7 +1,10 @@
 import java.util.HashMap;
 
 /**
- *
+ * The Resources class
+ * This class stores a HashMap that stores all the resources used during the program, to save loading time during the game.
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
  */
 public class Resources {
     /**
