@@ -6,7 +6,10 @@ import javafx.stage.Stage;
 import javax.swing.*;
 
 /**
- *
+ * The Menu class
+ * This class stores an object that represents the Menu window of the Waterworks program
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
  */
 public class Menu extends Window
 {
@@ -34,7 +37,7 @@ public class Menu extends Window
     }
 
     /**
-     *
+     * This method displays all the graphics of the Menu window
      */
     public void display() {
 
