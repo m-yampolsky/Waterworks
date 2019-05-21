@@ -33,7 +33,9 @@ public class Menu extends Window
         display();
         showAndWait();
         refresh();
-        return choice;
+        int value = choice;
+        choice = 0;
+        return value;
     }
 
     /**
