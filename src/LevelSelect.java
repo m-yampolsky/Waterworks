@@ -22,7 +22,7 @@ public class LevelSelect extends Window {
      * @param stg The JavaFX Stage to display to.
      */
     public LevelSelect(Stage stg) {
-        super(stg, "Main Menu");
+        super(stg, "Level Select");
         choice = 0;
     }
 

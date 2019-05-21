@@ -50,8 +50,8 @@ public class Menu extends Window
         ImageView menuQuizBtn = (ImageView)(Resources.get("quizBtn"));
         ImageView menuPlayBtn = (ImageView)(Resources.get("playBtn"));
         ImageView menuExitBtn = (ImageView)(Resources.get("exitBtn"));
-        Image menuInstructionsBtn = (Image)(Resources.get("instrcutionsBtn"));
-        Image menuHighscoresBtn = (Image)(Resources.get("highscoresBtn"));
+        Image menuInstructionsBtn = (Image)(Resources.get("instructionsBtn"));
+        ImageView menuHighscoresBtn = (ImageView)(Resources.get("highscoresBtn"));
 
 
         // Listener for MouseClick
@@ -65,6 +65,10 @@ public class Menu extends Window
             refresh();
             choice = 1;
         });
+        menuHighscoresBtn.setOnMouseClicked(e -> {
+            refresh();
+            choice = 4;
+        });
         menuExitBtn.setOnMouseClicked(e -> {
             choice = -1;
         });
@@ -73,6 +77,7 @@ public class Menu extends Window
         drawImage(menuQuizBtn, 0, 50);
         drawImage(menuPlayBtn, 20, 150);
         drawImage(menuExitBtn, -40, 235);
+        drawImage(menuHighscoresBtn, 330, 340);
 
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 
@@ -89,7 +94,6 @@ public class Menu extends Window
                 drawImage(menuBackgroundLog, 0, 690);
                 drawImage(menuTitle, 50, 50);
                 drawImage(menuInstructionsBtn, 60, 200);
-                drawImage(menuHighscoresBtn, 670, 700);
                 drawImage(standing.getFrame(t), -90, 275);
 
                 if (choice != 0) {

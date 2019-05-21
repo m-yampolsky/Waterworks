@@ -41,8 +41,12 @@ public class StageManager extends Application {
         Resources.add("playBtn", new ImageView("elements/menus/menuPlayBtn.png"));
         Resources.add("exitBtn", new ImageView("elements/menus/menuExitBtn.png"));
         Resources.add("instructionsBtn", new Image("elements/menus/menuInstructionsBtn.png"));
-        Resources.add("highscoresBtn", new Image("elements/menus/menuHighscoresBtn.png"));Image background = new Image ("elements/menus/background.png");
+        Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscoresBtn.png"));
         Resources.add("playTitle", new Image("elements/menus/playTitle.png"));
+        Resources.add("highscoresTitle", new Image("elements/menus/highscoresTitle.png"));
+        Resources.add("highscoresOntario", new Image("elements/menus/highscoresLakeOntario.png"));
+        Resources.add("highscoresErie", new Image("elements/menus/highscoresLakeErie.png"));
+        Resources.add("highscoresSuperior", new Image("elements/menus/highscoresLakeSuperior.png"));
         Resources.add("lakeOntario", new ImageView("elements/menus/playLakeOntarioBtn.png"));
         Resources.add("lakeErie", new ImageView("elements/menus/playLakeErieBtn.png"));
         Resources.add("lakeSuperior", new ImageView("elements/menus/playLakeSuperiorBtn.png"));
@@ -114,9 +118,12 @@ public class StageManager extends Application {
                         e.printStackTrace();
                     }
                 }
+            } else if  (c == 4) {
+                Highscores h = new Highscores(stage);
+                h.display();
+                stage.showAndWait();
             }
         }
-
         stage.close();
     }
 }
