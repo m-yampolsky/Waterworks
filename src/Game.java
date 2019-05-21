@@ -5,7 +5,10 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 /**
- *
+ * The Game class
+ * This class represents the window that has all the graphics for the actual Waterworks game.
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
  */
 public class Game extends Window {
     /**
@@ -44,7 +47,7 @@ public class Game extends Window {
     }
 
     /**
-     *
+     * This method displays all the graphics for the Game window. It displays appropriate images, depending on the level being played.
      */
     public void display () {
         Image lakeBackground;
