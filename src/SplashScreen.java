@@ -3,7 +3,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
- *
+ * The Splashscreen class
+ * This class represents the window with an animation that plays at the start of the program.
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
  */
 public class SplashScreen extends Window
 {
@@ -16,7 +19,7 @@ public class SplashScreen extends Window
     }
 
     /**
-     *
+     * This method displays the animation for a period of time, and then moves on to the Main Menu
      */
     public void display () {
 
