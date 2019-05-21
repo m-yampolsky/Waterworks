@@ -81,6 +81,7 @@ public class StageManager extends Application {
 
         Music hotel = (Music)(Resources.get("hotel"));
         hotel.play();
+        hotel.loop();
 
         Menu m = new Menu(stage);
         int c = 0;
@@ -90,6 +91,7 @@ public class StageManager extends Application {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
 
             if (c == 1) {
                 LevelSelect l = new LevelSelect(stage);
@@ -102,6 +104,7 @@ public class StageManager extends Application {
                 if (lvl == -1)
                     continue;
                 else if (lvl >= 1 && lvl <= 3) {
+                    hotel.pause();
                     Game g = new Game (stage, lvl);
                     try {
                         g.getScore();

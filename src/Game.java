@@ -60,6 +60,7 @@ public class Game extends Window {
 
         Water w = new Water(1);
         Music m = (Music)(Resources.get("oxfordComma"));
+        m.loop();
 
 
         avatar.setPreserveRatio(true);

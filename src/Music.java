@@ -29,21 +29,28 @@ public class Music {
     }
 
     /**
-     * This method plays the music
+     * This method plays the music.
      */
     public void play () {
         player.play();
     }
 
     /**
-     * This method pauses the music
+     * This method sets the music to loop.
+     */
+    public void loop () {
+        player.setCycleCount(MediaPlayer.INDEFINITE);
+    }
+
+    /**
+     * This method pauses the music.
      */
     public void pause () {
         player.pause();
     }
 
     /**
-     * This method stops the music
+     * This method stops the music.
      */
     public void stop () {
         player.stop();
