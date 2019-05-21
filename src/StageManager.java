@@ -83,9 +83,11 @@ public class StageManager extends Application {
         hotel.play();
         hotel.loop();
 
-        Menu m = new Menu(stage);
+        
         int c = 0;
         while (c != -1) {
+          Menu m = new Menu(stage);
+          c = 0;
             try {
                 c = m.getChoice();
             } catch (Exception e) {
