@@ -8,7 +8,10 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 /**
- *
+ * The Window class
+ * This abstract class is the superclass to which all the independent screens of the program belong.
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
  */
 public abstract class Window {
     /**
