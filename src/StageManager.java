@@ -9,8 +9,17 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
+/**
+  * The StageManager class
+  * This class puts together all the windows of the program, and organises the program flow.
+  * @author Maria Yampolsky and Vansh Juneja
+  * @version 1 05.20.2019
+  */
 public class StageManager extends Application {
 
+    /**
+    * This method will load all the necessary resources into a hashmap, open all the necessary windows and will control the program's flow.
+    */
     public void start(Stage stg) {
         // load resources
         Image[] imageArray = new Image[180];
