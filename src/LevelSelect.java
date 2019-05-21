@@ -6,7 +6,10 @@ import javafx.scene.image.ImageView;
 import javax.swing.*;
 
 /**
- *
+ * The LevelSelect class
+ * This class represents the LevelSelect window where the user will choose which level they want to play.
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
  */
 public class LevelSelect extends Window {
 
@@ -34,7 +37,7 @@ public class LevelSelect extends Window {
     }
 
     /**
-     *
+     * This method will display all the graphics of the LevelSelect window
      */
     public void display()
     {
