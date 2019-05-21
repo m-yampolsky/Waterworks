@@ -22,6 +22,7 @@ public class StageManager extends Application {
             imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
         AnimatedImage standing = new AnimatedImage(imageArray, 0.100);
         Resources.add("splashscreen", splashscreen);
+        Resources.add("hotel", new Music("src/elements/hotel.mp3"));
         Resources.add("standing", standing);
         Resources.add("menuBackground", new Image("elements/menus/background.png"));
         Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
@@ -68,6 +69,9 @@ public class StageManager extends Application {
         stage.hide();
         s.display();
         stage.showAndWait();
+
+        Music hotel = (Music)(Resources.get("hotel"));
+        hotel.play();
 
         Menu m = new Menu(stage);
         int c = 0;

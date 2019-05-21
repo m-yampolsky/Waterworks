@@ -59,14 +59,15 @@ public abstract class Window {
     }
 
     /**
-     *
+     * Hide the JavaFX Window Stage.
      */
     public void hideStage() {
         stage.hide();
     }
 
     /**
-     *
+     * Hide the Stage in case it isn't already hidden and then show it, and wait
+     * until it is hidden once again before continuing with the current Thread.
      */
     public void showAndWait () {
         stage.hide();
@@ -74,9 +75,9 @@ public abstract class Window {
     }
 
     /**
-     * @param img
-     * @param x
-     * @param y
+     * @param x The X-pos translation of the ImageView Object in the window.
+     * @param y The Y-pos tanslation of the ImageView Object in the window.
+     * @param img The ImageView Object to display.
      */
     public void drawImage (ImageView img, int x, int y) {
         img.setTranslateX(x);
@@ -85,16 +86,16 @@ public abstract class Window {
     }
 
     /**
-     * @param img
-     * @param x
-     * @param y
+     * @param x The X-pos translation of the Image Object in the window.
+     * @param y The Y-pos tanslation of the Image Object in the window.
+     * @param img The Image Object to display.
      */
     public void drawImage (Image img, int x, int y) {
         gc.drawImage(img, x, y);
     }
 
     /**
-     *
+     * Clear Stage StackPane of all components, then re-add the Canvas
      */
     public void refresh () {
         root.getChildren().clear();
@@ -102,7 +103,7 @@ public abstract class Window {
     }
 
     /**
-     *
+     * Display method that must be implemented by all subclasses containing the Window content.
      */
     public abstract void display ();
 }
