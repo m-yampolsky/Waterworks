@@ -4,6 +4,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import javax.swing.*;
+
 /**
  * The Game class
  * This class represents the window that has all the graphics for the actual Waterworks game.
@@ -57,10 +59,14 @@ public class Game extends Window {
         LogLine logLine;
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
         ImageView avatar = (ImageView)(Resources.get("avatar"));
+        ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
 
         Water w = new Water(1);
-        Music m = (Music)(Resources.get("oxfordComma"));
-        m.loop();
+
+        // Listener for MouseClick
+        menuBtn.setOnMouseClicked(e -> {
+            hideStage();
+        });
 
 
         avatar.setPreserveRatio(true);
@@ -91,15 +97,13 @@ public class Game extends Window {
             logLine = (LogLine)(Resources.get("ontarioLogLine"));
         }
 
-        drawImage( logLine, 0, w.getYValue()-30 );
-        drawImage (avatar, 0, w.getYValue()-30 );
+        drawImage(menuBtn, 400, -330);
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer()
         {
             public void handle(long currentNanoTime)
             {
-                m.play();
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 double x = 232 + 128 * Math.cos(t);
@@ -112,7 +116,8 @@ public class Game extends Window {
 
                 Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000+(int)(t*40), 75);
                 logImg.setViewport(viewportRect);
-                refresh();
+                remove(logImg);
+                remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
                 drawImage( avatar, -380, w.getYValue()-490 );
 

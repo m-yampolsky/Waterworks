@@ -1,3 +1,4 @@
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
@@ -103,6 +104,14 @@ public abstract class Window {
     public void refresh () {
         root.getChildren().clear();
         root.getChildren().add(canvas);
+    }
+
+    /**
+     * Clear Stage StackPane of all components, then re-add the Canvas
+     */
+    public void remove (Node e) {
+        if (root.getChildren().contains(e))
+            root.getChildren().remove(e);
     }
 
     /**

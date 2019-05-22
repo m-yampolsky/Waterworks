@@ -8,6 +8,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import jdk.management.resource.ResourceContext;
 
 /**
   * The StageManager class
@@ -54,11 +55,12 @@ public class StageManager extends Application {
         Resources.add("ontarioLake", new Image( "elements/game/lake.png" ));
         Resources.add("ontarioBack", new Image( "elements/game/ontarioBack.png" ));
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
-        Resources.add("ontarioLogImg", new ImageView( "elements/game/ontarioLogLine.png" ));
+        Resources.add("ontarioLogImg", new ImageView ( "elements/game/ontarioLogLine.png" ));
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
-        Resources.add("oxfordComma", new Music("src/elements/oxfordComma.wav"));
+        Resources.add("oxfordComma", new Music ("src/elements/oxfordComma.wav"));
+        Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
 
 
 
@@ -84,13 +86,15 @@ public class StageManager extends Application {
         stage.showAndWait();
 
         Music hotel = (Music)(Resources.get("hotel"));
-        hotel.play();
+        Music oxford = (Music)(Resources.get("oxfordComma"));
+        oxford.loop();
         hotel.loop();
 
         
         int c = 0;
         while (c != -1) {
           Menu m = new Menu(stage);
+          hotel.play();
           c = 0;
             try {
                 c = m.getChoice();
@@ -110,13 +114,13 @@ public class StageManager extends Application {
                 if (lvl == -1)
                     continue;
                 else if (lvl >= 1 && lvl <= 3) {
-                    hotel.pause();
+                    hotel.stop();
+                    oxford.play();
                     Game g = new Game (stage, lvl);
                     try {
                         g.getScore();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
+                    } catch (Exception e) {e.printStackTrace();}
+                    oxford.stop();
                 }
             } else if  (c == 4) {
                 Highscores h = new Highscores(stage);
@@ -125,5 +129,6 @@ public class StageManager extends Application {
             }
         }
         stage.close();
+
     }
 }
