@@ -26,18 +26,33 @@ public class Instructions extends Window {
         Image background = (Image)(Resources.get("menuBackground"));
         Image playTitle = (Image)(Resources.get("highscoresTitle"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
-        Image highscoresOntario = (Image)(Resources.get("highscoresOntario"));
-        Image highscoresErie = (Image)(Resources.get("highscoresErie"));
-        Image highscoresSuperior = (Image)(Resources.get("highscoresSuperior"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
+        ImageView instructions1 = (ImageView)(Resources.get("instructions1"));
+        ImageView instructions2 = (ImageView)(Resources.get("instructions2"));
+        ImageView instructionsF = (ImageView)(Resources.get("instructionsForward"));
+        ImageView instructionsB = (ImageView)(Resources.get("instructionsBackward"));
 
 
         backButton.setOnMouseClicked(e -> {
             refresh();
             back = true;
         });
+        instructionsF.setOnMouseClicked(e -> {
+            remove(instructions1);
+            remove(instructionsF);
+            drawImage(instructions2, 130, 50);
+            drawImage(instructionsB, 400, 330);
+        });
+        instructionsB.setOnMouseClicked(e -> {
+            remove(instructions2);
+            remove(instructionsB);
+            drawImage(instructions1, 130, 50);
+            drawImage(instructionsF, 400, 330);
+        });
 
-        drawImage(backButton, -380, -160);;
+        drawImage(backButton, -380, -160);
+        drawImage(instructions1, 130, 50);
+        drawImage(instructionsF, 400, 330);
 
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 
@@ -54,9 +69,6 @@ public class Instructions extends Window {
                 drawImage(menuBackgroundLog, 0, 690);
                 drawImage(playTitle, 40, 30);
                 drawImage(standing.getFrame(t), -90, 275);
-                drawImage(highscoresOntario, 360, 300);
-                drawImage(highscoresErie, 575, 300);
-                drawImage(highscoresSuperior, 790, 300);
 
                 if (back) {
                     stop();
