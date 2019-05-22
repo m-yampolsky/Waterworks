@@ -5,6 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.MediaException;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
@@ -32,7 +33,6 @@ public class StageManager extends Application {
             imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
         AnimatedImage standing = new AnimatedImage(imageArray, 0.100);
         Resources.add("splashscreen", splashscreen);
-        Resources.add("hotel", new Music("src/elements/hotel.mp3"));
         Resources.add("standing", standing);
         Resources.add("menuBackground", new Image("elements/menus/background.png"));
         Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
@@ -59,7 +59,14 @@ public class StageManager extends Application {
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
-        Resources.add("oxfordComma", new Music ("src/elements/oxfordComma.wav"));
+        try {
+            Resources.add("oxfordComma", new Music("elements/oxfordComma.wav"));
+            Resources.add("hotel", new Music("elements/hotel.mp3"));
+        }
+        catch (MediaException e) {
+            Resources.add("oxfordComma", new Music("src/elements/oxfordComma.wav"));
+            Resources.add("hotel", new Music("src/elements/hotel.mp3"));
+        }
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
 
 
