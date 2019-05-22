@@ -41,7 +41,7 @@ public class StageManager extends Application {
         Resources.add("quizBtn", new ImageView("elements/menus/menuQuizBtn.png"));
         Resources.add("playBtn", new ImageView("elements/menus/menuPlayBtn.png"));
         Resources.add("exitBtn", new ImageView("elements/menus/menuExitBtn.png"));
-        Resources.add("instructionsBtn", new Image("elements/menus/menuInstructionsBtn.png"));
+        Resources.add("instructionsBtn", new ImageView("elements/menus/menuInstructionsBtn.png"));
         Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscoresBtn.png"));
         Resources.add("playTitle", new Image("elements/menus/playTitle.png"));
         Resources.add("highscoresTitle", new Image("elements/menus/highscoresTitle.png"));
@@ -129,6 +129,10 @@ public class StageManager extends Application {
                     } catch (Exception e) {e.printStackTrace();}
                     oxford.stop();
                 }
+            } else if (c == 3) {
+                Instructions i = new Instructions(stage);
+                i.display();
+                stage.showAndWait();
             } else if  (c == 4) {
                 Highscores h = new Highscores(stage);
                 h.display();

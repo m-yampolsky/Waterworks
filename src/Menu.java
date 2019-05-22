@@ -50,7 +50,7 @@ public class Menu extends Window
         ImageView menuQuizBtn = (ImageView)(Resources.get("quizBtn"));
         ImageView menuPlayBtn = (ImageView)(Resources.get("playBtn"));
         ImageView menuExitBtn = (ImageView)(Resources.get("exitBtn"));
-        Image menuInstructionsBtn = (Image)(Resources.get("instructionsBtn"));
+        ImageView menuInstructionsBtn = (ImageView)(Resources.get("instructionsBtn"));
         ImageView menuHighscoresBtn = (ImageView)(Resources.get("highscoresBtn"));
 
 
@@ -72,12 +72,16 @@ public class Menu extends Window
         menuExitBtn.setOnMouseClicked(e -> {
             choice = -1;
         });
+        menuInstructionsBtn.setOnMouseClicked(e -> {
+            choice = 3;
+        });
 
         drawImage(menuLearnBtn, 40, -50);
         drawImage(menuQuizBtn, 0, 50);
         drawImage(menuPlayBtn, 20, 150);
         drawImage(menuExitBtn, -40, 235);
         drawImage(menuHighscoresBtn, 330, 340);
+        drawImage(menuInstructionsBtn, -235, -145);
 
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 
@@ -93,7 +97,6 @@ public class Menu extends Window
                 drawImage(menuBackground, 0, 0);
                 drawImage(menuBackgroundLog, 0, 690);
                 drawImage(menuTitle, 50, 50);
-                drawImage(menuInstructionsBtn, 60, 200);
                 drawImage(standing.getFrame(t), -90, 275);
 
                 if (choice != 0) {
