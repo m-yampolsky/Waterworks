@@ -18,6 +18,16 @@ public class Quiz extends Window {
         Image background = (Image) (Resources.get("quizBack"));
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
 
+        ImageView tub = (ImageView)(Resources.get("tub"));
+        ImageView sink = (ImageView)(Resources.get("sink"));
+        ImageView cWasher = (ImageView)(Resources.get("cWasher"));
+        ImageView dWasher = (ImageView)(Resources.get("dWasher"));
+        ImageView wCan = (ImageView)(Resources.get("wCan"));
+        ImageView barrel = (ImageView)(Resources.get("barrel"));
+        ImageView dSponge = (ImageView)(Resources.get("dSponge"));
+        ImageView hose = (ImageView)(Resources.get("hose"));
+        ImageView shower = (ImageView)(Resources.get("shower"));
+
         menuBtn.setOnMouseClicked(e -> {
             hideStage();
         });
@@ -25,5 +35,16 @@ public class Quiz extends Window {
         drawImage(background, 0, 0);
         drawImage(menuBtn, 400, -330);
 
+        drawImage (dSponge, -110, -185 );
+        drawImage (sink,17, -179 );
+        drawImage (shower, 128, -188);
+
+        drawImage (wCan, -90, -52);
+        drawImage (barrel, 37, -52);
+        drawImage (hose, 138, -48);
+
+        drawImage (cWasher, -130, 75);
+        drawImage (tub, 5, 82);
+        drawImage (dWasher, 145, 76);
     }
 }
