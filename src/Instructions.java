@@ -24,7 +24,7 @@ public class Instructions extends Window {
     public void display()
     {
         Image background = (Image)(Resources.get("menuBackground"));
-        Image playTitle = (Image)(Resources.get("highscoresTitle"));
+        Image playTitle = (Image)(Resources.get("instructionsTitle"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
         ImageView instructions1 = (ImageView)(Resources.get("instructions1"));
@@ -33,6 +33,7 @@ public class Instructions extends Window {
         ImageView instructionsB = (ImageView)(Resources.get("instructionsBackward"));
 
 
+        // Listeners for MouseClick
         backButton.setOnMouseClicked(e -> {
             refresh();
             back = true;
@@ -48,6 +49,26 @@ public class Instructions extends Window {
             remove(instructionsB);
             drawImage(instructions1, 130, 50);
             drawImage(instructionsF, 400, 330);
+        });
+        // Listeners for MouseEnter
+        backButton.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        instructionsF.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        instructionsB.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        // Listeners for MouseExit
+        backButton.setOnMouseExited(e -> {
+            setCursor(false);
+        });
+        instructionsF.setOnMouseExited(e -> {
+            setCursor(false);
+        });
+        instructionsB.setOnMouseExited(e -> {
+            setCursor(false);
         });
 
         drawImage(backButton, -380, -160);

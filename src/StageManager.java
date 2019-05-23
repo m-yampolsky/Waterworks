@@ -41,6 +41,7 @@ public class StageManager extends Application {
         Resources.add("playBtn", new ImageView("elements/menus/menuPlayBtn.png"));
         Resources.add("exitBtn", new ImageView("elements/menus/menuExitBtn.png"));
         Resources.add("instructionsBtn", new ImageView("elements/menus/menuInstructionsBtn.png"));
+        Resources.add("instructionsTitle", new Image("elements/menus/instructionsTitle.png"));
         Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscoresBtn.png"));
         Resources.add("instructions1", new ImageView ( "elements/menus/instructions1.png" ));
         Resources.add("instructions2", new ImageView ( "elements/menus/instructions2.png" ));

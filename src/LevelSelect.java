@@ -49,7 +49,7 @@ public class LevelSelect extends Window {
         ImageView lakeSuperior = (ImageView)(Resources.get("lakeSuperior"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
 
-
+        // Listeners for MouseClick
         backButton.setOnMouseClicked(e -> {
             refresh();
             choice = -1;
@@ -65,6 +65,32 @@ public class LevelSelect extends Window {
         lakeSuperior.setOnMouseClicked(e -> {
             refresh();
             choice = 3;
+        });
+        // Listeners for MouseEnter
+        backButton.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        lakeOntario.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        lakeErie.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        lakeSuperior.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        // Listeners for MouseExit
+        backButton.setOnMouseExited(e -> {
+            setCursor(false);
+        });
+        lakeOntario.setOnMouseExited(e -> {
+            setCursor(false);
+        });
+        lakeErie.setOnMouseExited(e -> {
+            setCursor(false);
+        });
+        lakeSuperior.setOnMouseExited(e -> {
+            setCursor(false);
         });
 
         drawImage(lakeOntario, -30, 100);

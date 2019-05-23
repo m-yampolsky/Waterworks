@@ -1,3 +1,5 @@
+import javafx.scene.Cursor;
+import javafx.scene.ImageCursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -53,6 +55,13 @@ public abstract class Window {
         stage.setScene(scene);
         gc = canvas.getGraphicsContext2D();
         gc.setFill(Color.WHITE);
+    }
+
+    public void setCursor (boolean state) {
+        if (state)
+            stage.getScene().setCursor(Cursor.HAND);
+        else
+            stage.getScene().setCursor(Cursor.DEFAULT);
     }
 
     /**

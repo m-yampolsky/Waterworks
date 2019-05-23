@@ -36,6 +36,14 @@ public class Highscores extends Window {
             refresh();
             back = true;
         });
+        // Listener for MouseEnter
+        backButton.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        // Listener for MouseExit
+        backButton.setOnMouseExited(e -> {
+            setCursor(false);
+        });
 
         drawImage(backButton, -380, -160);;
 
