@@ -59,7 +59,8 @@ public class Menu extends Window
             JOptionPane.showMessageDialog(new JFrame(), "Learn");
         });
         menuQuizBtn.setOnMouseClicked(e -> {
-            JOptionPane.showMessageDialog(new JFrame(), "Quiz");
+            refresh();
+            choice = 2;
         });
         menuPlayBtn.setOnMouseClicked(e -> {
             refresh();

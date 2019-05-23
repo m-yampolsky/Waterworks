@@ -75,6 +75,7 @@ public class StageManager extends Application {
             Resources.add("hotel", new Music("src/elements/hotel.mp3"));
         }
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
+        Resources.add("quizBack", new Image ("elements/game/quizBack.png"));
 
 
 
@@ -136,6 +137,11 @@ public class StageManager extends Application {
                     } catch (Exception e) {e.printStackTrace();}
                     oxford.stop();
                 }
+            }
+            else if (c == 2) {
+                Quiz q = new Quiz (stage);
+                q.display();
+                q.showAndWait();
             } else if (c == 3) {
                 Instructions i = new Instructions(stage);
                 i.display();
