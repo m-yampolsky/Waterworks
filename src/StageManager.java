@@ -108,7 +108,8 @@ public class StageManager extends Application {
         stage.setScene(scene);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        SplashScreen s = new SplashScreen(stage);
+
+       SplashScreen s = new SplashScreen(stage);
         stage.hide();
         s.display();
         stage.showAndWait();
@@ -168,6 +169,5 @@ public class StageManager extends Application {
                 break;
         }
         stage.close();
-
     }
 }
