@@ -9,19 +9,18 @@ import javafx.scene.media.MediaException;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import jdk.management.resource.ResourceContext;
 
 /**
-  * The StageManager class
-  * This class puts together all the windows of the program, and organises the program flow.
-  * @author Maria Yampolsky and Vansh Juneja
-  * @version 1 05.20.2019
-  */
+ * The StageManager class
+ * This class puts together all the windows of the program, and organises the program flow.
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 1 05.20.2019
+ */
 public class StageManager extends Application {
 
     /**
-    * This method will load all the necessary resources into a hashmap, open all the necessary windows and will control the program's flow.
-    */
+     * This method will load all the necessary resources into a hashmap, open all the necessary windows and will control the program's flow.
+     */
     public void start(Stage stg) {
         // load resources
         Image[] imageArray = new Image[180];
@@ -56,11 +55,15 @@ public class StageManager extends Application {
         Resources.add("lakeErie", new ImageView("elements/menus/playLakeErieBtn.png"));
         Resources.add("lakeSuperior", new ImageView("elements/menus/playLakeSuperiorBtn.png"));
         Resources.add("backButton", new ImageView("elements/menus/backBtn.png"));
-        Resources.add("ontarioLake", new Image( "elements/game/lake.png" ));
+        Resources.add("dirtBack", new Image( "elements/game/dirtBack.png" ));
+        Resources.add("ontarioLake", new Image( "elements/game/ontarioLake.png" ));
         Resources.add("ontarioBack", new Image( "elements/game/ontarioBack.png" ));
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
         Resources.add("ontarioLogImg", new ImageView ( "elements/game/ontarioLogLine.png" ));
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+        Resources.add("erieLake", new Image( "elements/game/erieLake.png" ));
+        Resources.add("erieBack", new Image( "elements/game/erieBack.png" ));
+        Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
         try {
@@ -74,6 +77,15 @@ public class StageManager extends Application {
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
         Resources.add("quizBack", new Image ("elements/game/quizBack.png"));
 
+        Resources.add("dSponge", new ImageView ("elements/game/dish.png"));
+        Resources.add("hose", new ImageView ("elements/game/hose.png"));
+        Resources.add("sink", new ImageView ("elements/game/sink.png"));
+        Resources.add("tub", new ImageView ("elements/game/tub.png"));
+        Resources.add("barrel", new ImageView ("elements/game/barrel.png"));
+        Resources.add("cWasher", new ImageView ("elements/game/washer.png"));
+        Resources.add("dWasher", new ImageView ("elements/game/dishwasher.png"));
+        Resources.add("shower", new ImageView ("elements/game/shower.png"));
+        Resources.add("wCan", new ImageView ("elements/game/waterCan.png"));
 
 
         Stage stage = new Stage();
@@ -102,12 +114,12 @@ public class StageManager extends Application {
         oxford.loop();
         hotel.loop();
 
-        
+
         int c = 0;
         while (c != -1) {
-          Menu m = new Menu(stage);
-          hotel.play();
-          c = 0;
+            Menu m = new Menu(stage);
+            hotel.play();
+            c = 0;
             try {
                 c = m.getChoice();
             } catch (Exception e) {
