@@ -64,10 +64,6 @@ public abstract class Window {
             stage.getScene().setCursor(Cursor.DEFAULT);
     }
 
-    public void setCursor (Image img) {
-            stage.getScene().setCursor(new ImageCursor(img));
-    }
-
     /**
      * Draw a white rectangle covering entire GraphicContext.
      */

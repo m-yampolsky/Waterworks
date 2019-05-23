@@ -68,6 +68,14 @@ public class Game extends Window {
         menuBtn.setOnMouseClicked(e -> {
             hideStage();
         });
+        // Listener for MouseEnter
+        menuBtn.setOnMouseEntered(e -> {
+            setCursor(true);
+        });
+        // Listener for MouseExit
+        menuBtn.setOnMouseExited(e -> {
+            setCursor(false);
+        });
 
 
         avatar.setPreserveRatio(true);
