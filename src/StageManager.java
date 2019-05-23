@@ -76,7 +76,7 @@ public class StageManager extends Application {
         }
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
         Resources.add("quizBack", new Image ("elements/game/quizBack.png"));
-
+        
         Resources.add("dSponge", new ImageView ("elements/game/dish.png"));
         Resources.add("hose", new ImageView ("elements/game/hose.png"));
         Resources.add("sink", new ImageView ("elements/game/sink.png"));
@@ -85,7 +85,7 @@ public class StageManager extends Application {
         Resources.add("cWasher", new ImageView ("elements/game/washer.png"));
         Resources.add("dWasher", new ImageView ("elements/game/dishwasher.png"));
         Resources.add("shower", new ImageView ("elements/game/shower.png"));
-        Resources.add("wCan", new ImageView ("elements/game/waterCan.png"));
+        Resources.add("wCan", new ImageView ("elements/game/waterCan.png"));     
 
 
         Stage stage = new Stage();
