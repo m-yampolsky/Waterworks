@@ -160,6 +160,8 @@ public class StageManager extends Application {
                 h.display();
                 stage.showAndWait();
             }
+            else if (c == -1)
+                break;
         }
         stage.close();
 
