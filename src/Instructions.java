@@ -24,7 +24,7 @@ public class Instructions extends Window {
     public void display()
     {
         Image background = (Image)(Resources.get("menuBackground"));
-        Image playTitle = (Image)(Resources.get("highscoresTitle"));
+        Image playTitle = (Image)(Resources.get("instructionsTitle"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
         ImageView instructions1 = (ImageView)(Resources.get("instructions1"));
