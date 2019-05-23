@@ -28,6 +28,9 @@ public class Quiz extends Window {
         ImageView hose = (ImageView)(Resources.get("hose"));
         ImageView shower = (ImageView)(Resources.get("shower"));
 
+        ImageView eBox = (ImageView)(Resources.get("effBox"));
+        ImageView iBox = (ImageView)(Resources.get("ineffBox"));
+
         menuBtn.setOnMouseClicked(e -> {
             hideStage();
         });
@@ -46,5 +49,8 @@ public class Quiz extends Window {
         drawImage (cWasher, -130, 75);
         drawImage (tub, 5, 82);
         drawImage (dWasher, 145, 76);
+
+        drawImage (eBox, -350, 200);
+        drawImage (iBox, 360, 200);
     }
 }

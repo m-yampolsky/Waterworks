@@ -85,7 +85,11 @@ public class StageManager extends Application {
         Resources.add("cWasher", new ImageView ("elements/game/washer.png"));
         Resources.add("dWasher", new ImageView ("elements/game/dishwasher.png"));
         Resources.add("shower", new ImageView ("elements/game/shower.png"));
-        Resources.add("wCan", new ImageView ("elements/game/waterCan.png"));     
+        Resources.add("wCan", new ImageView ("elements/game/waterCan.png"));
+
+        Resources.add("effBox", new ImageView("elements/game/efficientBox.png"));
+        Resources.add("ineffBox", new ImageView("elements/game/inefficientBox.png"));
+
 
 
         Stage stage = new Stage();
