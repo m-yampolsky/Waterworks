@@ -53,6 +53,7 @@ public class Game extends Window {
      */
     public void display () {
         Image lakeBackground;
+        Image dirtBack = (Image)(Resources.get("dirtBack"));
         Image cityBack;
         Image lake;
         ImageView logImg;
@@ -82,9 +83,9 @@ public class Game extends Window {
         }
         else if (level == 2)
         {
-            lakeBackground = (Image)(Resources.get("ontarioBack"));
-            cityBack = (Image)(Resources.get("ontarioToronto"));
-            lake = (Image)(Resources.get("ontarioLake"));
+            lakeBackground = (Image)(Resources.get("erieBack"));
+            cityBack = (Image)(Resources.get("erieCabin"));
+            lake = (Image)(Resources.get("erieLake"));
             logImg = (ImageView)(Resources.get("ontarioLogImg"));
             logLine = (LogLine)(Resources.get("ontarioLogLine"));
         }
@@ -111,7 +112,13 @@ public class Game extends Window {
 
                 // background image clears canvas
                 drawImage( lakeBackground, 0, 0 );
-                drawImage( cityBack, 480-(int)(t*3), 245 );
+                if (level == 1)
+                    drawImage( cityBack, 480-(int)(t*3), 249 );
+                else if (level == 2)
+                    drawImage( cityBack, 580-(int)(t*3), 304 );
+                else
+                    drawImage( cityBack, 480-(int)(t*3), 249 );
+                drawImage( dirtBack, 0, 542 );
                 drawImage( lake, 1, w.getYValue() );
 
                 Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000+(int)(t*40), 75);

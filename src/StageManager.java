@@ -9,7 +9,6 @@ import javafx.scene.media.MediaException;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import jdk.management.resource.ResourceContext;
 
 /**
   * The StageManager class
@@ -56,11 +55,15 @@ public class StageManager extends Application {
         Resources.add("lakeErie", new ImageView("elements/menus/playLakeErieBtn.png"));
         Resources.add("lakeSuperior", new ImageView("elements/menus/playLakeSuperiorBtn.png"));
         Resources.add("backButton", new ImageView("elements/menus/backBtn.png"));
-        Resources.add("ontarioLake", new Image( "elements/game/lake.png" ));
+        Resources.add("dirtBack", new Image( "elements/game/dirtBack.png" ));
+        Resources.add("ontarioLake", new Image( "elements/game/ontarioLake.png" ));
         Resources.add("ontarioBack", new Image( "elements/game/ontarioBack.png" ));
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
         Resources.add("ontarioLogImg", new ImageView ( "elements/game/ontarioLogLine.png" ));
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+        Resources.add("erieLake", new Image( "elements/game/erieLake.png" ));
+        Resources.add("erieBack", new Image( "elements/game/erieBack.png" ));
+        Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
         try {
