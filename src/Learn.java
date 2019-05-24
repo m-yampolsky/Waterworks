@@ -16,6 +16,12 @@ public class Learn extends Window {
      */
     private boolean back;
 
+    private int xtime = 0;
+
+    private int times = 2;
+
+    private boolean go = true;
+
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -30,7 +36,22 @@ public class Learn extends Window {
      */
     public void display()
     {
+
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+        Image menuBack = (Image)(Resources.get("menuBackground"));
+        Image learnBack = (Image)(Resources.get("learnBack"));
+
+        ImageView washer = (ImageView)(Resources.get("learnWasher"));
+        ImageView barrel = (ImageView)(Resources.get("learnBarrel"));
+        ImageView can = (ImageView)(Resources.get("learnCan"));
+        ImageView shower = (ImageView)(Resources.get("learnShower"));
+        ImageView tub = (ImageView)(Resources.get("learnTub"));
+        ImageView dwasher = (ImageView)(Resources.get("learnDWasher"));
+        ImageView dish = (ImageView)(Resources.get("learnDish"));
+        ImageView hose = (ImageView)(Resources.get("learnHose"));
+        ImageView sink = (ImageView)(Resources.get("learnSink"));
+        ImageView washer2 = (ImageView)(Resources.get("learnWasher2"));
+        ImageView barrel2 = (ImageView)(Resources.get("learnBarrel2"));
 
         // Listener for MouseClick
         menuBtn.setOnMouseClicked(e -> {
@@ -45,6 +66,8 @@ public class Learn extends Window {
             setCursor(false);
         });
 
+        drawImage(menuBack, 0, 0);
+        drawImage(learnBack, 0, 400);
         drawImage(menuBtn, 400, -330);
 
         final long startNanoTime = System.nanoTime();
@@ -55,7 +78,40 @@ public class Learn extends Window {
                 double x = 232 + 128 * Math.cos(t);
                 double y = 232 + 128 * Math.sin(t);
 
+
+                if (go) {
+                    xtime += 3;
+                    if (times <= 1 && xtime >= 300 || times == 2 && xtime >= 550)
+                        go = false;
+                }
+
                 // background image clears canvas
+                remove(washer);
+                remove(barrel);
+                remove(can);
+                remove(shower);
+                remove(tub);
+                remove(dwasher);
+                remove(dish);
+                remove(hose);
+                remove(sink);
+                remove(washer2);
+                remove(barrel2);
+                drawImage(washer, 290-xtime, -50);
+                drawImage(barrel, 540-xtime, -30);
+                drawImage(can, 840-xtime, -30);
+                drawImage(shower, 1160-xtime, -30);
+                drawImage(tub, 1600-xtime, -30);
+                drawImage(dwasher, 2040-xtime, -30);
+                drawImage(dish, 2340-xtime, -30);
+                drawImage(hose, 2600-xtime, 0);
+                drawImage(sink, 2890-xtime, 0);
+                drawImage(washer2, 3900-xtime, -50);
+                drawImage(barrel2, 4150-xtime, -30);
+
+                if (xtime == 3606)
+                    xtime = 0;
+
 
                 if (back) {
                     stop();
