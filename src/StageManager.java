@@ -107,7 +107,7 @@ public class StageManager extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
 
-       /*SplashScreen s = new SplashScreen(stage);
+       SplashScreen s = new SplashScreen(stage);
         stage.hide();
         s.display();
         stage.showAndWait();
@@ -170,10 +170,6 @@ public class StageManager extends Application {
             else if (c == -1)
                 break;
         }
-        stage.close();*/
-
-       Quiz q = new Quiz(stage);
-       q.display();
-       q.showAndWait();
+        stage.close();
     }
 }
