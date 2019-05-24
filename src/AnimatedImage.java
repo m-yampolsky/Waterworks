@@ -37,4 +37,16 @@ public class AnimatedImage
         int index = (int)((time % (frames.length * duration)) / duration);
         return frames[index];
     }
+
+    public int frame(double time) {
+        return (int)((time % (frames.length * duration)) / duration)+1;
+    }
+
+    public Image lastFrame() {
+        return frames[frames.length-1];
+    }
+
+    public Image getFrame (int f) {
+        return frames[f-1];
+    }
 }

@@ -55,26 +55,26 @@ public class Menu extends Window
 
 
         // Listener for MouseClick
-        menuLearnBtn.setOnMouseClicked(e -> {
-            JOptionPane.showMessageDialog(new JFrame(), "Learn");
+        menuPlayBtn.setOnMouseClicked(e -> {
+            refresh();
+            choice = 1;
         });
         menuQuizBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 2;
         });
-        menuPlayBtn.setOnMouseClicked(e -> {
-            refresh();
-            choice = 1;
+        menuInstructionsBtn.setOnMouseClicked(e -> {
+            choice = 3;
         });
         menuHighscoresBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 4;
         });
+        menuLearnBtn.setOnMouseClicked(e -> {
+            choice = 5;
+        });
         menuExitBtn.setOnMouseClicked(e -> {
             choice = -1;
-        });
-        menuInstructionsBtn.setOnMouseClicked(e -> {
-            choice = 3;
         });
         // Listener for MouseEnter
         menuLearnBtn.setOnMouseEntered(e -> {
