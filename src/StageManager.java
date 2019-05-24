@@ -23,16 +23,11 @@ public class StageManager extends Application {
      */
     public void start(Stage stg) {
         // load resources
-        Image[] imageArray = new Image[180];
-        for (int i = 1; i <= 170; i++)
+        Image[] imageArray = new Image[170];
+        for (int i = 1; i <= imageArray.length; i++)
             imageArray[i - 1] = new Image("elements/splash/splash (" + i + ").png");
         AnimatedImage splashscreen = new AnimatedImage(imageArray, 0.100);
-        imageArray = new Image[180];
-        for (int i = 1; i <= 180; i++)
-            imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
-        AnimatedImage standing = new AnimatedImage(imageArray, 0.100);
         Resources.add("splashscreen", splashscreen);
-        Resources.add("standing", standing);
         Resources.add("menuBackground", new Image("elements/menus/background.png"));
         Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
         Resources.add("menuTitle", new Image("elements/menus/menuLogo.png"));
@@ -164,6 +159,10 @@ public class StageManager extends Application {
             } else if  (c == 4) {
                 Highscores h = new Highscores(stage);
                 h.display();
+                stage.showAndWait();
+            } else if  (c == 5) {
+                Learn l = new Learn(stage);
+                l.display();
                 stage.showAndWait();
             }
             else if (c == -1)
