@@ -30,7 +30,6 @@ public class Learn extends Window {
      */
     public void display()
     {
-        AnimatedImage learn = (AnimatedImage)(Resources.get("learn"));
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
 
         // Listener for MouseClick
@@ -57,7 +56,6 @@ public class Learn extends Window {
                 double y = 232 + 128 * Math.sin(t);
 
                 // background image clears canvas
-                drawImage(learn.getFrame(t), 0, 0);
 
                 if (back) {
                     stop();
