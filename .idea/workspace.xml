@@ -7,9 +7,352 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Lake Erie Graphics and Implementation">
-      <change beforePath="$PROJECT_DIR$/src/Learn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SplashScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (1).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (10).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (100).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (101).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (102).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (103).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (104).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (105).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (106).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (107).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (108).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (109).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (11).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (110).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (111).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (112).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (113).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (114).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (115).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (116).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (117).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (118).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (119).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (12).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (120).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (121).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (122).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (123).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (124).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (125).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (126).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (127).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (128).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (129).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (13).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (130).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (131).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (132).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (133).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (134).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (135).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (136).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (137).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (138).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (139).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (14).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (140).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (141).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (142).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (143).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (144).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (145).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (146).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (147).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (148).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (149).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (15).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (150).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (151).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (152).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (153).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (154).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (155).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (156).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (157).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (158).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (159).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (16).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (160).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (161).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (162).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (163).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (164).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (165).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (166).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (167).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (168).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (169).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (17).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (170).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (171).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (172).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (173).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (174).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (175).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (176).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (177).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (178).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (179).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (18).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (180).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (181).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (182).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (183).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (184).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (185).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (186).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (187).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (188).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (189).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (19).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (190).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (191).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (192).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (193).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (194).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (195).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (196).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (197).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (198).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (199).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (2).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (20).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (200).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (201).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (202).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (203).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (204).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (205).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (206).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (207).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (208).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (209).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (21).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (210).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (211).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (212).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (213).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (214).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (215).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (216).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (217).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (218).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (219).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (22).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (220).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (221).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (222).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (223).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (224).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (225).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (226).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (227).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (228).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (229).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (23).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (230).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (231).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (232).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (233).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (234).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (235).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (236).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (237).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (238).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (239).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (24).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (240).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (241).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (242).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (243).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (244).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (245).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (246).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (247).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (248).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (249).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (25).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (250).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (251).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (252).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (253).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (254).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (255).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (256).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (257).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (258).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (259).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (26).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (260).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (261).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (262).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (263).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (264).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (265).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (266).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (267).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (268).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (269).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (27).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (270).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (271).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (272).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (273).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (274).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (275).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (276).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (277).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (278).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (279).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (28).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (280).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (281).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (282).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (283).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (284).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (285).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (286).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (287).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (288).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (289).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (29).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (290).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (291).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (292).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (293).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (294).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (295).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (296).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (297).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (298).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (299).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (3).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (30).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (300).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (301).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (302).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (303).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (304).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (305).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (306).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (307).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (308).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (309).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (31).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (310).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (311).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (312).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (313).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (314).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (315).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (316).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (317).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (318).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (319).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (32).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (320).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (321).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (322).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (323).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (324).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (325).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (326).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (327).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (328).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (329).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (33).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (330).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (331).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (332).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (333).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (334).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (335).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (336).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (337).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (338).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (339).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (34).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (340).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (341).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (342).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (343).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (344).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (345).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (35).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (36).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (37).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (38).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (39).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (4).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (40).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (41).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (42).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (43).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (44).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (45).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (46).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (47).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (48).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (49).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (5).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (50).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (51).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (52).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (53).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (54).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (55).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (56).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (57).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (58).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (59).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (6).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (60).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (61).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (62).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (63).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (64).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (65).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (66).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (67).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (68).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (69).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (7).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (70).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (71).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (72).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (73).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (74).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (75).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (76).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (77).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (78).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (79).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (8).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (80).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (81).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (82).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (83).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (84).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (85).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (86).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (87).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (88).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (89).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (9).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (90).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (91).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (92).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (93).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (94).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (95).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (96).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (97).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (98).png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/elements/learn/learn (99).png" beforeDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -72,45 +415,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="172" column="24" lean-forward="true" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SplashScreen.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="52" column="32" lean-forward="true" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Quiz.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="142" column="21" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
-              <folding>
-                <element signature="e#9785#11746#0" expanded="true" />
-                <element signature="e#11745#11746#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Window.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="95" selection-start-line="95" selection-end-line="95" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="880">
+              <caret line="88" column="80" selection-start-line="88" selection-start-column="80" selection-end-line="88" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -406,8 +712,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1064" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1119403" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.1130064" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
       <window_info id="Designer" order="3" />
@@ -741,16 +1048,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="172" column="24" lean-forward="true" selection-start-line="172" selection-start-column="24" selection-end-line="172" selection-end-column="24" />
+        <state relative-caret-position="2312">
+          <caret line="142" column="21" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Window.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
+        <state relative-caret-position="1377">
           <caret line="95" selection-start-line="95" selection-end-line="95" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -758,24 +1065,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Quiz.java">
+    <entry file="file://$PROJECT_DIR$/src/SplashScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="142" column="21" selection-start-line="142" selection-start-column="21" selection-end-line="142" selection-end-column="21" />
+        <state relative-caret-position="676">
+          <caret line="52" column="32" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
           <folding>
-            <element signature="e#9785#11746#0" expanded="true" />
-            <element signature="e#11745#11746#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SplashScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/StageManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="52" column="32" lean-forward="true" selection-start-line="52" selection-start-column="32" selection-end-line="52" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="880">
+          <caret line="88" column="80" selection-start-line="88" selection-start-column="80" selection-end-line="88" selection-end-column="80" />
         </state>
       </provider>
     </entry>

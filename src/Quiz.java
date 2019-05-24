@@ -21,16 +21,83 @@ public class Quiz extends Window {
     boolean lost = false;
     int x,y;
 
+    ImageView background = (ImageView) (Resources.get("quizBack"));
+    ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+
+
+
     public Quiz(Stage stg) {
         super(stg, "Quiz");
         effDevices = new ArrayList<ImageView>();
         ineffDevices = new ArrayList<ImageView>();
     }
 
-    public void display() {
+    public void setStuff(ImageView[] devices) {
 
-        ImageView background = (ImageView) (Resources.get("quizBack"));
-        ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+        for (ImageView img : devices)
+        {
+            img.setOnMousePressed(new EventHandler<MouseEvent>() {
+                public void handle(MouseEvent event) {
+                    img.setMouseTransparent(true);
+                    isDragged = false;
+                    device = img;
+                    event.setDragDetect(true);
+                    lost = false;
+                }
+            });
+
+            img.setOnMouseReleased(new EventHandler<MouseEvent>() {
+                public void handle(MouseEvent event) {
+                    if (device != null)
+                    {
+                        img.setMouseTransparent(false);
+                        isDragged = false;
+                        device = null;
+                    }
+                    else
+                    {
+                        lost = true;
+                    }
+                }
+            });
+
+            img.setOnMouseDragged(new EventHandler<MouseEvent>() {
+                public void handle(MouseEvent event) {
+                    event.setDragDetect(false);
+                    x = (int) event.getSceneX();
+                    y = (int) event.getSceneY();
+                    isDragged = true;
+                    lost = false;
+                }
+            });
+            img.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
+            {
+                public void handle(MouseDragEvent event)
+                {
+                    x = (int)event.getSceneX();
+                    y = (int)event.getSceneY();
+                    isDragged = true;
+                    lost = false;
+                }
+            });
+            img.setOnDragDetected(new EventHandler<MouseEvent>() {
+                public void handle(MouseEvent event) {
+                    img.startFullDrag();
+                    lost = false;
+                }
+            });
+            img.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+            {
+                public void handle(MouseDragEvent event)
+                {
+                    lost = true;
+                    event.setDragDetect(false);
+                }
+            });
+        }
+    }
+
+    public void display() {
 
         ImageView tub = (ImageView)(Resources.get("tub"));
         ImageView sink = (ImageView)(Resources.get("sink"));
@@ -46,6 +113,8 @@ public class Quiz extends Window {
         ImageView boxBack2 = (ImageView)(Resources.get("boxBack2"));
         ImageView eBox = (ImageView)(Resources.get("effBox"));
         ImageView iBox = (ImageView)(Resources.get("ineffBox"));
+
+        ImageView[] devices = {dSponge, sink, shower, wCan, barrel, hose, cWasher, tub, dWasher};
 
         menuBtn.setOnMouseClicked(e -> {
             hideStage();
@@ -71,236 +140,172 @@ public class Quiz extends Window {
         drawImage (eBox, -350, 200);
         drawImage (iBox, 360, 200);
 
+        Object.class.
 
-        ImageView[] devices = {dSponge, sink, shower, wCan, barrel, hose, cWasher, tub, dWasher};
+        eBox.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                isDragged = true;
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                lost = false;
+            }
+        });
+        iBox.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                isDragged = true;
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                lost = false;
+            }
+        });
+        boxBack1.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                isDragged = true;
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                lost = false;
+            }
+        });
+        boxBack2.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                isDragged = true;
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                lost = false;
+            }
+        });
+
+
+        background.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                isDragged = true;
+                lost = false;
+            }
+        });
+
+        eBox.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                isDragged = true;
+                lost = false;
+            }
+        });
+        iBox.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                isDragged = true;
+                lost = false;
+            }
+        });
+        boxBack1.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                isDragged = true;
+                lost = false;
+            }
+        });
+        boxBack2.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                isDragged = true;
+                lost = false;
+            }
+        });
+
+        eBox.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                remove (device);
+                drawImage (device, -350, 150);
+                remove (eBox);
+                drawImage (eBox, -350, 200);
+                device = null;
+                event.setDragDetect(false);
+                lost = false;
+            }
+        });
+        iBox.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                remove (device);
+                drawImage (device, 360, 150);
+                remove (iBox);
+                drawImage (iBox, 360, 200);
+                device = null;
+                event.setDragDetect(false);
+                lost = false;
+            }
+        });
+        boxBack1.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                remove (device);
+                drawImage (device, -350, 150);
+                remove (eBox);
+                drawImage (eBox, -350, 200);
+                device = null;
+                event.setDragDetect(false);
+                lost = false;
+            }
+        });
+        boxBack2.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                remove (device);
+                drawImage (device, 360, 150);
+                remove (iBox);
+                drawImage (iBox, 360, 200);
+                device = null;
+                event.setDragDetect(false);
+                lost = false;
+            }
+        });
+
+        background.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                lost = true;
+                event.setDragDetect(false);
+            }
+        });
 
 
 
-       final long startNanoTime = System.nanoTime();
+        final long startNanoTime = System.nanoTime();
+        setStuff(devices);
+
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
-
-                for (ImageView img : devices)
-                {
-                    img.setOnMousePressed(new EventHandler<MouseEvent>() {
-                        public void handle(MouseEvent event) {
-                            img.setMouseTransparent(true);
-                            isDragged = false;
-                            device = img;
-                            event.setDragDetect(true);
-                            lost = false;
-                        }
-                    });
-
-                    img.setOnMouseReleased(new EventHandler<MouseEvent>() {
-                        public void handle(MouseEvent event) {
-                            if (device != null)
-                            {
-                                img.setMouseTransparent(false);
-                                isDragged = false;
-                                device = null;
-                            }
-                            else
-                            {
-                                lost = true;
-                            }
-                        }
-                    });
-
-                    img.setOnMouseDragged(new EventHandler<MouseEvent>() {
-                        public void handle(MouseEvent event) {
-                            event.setDragDetect(false);
-                            x = (int) event.getSceneX();
-                            y = (int) event.getSceneY();
-                            isDragged = true;
-                            lost = false;
-                        }
-                    });
-                    img.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
-                    {
-                        public void handle(MouseDragEvent event)
-                        {
-                            x = (int)event.getSceneX();
-                            y = (int)event.getSceneY();
-                            isDragged = true;
-                            lost = false;
-                        }
-                    });
-                    img.setOnDragDetected(new EventHandler<MouseEvent>() {
-                        public void handle(MouseEvent event) {
-                            img.startFullDrag();
-                            lost = false;
-                        }
-                    });
-                    img.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
-                    {
-                        public void handle(MouseDragEvent event)
-                        {
-                            lost = true;
-                            event.setDragDetect(false);
-                        }
-                    });
-                }
-
-
-                eBox.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        isDragged = true;
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        lost = false;
-                    }
-                });
-                iBox.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        isDragged = true;
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        lost = false;
-                    }
-                });
-                boxBack1.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        isDragged = true;
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        lost = false;
-                    }
-                });
-                boxBack2.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        isDragged = true;
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        lost = false;
-                    }
-                });
-
-
-                background.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        isDragged = true;
-                        lost = false;
-                    }
-                });
-
-                eBox.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        isDragged = true;
-                        lost = false;
-                    }
-                });
-                iBox.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        isDragged = true;
-                        lost = false;
-                    }
-                });
-                boxBack1.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        isDragged = true;
-                        lost = false;
-                    }
-                });
-                boxBack2.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        x = (int)event.getSceneX();
-                        y = (int)event.getSceneY();
-                        isDragged = true;
-                        lost = false;
-                    }
-                });
-
-                eBox.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        remove (device);
-                        drawImage (device, -350, 150);
-                        remove (eBox);
-                        drawImage (eBox, -350, 200);
-                        device = null;
-                        event.setDragDetect(false);
-                        lost = false;
-                    }
-                });
-                iBox.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        remove (device);
-                        drawImage (device, 360, 150);
-                        remove (iBox);
-                        drawImage (iBox, 360, 200);
-                        device = null;
-                        event.setDragDetect(false);
-                        lost = false;
-                    }
-                });
-                boxBack1.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        remove (device);
-                        drawImage (device, -350, 150);
-                        remove (eBox);
-                        drawImage (eBox, -350, 200);
-                        device = null;
-                        event.setDragDetect(false);
-                        lost = false;
-                    }
-                });
-                boxBack2.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        remove (device);
-                        drawImage (device, 360, 150);
-                        remove (iBox);
-                        drawImage (iBox, 360, 200);
-                        device = null;
-                        event.setDragDetect(false);
-                        lost = false;
-                    }
-                });
-
-                background.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
-                {
-                    public void handle(MouseDragEvent event)
-                    {
-                        lost = true;
-                        event.setDragDetect(false);
-                    }
-                });
-
-
 
                 if (isDragged && device != null && !lost) {
                     remove(device);
@@ -308,6 +313,7 @@ public class Quiz extends Window {
                 }
                 if (lost && device != null)
                 {
+
                     remove (device);
                     if (device.equals(dSponge))
                         drawImage (dSponge, -110, -185 );
@@ -329,6 +335,11 @@ public class Quiz extends Window {
                         drawImage (dWasher, 145, 76);
 
 
+
+
+                    lost = false;
+                    isDragged = false;
+                    device = null;
                 }
             }
         }.start();
