@@ -88,8 +88,10 @@ public class StageManager extends Application {
         Resources.add("shower", new ImageView ("elements/game/shower.png"));
         Resources.add("wCan", new ImageView ("elements/game/waterCan.png"));
 
-        Resources.add("effBox", new ImageView("elements/game/efficientBox.png"));
-        Resources.add("ineffBox", new ImageView("elements/game/inefficientBox.png"));
+        Resources.add("boxBack", new ImageView ("elements/game/boxBack.png"));
+        Resources.add("boxBack2", new ImageView ("elements/game/boxBack.png"));
+        Resources.add("effBox", new ImageView("elements/game/boxFront1.png"));
+        Resources.add("ineffBox", new ImageView("elements/game/boxFront2.png"));
 
 
 
@@ -110,7 +112,7 @@ public class StageManager extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
 
-       SplashScreen s = new SplashScreen(stage);
+       /*SplashScreen s = new SplashScreen(stage);
         stage.hide();
         s.display();
         stage.showAndWait();
@@ -169,6 +171,10 @@ public class StageManager extends Application {
             else if (c == -1)
                 break;
         }
-        stage.close();
+        stage.close();*/
+
+       Quiz q = new Quiz(stage);
+       q.display();
+       q.showAndWait();
     }
 }
