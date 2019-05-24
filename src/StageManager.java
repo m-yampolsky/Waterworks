@@ -76,7 +76,7 @@ public class StageManager extends Application {
             Resources.add("hotel", new Music("src/elements/hotel.mp3"));
         }
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
-        Resources.add("quizBack", new Image ("elements/game/quizBack.png"));
+        Resources.add("quizBack", new ImageView ("elements/game/quizBack.png"));
         
         Resources.add("dSponge", new ImageView ("elements/game/dish.png"));
         Resources.add("hose", new ImageView ("elements/game/hose.png"));
