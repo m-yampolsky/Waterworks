@@ -30,6 +30,11 @@ public class Quiz extends Window {
     ImageView hose = new ImageView ("elements/game/hose.png");
     ImageView shower = new ImageView ("elements/game/shower.png");
 
+    ImageView background = (ImageView) (Resources.get("quizBack"));
+    ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+
+
+
     public Quiz(Stage stg) {
         super(stg, "Quiz");
         effDevices = new ArrayList<ImageView>();
@@ -70,6 +75,7 @@ public class Quiz extends Window {
         drawImage (eBox, -350, 200);
         drawImage (iBox, 360, 200);
 
+        Object.class.
 
         ImageView[] devices = {dSponge, sink, shower, wCan, barrel, hose, cWasher, tub, dWasher};
 
@@ -286,6 +292,8 @@ public class Quiz extends Window {
             }
         });
 
+        final long startNanoTime = System.nanoTime();
+        setStuff(devices);
 
        final long startNanoTime = System.nanoTime();
         new AnimationTimer() {
@@ -298,6 +306,7 @@ public class Quiz extends Window {
                 }
                 if (lost && device != null)
                 {
+
                     remove (device);
                     if (device.equals(dSponge)){
                         dSponge = new ImageView ("elements/game/dish.png");
@@ -338,6 +347,11 @@ public class Quiz extends Window {
                         resetMouse (dWasher);}
 
 
+
+
+                    lost = false;
+                    isDragged = false;
+                    device = null;
                 }
             }
         }.start();
