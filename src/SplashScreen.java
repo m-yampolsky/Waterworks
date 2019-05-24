@@ -47,12 +47,7 @@ public class SplashScreen extends Window
                     for (int i = 1; i <= imageArray.length; i++)
                         imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
                     AnimatedImage standing = new AnimatedImage(imageArray, 0.100);
-                    imageArray = new Image[345];
-                    for (int i = 1; i <= imageArray.length; i++)
-                        imageArray[i - 1] = new Image("elements/learn/learn (" + i + ").png");
-                    AnimatedImage learn = new AnimatedImage(imageArray, 0.100);
                     Resources.add("standing", standing);
-                    Resources.add("learn", learn);
 
                     stop();
                     hideStage();
