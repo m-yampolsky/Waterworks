@@ -106,9 +106,14 @@ public class StageManager extends Application {
 
         Stage stage = new Stage();
         stage.setTitle("Waterworks");
+        stage.setMinHeight(790);
+        stage.setMinWidth(1016);
+        stage.setMaxHeight(790);
+        stage.setMaxWidth(1016);
 
         StackPane root = new StackPane();
         Scene scene = new Scene(root, 1000, 750, Color.WHITE);
+
 
         Canvas canvas = new Canvas(1000, 750);
         root.getChildren().add(canvas);
@@ -118,7 +123,6 @@ public class StageManager extends Application {
         });
 
         stage.setScene(scene);
-        GraphicsContext gc = canvas.getGraphicsContext2D();
 
 
         SplashScreen s = new SplashScreen(stage);
