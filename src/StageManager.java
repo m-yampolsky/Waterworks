@@ -89,6 +89,7 @@ public class StageManager extends Application {
         Resources.add("ineffBox", new ImageView("elements/game/boxFront2.png"));
 
         Resources.add("learnBack", new Image ("elements/menus/learnBack.png"));
+        Resources.add("learnNext", new ImageView ("elements/menus/learnNext.png"));
         Resources.add("learnWasher", new ImageView ("elements/menus/learnWasher.png"));
         Resources.add("learnBarrel", new ImageView ("elements/menus/learnBarrel.png"));
         Resources.add("learnCan", new ImageView ("elements/menus/learnCan.png"));
