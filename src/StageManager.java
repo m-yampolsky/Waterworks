@@ -88,6 +88,20 @@ public class StageManager extends Application {
         Resources.add("effBox", new ImageView("elements/game/boxFront1.png"));
         Resources.add("ineffBox", new ImageView("elements/game/boxFront2.png"));
 
+        Resources.add("learnBack", new Image ("elements/menus/learnBack.png"));
+        Resources.add("learnNext", new ImageView ("elements/menus/learnNext.png"));
+        Resources.add("learnWasher", new ImageView ("elements/menus/learnWasher.png"));
+        Resources.add("learnBarrel", new ImageView ("elements/menus/learnBarrel.png"));
+        Resources.add("learnCan", new ImageView ("elements/menus/learnCan.png"));
+        Resources.add("learnShower", new ImageView ("elements/menus/learnShower.png"));
+        Resources.add("learnTub", new ImageView ("elements/menus/learnTub.png"));
+        Resources.add("learnDWasher", new ImageView ("elements/menus/learnDWasher.png"));
+        Resources.add("learnDish", new ImageView ("elements/menus/learnDish.png"));
+        Resources.add("learnHose", new ImageView ("elements/menus/learnHose.png"));
+        Resources.add("learnSink", new ImageView ("elements/menus/learnSink.png"));
+        Resources.add("learnWasher2", new ImageView ("elements/menus/learnWasher.png"));
+        Resources.add("learnBarrel2", new ImageView ("elements/menus/learnBarrel.png"));
+
 
 
         Stage stage = new Stage();
@@ -107,7 +121,7 @@ public class StageManager extends Application {
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
 
-       SplashScreen s = new SplashScreen(stage);
+        SplashScreen s = new SplashScreen(stage);
         stage.hide();
         s.display();
         stage.showAndWait();
