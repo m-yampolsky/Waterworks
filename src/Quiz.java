@@ -5,6 +5,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 import javafx.scene.input.*;
 import javafx.event.EventHandler;
+import javafx.scene.canvas.Canvas;
 
 /**
  * The Quiz class
@@ -19,8 +20,7 @@ public class Quiz extends Window {
     ArrayList<ImageView> ineffDevices;
     boolean isDragged = false;
     boolean lost = false;
-    boolean onScreen = false;
-    int x,y;
+    int x, y;
     ImageView tub = new ImageView ("elements/game/tub.png");
     ImageView sink = new ImageView ("elements/game/sink.png");
     ImageView cWasher = new ImageView ("elements/game/washer.png");
@@ -30,7 +30,7 @@ public class Quiz extends Window {
     ImageView dSponge = new ImageView ("elements/game/dish.png");
     ImageView hose = new ImageView ("elements/game/hose.png");
     ImageView shower = new ImageView ("elements/game/shower.png");
-
+    ImageView border = new ImageView ("elements/game/border.png");
 
 
     public Quiz(Stage stg) {
@@ -40,6 +40,8 @@ public class Quiz extends Window {
     }
 
     public void display() {
+        Canvas thisCan = getCanvas();
+
         ImageView background = (ImageView) (Resources.get("quizBack"));
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
 
@@ -73,12 +75,53 @@ public class Quiz extends Window {
         drawImage (eBox, -350, 200);
         drawImage (iBox, 360, 200);
 
+        drawImage (border, 0,0);
+
         ImageView[] devices = {dSponge, sink, shower, wCan, barrel, hose, cWasher, tub, dWasher};
 
         for (ImageView img : devices)
         {
             resetMouse (img);
         }
+
+        //border reaction
+        border.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                lost = true;
+            }
+        });
+        border.setOnMouseDragOver(new EventHandler <MouseEvent>()
+        {
+            public void handle(MouseEvent event)
+            {
+                lost = true;
+            }
+        });
+        border.setOnMouseDragExited(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                lost = true;
+            }
+        });
+        border.setOnMouseEntered(new EventHandler <MouseEvent>()
+        {
+            public void handle(MouseEvent event)
+            {
+                lost = true;
+            }
+        });
+        border.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            {
+                lost = true;
+                event.setDragDetect(false);
+            }
+        });
+
 
 
         eBox.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
@@ -89,7 +132,6 @@ public class Quiz extends Window {
                 x = (int)event.getSceneX();
                 y = (int)event.getSceneY();
                 lost = false;
-                onScreen = true;
             }
         });
         iBox.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
@@ -100,7 +142,6 @@ public class Quiz extends Window {
                 x = (int)event.getSceneX();
                 y = (int)event.getSceneY();
                 lost = false;
-                onScreen = true;
             }
         });
         boxBack1.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
@@ -111,7 +152,7 @@ public class Quiz extends Window {
                 x = (int)event.getSceneX();
                 y = (int)event.getSceneY();
                 lost = false;
-                onScreen = true;
+                
             }
         });
         boxBack2.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
@@ -122,7 +163,7 @@ public class Quiz extends Window {
                 x = (int)event.getSceneX();
                 y = (int)event.getSceneY();
                 lost = false;
-                onScreen = true;
+                
             }
         });
         background.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
@@ -133,7 +174,7 @@ public class Quiz extends Window {
                 x = (int)event.getSceneX();
                 y = (int)event.getSceneY();
                 lost = false;
-                onScreen = true;
+                
             }
         });
         menuBtn.setOnMouseDragEntered(new EventHandler <MouseDragEvent>()
@@ -144,7 +185,7 @@ public class Quiz extends Window {
                 x = (int)event.getSceneX();
                 y = (int)event.getSceneY();
                 lost = false;
-                onScreen = true;
+                
             }
         });
 
@@ -157,7 +198,7 @@ public class Quiz extends Window {
                 y = (int)event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
 
@@ -169,7 +210,7 @@ public class Quiz extends Window {
                 y = (int)event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
         iBox.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
@@ -180,7 +221,7 @@ public class Quiz extends Window {
                 y = (int)event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
         boxBack1.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
@@ -191,7 +232,7 @@ public class Quiz extends Window {
                 y = (int)event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
         boxBack2.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
@@ -202,7 +243,7 @@ public class Quiz extends Window {
                 y = (int)event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
         menuBtn.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
@@ -213,7 +254,7 @@ public class Quiz extends Window {
                 y = (int)event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
 
@@ -228,7 +269,7 @@ public class Quiz extends Window {
                 device = null;
                 event.setDragDetect(false);
                 lost = false;
-                onScreen = true;
+                
             }
         });
         iBox.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
@@ -242,7 +283,7 @@ public class Quiz extends Window {
                 device = null;
                 event.setDragDetect(false);
                 lost = false;
-                onScreen = true;
+                
             }
         });
         boxBack1.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
@@ -256,7 +297,7 @@ public class Quiz extends Window {
                 device = null;
                 event.setDragDetect(false);
                 lost = false;
-                onScreen = true;
+                
             }
         });
         boxBack2.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
@@ -270,7 +311,7 @@ public class Quiz extends Window {
                 device = null;
                 event.setDragDetect(false);
                 lost = false;
-                onScreen = true;
+                
             }
         });
 
@@ -280,7 +321,6 @@ public class Quiz extends Window {
             {
                 lost = true;
                 event.setDragDetect(false);
-                onScreen = false;
             }
         });
         menuBtn.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
@@ -289,7 +329,6 @@ public class Quiz extends Window {
             {
                 lost = true;
                 event.setDragDetect(false);
-                onScreen = false;
             }
         });
 
@@ -310,7 +349,71 @@ public class Quiz extends Window {
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
-                if (device != null && lost || (x >= 1000 || x < 0 || y >= 750 || y < 0) && device != null)
+
+                if (isDragged && device != null && !lost) {
+                    remove(device);
+
+                    if (device.equals(dSponge)){
+                        dSponge = new ImageView ("elements/game/dish.png");
+                        device = dSponge;
+                    }
+                    else if (device.equals(sink)){
+                        sink = new ImageView ("elements/game/sink.png");
+                        device = sink;}
+                    else if (device.equals(shower)){
+                        shower = new ImageView ("elements/game/shower.png");
+                        device = shower;}
+                    else if (device.equals(wCan)){
+                        wCan = new ImageView ("elements/game/waterCan.png");
+                        device = wCan;}
+                    else if (device.equals(barrel)){
+                        barrel = new ImageView ("elements/game/barrel.png");
+                        device = barrel;}
+                    else if (device.equals(hose)){
+                        hose = new ImageView ("elements/game/hose.png");
+                        device = hose;}
+                    else if (device.equals(cWasher)){
+                        cWasher = new ImageView ("elements/game/washer.png");
+                        device = cWasher;}
+                    else if (device.equals(tub)){
+                        tub = new ImageView ("elements/game/tub.png");
+                        device = tub;}
+                    else if (device.equals(dWasher)){
+                        dWasher = new ImageView ("elements/game/dishwasher.png");
+                        device = dWasher;}
+
+                    if (x < thisCan.getWidth() && x > 0 && y > 0 && y < thisCan.getHeight()) {
+                        resetMouse (device);
+                        drawImage(device, x - (int)thisCan.getWidth()/2, y - (int)thisCan.getHeight()/2);
+                    }
+                    else{
+                        resetMouse (device);
+                        if (device.equals(dSponge)){
+                            drawImage (dSponge, -110, -185 );
+                        }
+                        else if (device.equals(sink)){
+                            drawImage (sink,17, -179 );}
+                        else if (device.equals(shower)){
+                            drawImage (shower, 128, -188);}
+                        else if (device.equals(wCan)){
+                            drawImage (wCan, -90, -52);}
+                        else if (device.equals(barrel)){
+                            drawImage (barrel, 37, -52);}
+                        else if (device.equals(hose)){
+                            drawImage (hose, 138, -48);}
+                        else if (device.equals(cWasher)){
+                            drawImage (cWasher, -130, 75);}
+                        else if (device.equals(tub)){
+                            drawImage (tub, 5, 82);}
+                        else if (device.equals(dWasher)){
+                            drawImage (dWasher, 145, 76);}
+                        device = null;
+                        lost = false;
+                        isDragged = false;
+                    }
+                }
+
+                if (device != null && lost)
                 {
                     remove (device);
                     if (device.equals(dSponge)){
@@ -355,12 +458,6 @@ public class Quiz extends Window {
                     device = null;
                 }
 
-                if (isDragged && device != null && !lost && x < 1000 && x > 0 && y < 750 && y > 0) {
-                    remove(device);
-                    drawImage(device, x - 500, y - 375);
-                    onScreen = false;
-                }
-
             }
         }.start();
     }
@@ -371,14 +468,14 @@ public class Quiz extends Window {
         {
             public void handle(MouseEvent event) {
                 setCursor(true);
-                onScreen = true;
+                
             }
         });
         img.setOnMouseExited(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
                 setCursor(false);
-                onScreen = true;
+                
             }
         });
         img.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -388,7 +485,7 @@ public class Quiz extends Window {
                 device = img;
                 event.setDragDetect(true);
                 lost = false;
-                onScreen = true;
+                
             }
         });
 
@@ -404,7 +501,7 @@ public class Quiz extends Window {
                 {
                     lost = true;
                 }
-                onScreen = true;
+                
             }
         });
 
@@ -415,7 +512,7 @@ public class Quiz extends Window {
                 y = (int) event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
         img.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
@@ -426,14 +523,14 @@ public class Quiz extends Window {
                 y = (int)event.getSceneY();
                 isDragged = true;
                 lost = false;
-                onScreen = true;
+                
             }
         });
         img.setOnDragDetected(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 img.startFullDrag();
                 lost = false;
-                onScreen = true;
+                
             }
         });
         img.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
@@ -442,7 +539,7 @@ public class Quiz extends Window {
             {
                 lost = true;
                 event.setDragDetect(false);
-                onScreen = true;
+                
             }
         });
     }

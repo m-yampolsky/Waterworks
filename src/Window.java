@@ -123,6 +123,10 @@ public abstract class Window {
             root.getChildren().remove(e);
     }
 
+    public Canvas getCanvas(){
+        return canvas;
+    }
+
     /**
      * Display method that must be implemented by all subclasses containing the Window content.
      */
