@@ -1,10 +1,14 @@
 import javafx.animation.AnimationTimer;
+import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 /**
  * The Game class
@@ -28,6 +32,15 @@ public class Game extends Window {
      */
     int level;
 
+    int height;
+
+    boolean jumping;
+
+    double jumpStart;
+
+    double jumpStop;
+
+
     /**
      * @param stg The JavaFX Stage to display to.
      * @param lvl The selected game level.
@@ -36,6 +49,9 @@ public class Game extends Window {
         super(stg, names [lvl - 1]);
         score = 1000;
         level = lvl;
+        height = 0;
+        jumping = false;
+        jumpStart = 0;
     }
 
     /**
@@ -52,6 +68,8 @@ public class Game extends Window {
      * This method displays all the graphics for the Game window. It displays appropriate images, depending on the level being played.
      */
     public void display () {
+        ArrayList<String> input = new ArrayList<String>();
+
         Image lakeBackground;
         Image dirtBack = (Image)(Resources.get("dirtBack"));
         Image cityBack;
@@ -108,6 +126,32 @@ public class Game extends Window {
 
         drawImage(menuBtn, 400, -330);
 
+        getScene().setOnKeyPressed(
+                new EventHandler<KeyEvent>()
+                {
+                    public void handle(KeyEvent e)
+                    {
+                        String code = e.getCode().toString();
+
+                        // only add once... prevent duplicates
+                        if ( !input.contains(code) )
+                            input.add( code );
+                    }
+                });
+
+        getScene().setOnKeyReleased(
+                new EventHandler<KeyEvent>()
+                {
+                    public void handle(KeyEvent e)
+                    {
+                        String code = e.getCode().toString();
+                        input.remove( code );
+                        if (code.equals("SPACE") && jumping)
+                            jumpStop = System.nanoTime();
+                    }
+                });
+
+
         final long startNanoTime = System.nanoTime();
         new AnimationTimer()
         {
@@ -134,7 +178,28 @@ public class Game extends Window {
                 remove(logImg);
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
-                drawImage( avatar, -380, w.getYValue()-490 );
+                drawImage( avatar, -380, w.getYValue()-490-height );
+
+                if (input.contains("SPACE")) {
+                    if (!jumping && height == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
+                        jumping = true;
+                        jumpStart = t;
+                    }
+                }else
+                    jumping = false;
+                if (jumping)
+                    if ((t-jumpStart) <= 2)
+                        height += (int) (3 * (4 - (t - jumpStart)));
+                    else {
+                        jumping = false;
+                        jumpStop = System.nanoTime();
+                    }
+                else {
+                    if (height > 0)
+                        height = Math.max(height - ((int) (5 * ((currentNanoTime - jumpStop) / 300000000.0))), 0);
+                    else
+                        jumpStart = 0;
+                }
 
                 if (w.getYValue() == 750)
                     stop();

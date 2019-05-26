@@ -72,7 +72,7 @@ public class StageManager extends Application {
         }
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
         Resources.add("quizBack", new ImageView ("elements/game/quizBack.png"));
-        
+
         Resources.add("dSponge", new ImageView ("elements/game/dish.png"));
         Resources.add("hose", new ImageView ("elements/game/hose.png"));
         Resources.add("sink", new ImageView ("elements/game/sink.png"));
@@ -87,6 +87,7 @@ public class StageManager extends Application {
         Resources.add("boxBack2", new ImageView ("elements/game/boxBack.png"));
         Resources.add("effBox", new ImageView("elements/game/boxFront1.png"));
         Resources.add("ineffBox", new ImageView("elements/game/boxFront2.png"));
+        Resources.add("check", new ImageView("elements/game/quizCheck.png"));
 
         Resources.add("learnBack", new Image ("elements/menus/learnBack.png"));
         Resources.add("learnNext", new ImageView ("elements/menus/learnNext.png"));

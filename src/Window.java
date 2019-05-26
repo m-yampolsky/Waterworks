@@ -126,6 +126,11 @@ public abstract class Window {
     public Canvas getCanvas(){
         return canvas;
     }
+
+    public Scene getScene() {
+        return stage.getScene();
+    }
+
     /**
      * Display method that must be implemented by all subclasses containing the Window content.
      */
