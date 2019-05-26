@@ -63,11 +63,11 @@ public class StageManager extends Application {
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
         try {
-            Resources.add("oxfordComma", new Music("elements/oxfordComma.wav"));
+            Resources.add("oxfordComma", new Music("elements/oxfordComma.mp3"));
             Resources.add("hotel", new Music("elements/hotel.mp3"));
         }
         catch (MediaException e) {
-            Resources.add("oxfordComma", new Music("src/elements/oxfordComma.wav"));
+            Resources.add("oxfordComma", new Music("src/elements/oxfordComma.mp3"));
             Resources.add("hotel", new Music("src/elements/hotel.mp3"));
         }
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
