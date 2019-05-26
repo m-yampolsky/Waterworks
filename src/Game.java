@@ -40,6 +40,9 @@ public class Game extends Window {
 
     double jumpStop;
 
+    double t = 0;
+    double lastT;
+
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -78,6 +81,7 @@ public class Game extends Window {
         LogLine logLine;
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
         ImageView avatar = (ImageView)(Resources.get("avatar"));
+        AnimatedImageView walking = (AnimatedImageView)(Resources.get("walking"));
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
 
         Water w = new Water(1);
@@ -157,7 +161,8 @@ public class Game extends Window {
         {
             public void handle(long currentNanoTime)
             {
-                double t = (currentNanoTime - startNanoTime) / 300000000.0;
+                lastT = t;
+                t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 double x = 232 + 128 * Math.cos(t);
                 double y = 232 + 128 * Math.sin(t);
@@ -178,7 +183,10 @@ public class Game extends Window {
                 remove(logImg);
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
-                drawImage( avatar, -380, w.getYValue()-490-height );
+                //drawImage( avatar, -380, w.getYValue()-490-height );
+                if (lastT != 0)
+                    remove(walking.getFrame(lastT));
+                drawImage(walking.getFrame(t), -380, w.getYValue()-490-height);
 
                 if (input.contains("SPACE")) {
                     if (!jumping && height == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
