@@ -31,7 +31,8 @@ public class Quiz extends Window {
     ImageView hose = new ImageView ("elements/game/hose.png");
     ImageView shower = new ImageView ("elements/game/shower.png");
     ImageView border = new ImageView ("elements/game/border.png");
-
+    ImageView eBox = (ImageView)(Resources.get("effBox"));
+    ImageView iBox = (ImageView)(Resources.get("ineffBox"));
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
@@ -44,11 +45,10 @@ public class Quiz extends Window {
 
         ImageView background = (ImageView) (Resources.get("quizBack"));
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
-
         ImageView boxBack1 = (ImageView)(Resources.get("boxBack"));
         ImageView boxBack2 = (ImageView)(Resources.get("boxBack2"));
-        ImageView eBox = (ImageView)(Resources.get("effBox"));
-        ImageView iBox = (ImageView)(Resources.get("ineffBox"));
+
+
 
 
         menuBtn.setOnMouseClicked(e -> {
@@ -57,6 +57,8 @@ public class Quiz extends Window {
 
         drawImage(background, 0, 0);
         drawImage(menuBtn, 400, -330);
+
+        drawImage (border, 0,0);
 
         drawImage (dSponge, -110, -185 );
         drawImage (sink,17, -179 );
@@ -74,8 +76,6 @@ public class Quiz extends Window {
         drawImage (boxBack2, 360, 187);
         drawImage (eBox, -350, 200);
         drawImage (iBox, 360, 200);
-
-        drawImage (border, 0,0);
 
         ImageView[] devices = {dSponge, sink, shower, wCan, barrel, hose, cWasher, tub, dWasher};
 
@@ -264,8 +264,10 @@ public class Quiz extends Window {
             {
                 remove (device);
                 drawImage (device, -350, 150);
+                removeMouse (device);
                 remove (eBox);
                 drawImage (eBox, -350, 200);
+                effDevices.add(device);
                 device = null;
                 event.setDragDetect(false);
                 lost = false;
@@ -276,13 +278,16 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                if (device != null){
                 remove (device);
                 drawImage (device, 360, 150);
+                removeMouse (device);
                 remove (iBox);
                 drawImage (iBox, 360, 200);
+                ineffDevices.add(device);
                 device = null;
                 event.setDragDetect(false);
-                lost = false;
+                lost = false;}
                 
             }
         });
@@ -290,13 +295,16 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                if (device != null){
                 remove (device);
                 drawImage (device, -350, 150);
+                removeMouse (device);
                 remove (eBox);
                 drawImage (eBox, -350, 200);
+                effDevices.add(device);
                 device = null;
                 event.setDragDetect(false);
-                lost = false;
+                lost = false;}
                 
             }
         });
@@ -304,13 +312,16 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
-                remove (device);
+                if (device != null)
+                {remove (device);
                 drawImage (device, 360, 150);
+                removeMouse (device);
                 remove (iBox);
                 drawImage (iBox, 360, 200);
+                ineffDevices.add(device);
                 device = null;
                 event.setDragDetect(false);
-                lost = false;
+                lost = false;}
                 
             }
         });
@@ -382,7 +393,7 @@ public class Quiz extends Window {
                         dWasher = new ImageView ("elements/game/dishwasher.png");
                         device = dWasher;}
 
-                    if (x < thisCan.getWidth() && x > 0 && y > 0 && y < thisCan.getHeight()) {
+                    if (x <= 1000 && x >= 0 && y >= 0 && y <= 750) {
                         resetMouse (device);
                         drawImage(device, x - (int)thisCan.getWidth()/2, y - (int)thisCan.getHeight()/2);
                     }
@@ -462,12 +473,12 @@ public class Quiz extends Window {
         }.start();
     }
 
-    public void resetMouse (ImageView img)
+    public void removeMouse (ImageView img)
     {
         img.setOnMouseEntered(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
-                setCursor(true);
+                setCursor(false);
                 
             }
         });
@@ -480,28 +491,14 @@ public class Quiz extends Window {
         });
         img.setOnMousePressed(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
-                img.setMouseTransparent(true);
-                isDragged = false;
-                device = img;
-                event.setDragDetect(true);
-                lost = false;
+                device = null;
                 
             }
         });
 
         img.setOnMouseReleased(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
-                if (device != null)
-                {
-                    img.setMouseTransparent(false);
-                    isDragged = false;
-                    device = null;
-                }
-                else
-                {
-                    lost = true;
-                }
-                
+
             }
         });
 
@@ -528,8 +525,6 @@ public class Quiz extends Window {
         });
         img.setOnDragDetected(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
-                img.startFullDrag();
-                lost = false;
                 
             }
         });
@@ -537,10 +532,121 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
-                lost = true;
-                event.setDragDetect(false);
+
                 
             }
+        });
+    }
+
+    public void resetMouse (ImageView img)
+    {
+        img.setOnMouseEntered(new EventHandler<MouseEvent>()
+        {
+            public void handle(MouseEvent event) {
+                setCursor(true);
+
+            }
+        });
+        img.setOnMouseExited(new EventHandler<MouseEvent>()
+        {
+            public void handle(MouseEvent event) {
+                setCursor(false);
+
+            }
+        });
+        img.setOnMousePressed(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                img.setMouseTransparent(true);
+                isDragged = false;
+                device = img;
+                event.setDragDetect(true);
+                lost = false;
+
+            }
+        });
+
+        img.setOnMouseReleased(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                if (device != null)
+                {
+                    img.setMouseTransparent(false);
+                    isDragged = false;
+                    device = null;
+                }
+                else
+                {
+                    lost = true;
+                }
+
+            }
+        });
+
+        img.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                if (device != null && !device.equals(img))
+                {event.setDragDetect(false);
+                x = (int) event.getSceneX();
+                y = (int) event.getSceneY();
+                isDragged = true;
+                lost = false;}
+
+            }
+        });
+        img.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event)
+            { if (device != null && !device.equals(img))
+                {
+                x = (int)event.getSceneX();
+                y = (int)event.getSceneY();
+                isDragged = true;
+                lost = false;}
+
+            }
+        });
+        img.setOnDragDetected(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                img.startFullDrag();
+                lost = false;
+
+            }
+        });
+        img.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
+        {
+            public void handle(MouseDragEvent event) {
+                if (device.equals(img)) {
+                    if (x >= 48 && x <= 252 && y >= 465 && y <= 670) //efficient box
+                    {
+                        remove(device);
+                        drawImage(device, -350, 150);
+                        removeMouse (device);
+                        remove(eBox);
+                        drawImage(eBox, -350, 200);
+                        effDevices.add(device);
+                        device = null;
+                        event.setDragDetect(false);
+                        lost = false;
+                    } else if (x >= 748 && x <= 962 && y >= 465 && y <= 670) //inefficient box
+                    {
+                        remove(device);
+                        drawImage(device, 360, 150);
+                        removeMouse (device);
+                        remove(iBox);
+                        drawImage(iBox, 360, 200);
+                        ineffDevices.add(device);
+                        device = null;
+                        event.setDragDetect(false);
+                        lost = false;
+                    }
+                    else {
+                        lost = true;
+                    }
+                }
+                else {
+                    lost = true;
+                }
+            }
+
         });
     }
 }
