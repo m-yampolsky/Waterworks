@@ -53,7 +53,7 @@ public class SplashScreen extends Window
                     ImageView[] imageViewArray = new ImageView[178];
                     for (int i = 1; i <= imageViewArray.length; i++)
                         imageViewArray[i - 1] = new ImageView("elements/walking/walking (" + i + ").png");
-                    AnimatedImageView walking = new AnimatedImageView(imageViewArray, 0.100);
+                    AnimatedImageView walking = new AnimatedImageView(imageViewArray, 0.070);
                     Resources.add("walking", walking);
 
                     stop();

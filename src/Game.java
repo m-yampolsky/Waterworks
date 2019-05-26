@@ -32,7 +32,8 @@ public class Game extends Window {
      */
     int level;
 
-    int height;
+    int jumpY;
+    int jumpX;
 
     boolean jumping;
 
@@ -52,7 +53,8 @@ public class Game extends Window {
         super(stg, names [lvl - 1]);
         score = 1000;
         level = lvl;
-        height = 0;
+        jumpY = 0;
+        jumpX = 0;
         jumping = false;
         jumpStart = 0;
     }
@@ -183,28 +185,32 @@ public class Game extends Window {
                 remove(logImg);
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
-                //drawImage( avatar, -380, w.getYValue()-490-height );
+                //drawImage( avatar, -380, w.getYValue()-490-jumpY );
                 if (lastT != 0)
                     remove(walking.getFrame(lastT));
-                drawImage(walking.getFrame(t), -380, w.getYValue()-490-height);
+                drawImage(walking.getFrame(t), -380+jumpX, w.getYValue()-490-jumpY);
 
                 if (input.contains("SPACE")) {
-                    if (!jumping && height == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
+                    if (!jumping && jumpY == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
                         jumping = true;
                         jumpStart = t;
                     }
                 }else
                     jumping = false;
                 if (jumping)
-                    if ((t-jumpStart) <= 2)
-                        height += (int) (3 * (4 - (t - jumpStart)));
-                    else {
+                    if ((t-jumpStart) <= 2) {
+                        if (jumpX < 700)
+                            jumpX += 2;
+                        jumpY += (int) (3 * (4 - (t - jumpStart)));
+                    } else {
                         jumping = false;
                         jumpStop = System.nanoTime();
                     }
                 else {
-                    if (height > 0)
-                        height = Math.max(height - ((int) (5 * ((currentNanoTime - jumpStop) / 300000000.0))), 0);
+                    if (jumpX > 0 && jumpY == 0)
+                        jumpX--;
+                    if (jumpY > 0)
+                        jumpY = Math.max(jumpY - ((int) (5 * ((currentNanoTime - jumpStop) / 300000000.0))), 0);
                     else
                         jumpStart = 0;
                 }
