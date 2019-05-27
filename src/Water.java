@@ -2,7 +2,7 @@
  * The Water class
  * This class represents the water of the lake from the Wateworks game.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.20.2019
+ * @version 2 05.27.2019
  */
 public class Water {
     /**

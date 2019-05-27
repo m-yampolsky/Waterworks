@@ -14,7 +14,7 @@ import javafx.stage.WindowEvent;
  * The StageManager class
  * This class puts together all the windows of the program, and organises the program flow.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.20.2019
+ * @version 2 05.27.2019
  */
 public class StageManager extends Application {
 

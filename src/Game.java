@@ -14,7 +14,7 @@ import java.util.ArrayList;
  * The Game class
  * This class represents the window that has all the graphics for the actual Waterworks game.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.20.2019
+ * @version 2 05.27.2019
  */
 public class Game extends Window {
     /**

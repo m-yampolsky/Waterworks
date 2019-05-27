@@ -4,7 +4,7 @@ import javafx.application.Application;
  * The Main class
  * This is the driver class of the Waterworks program.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.20.2019
+ * @version 2 05.27.2019
  */
 class Main {
     /**

@@ -7,15 +7,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Lake Erie Graphics and Implementation">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AnimatedImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnimatedImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AnimatedImageView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnimatedImageView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cloud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cloud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeviceLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeviceLine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Highscores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Highscores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Instructions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Instructions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameChar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameChar.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Learn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LevelSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LevelSelect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/LogLine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LogLine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Music.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Resources.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Resources.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Sound.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Sound.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SplashScreen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StageManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Water.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Water.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
@@ -77,38 +86,26 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Quiz.java">
+        <entry file="file://$PROJECT_DIR$/src/DeviceLine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="555" lean-forward="true" selection-start-line="555" selection-end-line="555" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3384#3385#0" expanded="true" />
-                <element signature="e#3427#3428#0" expanded="true" />
-                <element signature="e#3578#3579#0" expanded="true" />
-                <element signature="e#3621#3622#0" expanded="true" />
-                <element signature="e#3782#3783#0" expanded="true" />
-                <element signature="e#3825#3826#0" expanded="true" />
-                <element signature="e#3975#3976#0" expanded="true" />
-                <element signature="e#4018#4019#0" expanded="true" />
-                <element signature="e#11264#11265#0" expanded="true" />
-                <element signature="e#11308#11309#0" expanded="true" />
-                <element signature="e#11445#11446#0" expanded="true" />
-                <element signature="e#11489#11490#0" expanded="true" />
-                <element signature="e#11565#17693#0" expanded="true" />
-                <element signature="e#17692#17693#0" expanded="true" />
-                <element signature="e#19878#19879#0" expanded="true" />
-                <element signature="e#19922#19923#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/StageManager.java">
+        <entry file="file://$PROJECT_DIR$/src/AnimatedImage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="173" column="16" lean-forward="true" selection-start-line="173" selection-start-column="16" selection-end-line="173" selection-end-column="16" />
+            <state relative-caret-position="272">
+              <caret line="28" column="5" lean-forward="true" selection-end-line="52" />
+              <folding>
+                <element signature="docComment;class#AnimatedImage#0" />
+                <element signature="docComment;field#frames#0;class#AnimatedImage#0" />
+                <element signature="docComment;field#duration#0;class#AnimatedImage#0" />
+                <element signature="docComment;method#AnimatedImage#0;class#AnimatedImage#0" />
+                <element signature="docComment;method#getFrame#0;class#AnimatedImage#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,6 +143,7 @@
       <find>Animatio</find>
       <find>menuBtn.set</find>
       <find>set</find>
+      <find>1 05.20.2019</find>
     </findStrings>
     <replaceStrings>
       <replace>Pressed</replace>
@@ -157,6 +155,7 @@
       <replace>Moved</replace>
       <replace>Clicked</replace>
       <replace>getSceneY</replace>
+      <replace>2 05.27.2019</replace>
     </replaceStrings>
   </component>
   <component name="FindManager">
@@ -182,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/Splash.java" />
         <option value="$PROJECT_DIR$/src/MyPreloader.java" />
         <option value="$PROJECT_DIR$/src/Cloud.java" />
-        <option value="$PROJECT_DIR$/src/DeviceLine.java" />
         <option value="$PROJECT_DIR$/src/GameChar.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Resources.java" />
@@ -205,6 +203,7 @@
         <option value="$PROJECT_DIR$/src/StageManager.java" />
         <option value="$PROJECT_DIR$/src/StageManager.java" />
         <option value="$PROJECT_DIR$/src/Quiz.java" />
+        <option value="$PROJECT_DIR$/src/DeviceLine.java" />
       </list>
     </option>
   </component>
@@ -230,7 +229,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -248,6 +246,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -266,7 +265,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
     <property name="last_opened_file_path" value="C:/Program Files/Git/git-bash.exe" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
@@ -310,40 +309,9 @@
       <option name="testName" />
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
     </configuration>
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
@@ -369,6 +337,37 @@
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -406,8 +405,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.11727079" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.118336886" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
@@ -416,7 +416,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914045" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23364486" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.23364486" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26487252" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -605,14 +605,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyPreloader.java" />
-    <entry file="file://$PROJECT_DIR$/src/Cloud.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DeviceLine.java" />
     <entry file="file://$PROJECT_DIR$/src/GameChar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -677,32 +669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="15" column="8" selection-start-line="15" selection-start-column="8" selection-end-line="15" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AnimatedImage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="28" column="5" lean-forward="true" selection-end-line="52" />
-          <folding>
-            <element signature="docComment;class#AnimatedImage#0" />
-            <element signature="docComment;field#frames#0;class#AnimatedImage#0" />
-            <element signature="docComment;field#duration#0;class#AnimatedImage#0" />
-            <element signature="docComment;method#AnimatedImage#0;class#AnimatedImage#0" />
-            <element signature="docComment;method#getFrame#0;class#AnimatedImage#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AnimatedImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="649">
-          <caret line="37" column="73" selection-start-line="37" selection-start-column="20" selection-end-line="37" selection-end-column="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1285#1286#0" expanded="true" />
-            <element signature="e#1363#1364#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,36 +758,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/StageManager.java">
+    <entry file="file://$PROJECT_DIR$/src/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="173" column="16" lean-forward="true" selection-start-line="173" selection-start-column="16" selection-end-line="173" selection-end-column="16" />
+        <state relative-caret-position="10710">
+          <caret line="659" column="49" lean-forward="true" selection-start-line="659" selection-start-column="49" selection-end-line="659" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Quiz.java">
+    <entry file="file://$PROJECT_DIR$/src/StageManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="555" lean-forward="true" selection-start-line="555" selection-end-line="555" />
+        <state relative-caret-position="323">
+          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AnimatedImageView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cloud.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AnimatedImage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="28" column="5" lean-forward="true" selection-end-line="52" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3384#3385#0" expanded="true" />
-            <element signature="e#3427#3428#0" expanded="true" />
-            <element signature="e#3578#3579#0" expanded="true" />
-            <element signature="e#3621#3622#0" expanded="true" />
-            <element signature="e#3782#3783#0" expanded="true" />
-            <element signature="e#3825#3826#0" expanded="true" />
-            <element signature="e#3975#3976#0" expanded="true" />
-            <element signature="e#4018#4019#0" expanded="true" />
-            <element signature="e#11264#11265#0" expanded="true" />
-            <element signature="e#11308#11309#0" expanded="true" />
-            <element signature="e#11445#11446#0" expanded="true" />
-            <element signature="e#11489#11490#0" expanded="true" />
-            <element signature="e#11565#17693#0" expanded="true" />
-            <element signature="e#17692#17693#0" expanded="true" />
-            <element signature="e#19878#19879#0" expanded="true" />
-            <element signature="e#19922#19923#0" expanded="true" />
+            <element signature="docComment;class#AnimatedImage#0" />
+            <element signature="docComment;field#frames#0;class#AnimatedImage#0" />
+            <element signature="docComment;field#duration#0;class#AnimatedImage#0" />
+            <element signature="docComment;method#AnimatedImage#0;class#AnimatedImage#0" />
+            <element signature="docComment;method#getFrame#0;class#AnimatedImage#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DeviceLine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -836,6 +818,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>

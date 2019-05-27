@@ -7,7 +7,7 @@ import java.nio.file.Paths;
  * The Music class
  * This class represents the music objects that will be played during the program.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.20.2019
+ * @version 2 05.27.2019
  */
 public class Music {
     /**

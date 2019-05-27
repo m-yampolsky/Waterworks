@@ -6,7 +6,7 @@ import javafx.scene.image.PixelReader;
  * The LogLine class
  * This class stores an object that represents the logs that the avatar will have to run across during the game
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.20.2019
+ * @version 2 05.27.2019
  */
 public class LogLine extends Image
 {

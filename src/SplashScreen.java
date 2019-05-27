@@ -8,7 +8,7 @@ import javafx.stage.Stage;
  * The Splashscreen class
  * This class represents the window with an animation that plays at the start of the program.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.20.2019
+ * @version 2 05.27.2019
  */
 public class SplashScreen extends Window
 {
