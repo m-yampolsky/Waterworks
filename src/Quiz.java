@@ -15,29 +15,37 @@ import javafx.scene.canvas.Canvas;
  */
 public class Quiz extends Window {
 
-    ImageView device = null;
-    ArrayList<ImageView> effDevices;
-    ArrayList<ImageView> ineffDevices;
-    boolean isDragged = false;
-    boolean lost = false;
-    int x, y;
-    ImageView tub = new ImageView ("elements/game/tub.png");
-    ImageView sink = new ImageView ("elements/game/sink.png");
-    ImageView cWasher = new ImageView ("elements/game/washer.png");
-    ImageView dWasher = new ImageView ("elements/game/dishwasher.png");
-    ImageView wCan = new ImageView ("elements/game/watercan.png");
-    ImageView barrel = new ImageView ("elements/game/barrel.png");
-    ImageView dSponge = new ImageView ("elements/game/dish.png");
-    ImageView hose = new ImageView ("elements/game/hose.png");
-    ImageView shower = new ImageView ("elements/game/shower.png");
-    ImageView border = new ImageView ("elements/game/border.png");
-    ImageView eBox = (ImageView)(Resources.get("effBox"));
-    ImageView iBox = (ImageView)(Resources.get("ineffBox"));
+    private int score = 0;
+    private boolean isDragged = false;
+    private boolean lost = false;
+    private int x, y;
+    private ImageView device = null;
+    private ArrayList<ImageView> effDevices;
+    private ArrayList<ImageView> ineffDevices;
+    private ImageView tub = new ImageView ("elements/game/tub.png");
+    private ImageView sink = new ImageView ("elements/game/sink.png");
+    private ImageView cWasher = new ImageView ("elements/game/washer.png");
+    private ImageView dWasher = new ImageView ("elements/game/dishwasher.png");
+    private ImageView wCan = new ImageView ("elements/game/watercan.png");
+    private ImageView barrel = new ImageView ("elements/game/barrel.png");
+    private ImageView dSponge = new ImageView ("elements/game/dish.png");
+    private ImageView hose = new ImageView ("elements/game/hose.png");
+    private ImageView shower = new ImageView ("elements/game/shower.png");
+    private ImageView border = new ImageView ("elements/game/border.png");
+    private ImageView eBox = (ImageView)(Resources.get("effBox"));
+    private ImageView iBox = (ImageView)(Resources.get("ineffBox"));
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
         effDevices = new ArrayList<ImageView>();
         ineffDevices = new ArrayList<ImageView>();
+    }
+
+    public int getScore() {
+        display();
+        showAndWait();
+        refresh();
+        return score;
     }
 
     public void display() {
@@ -47,7 +55,7 @@ public class Quiz extends Window {
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
         ImageView boxBack1 = (ImageView)(Resources.get("boxBack"));
         ImageView boxBack2 = (ImageView)(Resources.get("boxBack2"));
-
+        ImageView check = (ImageView)(Resources.get("check"));
 
 
 
@@ -346,13 +354,13 @@ public class Quiz extends Window {
         menuBtn.setOnMouseEntered(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
-                setCursor(true);
+                setCursor(1);
             }
         });
         menuBtn.setOnMouseExited(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
-                setCursor(false);
+                setCursor(0);
             }
         });
 
@@ -469,6 +477,19 @@ public class Quiz extends Window {
                     device = null;
                 }
 
+                if (ineffDevices.size() + effDevices.size() >= 9) {
+                    stop();
+                    drawImage(check, 20, -60);
+                    check.setOnMouseClicked(e -> {
+                        hideStage();
+                    });
+                    check.setOnMouseEntered(e -> {
+                            setCursor(1);
+                    });
+                    check.setOnMouseExited(e -> {
+                        setCursor(0);
+                    });
+                }
             }
         }.start();
     }
@@ -478,14 +499,14 @@ public class Quiz extends Window {
         img.setOnMouseEntered(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
-                setCursor(false);
+                setCursor(0);
                 
             }
         });
         img.setOnMouseExited(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
-                setCursor(false);
+                setCursor(0);
                 
             }
         });
@@ -543,15 +564,14 @@ public class Quiz extends Window {
         img.setOnMouseEntered(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
-                setCursor(true);
+                setCursor(1);
 
             }
         });
         img.setOnMouseExited(new EventHandler<MouseEvent>()
         {
             public void handle(MouseEvent event) {
-                setCursor(false);
-
+                setCursor(0);
             }
         });
         img.setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -561,7 +581,6 @@ public class Quiz extends Window {
                 device = img;
                 event.setDragDetect(true);
                 lost = false;
-
             }
         });
 
@@ -584,36 +603,41 @@ public class Quiz extends Window {
         img.setOnMouseDragged(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
                 if (device != null && !device.equals(img))
-                {event.setDragDetect(false);
-                x = (int) event.getSceneX();
-                y = (int) event.getSceneY();
-                isDragged = true;
-                lost = false;}
-
+                {
+                    event.setDragDetect(false);
+                    x = (int) event.getSceneX();
+                    y = (int) event.getSceneY();
+                    isDragged = true;
+                    lost = false;
+                }
             }
         });
         img.setOnMouseDragOver(new EventHandler <MouseDragEvent>()
         {
             public void handle(MouseDragEvent event)
-            { if (device != null && !device.equals(img))
+            {
+                setCursor(2);
+                if (device != null && !device.equals(img))
                 {
-                x = (int)event.getSceneX();
-                y = (int)event.getSceneY();
-                isDragged = true;
-                lost = false;}
+                    x = (int)event.getSceneX();
+                    y = (int)event.getSceneY();
+                    isDragged = true;
+                    lost = false;
+                }
 
             }
         });
         img.setOnDragDetected(new EventHandler<MouseEvent>() {
             public void handle(MouseEvent event) {
+                setCursor(2);
                 img.startFullDrag();
                 lost = false;
-
             }
         });
         img.setOnMouseDragReleased(new EventHandler <MouseDragEvent>()
         {
             public void handle(MouseDragEvent event) {
+                setCursor(0);
                 if (device.equals(img)) {
                     if (x >= 48 && x <= 252 && y >= 465 && y <= 670) //efficient box
                     {

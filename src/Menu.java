@@ -78,41 +78,41 @@ public class Menu extends Window
         });
         // Listener for MouseEnter
         menuLearnBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         menuQuizBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         menuPlayBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         menuHighscoresBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         menuExitBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         menuInstructionsBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         // Listener for MouseExit
         menuLearnBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         menuQuizBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         menuPlayBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         menuHighscoresBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         menuExitBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         menuInstructionsBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
 
         drawImage(menuLearnBtn, 40, -50);

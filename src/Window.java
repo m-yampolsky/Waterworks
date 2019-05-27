@@ -57,9 +57,11 @@ public abstract class Window {
         gc.setFill(Color.WHITE);
     }
 
-    public void setCursor (boolean state) {
-        if (state)
+    public void setCursor (int state) {
+        if (state == 1)
             stage.getScene().setCursor(Cursor.HAND);
+        else if (state == 2)
+            stage.getScene().setCursor(Cursor.CLOSED_HAND);
         else
             stage.getScene().setCursor(Cursor.DEFAULT);
     }

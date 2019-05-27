@@ -68,29 +68,29 @@ public class LevelSelect extends Window {
         });
         // Listeners for MouseEnter
         backButton.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         lakeOntario.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         lakeErie.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         lakeSuperior.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         // Listeners for MouseExit
         backButton.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         lakeOntario.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         lakeErie.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         lakeSuperior.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
 
         drawImage(lakeOntario, -30, 100);

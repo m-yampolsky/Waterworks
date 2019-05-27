@@ -52,23 +52,23 @@ public class Instructions extends Window {
         });
         // Listeners for MouseEnter
         backButton.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         instructionsF.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         instructionsB.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         // Listeners for MouseExit
         backButton.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         instructionsF.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
         instructionsB.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
 
         drawImage(backButton, -380, -160);

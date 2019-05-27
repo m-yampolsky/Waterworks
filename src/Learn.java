@@ -66,17 +66,17 @@ public class Learn extends Window {
         });
         // Listeners for MouseEnter
         menuBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         learnNext.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         // Listeners for MouseExit
         menuBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
-        learnNext.setOnMouseEntered(e -> {
-            setCursor(true);
+        learnNext.setOnMouseExited(e -> {
+            setCursor(0);
         });
 
         drawImage(menuBack, 0, 0);

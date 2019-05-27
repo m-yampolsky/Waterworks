@@ -94,11 +94,11 @@ public class Game extends Window {
         });
         // Listener for MouseEnter
         menuBtn.setOnMouseEntered(e -> {
-            setCursor(true);
+            setCursor(1);
         });
         // Listener for MouseExit
         menuBtn.setOnMouseExited(e -> {
-            setCursor(false);
+            setCursor(0);
         });
 
 
