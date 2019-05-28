@@ -52,29 +52,36 @@ public class Menu extends Window
         ImageView menuExitBtn = (ImageView)(Resources.get("exitBtn"));
         ImageView menuInstructionsBtn = (ImageView)(Resources.get("instructionsBtn"));
         ImageView menuHighscoresBtn = (ImageView)(Resources.get("highscoresBtn"));
+        Sound click = (Sound)(Resources.get("click"));
 
 
         // Listener for MouseClick
         menuPlayBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 1;
+            click.play();
         });
         menuQuizBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 2;
+            click.play();
         });
         menuInstructionsBtn.setOnMouseClicked(e -> {
             choice = 3;
+            click.play();
         });
         menuHighscoresBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 4;
+            click.play();
         });
         menuLearnBtn.setOnMouseClicked(e -> {
             choice = 5;
+            click.play();
         });
         menuExitBtn.setOnMouseClicked(e -> {
             choice = -1;
+            click.play();
         });
         // Listener for MouseEnter
         menuLearnBtn.setOnMouseEntered(e -> {

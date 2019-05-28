@@ -31,20 +31,24 @@ public class Instructions extends Window {
         ImageView instructions2 = (ImageView)(Resources.get("instructions2"));
         ImageView instructionsF = (ImageView)(Resources.get("instructionsForward"));
         ImageView instructionsB = (ImageView)(Resources.get("instructionsBackward"));
+        Sound click = (Sound)(Resources.get("click"));
 
 
         // Listeners for MouseClick
         backButton.setOnMouseClicked(e -> {
+            click.play();
             refresh();
             back = true;
         });
         instructionsF.setOnMouseClicked(e -> {
+            click.play();
             remove(instructions1);
             remove(instructionsF);
             drawImage(instructions2, 130, 50);
             drawImage(instructionsB, 400, 330);
         });
         instructionsB.setOnMouseClicked(e -> {
+            click.play();
             remove(instructions2);
             remove(instructionsB);
             drawImage(instructions1, 130, 50);

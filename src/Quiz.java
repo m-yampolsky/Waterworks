@@ -34,6 +34,7 @@ public class Quiz extends Window {
     private ImageView border = new ImageView ("elements/game/border.png");
     private ImageView eBox = (ImageView)(Resources.get("effBox"));
     private ImageView iBox = (ImageView)(Resources.get("ineffBox"));
+    Sound click = (Sound)(Resources.get("click"));
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
@@ -60,6 +61,7 @@ public class Quiz extends Window {
 
 
         menuBtn.setOnMouseClicked(e -> {
+            click.play();
             hideStage();
         });
 
@@ -479,12 +481,14 @@ public class Quiz extends Window {
 
                 if (ineffDevices.size() + effDevices.size() >= 9) {
                     stop();
+                    click.play();
                     drawImage(check, 20, -60);
                     check.setOnMouseClicked(e -> {
                         hideStage();
+                        click.play();
                     });
                     check.setOnMouseEntered(e -> {
-                            setCursor(1);
+                        click.play();
                     });
                     check.setOnMouseExited(e -> {
                         setCursor(0);

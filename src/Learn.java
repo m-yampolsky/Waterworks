@@ -40,7 +40,6 @@ public class Learn extends Window {
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
         Image menuBack = (Image)(Resources.get("menuBackground"));
         Image learnBack = (Image)(Resources.get("learnBack"));
-
         ImageView washer = (ImageView)(Resources.get("learnWasher"));
         ImageView barrel = (ImageView)(Resources.get("learnBarrel"));
         ImageView can = (ImageView)(Resources.get("learnCan"));
@@ -53,16 +52,19 @@ public class Learn extends Window {
         ImageView washer2 = (ImageView)(Resources.get("learnWasher2"));
         ImageView barrel2 = (ImageView)(Resources.get("learnBarrel2"));
         ImageView learnNext = (ImageView)(Resources.get("learnNext"));
+        Sound click = (Sound)(Resources.get("click"));
 
         // Listeners for MouseClick
         menuBtn.setOnMouseClicked(e -> {
             hideStage();
+            click.play();
         });
         learnNext.setOnMouseClicked(e -> {
             if (!go) {
                 go = true;
                 times++;
             }
+            click.play();
         });
         // Listeners for MouseEnter
         menuBtn.setOnMouseEntered(e -> {

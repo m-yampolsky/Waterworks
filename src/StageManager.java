@@ -62,14 +62,14 @@ public class StageManager extends Application {
         Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
-        /*try {
+        try {
             Resources.add("oxfordComma", new Music("elements/oxfordComma.mp3"));
             Resources.add("hotel", new Music("elements/hotel.mp3"));
         }
         catch (MediaException e) {
             Resources.add("oxfordComma", new Music("src/elements/oxfordComma.mp3"));
             Resources.add("hotel", new Music("src/elements/hotel.mp3"));
-        }*/
+        }
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
         Resources.add("quizBack", new ImageView ("elements/game/quizBack.png"));
 
@@ -103,6 +103,8 @@ public class StageManager extends Application {
         Resources.add("learnWasher2", new ImageView ("elements/menus/learnWasher.png"));
         Resources.add("learnBarrel2", new ImageView ("elements/menus/learnBarrel.png"));
 
+        Resources.add("click", new Sound ("elements/click.mp3"));
+
 
 
         Stage stage = new Stage();
@@ -131,16 +133,16 @@ public class StageManager extends Application {
         s.display();
         stage.showAndWait();
 
-        //Music hotel = (Music)(Resources.get("hotel"));
-        //Music oxford = (Music)(Resources.get("oxfordComma"));
-        //oxford.loop();
-        //hotel.loop();
+        Music hotel = (Music)(Resources.get("hotel"));
+        Music oxford = (Music)(Resources.get("oxfordComma"));
+        oxford.loop();
+        hotel.loop();
 
 
         int c = 0;
         while (c != -1) {
             Menu m = new Menu(stage);
-            //hotel.play();
+            hotel.play();
             c = 0;
             try {
                 c = m.getChoice();
@@ -160,13 +162,13 @@ public class StageManager extends Application {
                 if (lvl == -1)
                     continue;
                 else if (lvl >= 1 && lvl <= 3) {
-                    //hotel.stop();
-                    //oxford.play();
+                    hotel.stop();
+                    oxford.play();
                     Game g = new Game (stage, lvl);
                     try {
                         g.getScore();
                     } catch (Exception e) {e.printStackTrace();}
-                    //oxford.stop();
+                    oxford.stop();
                 }
             }
             else if (c == 2) {

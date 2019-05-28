@@ -30,11 +30,13 @@ public class Highscores extends Window {
         Image highscoresErie = (Image)(Resources.get("highscoresErie"));
         Image highscoresSuperior = (Image)(Resources.get("highscoresSuperior"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
+        Sound click = (Sound)(Resources.get("click"));
 
 
         backButton.setOnMouseClicked(e -> {
             refresh();
             back = true;
+            click.play();
         });
         // Listener for MouseEnter
         backButton.setOnMouseEntered(e -> {
