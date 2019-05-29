@@ -5,6 +5,7 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.AudioClip;
 import javafx.scene.media.MediaException;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -23,10 +24,7 @@ public class StageManager extends Application {
      */
     public void start(Stage stg) {
         // load resources
-        Image[] imageArray = new Image[170];
-        for (int i = 1; i <= imageArray.length; i++)
-            imageArray[i - 1] = new Image("elements/splash/splash (" + i + ").png");
-        AnimatedImage splashscreen = new AnimatedImage(imageArray, 0.100);
+        AnimatedImage splashscreen = new AnimatedImage("elements/splash/splash", 170, 0.100);
         Resources.add("splashscreen", splashscreen);
         Resources.add("menuBackground", new Image("elements/menus/background.png"));
         Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
@@ -62,14 +60,7 @@ public class StageManager extends Application {
         Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
-        try {
-            Resources.add("oxfordComma", new Music("elements/oxfordComma.mp3"));
-            Resources.add("hotel", new Music("elements/hotel.mp3"));
-        }
-        catch (MediaException e) {
-            Resources.add("oxfordComma", new Music("src/elements/oxfordComma.mp3"));
-            Resources.add("hotel", new Music("src/elements/hotel.mp3"));
-        }
+
         Resources.add("menuBtn", new ImageView ("elements/menus/menuBtn.png"));
         Resources.add("quizBack", new ImageView ("elements/game/quizBack.png"));
 
@@ -103,6 +94,8 @@ public class StageManager extends Application {
         Resources.add("learnWasher2", new ImageView ("elements/menus/learnWasher.png"));
         Resources.add("learnBarrel2", new ImageView ("elements/menus/learnBarrel.png"));
 
+        Resources.add("oxfordComma", new Sound("elements/oxfordComma.mp3"));
+        Resources.add("hotel", new Sound("elements/hotel.mp3"));
         Resources.add("click", new Sound ("elements/click.mp3"));
 
 
@@ -133,8 +126,8 @@ public class StageManager extends Application {
         s.display();
         stage.showAndWait();
 
-        Music hotel = (Music)(Resources.get("hotel"));
-        Music oxford = (Music)(Resources.get("oxfordComma"));
+        Sound hotel = (Sound)(Resources.get("hotel"));
+        Sound oxford = (Sound)(Resources.get("oxfordComma"));
         oxford.loop();
         hotel.loop();
 

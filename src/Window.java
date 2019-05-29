@@ -120,9 +120,12 @@ public abstract class Window {
     /**
      * Clear Stage StackPane of all components, then re-add the Canvas
      */
-    public void remove (Node e) {
-        if (root.getChildren().contains(e))
+    public boolean remove (Node e) {
+        if (root.getChildren().contains(e)) {
             root.getChildren().remove(e);
+            return true;
+        }
+        return false;
     }
 
     public Canvas getCanvas(){

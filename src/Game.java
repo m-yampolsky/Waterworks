@@ -42,7 +42,8 @@ public class Game extends Window {
     double jumpStop;
 
     double t = 0;
-    double lastT;
+    ImageView frame;
+    ImageView lastFrame;
 
 
     /**
@@ -165,7 +166,6 @@ public class Game extends Window {
         {
             public void handle(long currentNanoTime)
             {
-                lastT = t;
                 t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 double x = 232 + 128 * Math.cos(t);
@@ -188,9 +188,12 @@ public class Game extends Window {
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
                 //drawImage( avatar, -380, w.getYValue()-490-jumpY );
-                if (lastT != 0)
-                    remove(walking.getFrame(lastT));
-                drawImage(walking.getFrame(t), -380+jumpX, w.getYValue()-490-jumpY);
+                remove(lastFrame);
+                if(frame != null)
+                    lastFrame = frame;
+                frame = walking.getFrame(t);
+                drawImage(frame, -380+jumpX, w.getYValue()-490-jumpY);
+                remove(lastFrame);
 
                 if (input.contains("SPACE")) {
                     if (!jumping && jumpY == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {

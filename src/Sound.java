@@ -14,16 +14,24 @@ public class Sound {
     }
 
     /**
-     * This method plays the music.
+     * This method plays the sound.
      */
     public void play () {
-        ac.play();
+        if (!ac.isPlaying())
+            ac.play();
     }
 
     /**
-     * This method stops the music.
+     * This method stops the sound.
      */
     public void stop () {
         ac.stop();
+    }
+
+    /**
+     * This method loops the sound.
+     */
+    public void loop () {
+        ac.setCycleCount(AudioClip.INDEFINITE);
     }
 }
