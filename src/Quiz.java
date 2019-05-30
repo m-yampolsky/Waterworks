@@ -1,11 +1,13 @@
 import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 import javafx.scene.input.*;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.layout.StackPane;
 
 /**
  * The Quiz class
@@ -22,6 +24,7 @@ public class Quiz extends Window {
     private ImageView device = null;
     private ArrayList<ImageView> effDevices;
     private ArrayList<ImageView> ineffDevices;
+    private ImageView background = (ImageView) (Resources.get("quizBack"));
     private ImageView tub = new ImageView ("elements/game/tub.png");
     private ImageView sink = new ImageView ("elements/game/sink.png");
     private ImageView cWasher = new ImageView ("elements/game/washer.png");
@@ -34,7 +37,9 @@ public class Quiz extends Window {
     private ImageView border = new ImageView ("elements/game/border.png");
     private ImageView eBox = (ImageView)(Resources.get("effBox"));
     private ImageView iBox = (ImageView)(Resources.get("ineffBox"));
-    Sound click = (Sound)(Resources.get("click"));
+    private ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+    private Sound click = (Sound)(Resources.get("click"));
+    private Canvas thisCan = getCanvas();
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
@@ -50,10 +55,9 @@ public class Quiz extends Window {
     }
 
     public void display() {
+        StackPane thisRoot = getRoot();
         Canvas thisCan = getCanvas();
 
-        ImageView background = (ImageView) (Resources.get("quizBack"));
-        ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
         ImageView boxBack1 = (ImageView)(Resources.get("boxBack"));
         ImageView boxBack2 = (ImageView)(Resources.get("boxBack2"));
         ImageView check = (ImageView)(Resources.get("check"));
@@ -484,8 +488,10 @@ public class Quiz extends Window {
                     click.play();
                     drawImage(check, 20, -60);
                     check.setOnMouseClicked(e -> {
-                        hideStage();
+                        thisRoot.getChildren().clear();
+                        thisRoot.getChildren().add(thisCan);
                         click.play();
+                        checkScreen();
                     });
                     check.setOnMouseEntered(e -> {
                         click.play();
@@ -677,4 +683,86 @@ public class Quiz extends Window {
 
         });
     }
+
+    public void checkScreen ()
+    {
+        Image checkBack = (Image)(Resources.get("checkBack"));
+        Image checkMark = (Image)(Resources.get("checkMark"));
+        Image wrong = (Image)(Resources.get("wrong"));
+        int quizScore = 0;
+        ArrayList<ImageView> correctEff = new ArrayList<ImageView>();
+        ArrayList<ImageView> correctIneff = new ArrayList<ImageView>();
+
+        correctEff.add (wCan);
+        correctEff.add (shower);
+        correctEff.add (barrel);
+        correctEff.add (dSponge);
+        correctIneff.add (hose);
+        correctIneff.add (tub);
+        correctIneff.add (sink);
+        correctIneff.add (cWasher);
+        correctIneff.add (dWasher);
+
+        drawImage (checkBack, 0, 0);
+        drawImage (menuBtn, 400, -330);
+        menuBtn.setOnMouseClicked(e -> {
+            click.play();
+            hideStage();
+        });
+        int coord = -300;
+        for (int i = 0; i< effDevices.size(); i++)
+        {
+            if (i == 0)
+                coord = -300;
+           else
+                coord += 85;
+            if (effDevices.get(i).equals(tub))
+                coord += 30;
+            if (i != 0 && effDevices.get(i-1).equals(tub))
+                coord += 35;
+            if (effDevices.get(i).equals(wCan))
+                coord += 10;
+            if (i != 0 && effDevices.get(i-1).equals(wCan))
+                coord += 10;
+            effDevices.get(i).setPreserveRatio(true);
+            effDevices.get(i).setFitHeight(75);
+            drawImage (effDevices.get(i), coord,-220);
+            if (correctEff.contains(effDevices.get(i)))
+            {
+                quizScore ++;
+                drawImage (checkMark, coord + 500, -150 + 350);
+            }
+            else {
+                drawImage (wrong, coord + 500, -150 + 350);
+            }
+        }
+        coord = -300;
+        for (int i = 0; i< ineffDevices.size(); i++)
+        {
+            if (i == 0)
+                coord = -300;
+            else
+                coord += 85;
+            if (ineffDevices.get(i).equals(tub))
+                coord += 35;
+            if (i != 0 && ineffDevices.get(i-1).equals(tub))
+                coord += 10;
+            if (ineffDevices.get(i).equals(wCan))
+                coord += 30;
+            if (i != 0 && ineffDevices.get(i-1).equals(wCan))
+                coord += 10;
+            ineffDevices.get(i).setPreserveRatio(true);
+            ineffDevices.get(i).setFitHeight(75);
+            drawImage (ineffDevices.get(i), coord,-100);
+            if (correctIneff.contains(ineffDevices.get(i)))
+            {
+                quizScore ++;
+                drawImage (checkMark, coord + 500, -30 + 350);
+            }
+            else {
+                drawImage (wrong, coord + 500, -30 + 350);
+            }
+        }
+    }
+
 }
