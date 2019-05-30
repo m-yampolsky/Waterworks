@@ -8,6 +8,7 @@ import javafx.scene.input.*;
 import javafx.event.EventHandler;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 
 /**
  * The Quiz class
@@ -40,6 +41,8 @@ public class Quiz extends Window {
     private ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
     private Sound click = (Sound)(Resources.get("click"));
     private Canvas thisCan = getCanvas();
+
+    public static boolean playButtonClicked;
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
@@ -389,7 +392,7 @@ public class Quiz extends Window {
                         shower = new ImageView ("elements/game/shower.png");
                         device = shower;}
                     else if (device.equals(wCan)){
-                        wCan = new ImageView ("elements/game/waterCan.png");
+                        wCan = new ImageView ("elements/game/watercan.png");
                         device = wCan;}
                     else if (device.equals(barrel)){
                         barrel = new ImageView ("elements/game/barrel.png");
@@ -455,7 +458,7 @@ public class Quiz extends Window {
                         drawImage (shower, 128, -188);
                         resetMouse (shower);}
                     else if (device.equals(wCan)){
-                        wCan = new ImageView ("elements/game/waterCan.png");
+                        wCan = new ImageView ("elements/game/watercan.png");
                         drawImage (wCan, -90, -52);
                         resetMouse (wCan);}
                     else if (device.equals(barrel)){
@@ -492,6 +495,7 @@ public class Quiz extends Window {
                         thisRoot.getChildren().add(thisCan);
                         click.play();
                         checkScreen();
+                        stop();
                     });
                     check.setOnMouseEntered(e -> {
                         click.play();
@@ -708,61 +712,81 @@ public class Quiz extends Window {
         menuBtn.setOnMouseClicked(e -> {
             click.play();
             hideStage();
+            return;
         });
-        int coord = -300;
+        int coord = -302;
         for (int i = 0; i< effDevices.size(); i++)
         {
-            if (i == 0)
-                coord = -300;
-           else
+            if (i == 0){
+                coord = -302;}
+           else{
                 coord += 85;
-            if (effDevices.get(i).equals(tub))
-                coord += 30;
-            if (i != 0 && effDevices.get(i-1).equals(tub))
-                coord += 35;
-            if (effDevices.get(i).equals(wCan))
-                coord += 10;
-            if (i != 0 && effDevices.get(i-1).equals(wCan))
-                coord += 10;
+                if (effDevices.get(i).equals(tub))
+                    coord += 30;
+                if (effDevices.get(i).equals(barrel))
+                    coord -= 10;
+                if (i != 0 && effDevices.get(i-1).equals(tub))
+                    coord += 35;
+                if (effDevices.get(i).equals(wCan))
+                    coord += 10;
+                if (effDevices.get(i).equals(sink))
+                    coord += 10;
+                if (i != 0 && effDevices.get(i-1).equals(wCan))
+                    coord += 10;
+                if (i != 0 && effDevices.get(i-1).equals(sink))
+                    coord += 10;
+                if (i != 0 && effDevices.get(i-1).equals(barrel))
+                    coord -= 10;
+           }
             effDevices.get(i).setPreserveRatio(true);
             effDevices.get(i).setFitHeight(75);
-            drawImage (effDevices.get(i), coord,-220);
+            drawImage (effDevices.get(i), coord,-240);
             if (correctEff.contains(effDevices.get(i)))
             {
                 quizScore ++;
-                drawImage (checkMark, coord + 500, -150 + 350);
+                drawImage (checkMark, coord + 483, -170 + 350);
             }
             else {
-                drawImage (wrong, coord + 500, -150 + 350);
+                drawImage (wrong, coord + 483, -170 + 350);
             }
         }
-        coord = -300;
+        coord = -302;
         for (int i = 0; i< ineffDevices.size(); i++)
         {
-            if (i == 0)
-                coord = -300;
-            else
+            if (i == 0){
+                coord = -302;}
+            else {
                 coord += 85;
-            if (ineffDevices.get(i).equals(tub))
-                coord += 35;
-            if (i != 0 && ineffDevices.get(i-1).equals(tub))
-                coord += 10;
-            if (ineffDevices.get(i).equals(wCan))
-                coord += 30;
-            if (i != 0 && ineffDevices.get(i-1).equals(wCan))
-                coord += 10;
+                if (ineffDevices.get(i).equals(tub))
+                    coord += 20;
+                if (ineffDevices.get(i).equals(barrel))
+                    coord -= 10;
+                if (i != 0 && ineffDevices.get(i-1).equals(tub))
+                    coord += 20;
+                if (ineffDevices.get(i).equals(wCan))
+                    coord += 10;
+                if (ineffDevices.get(i).equals(sink))
+                    coord += 10;
+                if (i != 0 && ineffDevices.get(i-1).equals(wCan))
+                    coord += 10;
+                if (i != 0 && ineffDevices.get(i-1).equals(sink))
+                    coord += 10;
+                if (i != 0 && ineffDevices.get(i-1).equals(barrel))
+                    coord -= 10;
+                }
             ineffDevices.get(i).setPreserveRatio(true);
             ineffDevices.get(i).setFitHeight(75);
             drawImage (ineffDevices.get(i), coord,-100);
             if (correctIneff.contains(ineffDevices.get(i)))
             {
                 quizScore ++;
-                drawImage (checkMark, coord + 500, -30 + 350);
+                drawImage (checkMark, coord + 475, -30 + 350);
             }
             else {
-                drawImage (wrong, coord + 500, -30 + 350);
+                drawImage (wrong, coord + 475, -30 + 350);
             }
         }
+        Image number = new Image ("elements/game/dig" + quizScore + ".png");
     }
 
 }
