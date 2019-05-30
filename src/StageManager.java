@@ -117,6 +117,8 @@ public class StageManager extends Application {
         stage.setMaxHeight(790);
         stage.setMaxWidth(1016);
 
+        int quizScore = 0;
+
         StackPane root = new StackPane();
         Scene scene = new Scene(root, 1000, 750, Color.WHITE);
 
@@ -152,9 +154,21 @@ public class StageManager extends Application {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
             if (c == 1) {
+                Learn l = new Learn(stage);
+                l.display();
+                stage.showAndWait();
+            }
+            else if (c == 2) {
+                Quiz q = new Quiz (stage);
+                q.display();
+                q.showAndWait();
+                //q.checkScreen();
+                quizScore = q.getScore();
+                if (Quiz.playButtonClicked)
+                    c = 3;
+            }
+            if (c == 3) {
                 LevelSelect l = new LevelSelect(stage);
                 int lvl = 0;
                 try {
@@ -173,24 +187,16 @@ public class StageManager extends Application {
                     } catch (Exception e) {e.printStackTrace();}
                     oxford.stop();
                 }
-            }
-            else if (c == 2) {
-                Quiz q = new Quiz (stage);
-                q.getScore();
-                q.checkScreen();
-                stage.showAndWait();
-            } else if (c == 3) {
-                Instructions i = new Instructions(stage);
-                i.display();
-                stage.showAndWait();
             } else if  (c == 4) {
                 Highscores h = new Highscores(stage);
                 h.display();
                 stage.showAndWait();
             } else if  (c == 5) {
-                Learn l = new Learn(stage);
-                l.display();
+                Instructions i = new Instructions(stage);
+                i.display();
                 stage.showAndWait();
+
+
             }
             else if (c == -1)
                 break;

@@ -18,7 +18,7 @@ import javafx.scene.text.Text;
  */
 public class Quiz extends Window {
 
-    private int score = 0;
+    private int quizScore = 0;
     private boolean isDragged = false;
     private boolean lost = false;
     private int x, y;
@@ -42,19 +42,12 @@ public class Quiz extends Window {
     private ImageView play = (ImageView)(Resources.get("checkPlay"));
     private Sound click = (Sound)(Resources.get("click"));
 
-    public static boolean playButtonClicked;
+    public static boolean playButtonClicked = false;
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
         effDevices = new ArrayList<ImageView>();
         ineffDevices = new ArrayList<ImageView>();
-    }
-
-    public int getScore() {
-        display();
-        showAndWait();
-        refresh();
-        return score;
     }
 
     public void display() {
@@ -491,7 +484,7 @@ public class Quiz extends Window {
                     check.setOnMouseClicked(e -> {
                         refresh();
                         click.play();
-                        hideStage();
+                        checkScreen();
                     });
                     check.setOnMouseEntered(e -> {
                         setCursor(1);
@@ -685,10 +678,10 @@ public class Quiz extends Window {
 
     public void checkScreen ()
     {
+        refresh();
         Image checkBack = (Image)(Resources.get("checkBack"));
         Image checkMark = (Image)(Resources.get("checkMark"));
         Image wrong = (Image)(Resources.get("wrong"));
-        int quizScore = 0;
         ArrayList<ImageView> correctEff = new ArrayList<ImageView>();
         ArrayList<ImageView> correctIneff = new ArrayList<ImageView>();
 
@@ -708,7 +701,6 @@ public class Quiz extends Window {
         menuBtn.setOnMouseClicked(e -> {
             click.play();
             hideStage();
-            return;
         });
         int coord = -302;
         for (int i = 0; i< effDevices.size(); i++)
@@ -782,9 +774,11 @@ public class Quiz extends Window {
                 drawImage (wrong, coord + 475, -30 + 350);
             }
         }
-        Image number = new Image ("elements/game/dig" + quizScore + ".png");
+       // Image number = new Image ("elements/game/dig" + quizScore + ".png");
 
         play.setOnMouseClicked(e -> {
+            playButtonClicked = true;
+            hideStage();
         });
         play.setOnMouseEntered(e -> {
             setCursor(1);
@@ -798,6 +792,11 @@ public class Quiz extends Window {
                 hideStage();
             }
         });
+    }
+
+    public int getScore()
+    {
+        return quizScore;
     }
 
 }

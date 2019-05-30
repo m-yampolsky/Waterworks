@@ -58,7 +58,7 @@ public class Menu extends Window
         // Listener for MouseClick
         menuPlayBtn.setOnMouseClicked(e -> {
             refresh();
-            choice = 1;
+            choice = 3;
             click.play();
         });
         menuQuizBtn.setOnMouseClicked(e -> {
@@ -67,7 +67,7 @@ public class Menu extends Window
             click.play();
         });
         menuInstructionsBtn.setOnMouseClicked(e -> {
-            choice = 3;
+            choice = 5;
             click.play();
         });
         menuHighscoresBtn.setOnMouseClicked(e -> {
@@ -76,7 +76,7 @@ public class Menu extends Window
             click.play();
         });
         menuLearnBtn.setOnMouseClicked(e -> {
-            choice = 5;
+            choice = 1;
             click.play();
         });
         menuExitBtn.setOnMouseClicked(e -> {
