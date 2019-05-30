@@ -105,7 +105,9 @@ public class StageManager extends Application {
         Resources.add("hotel", new Sound("elements/hotel.mp3"));
         Resources.add("click", new Sound ("elements/click.mp3"));
 
-
+        Resources.add("checkBack", new Image("elements/game/checkBack.png"));
+        Resources.add("checkMark", new Image("elements/game/checkMark.png"));
+        Resources.add("wrong", new Image("elements/game/wrong.png"));
 
         Stage stage = new Stage();
         stage.setTitle("Waterworks");
