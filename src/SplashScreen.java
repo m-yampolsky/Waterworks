@@ -44,16 +44,10 @@ public class SplashScreen extends Window
 
                 if (splashscreen.frame(t) >= 168) {
                     // load large animations
-                    Image[] imageArray = new Image[180];
-                    for (int i = 1; i <= imageArray.length; i++)
-                        imageArray[i - 1] = new Image("elements/standing/standing (" + i + ").png");
-                    AnimatedImage standing = new AnimatedImage(imageArray, 0.100);
+                    AnimatedImage standing = new AnimatedImage("elements/standing/standing", 180, 0.100);
                     Resources.add("standing", standing);
 
-                    ImageView[] imageViewArray = new ImageView[178];
-                    for (int i = 1; i <= imageViewArray.length; i++)
-                        imageViewArray[i - 1] = new ImageView("elements/walking/walking (" + i + ").png");
-                    AnimatedImageView walking = new AnimatedImageView(imageViewArray, 0.070);
+                    AnimatedImageView walking = new AnimatedImageView("elements/walking/walking", 178, 0.070);
                     Resources.add("walking", walking);
 
                     stop();
