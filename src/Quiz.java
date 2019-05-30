@@ -38,8 +38,8 @@ public class Quiz extends Window {
     private ImageView eBox = (ImageView)(Resources.get("effBox"));
     private ImageView iBox = (ImageView)(Resources.get("ineffBox"));
     private ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+    private ImageView play = (ImageView)(Resources.get("checkPlay"));
     private Sound click = (Sound)(Resources.get("click"));
-    private Canvas thisCan = getCanvas();
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
@@ -55,12 +55,10 @@ public class Quiz extends Window {
     }
 
     public void display() {
-        StackPane thisRoot = getRoot();
         Canvas thisCan = getCanvas();
 
         ImageView boxBack1 = (ImageView)(Resources.get("boxBack"));
         ImageView boxBack2 = (ImageView)(Resources.get("boxBack2"));
-        ImageView check = (ImageView)(Resources.get("check"));
 
 
 
@@ -389,7 +387,7 @@ public class Quiz extends Window {
                         shower = new ImageView ("elements/game/shower.png");
                         device = shower;}
                     else if (device.equals(wCan)){
-                        wCan = new ImageView ("elements/game/waterCan.png");
+                        wCan = new ImageView ("elements/game/watercan.png");
                         device = wCan;}
                     else if (device.equals(barrel)){
                         barrel = new ImageView ("elements/game/barrel.png");
@@ -455,7 +453,7 @@ public class Quiz extends Window {
                         drawImage (shower, 128, -188);
                         resetMouse (shower);}
                     else if (device.equals(wCan)){
-                        wCan = new ImageView ("elements/game/waterCan.png");
+                        wCan = new ImageView ("elements/game/watercan.png");
                         drawImage (wCan, -90, -52);
                         resetMouse (wCan);}
                     else if (device.equals(barrel)){
@@ -485,24 +483,18 @@ public class Quiz extends Window {
 
                 if (ineffDevices.size() + effDevices.size() >= 9) {
                     stop();
+                    ImageView check = (ImageView)(Resources.get("check"));
                     drawImage(check, 20, -60);
                     check.setOnMouseClicked(e -> {
-                        thisRoot.getChildren().clear();
-                        thisRoot.getChildren().add(thisCan);
+                        refresh();
                         click.play();
-                        checkScreen();
+                        hideStage();
                     });
                     check.setOnMouseEntered(e -> {
                         setCursor(1);
                     });
                     check.setOnMouseExited(e -> {
                         setCursor(0);
-                    });
-                    menuBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
-                        public void handle(MouseEvent event) {
-                            click.play();
-                            hideStage();
-                        }
                     });
                 }
             }
@@ -707,12 +699,9 @@ public class Quiz extends Window {
         correctIneff.add (cWasher);
         correctIneff.add (dWasher);
 
+        drawImage(play, 400, 325);
         drawImage (checkBack, 0, 0);
         drawImage (menuBtn, 400, -330);
-        menuBtn.setOnMouseClicked(e -> {
-            click.play();
-            hideStage();
-        });
         int coord = -300;
         for (int i = 0; i< effDevices.size(); i++)
         {
@@ -767,6 +756,21 @@ public class Quiz extends Window {
                 drawImage (wrong, coord + 500, -30 + 350);
             }
         }
+
+        play.setOnMouseClicked(e -> {
+        });
+        play.setOnMouseEntered(e -> {
+            setCursor(1);
+        });
+        play.setOnMouseExited(e -> {
+            setCursor(0);
+        });
+        menuBtn.setOnMouseClicked(new EventHandler<MouseEvent>() {
+            public void handle(MouseEvent event) {
+                click.play();
+                hideStage();
+            }
+        });
     }
 
 }

@@ -106,6 +106,7 @@ public class StageManager extends Application {
         Resources.add("click", new Sound ("elements/click.mp3"));
 
         Resources.add("checkBack", new Image("elements/game/checkBack.png"));
+        Resources.add("checkPlay", new ImageView("elements/game/checkPlay.png"));
         Resources.add("checkMark", new Image("elements/game/checkMark.png"));
         Resources.add("wrong", new Image("elements/game/wrong.png"));
 
@@ -176,6 +177,8 @@ public class StageManager extends Application {
             else if (c == 2) {
                 Quiz q = new Quiz (stage);
                 q.getScore();
+                q.checkScreen();
+                stage.showAndWait();
             } else if (c == 3) {
                 Instructions i = new Instructions(stage);
                 i.display();
