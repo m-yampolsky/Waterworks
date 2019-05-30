@@ -176,7 +176,6 @@ public class StageManager extends Application {
             else if (c == 2) {
                 Quiz q = new Quiz (stage);
                 q.getScore();
-                q.showAndWait();
             } else if (c == 3) {
                 Instructions i = new Instructions(stage);
                 i.display();
