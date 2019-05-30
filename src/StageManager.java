@@ -80,25 +80,33 @@ public class StageManager extends Application {
         Resources.add("ineffBox", new ImageView("elements/game/boxFront2.png"));
         Resources.add("check", new ImageView("elements/game/quizCheck.png"));
 
-        Resources.add("learnBack", new Image ("elements/menus/learnBack.png"));
-        Resources.add("learnNext", new ImageView ("elements/menus/learnNext.png"));
-        Resources.add("learnWasher", new ImageView ("elements/menus/learnWasher.png"));
-        Resources.add("learnBarrel", new ImageView ("elements/menus/learnBarrel.png"));
-        Resources.add("learnCan", new ImageView ("elements/menus/learnCan.png"));
-        Resources.add("learnShower", new ImageView ("elements/menus/learnShower.png"));
-        Resources.add("learnTub", new ImageView ("elements/menus/learnTub.png"));
-        Resources.add("learnDWasher", new ImageView ("elements/menus/learnDWasher.png"));
-        Resources.add("learnDish", new ImageView ("elements/menus/learnDish.png"));
-        Resources.add("learnHose", new ImageView ("elements/menus/learnHose.png"));
-        Resources.add("learnSink", new ImageView ("elements/menus/learnSink.png"));
-        Resources.add("learnWasher2", new ImageView ("elements/menus/learnWasher.png"));
-        Resources.add("learnBarrel2", new ImageView ("elements/menus/learnBarrel.png"));
+        Resources.add("learnBack", new Image ("elements/game/learnBack.png"));
+        Resources.add("learnScreen", new Image ("elements/game/learnScreen.png"));
+        Resources.add("learnLeft", new ImageView ("elements/game/learnLeft.png"));
+        Resources.add("learnRight", new ImageView ("elements/game/learnRight.png"));
+        Resources.add("learnCheck", new ImageView ("elements/game/learnCheck.png"));
+        Resources.add("learnWrong", new ImageView ("elements/game/learnWrong.png"));
+
+        Resources.add("learnHose2", new ImageView ("elements/game/learnHose.png"));
+        Resources.add("learnSink2", new ImageView ("elements/game/learnSink.png"));
+        Resources.add("learnWasher", new ImageView ("elements/game/learnWasher.png"));
+        Resources.add("learnBarrel", new ImageView ("elements/game/learnBarrel.png"));
+        Resources.add("learnCan", new ImageView ("elements/game/learnCan.png"));
+        Resources.add("learnShower", new ImageView ("elements/game/learnShower.png"));
+        Resources.add("learnTub", new ImageView ("elements/game/learnTub.png"));
+        Resources.add("learnDWasher", new ImageView ("elements/game/learnDWasher.png"));
+        Resources.add("learnDish", new ImageView ("elements/game/learnDish.png"));
+        Resources.add("learnHose", new ImageView ("elements/game/learnHose.png"));
+        Resources.add("learnSink", new ImageView ("elements/game/learnSink.png"));
+        Resources.add("learnWasher2", new ImageView ("elements/game/learnWasher.png"));
+        Resources.add("learnBarrel2", new ImageView ("elements/game/learnBarrel.png"));
 
         Resources.add("oxfordComma", new Sound("elements/oxfordComma.mp3"));
         Resources.add("hotel", new Sound("elements/hotel.mp3"));
         Resources.add("click", new Sound ("elements/click.mp3"));
 
         Resources.add("checkBack", new Image("elements/game/checkBack.png"));
+        Resources.add("checkPlay", new ImageView("elements/game/checkPlay.png"));
         Resources.add("checkMark", new Image("elements/game/checkMark.png"));
         Resources.add("wrong", new Image("elements/game/wrong.png"));
 
@@ -169,7 +177,8 @@ public class StageManager extends Application {
             else if (c == 2) {
                 Quiz q = new Quiz (stage);
                 q.getScore();
-                q.showAndWait();
+                q.checkScreen();
+                stage.showAndWait();
             } else if (c == 3) {
                 Instructions i = new Instructions(stage);
                 i.display();

@@ -95,9 +95,11 @@ public abstract class Window {
      * @param img The ImageView Object to display.
      */
     public void drawImage (ImageView img, int x, int y) {
-        img.setTranslateX(x);
-        img.setTranslateY(y);
-        root.getChildren().add(img);
+        if (!root.getChildren().contains(img)) {
+            img.setTranslateX(x);
+            img.setTranslateY(y);
+            root.getChildren().add(img);
+        }
     }
 
     /**
@@ -140,8 +142,4 @@ public abstract class Window {
      * Display method that must be implemented by all subclasses containing the Window content.
      */
     public abstract void display ();
-
-    public StackPane getRoot(){
-        return root;
-    }
 }
