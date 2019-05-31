@@ -44,6 +44,9 @@ public class Game extends Window {
     double t = 0;
     ImageView frame;
     ImageView lastFrame;
+    boolean logTouched;
+    boolean falling;
+    int startX;
 
 
     /**
@@ -168,8 +171,7 @@ public class Game extends Window {
             {
                 t = (currentNanoTime - startNanoTime) / 300000000.0;
 
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
+                falling = jumpStop < jumpStart && !jumping;
 
                 // background image clears canvas
                 drawImage( lakeBackground, 0, 0 );
@@ -182,20 +184,25 @@ public class Game extends Window {
                 drawImage( dirtBack, 0, 542 );
                 drawImage( lake, 1, w.getYValue() );
 
-                Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000+(int)(t*40), 75);
+                Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000, 75);
+                startX = (int)(t*40);
                 logImg.setViewport(viewportRect);
                 remove(logImg);
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
                 //drawImage( avatar, -380, w.getYValue()-490-jumpY );
                 remove(lastFrame);
-                if(frame != null)
-                    lastFrame = frame;
-                frame = walking.getFrame(t);
+                if (!falling)
+                {
+                    if (frame != null)
+                        lastFrame = frame;
+                    frame = walking.getFrame(t);
+                }
                 drawImage(frame, -380+jumpX, w.getYValue()-490-jumpY);
                 remove(lastFrame);
+               // avatarImg.setX (-380 + jumpX);
 
-                if (input.contains("SPACE")) {
+                if (input.contains("SPACE") && !falling) {
                     if (!jumping && jumpY == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
                         jumping = true;
                         jumpStart = t;
@@ -214,13 +221,23 @@ public class Game extends Window {
                 else {
                     if (jumpX > 0 && jumpY == 0)
                         jumpX--;
-                    if (jumpY > 0)
+                    if (jumpY <= 0)
+                    {
+                        logTouched = avatarImg.isTouchingLog (logLine, startX, jumpX);
+                        if (!logTouched)
+                            falling = true;
+                    }
+                   if (falling){
+                        jumpY -= 100;
+                        //stop();
+                    }
+                    else if (jumpY > 0)
                         jumpY = Math.max(jumpY - ((int) (5 * ((currentNanoTime - jumpStop) / 300000000.0))), 0);
                     else
                         jumpStart = 0;
                 }
 
-                if (w.getYValue() == 750)
+                if (w.getYValue() == 750 || jumpY <= -550)
                     stop();
             }
         }.start();

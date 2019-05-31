@@ -689,12 +689,12 @@ public class Quiz extends Window {
         correctEff.add (wCan);
         correctEff.add (shower);
         correctEff.add (barrel);
-        correctEff.add (dSponge);
+        correctEff.add (dWasher);
         correctIneff.add (hose);
         correctIneff.add (tub);
         correctIneff.add (sink);
         correctIneff.add (cWasher);
-        correctIneff.add (dWasher);
+        correctIneff.add (dSponge);
 
         drawImage(play, 400, 325);
         drawImage (checkBack, 0, 0);

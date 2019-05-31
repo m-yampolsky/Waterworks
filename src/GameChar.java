@@ -37,10 +37,13 @@ public class GameChar extends Image
    * @param log
    * @return true if the avatar is touching a log, and false if it is not
    */
-  public boolean isTouchingLog (LogLine log)
+  public boolean isTouchingLog (LogLine log, int startX, int jump)
   {
-    if (log.isColoured((xCoord+WIDTH)/2))
-      return true;
+    for (int i = startX + 125 + jump; i <= startX + 125 + jump + 75 && i < log.getLength(); i++)
+    {
+      if (log.isColoured(i))
+        return true;
+    }
     return false;
   }
 
@@ -63,5 +66,10 @@ public class GameChar extends Image
    */
   public void fall ()
   {
+  }
+
+  public void setX(int x)
+  {
+    xCoord = x;
   }
 }

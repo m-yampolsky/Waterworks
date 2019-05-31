@@ -51,4 +51,9 @@ public class LogLine extends Image
       }
     return false;
   }
+
+  public int getLength ()
+  {
+    return isColoured[0].length;
+  }
 }
