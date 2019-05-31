@@ -39,11 +39,8 @@ public class GameChar extends Image
    */
   public boolean isTouchingLog (LogLine log)
   {
-    for (int i = xCoord; i < xCoord + WIDTH; i++)
-    {
-      if (log.isColoured(i, yCoord + HEIGHT))
-        return true;
-    }
+    if (log.isColoured((xCoord+WIDTH)/2))
+      return true;
     return false;
   }
 
