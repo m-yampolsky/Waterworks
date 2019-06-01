@@ -113,7 +113,9 @@ public class Learn extends Window {
             if (right) {
                 remove(descriptions[current]);
                 remove(learnCheck);
-                drawImage(descriptions[current], -13, 256);
+                descriptions[current].setPreserveRatio(true);
+                descriptions[current].setFitHeight(100);
+                drawImage(descriptions[current], -13, -280);
                 states[current] = true;
                 current = -1;
             } else {
@@ -173,8 +175,11 @@ public class Learn extends Window {
                             if (!states[current])
                                 break;
                         }
-                    else
-                        drawImage(descriptions[current], -13, -250);
+                    else {
+                        descriptions[current].setPreserveRatio(true);
+                        descriptions[current].setFitHeight(170);
+                        drawImage(descriptions[current], -13, -280);
+                    }
 
                 if (go != 0 && remove(learnWrong)) {
                     drawImage(learnCheck, -15, 260);
