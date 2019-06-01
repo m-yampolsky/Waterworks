@@ -135,9 +135,7 @@ public class StageManager extends Application {
         stage.setScene(scene);
 
 
-        new Learn(stage).display();
-        stage.showAndWait();
-        /*SplashScreen s = new SplashScreen(stage);
+        SplashScreen s = new SplashScreen(stage);
         stage.hide();
         s.display();
         stage.showAndWait();
@@ -205,6 +203,6 @@ public class StageManager extends Application {
             else if (c == -1)
                 break;
         }
-        stage.close();*/
+        stage.close();
     }
 }
