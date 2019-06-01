@@ -114,13 +114,13 @@ public class Learn extends Window {
                 remove(descriptions[current]);
                 remove(learnCheck);
                 descriptions[current].setPreserveRatio(true);
-                descriptions[current].setFitHeight(100);
-                drawImage(descriptions[current], -13, -280);
+                descriptions[current].setFitHeight(215);
+                drawImage(descriptions[current], -13, 257);
                 states[current] = true;
                 current = -1;
             } else {
                 remove(learnCheck);
-                drawImage(learnWrong, -15, 260);
+                drawImage(learnWrong, -15, 255);
             }
         });
         // Listeners for MouseEnter
