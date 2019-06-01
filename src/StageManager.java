@@ -93,6 +93,8 @@ public class StageManager extends Application {
         Resources.add("learnBarrel", new ImageView ("elements/game/learnBarrel.png"));
         Resources.add("learnCan", new ImageView ("elements/game/learnCan.png"));
         Resources.add("learnShower", new ImageView ("elements/game/learnShower.png"));
+        Resources.add("learnIce", new ImageView ("elements/game/learnIce.png"));
+        Resources.add("learnWell", new ImageView ("elements/game/learnWell.png"));
         Resources.add("learnTub", new ImageView ("elements/game/learnTub.png"));
         Resources.add("learnDWasher", new ImageView ("elements/game/learnDWasher.png"));
         Resources.add("learnDish", new ImageView ("elements/game/learnDish.png"));
@@ -133,7 +135,9 @@ public class StageManager extends Application {
         stage.setScene(scene);
 
 
-        SplashScreen s = new SplashScreen(stage);
+        new Learn(stage).display();
+        stage.showAndWait();
+        /*SplashScreen s = new SplashScreen(stage);
         stage.hide();
         s.display();
         stage.showAndWait();
@@ -201,6 +205,6 @@ public class StageManager extends Application {
             else if (c == -1)
                 break;
         }
-        stage.close();
+        stage.close();*/
     }
 }

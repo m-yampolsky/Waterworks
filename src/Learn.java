@@ -54,6 +54,8 @@ public class Learn extends Window {
         ImageView barrel = (ImageView)(Resources.get("learnBarrel"));
         ImageView can = (ImageView)(Resources.get("learnCan"));
         ImageView shower = (ImageView)(Resources.get("learnShower"));
+        ImageView ice = (ImageView)(Resources.get("learnIce"));
+        ImageView well = (ImageView)(Resources.get("learnWell"));
         ImageView tub = (ImageView)(Resources.get("learnTub"));
         ImageView dwasher = (ImageView)(Resources.get("learnDWasher"));
         ImageView dish = (ImageView)(Resources.get("learnDish"));
@@ -138,11 +140,11 @@ public class Learn extends Window {
                 }
                 if (go == 1) {
                     xtime += 6;
-                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1610 || times == 6 && xtime >= 2050 || times == 7 && xtime >= 2350 || times == 8 && xtime >= 2610 || times == 9 && xtime >= 2900)
+                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3110 || times == 10 && xtime >= 3370 || times == 11 && xtime >= 3660)
                         go = 0;
                 } else if (go == 2) {
                     xtime -= 6;
-                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1610 || times == 6 && xtime <= 2050 || times == 7 && xtime <= 2350 || times == 8 && xtime <= 2610 || times == 9 && xtime <= 2900)
+                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3110 || times == 10 && xtime <= 3370 || times == 11 && xtime <= 3660)
                         go = 0;
                 }
 
@@ -153,6 +155,8 @@ public class Learn extends Window {
                 remove(barrel);
                 remove(can);
                 remove(shower);
+                remove(ice);
+                remove(well);
                 remove(tub);
                 remove(dwasher);
                 remove(dish);
@@ -166,20 +170,22 @@ public class Learn extends Window {
                 drawImage(barrel, 540-xtime, -30);
                 drawImage(can, 840-xtime, -30);
                 drawImage(shower, 1160-xtime, -30);
-                drawImage(tub, 1600-xtime, -30);
-                drawImage(dwasher, 2040-xtime, -30);
-                drawImage(dish, 2340-xtime, -30);
-                drawImage(hose, 2600-xtime, 0);
-                drawImage(sink, 2890-xtime, 0);
-                drawImage(washer2, 3900-xtime, -50);
-                drawImage(barrel2, 4150-xtime, -30);
+                drawImage(ice, 1540-xtime, -30);
+                drawImage(well, 1900-xtime, 0);
+                drawImage(tub, 2300-xtime, -30);
+                drawImage(dwasher, 2740-xtime, -30);
+                drawImage(dish, 3040-xtime, -30);
+                drawImage(hose, 3300-xtime, 0);
+                drawImage(sink, 3590-xtime, 0);
+                drawImage(washer2, 4600-xtime, -50);
+                drawImage(barrel2, 4850-xtime, -30);
 
-                if (xtime >= 3606) {
+                if (xtime >= 4310) {
                     xtime = 0;
                     times = 1;
                 } else if (xtime <= -450) {
-                    xtime = 3135;
-                    times = 9;
+                    xtime = 3840;
+                    times = 11;
                 }
 
                 if (back) {
