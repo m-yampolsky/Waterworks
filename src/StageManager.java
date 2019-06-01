@@ -103,6 +103,18 @@ public class StageManager extends Application {
         Resources.add("learnWasher2", new ImageView ("elements/game/learnWasher.png"));
         Resources.add("learnBarrel2", new ImageView ("elements/game/learnBarrel.png"));
 
+        Resources.add("washerD", new ImageView ("elements/game/descriptions/washer.png"));
+        Resources.add("barrelD", new ImageView ("elements/game/descriptions/barrel.png"));
+        Resources.add("canD", new ImageView ("elements/game/descriptions/wcan.png"));
+        Resources.add("showerD", new ImageView ("elements/game/descriptions/shower.png"));
+        Resources.add("iceD", new ImageView ("elements/game/descriptions/ice.png"));
+        Resources.add("wellD", new ImageView ("elements/game/descriptions/well.png"));
+        Resources.add("tubD", new ImageView ("elements/game/descriptions/tub.png"));
+        Resources.add("dwasherD", new ImageView ("elements/game/descriptions/dwasher.png"));
+        Resources.add("dishD", new ImageView ("elements/game/descriptions/dish.png"));
+        Resources.add("hoseD", new ImageView ("elements/game/descriptions/hose.png"));
+        Resources.add("sinkD", new ImageView ("elements/game/descriptions/sink.png"));
+
         Resources.add("oxfordComma", new Sound("elements/oxfordComma.mp3"));
         Resources.add("hotel", new Sound("elements/hotel.mp3"));
         Resources.add("click", new Sound ("elements/click.mp3"));

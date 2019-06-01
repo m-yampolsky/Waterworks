@@ -249,6 +249,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
@@ -609,28 +610,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyPreloader.java" />
-    <entry file="file://$PROJECT_DIR$/src/GameChar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="44" column="3" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="44" selection-end-column="3" />
-          <folding>
-            <element signature="docComment;class#GameChar#0" />
-            <element signature="docComment;field#xCoord#0;class#GameChar#0" />
-            <element signature="docComment;field#WIDTH#0;class#GameChar#0" />
-            <element signature="docComment;field#HEIGHT#0;class#GameChar#0" />
-            <element signature="docComment;method#GameChar#0;class#GameChar#0" />
-            <element signature="method#GameChar#0;class#GameChar#0" />
-            <element signature="docComment;method#isTouchingLog#0;class#GameChar#0" />
-            <element signature="docComment;method#run#0;class#GameChar#0" />
-            <element signature="method#run#0;class#GameChar#0" />
-            <element signature="docComment;method#jump#0;class#GameChar#0" />
-            <element signature="method#jump#0;class#GameChar#0" />
-            <element signature="docComment;method#fall#0;class#GameChar#0" />
-            <element signature="method#fall#0;class#GameChar#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Water.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="912">
@@ -744,7 +723,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/SplashScreen.java">
+    <entry file="file://$PROJECT_DIR$/src/LevelSelect.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="50" column="32" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
@@ -786,7 +765,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/GameChar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
