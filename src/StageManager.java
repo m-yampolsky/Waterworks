@@ -50,14 +50,25 @@ public class StageManager extends Application {
         Resources.add("lakeSuperior", new ImageView("elements/menus/playLakeSuperiorBtn.png"));
         Resources.add("backButton", new ImageView("elements/menus/backBtn.png"));
         Resources.add("dirtBack", new Image( "elements/game/dirtBack.png" ));
+
         Resources.add("ontarioLake", new Image( "elements/game/ontarioLake.png" ));
         Resources.add("ontarioBack", new Image( "elements/game/ontarioBack.png" ));
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
         Resources.add("ontarioLogImg", new ImageView ( "elements/game/ontarioLogLine.png" ));
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+
         Resources.add("erieLake", new Image( "elements/game/erieLake.png" ));
         Resources.add("erieBack", new Image( "elements/game/erieBack.png" ));
         Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
+        Resources.add("erieLogImg", new ImageView ( "elements/game/erieLogLine.png" ));
+        Resources.add("erieLogLine", new LogLine("elements/game/erieLogLine.png"));
+
+        Resources.add("superiorLake", new Image( "elements/game/superiorLake.png" ));
+        Resources.add("superiorBack", new Image( "elements/game/superiorBack.png" ));
+        Resources.add("superiorTrees", new Image("elements/game/superiorTrees.png"));
+        Resources.add("superiorLogImg", new ImageView ( "elements/game/superiorLogLine.png" ));
+        Resources.add("superiorLogLine", new LogLine("elements/game/superiorLogLine.png"));
+
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
 
