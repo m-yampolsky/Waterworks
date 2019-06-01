@@ -93,6 +93,8 @@ public class StageManager extends Application {
         Resources.add("learnBarrel", new ImageView ("elements/game/learnBarrel.png"));
         Resources.add("learnCan", new ImageView ("elements/game/learnCan.png"));
         Resources.add("learnShower", new ImageView ("elements/game/learnShower.png"));
+        Resources.add("learnIce", new ImageView ("elements/game/learnIce.png"));
+        Resources.add("learnWell", new ImageView ("elements/game/learnWell.png"));
         Resources.add("learnTub", new ImageView ("elements/game/learnTub.png"));
         Resources.add("learnDWasher", new ImageView ("elements/game/learnDWasher.png"));
         Resources.add("learnDish", new ImageView ("elements/game/learnDish.png"));
@@ -100,6 +102,18 @@ public class StageManager extends Application {
         Resources.add("learnSink", new ImageView ("elements/game/learnSink.png"));
         Resources.add("learnWasher2", new ImageView ("elements/game/learnWasher.png"));
         Resources.add("learnBarrel2", new ImageView ("elements/game/learnBarrel.png"));
+
+        Resources.add("washerD", new ImageView ("elements/game/descriptions/washer.png"));
+        Resources.add("barrelD", new ImageView ("elements/game/descriptions/barrel.png"));
+        Resources.add("canD", new ImageView ("elements/game/descriptions/wcan.png"));
+        Resources.add("showerD", new ImageView ("elements/game/descriptions/shower.png"));
+        Resources.add("iceD", new ImageView ("elements/game/descriptions/ice.png"));
+        Resources.add("wellD", new ImageView ("elements/game/descriptions/well.png"));
+        Resources.add("tubD", new ImageView ("elements/game/descriptions/tub.png"));
+        Resources.add("dwasherD", new ImageView ("elements/game/descriptions/dwasher.png"));
+        Resources.add("dishD", new ImageView ("elements/game/descriptions/dish.png"));
+        Resources.add("hoseD", new ImageView ("elements/game/descriptions/hose.png"));
+        Resources.add("sinkD", new ImageView ("elements/game/descriptions/sink.png"));
 
         Resources.add("oxfordComma", new Sound("elements/oxfordComma.mp3"));
         Resources.add("hotel", new Sound("elements/hotel.mp3"));
@@ -133,7 +147,9 @@ public class StageManager extends Application {
         stage.setScene(scene);
 
 
-        SplashScreen s = new SplashScreen(stage);
+        new Learn(stage).display();
+        stage.showAndWait();
+        /*SplashScreen s = new SplashScreen(stage);
         stage.hide();
         s.display();
         stage.showAndWait();
@@ -201,6 +217,6 @@ public class StageManager extends Application {
             else if (c == -1)
                 break;
         }
-        stage.close();
+        stage.close();*/
     }
 }
