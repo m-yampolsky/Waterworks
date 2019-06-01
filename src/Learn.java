@@ -24,6 +24,10 @@ public class Learn extends Window {
 
     private boolean right = false;
 
+    int current = -1;
+
+    boolean done = false;
+
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -38,6 +42,8 @@ public class Learn extends Window {
      */
     public void display()
     {
+        boolean[] states = new boolean[11];
+        ImageView[] descriptions = {(ImageView)(Resources.get("washerD")), (ImageView)(Resources.get("barrelD")), (ImageView)(Resources.get("canD")), (ImageView)(Resources.get("showerD")) , (ImageView)(Resources.get("iceD")), (ImageView)(Resources.get("wellD")), (ImageView)(Resources.get("tubD")), (ImageView)(Resources.get("dwasherD")), (ImageView)(Resources.get("dishD")), (ImageView)(Resources.get("hoseD")), (ImageView)(Resources.get("sinkD"))};
 
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
         Image menuBack = (Image)(Resources.get("menuBackground"));
@@ -63,6 +69,7 @@ public class Learn extends Window {
         ImageView sink = (ImageView)(Resources.get("learnSink"));
         ImageView washer2 = (ImageView)(Resources.get("learnWasher2"));
         ImageView barrel2 = (ImageView)(Resources.get("learnBarrel2"));
+
         Sound click = (Sound)(Resources.get("click"));
 
         // Listeners for MouseClick
@@ -71,23 +78,44 @@ public class Learn extends Window {
             click.play();
         });
         learnLeft.setOnMouseClicked(e -> {
+            if (times > 0)
+                remove(descriptions[times-1]);
             if (go != 2) {
                 go = 2;
                 times--;
             }
+            if (times > 0 && states[times-1]) {
+                remove(learnCheck);
+                drawImage(learnScreen, 284, 523);
+            } else {
+                drawImage(learnBack, 0, 385);
+                drawImage(learnCheck, -15, 260);
+            }
             click.play();
         });
         learnRight.setOnMouseClicked(e -> {
+            if (times > 0)
+                remove(descriptions[times-1]);
             if (go != 1) {
                 go = 1;
                 times++;
+            }
+            if (times < 11 && states[times-1]) {
+                remove(learnCheck);
+                drawImage(learnScreen, 284, 523);
+            } else {
+                drawImage(learnBack, 0, 385);
+                drawImage(learnCheck, -15, 260);
             }
             click.play();
         });
         learnCheck.setOnMouseClicked(e -> {
             if (right) {
+                remove(descriptions[current]);
                 remove(learnCheck);
-                drawImage(learnScreen, 284, 523);
+                drawImage(descriptions[current], -13, 256);
+                states[current] = true;
+                current = -1;
             } else {
                 remove(learnCheck);
                 drawImage(learnWrong, -15, 260);
@@ -127,25 +155,58 @@ public class Learn extends Window {
         drawImage(learnRight, 240, 260);
         drawImage(learnCheck, -15, 260);
 
-        final long startNanoTime = System.nanoTime();
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
-                double t = (currentNanoTime - startNanoTime) / 300000000.0;
 
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
+                boolean d = false;
+                if (!done)
+                    for (boolean s : states)
+                        if (!s)
+                            break;
+                    if (d)
+                        done = true;
+
+                if (!done)
+                    if (current == -1)
+                        while (true) {
+                            current = (int) (Math.random() * 10);
+                            if (!states[current])
+                                break;
+                        }
+                    else
+                        drawImage(descriptions[current], -13, -250);
 
                 if (go != 0 && remove(learnWrong)) {
                     drawImage(learnCheck, -15, 260);
                 }
                 if (go == 1) {
-                    xtime += 6;
-                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3600)
+                    xtime += 12;
+                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3600) {
                         go = 0;
+                        if (states[times-1]) {
+                            drawImage(descriptions[times - 1], -13, 256);
+                            remove(learnCheck);
+                        } else
+                            drawImage(learnCheck, -15, 260);
+                        if (times-1 == current)
+                            right = true;
+                        else
+                            right = false;
+                    }
                 } else if (go == 2) {
-                    xtime -= 6;
-                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3050 || times == 10 && xtime <= 3310 || times == 11 && xtime <= 3600)
+                    xtime -= 12;
+                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3050 || times == 10 && xtime <= 3310 || times == 11 && xtime <= 3600) {
                         go = 0;
+                        if (states[times-1]) {
+                            drawImage(descriptions[times - 1], -13, 256);
+                            remove(learnCheck);
+                        } else
+                            drawImage(learnCheck, -15, 260);
+                        if (times-1 == current)
+                            right = true;
+                        else
+                            right = false;
+                    }
                 }
 
                 // background image clears canvas
