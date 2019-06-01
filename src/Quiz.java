@@ -271,6 +271,8 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                if (device != null){
+                setCursor(0);
                 remove (device);
                 drawImage (device, -350, 150);
                 removeMouse (device);
@@ -280,6 +282,7 @@ public class Quiz extends Window {
                 device = null;
                 event.setDragDetect(false);
                 lost = false;
+                }
 
             }
         });
@@ -287,6 +290,7 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                setCursor(0);
                 if (device != null){
                     remove (device);
                     drawImage (device, 360, 150);
@@ -304,6 +308,7 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                setCursor(0);
                 if (device != null){
                     remove (device);
                     drawImage (device, -350, 150);
@@ -321,6 +326,7 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                setCursor(0);
                 if (device != null)
                 {remove (device);
                     drawImage (device, 360, 150);
@@ -339,6 +345,7 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                setCursor(0);
                 lost = true;
                 event.setDragDetect(false);
             }
@@ -347,6 +354,7 @@ public class Quiz extends Window {
         {
             public void handle(MouseDragEvent event)
             {
+                setCursor(0);
                 lost = true;
                 event.setDragDetect(false);
             }
