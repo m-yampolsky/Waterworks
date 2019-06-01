@@ -140,11 +140,11 @@ public class Learn extends Window {
                 }
                 if (go == 1) {
                     xtime += 6;
-                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3110 || times == 10 && xtime >= 3370 || times == 11 && xtime >= 3660)
+                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3600)
                         go = 0;
                 } else if (go == 2) {
                     xtime -= 6;
-                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3110 || times == 10 && xtime <= 3370 || times == 11 && xtime <= 3660)
+                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3050 || times == 10 && xtime <= 3310 || times == 11 && xtime <= 3600)
                         go = 0;
                 }
 
@@ -171,7 +171,7 @@ public class Learn extends Window {
                 drawImage(can, 840-xtime, -30);
                 drawImage(shower, 1160-xtime, -30);
                 drawImage(ice, 1540-xtime, -30);
-                drawImage(well, 1900-xtime, 0);
+                drawImage(well, 1900-xtime, -60);
                 drawImage(tub, 2300-xtime, -30);
                 drawImage(dwasher, 2740-xtime, -30);
                 drawImage(dish, 3040-xtime, -30);
