@@ -125,16 +125,16 @@ public class Game extends Window {
             lakeBackground = (Image)(Resources.get("erieBack"));
             cityBack = (Image)(Resources.get("erieCabin"));
             lake = (Image)(Resources.get("erieLake"));
-            logImg = (ImageView)(Resources.get("ontarioLogImg"));
-            logLine = (LogLine)(Resources.get("ontarioLogLine"));
+            logImg = (ImageView)(Resources.get("erieLogImg"));
+            logLine = (LogLine)(Resources.get("erieLogLine"));
         }
         else
         {
-            lakeBackground = (Image)(Resources.get("ontarioBack"));
-            cityBack = (Image)(Resources.get("ontarioToronto"));
-            lake = (Image)(Resources.get("ontarioLake"));
-            logImg = (ImageView)(Resources.get("ontarioLogImg"));
-            logLine = (LogLine)(Resources.get("ontarioLogLine"));
+            lakeBackground = (Image)(Resources.get("superiorBack"));
+            cityBack = (Image)(Resources.get("superiorTrees"));
+            lake = (Image)(Resources.get("superiorLake"));
+            logImg = (ImageView)(Resources.get("superiorLogImg"));
+            logLine = (LogLine)(Resources.get("superiorLogLine"));
         }
 
         drawImage(menuBtn, 400, -330);
@@ -181,7 +181,7 @@ public class Game extends Window {
                 else if (level == 2)
                     drawImage( cityBack, 580-(int)(t*3), 304 );
                 else
-                    drawImage( cityBack, 480-(int)(t*3), 249 );
+                    drawImage( cityBack, 480-(int)(t*3), 20 );
                 drawImage( dirtBack, 0, 542 );
                 drawImage( lake, 1, w.getYValue() );
 

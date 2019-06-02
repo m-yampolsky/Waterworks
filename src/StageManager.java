@@ -50,14 +50,25 @@ public class StageManager extends Application {
         Resources.add("lakeSuperior", new ImageView("elements/menus/playLakeSuperiorBtn.png"));
         Resources.add("backButton", new ImageView("elements/menus/backBtn.png"));
         Resources.add("dirtBack", new Image( "elements/game/dirtBack.png" ));
+
         Resources.add("ontarioLake", new Image( "elements/game/ontarioLake.png" ));
         Resources.add("ontarioBack", new Image( "elements/game/ontarioBack.png" ));
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
         Resources.add("ontarioLogImg", new ImageView ( "elements/game/ontarioLogLine.png" ));
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+
         Resources.add("erieLake", new Image( "elements/game/erieLake.png" ));
         Resources.add("erieBack", new Image( "elements/game/erieBack.png" ));
         Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
+        Resources.add("erieLogImg", new ImageView ( "elements/game/erieLogLine.png" ));
+        Resources.add("erieLogLine", new LogLine("elements/game/erieLogLine.png"));
+
+        Resources.add("superiorLake", new Image( "elements/game/superiorLake.png" ));
+        Resources.add("superiorBack", new Image( "elements/game/superiorBack.png" ));
+        Resources.add("superiorTrees", new Image("elements/game/superiorTrees.png"));
+        Resources.add("superiorLogImg", new ImageView ( "elements/game/superiorLogLine.png" ));
+        Resources.add("superiorLogLine", new LogLine("elements/game/superiorLogLine.png"));
+
         Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
         Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
 
@@ -86,6 +97,7 @@ public class StageManager extends Application {
         Resources.add("learnRight", new ImageView ("elements/game/learnRight.png"));
         Resources.add("learnCheck", new ImageView ("elements/game/learnCheck.png"));
         Resources.add("learnWrong", new ImageView ("elements/game/learnWrong.png"));
+        Resources.add("learnQuiz", new ImageView ("elements/game/learnQuiz.png"));
 
         Resources.add("learnHose2", new ImageView ("elements/game/learnHose.png"));
         Resources.add("learnSink2", new ImageView ("elements/game/learnSink.png"));
@@ -172,13 +184,15 @@ public class StageManager extends Application {
                 Learn l = new Learn(stage);
                 l.display();
                 stage.showAndWait();
+                if (l.quizButtonClicked)
+                    c = 2;
             }
-            else if (c == 2) {
+            if (c == 2) {
                 Quiz q = new Quiz (stage);
                 q.display();
                 q.showAndWait();
                 quizScore = q.getScore();
-                if (Quiz.playButtonClicked)
+                if (q.playButtonClicked)
                     c = 3;
             }
             if (c == 3) {

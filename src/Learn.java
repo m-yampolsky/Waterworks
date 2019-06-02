@@ -24,9 +24,11 @@ public class Learn extends Window {
 
     private boolean right = false;
 
-    int current = -1;
+    private int current = -1;
 
-    boolean done = false;
+    private boolean done = false;
+
+    public boolean quizButtonClicked = false;
 
 
     /**
@@ -53,6 +55,7 @@ public class Learn extends Window {
         ImageView learnRight = (ImageView)(Resources.get("learnRight"));
         ImageView learnCheck = (ImageView)(Resources.get("learnCheck"));
         ImageView learnWrong = (ImageView)(Resources.get("learnWrong"));
+        ImageView quiz = (ImageView)(Resources.get("learnQuiz"));
 
         ImageView hose2 = (ImageView)(Resources.get("learnHose2"));
         ImageView sink2 = (ImageView)(Resources.get("learnSink2"));
@@ -113,12 +116,14 @@ public class Learn extends Window {
             if (right) {
                 remove(descriptions[current]);
                 remove(learnCheck);
-                drawImage(descriptions[current], -13, 256);
+                descriptions[current].setPreserveRatio(true);
+                descriptions[current].setFitHeight(215);
+                drawImage(descriptions[current], -13, 257);
                 states[current] = true;
                 current = -1;
             } else {
                 remove(learnCheck);
-                drawImage(learnWrong, -15, 260);
+                drawImage(learnWrong, -15, 255);
             }
         });
         // Listeners for MouseEnter
@@ -158,13 +163,17 @@ public class Learn extends Window {
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
 
-                boolean d = false;
-                if (!done)
+                if (!done) {
+                    boolean d = true;
                     for (boolean s : states)
-                        if (!s)
+                        if (!s) {
+                            d = false;
                             break;
-                    if (d)
+                        }
+                    if (d) {
                         done = true;
+                    }
+                }
 
                 if (!done)
                     if (current == -1)
@@ -173,8 +182,11 @@ public class Learn extends Window {
                             if (!states[current])
                                 break;
                         }
-                    else
-                        drawImage(descriptions[current], -13, -250);
+                    else {
+                        descriptions[current].setPreserveRatio(true);
+                        descriptions[current].setFitHeight(170);
+                        drawImage(descriptions[current], -13, -280);
+                    }
 
                 if (go != 0 && remove(learnWrong)) {
                     drawImage(learnCheck, -15, 260);
@@ -252,6 +264,21 @@ public class Learn extends Window {
                 if (back) {
                     stop();
                     hideStage();
+                }
+
+                if (done) {
+                    drawImage(quiz, 400, 325);
+
+                    quiz.setOnMouseClicked(e -> {
+                        quizButtonClicked = true;
+                        hideStage();
+                    });
+                    quiz.setOnMouseEntered(e -> {
+                        setCursor(1);
+                    });
+                    quiz.setOnMouseExited(e -> {
+                        setCursor(0);
+                    });
                 }
             }
         }.start();

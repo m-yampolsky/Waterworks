@@ -6,10 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Lake Erie Graphics and Implementation">
-      <change beforePath="$PROJECT_DIR$/src/Learn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Learn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StageManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StageManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Lake Erie Graphics and Implementation" />
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -71,12 +68,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Learn.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="518">
-              <caret line="107" column="48" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
+            <state relative-caret-position="651">
+              <caret line="257" column="27" selection-start-line="257" selection-start-column="27" selection-end-line="257" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5448#9211#0" expanded="true" />
-                <element signature="e#9210#9211#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -85,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StageManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="150" selection-start-line="150" selection-end-line="150" />
+            <state relative-caret-position="349">
+              <caret line="157" column="30" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -102,6 +97,13 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>pause</find>
+      <find>Clicked</find>
+      <find>device = dSponge;</find>
+      <find>remove = true;</find>
+      <find>Released</find>
+      <find>Pressed</find>
+      <find>Dragged</find>
       <find>getY</find>
       <find>device =</find>
       <find>devices</find>
@@ -124,14 +126,7 @@
       <find>checkSc</find>
       <find>checkScr</find>
       <find>check</find>
-      <find>right</find>
-      <find>if (ri</find>
-      <find>desc</find>
-      <find>current =</find>
-      <find>remove(des</find>
-      <find>drawImage(des</find>
-      <find>learnBac</find>
-      <find>drawImage(learnChe</find>
+      <find>9</find>
     </findStrings>
     <replaceStrings>
       <replace>Pressed</replace>
@@ -181,7 +176,6 @@
         <option value="$PROJECT_DIR$/src/Highscores.java" />
         <option value="$PROJECT_DIR$/src/Highscores.java" />
         <option value="$PROJECT_DIR$/src/Instructions.java" />
-        <option value="$PROJECT_DIR$/src/Game.java" />
         <option value="$PROJECT_DIR$/src/AnimatedImageView.java" />
         <option value="$PROJECT_DIR$/src/AnimatedImage.java" />
         <option value="$PROJECT_DIR$/src/SplashScreen.java" />
@@ -189,9 +183,10 @@
         <option value="$PROJECT_DIR$/src/LevelSelect.java" />
         <option value="$PROJECT_DIR$/src/Window.java" />
         <option value="$PROJECT_DIR$/src/Quiz.java" />
-        <option value="$PROJECT_DIR$/src/StageManager.java" />
-        <option value="$PROJECT_DIR$/src/StageManager.java" />
         <option value="$PROJECT_DIR$/src/Learn.java" />
+        <option value="$PROJECT_DIR$/src/StageManager.java" />
+        <option value="$PROJECT_DIR$/src/StageManager.java" />
+        <option value="$PROJECT_DIR$/src/Game.java" />
       </list>
     </option>
   </component>
@@ -202,10 +197,11 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-7" />
-    <option name="width" value="1013" />
-    <option name="height" value="1087" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="977" />
+    <option name="height" value="1097" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -253,8 +249,8 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,10 +277,8 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\User\Desktop\Waterworks\src\elements" />
-      <recent name="C:\Users\User\Desktop\Waterworks\src\elements\game" />
-      <recent name="C:\Users\User\Desktop\Waterworks\src" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\User\Desktop\Waterworks\src\elements" />
@@ -292,8 +286,10 @@
       <recent name="C:\Users\User\Desktop\Waterworks" />
       <recent name="C:\Users\User\Desktop\Waterworks\src" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\Waterworks\src\elements" />
+      <recent name="C:\Users\User\Desktop\Waterworks\src\elements\game" />
+      <recent name="C:\Users\User\Desktop\Waterworks\src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -317,65 +313,13 @@
       <option name="testName" />
       <method />
     </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="TEST_OBJECT" value="class" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="TestNG">
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file enabled="true" id="idea.log" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet">
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Waterworks" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Waterworks" />
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -413,9 +357,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.12260128" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.13059701" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" weight="0.32995737" />
       <window_info id="Designer" order="3" />
@@ -424,8 +367,8 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32914045" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.27310488" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2647975" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.27206644" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26487252" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -633,20 +576,14 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/LogLine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state relative-caret-position="589">
+          <caret line="50" column="7" lean-forward="true" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cloud.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="11" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Cloud.java" />
     <entry file="file://$PROJECT_DIR$/src/DeviceLine.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -728,45 +665,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/LevelSelect.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="49" column="72" lean-forward="true" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
+        <state relative-caret-position="748">
+          <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Quiz.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="490" column="36" selection-start-line="490" selection-start-column="36" selection-end-line="490" selection-end-column="36" />
+        <state relative-caret-position="875">
+          <caret line="459" column="20" selection-start-line="459" selection-start-column="20" selection-end-line="459" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3555#3556#0" expanded="true" />
-            <element signature="e#3598#3599#0" expanded="true" />
-            <element signature="e#3749#3750#0" expanded="true" />
-            <element signature="e#3792#3793#0" expanded="true" />
-            <element signature="e#3953#3954#0" expanded="true" />
-            <element signature="e#3996#3997#0" expanded="true" />
-            <element signature="e#4146#4147#0" expanded="true" />
-            <element signature="e#4189#4190#0" expanded="true" />
-            <element signature="e#11211#11212#0" expanded="true" />
-            <element signature="e#11255#11256#0" expanded="true" />
-            <element signature="e#11392#11393#0" expanded="true" />
-            <element signature="e#11436#11437#0" expanded="true" />
-            <element signature="e#11512#17708#0" expanded="true" />
-            <element signature="e#17707#17708#0" expanded="true" />
-            <element signature="e#17895#17896#0" expanded="true" />
-            <element signature="e#17939#17940#0" expanded="true" />
-            <element signature="e#19780#19781#0" expanded="true" />
-            <element signature="e#19824#19825#0" expanded="true" />
-            <element signature="e#24028#24039#0" expanded="true" />
-            <element signature="e#24100#24111#0" expanded="true" />
+            <element signature="e#326#327#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/GameChar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3705">
-          <caret line="216" column="28" selection-start-line="216" selection-start-column="28" selection-end-line="216" selection-end-column="28" />
+        <state relative-caret-position="615">
+          <caret line="141" column="8" selection-start-line="141" selection-start-column="8" selection-end-line="141" selection-end-column="8" />
           <folding>
             <element signature="docComment;class#Game#0" />
             <element signature="docComment;field#score#0;class#Game#0" />
@@ -776,71 +711,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/LogLine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="874">
-          <caret line="50" column="7" selection-start-line="50" selection-start-column="7" selection-end-line="50" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GameChar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="47" column="3" selection-start-line="47" selection-start-column="3" selection-end-line="47" selection-end-column="3" />
-          <folding>
-            <element signature="docComment;class#GameChar#0" />
-            <element signature="docComment;field#xCoord#0;class#GameChar#0" />
-            <element signature="docComment;field#WIDTH#0;class#GameChar#0" />
-            <element signature="docComment;field#HEIGHT#0;class#GameChar#0" />
-            <element signature="docComment;method#GameChar#0;class#GameChar#0" />
-            <element signature="method#GameChar#0;class#GameChar#0" />
-            <element signature="docComment;method#isTouchingLog#0;class#GameChar#0" />
-            <element signature="method#fall#0;class#GameChar#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1406">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3113#3114#0" expanded="true" />
-            <element signature="e#3152#3153#0" expanded="true" />
-            <element signature="e#3659#3660#0" expanded="true" />
-            <element signature="e#3688#3689#0" expanded="true" />
-            <element signature="e#3719#3720#0" expanded="true" />
-            <element signature="e#3758#3759#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SplashScreen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="893">
-          <caret line="53" column="32" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/elements/game/sink.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/StageManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="150" selection-start-line="150" selection-end-line="150" />
+        <state relative-caret-position="349">
+          <caret line="157" column="30" selection-start-line="157" selection-start-column="30" selection-end-line="157" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="160" column="60" lean-forward="true" selection-start-line="160" selection-start-column="60" selection-end-line="160" selection-end-column="60" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Learn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="518">
-          <caret line="107" column="48" selection-start-line="107" selection-start-column="48" selection-end-line="107" selection-end-column="48" />
+        <state relative-caret-position="651">
+          <caret line="257" column="27" selection-start-line="257" selection-start-column="27" selection-end-line="257" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5448#9211#0" expanded="true" />
-            <element signature="e#9210#9211#0" expanded="true" />
           </folding>
         </state>
       </provider>
