@@ -44,16 +44,6 @@ public class Game extends Window {
     private boolean falling;
     private int startX;
 
-    private boolean jumping;
-    private double jumpStart;
-    private double jumpStop;
-    private double t = 0;
-    private ImageView frame;
-    private ImageView lastFrame;
-    private boolean logTouched;
-    private boolean falling = false;
-    private int startX;
-
     public int endStatus = 0;
 
 
