@@ -162,12 +162,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>device = dSponge;</find>
-      <find>remove = true;</find>
-      <find>Released</find>
-      <find>Pressed</find>
-      <find>Dragged</find>
-      <find>getY</find>
       <find>device =</find>
       <find>devices</find>
       <find>onScreen = true;</find>
@@ -192,6 +186,12 @@
       <find>9</find>
       <find>e58383</find>
       <find>-1</find>
+      <find>println</find>
+      <find>back</find>
+      <find>drawImage( ava</find>
+      <find>viewpo</find>
+      <find>deviceIm</find>
+      <find>isTouchingLo</find>
     </findStrings>
     <replaceStrings>
       <replace>Pressed</replace>
@@ -229,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/Splash.java" />
         <option value="$PROJECT_DIR$/src/MyPreloader.java" />
         <option value="$PROJECT_DIR$/src/Cloud.java" />
-        <option value="$PROJECT_DIR$/src/GameChar.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/Resources.java" />
         <option value="$PROJECT_DIR$/src/Water.java" />
@@ -243,7 +242,6 @@
         <option value="$PROJECT_DIR$/src/AnimatedImage.java" />
         <option value="$PROJECT_DIR$/src/Sound.java" />
         <option value="$PROJECT_DIR$/src/LevelSelect.java" />
-        <option value="$PROJECT_DIR$/src/Window.java" />
         <option value="$PROJECT_DIR$/src/Quiz.java" />
         <option value="$PROJECT_DIR$/src/Learn.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
@@ -622,13 +620,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MyPreloader.java" />
-    <entry file="file://$PROJECT_DIR$/src/Water.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="912">
-          <caret line="55" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elements/menus/menuInstructionsBtn.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -673,21 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AnimatedImageView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding>
-            <element signature="docComment;class#AnimatedImage#0" />
-            <element signature="docComment;field#duration#0;class#AnimatedImage#0" />
-            <element signature="e#991#992#0" expanded="true" />
-            <element signature="e#1065#1066#0" expanded="true" />
-            <element signature="e#1097#1098#0" expanded="true" />
-            <element signature="e#1169#1170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/javafx-src.zip!/javafx/scene/media/AudioClip.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
@@ -721,16 +697,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="49" column="72" selection-start-line="49" selection-start-column="72" selection-end-line="49" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="143" column="5" selection-start-line="143" selection-start-column="5" selection-end-line="143" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -842,6 +808,24 @@
             <element signature="method#fall#0;class#GameChar#0" />
             <element signature="e#2376#2377#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="333" column="52" selection-start-line="333" selection-start-column="52" selection-end-line="333" selection-end-column="52" />
+          <folding>
+            <element signature="e#7592#11322#0" expanded="true" />
+            <element signature="e#11321#11322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GameChar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="639">
+          <caret line="109" column="53" selection-start-line="109" selection-start-column="53" selection-end-line="109" selection-end-column="53" />
         </state>
       </provider>
     </entry>

@@ -46,7 +46,7 @@ public class Instructions extends Window {
             refresh();
             drawImage(instructions[page], 0, 0);
 
-            drawImage(backButton, -380, -160);
+            drawImage(backButton, -400, -180);
             if (page < 3)
                 drawImage(instructionsF, 420, 300);
             if (page > 0)
@@ -58,7 +58,7 @@ public class Instructions extends Window {
             refresh();
             drawImage(instructions[page], 0, 0);
 
-            drawImage(backButton, -380, -160);
+            drawImage(backButton, -400, -180);
             if (page < 3)
                 drawImage(instructionsF, 420, 300);
             if (page > 0)
@@ -85,7 +85,7 @@ public class Instructions extends Window {
             setCursor(0);
         });
 
-        drawImage(backButton, -380, -160);
+        drawImage(backButton, -400, -180);
         drawImage(instructions[0], 0, 0);
         drawImage(instructionsF, 420, 300);
 

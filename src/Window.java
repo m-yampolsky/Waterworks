@@ -1,5 +1,4 @@
 import javafx.scene.Cursor;
-import javafx.scene.ImageCursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -100,6 +99,11 @@ public abstract class Window {
             img.setTranslateY(y);
             root.getChildren().add(img);
         }
+    }
+
+    public void drawRect(int startX, int startY, int width, int height) {
+        gc.setFill(Color.RED);
+        gc.fillRect(startX, startY, width, height);
     }
 
     /**

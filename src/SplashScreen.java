@@ -93,6 +93,8 @@ public class SplashScreen extends Window
                     Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
                     Resources.add("ontarioLogImg", new ImageView ( "elements/game/ontarioLogLine.png" ));
                     Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+                    Resources.add("ontarioDeviceImg", new ImageView ( "elements/game/ontarioDeviceLine.png" ));
+                    Resources.add("ontarioDeviceLine", new DeviceLine("elements/game/ontarioDeviceLine.png"));
 
                     Resources.add("erieLake", new Image( "elements/game/erieLake.png" ));
                     Resources.add("erieBack", new Image( "elements/game/erieBack.png" ));
