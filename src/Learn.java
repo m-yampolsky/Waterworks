@@ -24,9 +24,11 @@ public class Learn extends Window {
 
     private boolean right = false;
 
-    int current = -1;
+    private int current = -1;
 
-    boolean done = false;
+    private boolean done = false;
+
+    public boolean quizButtonClicked = false;
 
 
     /**
@@ -53,6 +55,7 @@ public class Learn extends Window {
         ImageView learnRight = (ImageView)(Resources.get("learnRight"));
         ImageView learnCheck = (ImageView)(Resources.get("learnCheck"));
         ImageView learnWrong = (ImageView)(Resources.get("learnWrong"));
+        ImageView quiz = (ImageView)(Resources.get("learnQuiz"));
 
         ImageView hose2 = (ImageView)(Resources.get("learnHose2"));
         ImageView sink2 = (ImageView)(Resources.get("learnSink2"));
@@ -160,13 +163,17 @@ public class Learn extends Window {
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
 
-                boolean d = false;
-                if (!done)
+                if (!done) {
+                    boolean d = true;
                     for (boolean s : states)
-                        if (!s)
+                        if (!s) {
+                            d = false;
                             break;
-                    if (d)
+                        }
+                    if (d) {
                         done = true;
+                    }
+                }
 
                 if (!done)
                     if (current == -1)
@@ -257,6 +264,21 @@ public class Learn extends Window {
                 if (back) {
                     stop();
                     hideStage();
+                }
+
+                if (done) {
+                    drawImage(quiz, 400, 325);
+
+                    quiz.setOnMouseClicked(e -> {
+                        quizButtonClicked = true;
+                        hideStage();
+                    });
+                    quiz.setOnMouseEntered(e -> {
+                        setCursor(1);
+                    });
+                    quiz.setOnMouseExited(e -> {
+                        setCursor(0);
+                    });
                 }
             }
         }.start();

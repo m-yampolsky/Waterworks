@@ -97,6 +97,7 @@ public class StageManager extends Application {
         Resources.add("learnRight", new ImageView ("elements/game/learnRight.png"));
         Resources.add("learnCheck", new ImageView ("elements/game/learnCheck.png"));
         Resources.add("learnWrong", new ImageView ("elements/game/learnWrong.png"));
+        Resources.add("learnQuiz", new ImageView ("elements/game/learnQuiz.png"));
 
         Resources.add("learnHose2", new ImageView ("elements/game/learnHose.png"));
         Resources.add("learnSink2", new ImageView ("elements/game/learnSink.png"));
@@ -183,14 +184,16 @@ public class StageManager extends Application {
                 Learn l = new Learn(stage);
                 l.display();
                 stage.showAndWait();
+                if (l.quizButtonClicked)
+                    c = 2;
             }
-            else if (c == 2) {
+            if (c == 2) {
                 Quiz q = new Quiz (stage);
                 q.display();
                 q.showAndWait();
                 //q.checkScreen();
                 quizScore = q.getScore();
-                if (Quiz.playButtonClicked)
+                if (q.playButtonClicked)
                     c = 3;
             }
             if (c == 3) {

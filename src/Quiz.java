@@ -42,7 +42,7 @@ public class Quiz extends Window {
     private ImageView play = (ImageView)(Resources.get("checkPlay"));
     private Sound click = (Sound)(Resources.get("click"));
 
-    public static boolean playButtonClicked = false;
+    public boolean playButtonClicked = false;
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
