@@ -30,6 +30,8 @@ public class Learn extends Window {
 
     public boolean quizButtonClicked = false;
 
+    private int numDone = 0;
+
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -81,7 +83,7 @@ public class Learn extends Window {
             click.play();
         });
         learnLeft.setOnMouseClicked(e -> {
-            if (times > 0)
+            if (times > 0 && times < 12)
                 remove(descriptions[times-1]);
             if (go != 2) {
                 go = 2;
@@ -97,7 +99,7 @@ public class Learn extends Window {
             click.play();
         });
         learnRight.setOnMouseClicked(e -> {
-            if (times > 0)
+            if (times > 0 && times < 12)
                 remove(descriptions[times-1]);
             if (go != 1) {
                 go = 1;
@@ -120,7 +122,11 @@ public class Learn extends Window {
                 descriptions[current].setFitHeight(215);
                 drawImage(descriptions[current], -13, 257);
                 states[current] = true;
-                current = -1;
+                numDone++;
+                if (numDone >= 11) {
+                    current = -2;
+                } else
+                    current = -1;
             } else {
                 remove(learnCheck);
                 drawImage(learnWrong, -15, 255);
@@ -175,18 +181,18 @@ public class Learn extends Window {
                     }
                 }
 
-                if (!done)
-                    if (current == -1)
-                        while (true) {
-                            current = (int) (Math.random() * 10);
-                            if (!states[current])
-                                break;
-                        }
-                    else {
+                if (!done) {
+                    while (current == -1 && !done && numDone < 11) {
+                        int tmp = (int) (Math.random() * 11);
+                        if (!states[tmp])
+                            current = tmp;
+                    }
+                    if (current != -1 && current != -2) {
                         descriptions[current].setPreserveRatio(true);
                         descriptions[current].setFitHeight(170);
                         drawImage(descriptions[current], -13, -280);
                     }
+                }
 
                 if (go != 0 && remove(learnWrong)) {
                     drawImage(learnCheck, -15, 260);
@@ -244,7 +250,7 @@ public class Learn extends Window {
                 drawImage(can, 840-xtime, -30);
                 drawImage(shower, 1160-xtime, -30);
                 drawImage(ice, 1540-xtime, -30);
-                drawImage(well, 1900-xtime, -60);
+                drawImage(well, 1900-xtime, -40);
                 drawImage(tub, 2300-xtime, -30);
                 drawImage(dwasher, 2740-xtime, -30);
                 drawImage(dish, 3040-xtime, -30);
