@@ -177,6 +177,7 @@ public class Game extends Window {
         // Listener for MouseClick
         menuBtn.setOnMouseClicked(e -> {
             click.play();
+            endStatus = -1;
             hideStage();
         });
         // Listener for MouseEnter
@@ -320,6 +321,10 @@ public class Game extends Window {
                     stop();
                     refresh();
                     lose();
+                }
+
+                if (endStatus == -1) {
+                    stop();
                 }
             }
         }.start();

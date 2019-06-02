@@ -3,11 +3,14 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+import java.util.Arrays;
+
 public class Instructions extends Window {
     /**
      * The choice selected for the game level that the user wishes to play.
      */
     private boolean back;
+    private int page = 0;
 
 
     /**
@@ -23,16 +26,13 @@ public class Instructions extends Window {
      */
     public void display()
     {
-        Image background = (Image)(Resources.get("menuBackground"));
-        Image playTitle = (Image)(Resources.get("instructionsTitle"));
-        Image menuBackgroundLog = (Image)(Resources.get("backLog"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
-        ImageView instructions1 = (ImageView)(Resources.get("instructions1"));
-        ImageView instructions2 = (ImageView)(Resources.get("instructions2"));
+        Image[] instructions = new Image[4];
+        for (int i = 0; i < instructions.length; i++)
+            instructions[i] = (Image)(Resources.get("instructions"+i));
         ImageView instructionsF = (ImageView)(Resources.get("instructionsForward"));
         ImageView instructionsB = (ImageView)(Resources.get("instructionsBackward"));
         Sound click = (Sound)(Resources.get("click"));
-
 
         // Listeners for MouseClick
         backButton.setOnMouseClicked(e -> {
@@ -42,17 +42,27 @@ public class Instructions extends Window {
         });
         instructionsF.setOnMouseClicked(e -> {
             click.play();
-            remove(instructions1);
-            remove(instructionsF);
-            drawImage(instructions2, 130, 50);
-            drawImage(instructionsB, 400, 330);
+            page++;
+            refresh();
+            drawImage(instructions[page], 0, 0);
+
+            drawImage(backButton, -380, -160);
+            if (page < 3)
+                drawImage(instructionsF, 420, 300);
+            if (page > 0)
+                drawImage(instructionsB, -425, 300);
         });
         instructionsB.setOnMouseClicked(e -> {
             click.play();
-            remove(instructions2);
-            remove(instructionsB);
-            drawImage(instructions1, 130, 50);
-            drawImage(instructionsF, 400, 330);
+            page--;
+            refresh();
+            drawImage(instructions[page], 0, 0);
+
+            drawImage(backButton, -380, -160);
+            if (page < 3)
+                drawImage(instructionsF, 420, 300);
+            if (page > 0)
+                drawImage(instructionsB, -425, 300);
         });
         // Listeners for MouseEnter
         backButton.setOnMouseEntered(e -> {
@@ -76,10 +86,8 @@ public class Instructions extends Window {
         });
 
         drawImage(backButton, -380, -160);
-        drawImage(instructions1, 130, 50);
-        drawImage(instructionsF, 400, 330);
-
-        AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
+        drawImage(instructions[0], 0, 0);
+        drawImage(instructionsF, 420, 300);
 
         final long startNanoTime = System.nanoTime();
         new AnimationTimer() {
@@ -88,12 +96,6 @@ public class Instructions extends Window {
 
                 double x = 232 + 128 * Math.cos(t);
                 double y = 232 + 128 * Math.sin(t);
-
-                // background image clears canvas
-                drawImage(background, 0, 0);
-                drawImage(menuBackgroundLog, 0, 690);
-                drawImage(playTitle, 40, 30);
-                drawImage(standing.getFrame(t), -90, 275);
 
                 if (back) {
                     stop();

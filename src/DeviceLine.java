@@ -51,7 +51,6 @@ public class DeviceLine extends Image{
         effColours.add(Color.web("#588287"));
         effColours.add(Color.web("#769499"));
         effColours.add(Color.web("#92a6ad"));
-
         effColours.add(Color.web("#a9aa9a"));
         effColours.add(Color.web("#ededed"));
         effColours.add(Color.web("#72defc"));
