@@ -12,6 +12,7 @@ public class GameChar extends Image
    * The coordinates of the avatars location.
    */
   private int xCoord, yCoord;
+  private boolean onDevice = false;
 
   /**
    * The width of the avatar's image.
@@ -39,12 +40,31 @@ public class GameChar extends Image
    */
   public boolean isTouchingLog (LogLine log, int startX, int jump)
   {
-    for (int i = startX + 125 + jump; i <= startX + 125 + jump + 75 && i < log.getLength(); i++)
+    for (int i = startX + 90 + jump; i <= startX + 90 + jump + 60 && i < log.getLength(); i++)
     {
       if (log.isColoured(i))
         return true;
     }
     return false;
+  }
+
+  public int isTouchingDevice (DeviceLine dvcLine, int startX, int jump)
+  {
+    if (!onDevice) {
+      for (int i = startX + 75 + jump; i <= startX + 75 + jump + 75 && i < dvcLine.getLength(); i++) {
+        if (dvcLine.deviceType(i) == 1) {
+          onDevice = true;
+          return 1;
+        }
+        else if (dvcLine.deviceType(i) == -1){
+          onDevice = true;
+          return -1;
+        }
+        else
+          onDevice = false;
+      }
+    }
+    return 0;
   }
 
   /**

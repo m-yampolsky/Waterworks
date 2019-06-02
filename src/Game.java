@@ -4,6 +4,7 @@ import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -45,7 +46,7 @@ public class Game extends Window {
     ImageView frame;
     ImageView lastFrame;
     boolean logTouched;
-    boolean falling;
+    boolean falling = false;
     int startX;
 
 
@@ -171,7 +172,7 @@ public class Game extends Window {
             {
                 t = (currentNanoTime - startNanoTime) / 300000000.0;
 
-                falling = jumpStop < jumpStart && !jumping;
+                //falling = jumpStop < jumpStart && !jumping;
 
                 // background image clears canvas
                 drawImage( lakeBackground, 0, 0 );
@@ -192,13 +193,11 @@ public class Game extends Window {
                 drawImage( logImg, 0, w.getYValue()-370 );
                 //drawImage( avatar, -380, w.getYValue()-490-jumpY );
                 remove(lastFrame);
-                if (!falling)
-                {
-                    if (frame != null)
+                if (frame != null)
                         lastFrame = frame;
-                    frame = walking.getFrame(t);
-                }
+                 frame = walking.getFrame(t);
                 drawImage(frame, -380+jumpX, w.getYValue()-490-jumpY);
+
                 remove(lastFrame);
                // avatarImg.setX (-380 + jumpX);
 
@@ -228,7 +227,7 @@ public class Game extends Window {
                             falling = true;
                     }
                    if (falling){
-                        jumpY -= 100;
+                        jumpY -= 10;
                         //stop();
                     }
                     else if (jumpY > 0)
