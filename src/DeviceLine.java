@@ -33,12 +33,9 @@ public class DeviceLine extends Image{
         ineffColours.add(Color.web("#b9ffff"));
         ineffColours.add(Color.web("#249a00"));
         ineffColours.add(Color.web("#96deea"));
-        ineffColours.add(Color.web("#a9aa9a"));
         ineffColours.add(Color.web("#737373"));
         ineffColours.add(Color.web("#e57e7e"));
         ineffColours.add(Color.web("#5eadeb"));
-        ineffColours.add(Color.web("#febc59"));
-        ineffColours.add(Color.web("#fea928"));
         ineffColours.add(Color.web("#d1dced"));
         ineffColours.add(Color.web("#ba650f"));
 
@@ -54,6 +51,14 @@ public class DeviceLine extends Image{
         effColours.add(Color.web("#588287"));
         effColours.add(Color.web("#769499"));
         effColours.add(Color.web("#92a6ad"));
+
+        effColours.add(Color.web("#a9aa9a"));
+        effColours.add(Color.web("#ededed"));
+        effColours.add(Color.web("#72defc"));
+        effColours.add(Color.web("#febc59"));
+        effColours.add(Color.web("#fea928"));
+        effColours.add(Color.web("#f95353"));
+        effColours.add(Color.web("#e58383"));
 
         for (int y = 0; y < colours.length; y++)
         {

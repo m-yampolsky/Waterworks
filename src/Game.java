@@ -21,33 +21,30 @@ public class Game extends Window {
     /**
      * The user's current level score.
      */
-    int score;
+    private int score;
 
     /**
      * The level names.
      */
-    static String[] names = {"Lake Ontario", "Lake Erie", "Lake Superior"};
+    private static String[] names = {"Lake Ontario", "Lake Erie", "Lake Superior"};
 
     /**
      * The current level selected.
      */
-    int level;
-
+    private int level;
     int jumpY;
     int jumpX;
+    private boolean jumping;
+    private double jumpStart;
+    private double jumpStop;
+    private double t = 0;
+    private ImageView frame;
+    private ImageView lastFrame;
+    private boolean logTouched;
+    private boolean falling;
+    private int startX;
 
-    boolean jumping;
-
-    double jumpStart;
-
-    double jumpStop;
-
-    double t = 0;
-    ImageView frame;
-    ImageView lastFrame;
-    boolean logTouched;
-    boolean falling = false;
-    int startX;
+    public int endStatus = 0;
 
 
     /**
@@ -64,6 +61,7 @@ public class Game extends Window {
         jumpStart = 0;
     }
 
+
     /**
      * @return The user's score at the end of the game.
      */
@@ -73,6 +71,88 @@ public class Game extends Window {
         refresh();
         return score;
     }
+
+
+    public void lose() {
+        Image back = (Image)(Resources.get("loseBack"));
+        Image title = (Image)(Resources.get("loseTitle"));
+        ImageView menu = (ImageView)(Resources.get("loseMenu"));
+        ImageView tryAgain = (ImageView)(Resources.get("loseTryAgain"));
+        Sound click = (Sound)(Resources.get("click"));
+
+        // Listener for MouseClick
+        menu.setOnMouseClicked(e -> {
+            click.play();
+            hideStage();
+        });
+        tryAgain.setOnMouseClicked(e -> {
+            click.play();
+            endStatus = 1;
+            hideStage();
+        });
+        // Listener for MouseEnter
+        menu.setOnMouseEntered(e -> {
+            setCursor(1);
+        });
+        tryAgain.setOnMouseEntered(e -> {
+            setCursor(1);
+        });
+        // Listener for MouseExit
+        menu.setOnMouseExited(e -> {
+            setCursor(0);
+        });
+        tryAgain.setOnMouseExited(e -> {
+            setCursor(0);
+        });
+
+        drawImage(back, 0, 0);
+        drawImage(title, 130, 260);
+        drawImage(menu, -390, 325);
+        drawImage(tryAgain, 310, 325);
+    }
+
+
+    public void win() {
+        Image back = (Image)(Resources.get("winBack"));
+        Image title = (Image)(Resources.get("winTitle"));
+        Image score = (Image)(Resources.get("winScore"));
+        ImageView menu = (ImageView)(Resources.get("winMenu"));
+        ImageView nextLevel = (ImageView)(Resources.get("winNextLevel"));
+        Sound click = (Sound)(Resources.get("click"));
+
+        // Listener for MouseClick
+        menu.setOnMouseClicked(e -> {
+            click.play();
+            hideStage();
+        });
+        nextLevel.setOnMouseClicked(e -> {
+            click.play();
+            endStatus = 2;
+            hideStage();
+        });
+        // Listener for MouseEnter
+        menu.setOnMouseEntered(e -> {
+            setCursor(1);
+        });
+        nextLevel.setOnMouseEntered(e -> {
+            setCursor(1);
+        });
+        // Listener for MouseExit
+        menu.setOnMouseExited(e -> {
+            setCursor(0);
+        });
+        nextLevel.setOnMouseExited(e -> {
+            setCursor(0);
+        });
+
+        drawImage(back, 0, 0);
+        drawImage(title, 155, 200);
+        drawImage(score, 225, 400);
+        drawImage(menu, -390, 325);
+        if (level < 3)
+            drawImage(nextLevel, 310, 325);
+    }
+
 
     /**
      * This method displays all the graphics for the Game window. It displays appropriate images, depending on the level being played.
@@ -236,8 +316,11 @@ public class Game extends Window {
                         jumpStart = 0;
                 }
 
-                if (w.getYValue() == 750 || jumpY <= -550)
+                if (w.getYValue() == 750 || jumpY <= -550) {
                     stop();
+                    refresh();
+                    lose();
+                }
             }
         }.start();
     }

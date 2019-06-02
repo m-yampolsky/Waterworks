@@ -51,6 +51,16 @@ public class StageManager extends Application {
         Resources.add("backButton", new ImageView("elements/menus/backBtn.png"));
         Resources.add("dirtBack", new Image( "elements/game/dirtBack.png" ));
 
+        Resources.add("loseBack", new Image( "elements/menus/loseBack.png" ));
+        Resources.add("loseTitle", new Image( "elements/menus/loseTitle.png" ));
+        Resources.add("loseMenu", new ImageView( "elements/menus/loseMenu.png" ));
+        Resources.add("loseTryAgain", new ImageView( "elements/menus/loseTryAgain.png" ));
+        Resources.add("winBack", new Image( "elements/menus/winBack.png" ));
+        Resources.add("winTitle", new Image( "elements/menus/winTitle.png" ));
+        Resources.add("winScore", new Image( "elements/menus/winScore.png" ));
+        Resources.add("winMenu", new ImageView( "elements/menus/winMenu.png" ));
+        Resources.add("winNextLevel", new ImageView( "elements/menus/winNextLevel.png" ));
+
         Resources.add("ontarioLake", new Image( "elements/game/ontarioLake.png" ));
         Resources.add("ontarioBack", new Image( "elements/game/ontarioBack.png" ));
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
@@ -208,10 +218,14 @@ public class StageManager extends Application {
                 else if (lvl >= 1 && lvl <= 3) {
                     hotel.stop();
                     oxford.play();
-                    Game g = new Game (stage, lvl);
-                    try {
+                    while (true) {
+                        Game g = new Game(stage, lvl);
                         g.getScore();
-                    } catch (Exception e) {e.printStackTrace();}
+                        if (g.endStatus == 0)
+                            break;
+                        else if (g.endStatus == 2)
+                            lvl = Math.min(3, lvl+1);
+                    }
                     oxford.stop();
                 }
             } else if  (c == 4) {
