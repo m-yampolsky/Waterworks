@@ -493,7 +493,7 @@ public class Quiz extends Window {
                     check.setOnMouseClicked(e -> {
                         refresh();
                         click.play();
-                        checkScreen();
+                        check();
                     });
                     check.setOnMouseEntered(e -> {
                         setCursor(1);
@@ -685,7 +685,7 @@ public class Quiz extends Window {
         });
     }
 
-    public void checkScreen ()
+    public void check ()
     {
         refresh();
         Image checkBack = (Image)(Resources.get("checkBack"));
@@ -786,6 +786,7 @@ public class Quiz extends Window {
 
         play.setOnMouseClicked(e -> {
             playButtonClicked = true;
+            click.play();
             hideStage();
         });
         play.setOnMouseEntered(e -> {
