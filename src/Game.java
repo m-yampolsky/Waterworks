@@ -254,6 +254,11 @@ public class Game extends Window {
                 t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 //falling = jumpStop < jumpStart && !jumping;
+                if (jumpY < 10) {
+                    logTouched = avatarImg.isTouchingLog (logLine, startX, jumpX);
+                    if (!logTouched)
+                        falling = true;
+                }
 
                 // background image clears canvas
                 drawImage( lakeBackground, 0, 0 );
@@ -301,12 +306,6 @@ public class Game extends Window {
                 else {
                     if (jumpX > 0 && jumpY == 0)
                         jumpX--;
-                    if (jumpY <= 0)
-                    {
-                        logTouched = avatarImg.isTouchingLog (logLine, startX, jumpX);
-                        if (!logTouched)
-                            falling = true;
-                    }
                    if (falling){
                         jumpY -= 10;
                         //stop();
