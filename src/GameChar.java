@@ -1,4 +1,6 @@
 import javafx.scene.image.Image;
+import javafx.scene.image.PixelReader;
+import javafx.scene.paint.Color;
 
 /**
  * The GameChar class
@@ -48,20 +50,30 @@ public class GameChar extends Image
     return false;
   }
 
-  public int isTouchingDevice (DeviceLine dvcLine, int startX, int jump)
+  public boolean colIsColoured (Image img, int x, int y){
+    PixelReader pixelReader = img.getPixelReader();
+    if (!pixelReader.getColor(x, y).equals(Color.TRANSPARENT))
+        return true;
+    return false;
+  }
+
+
+  public int isTouchingDevice (DeviceLine dvcLine, int startX, int jumpX, AnimatedImageView avatar, int jumpY)
   {
+    Image avatarImg = new Image (avatar.getPath());
     if (!onDevice) {
-      for (int i = startX + 75 + jump; i <= startX + 75 + jump + 75 && i < dvcLine.getLength(); i++) {
-        if (dvcLine.deviceType(i) == 1) {
-          onDevice = true;
-          return 1;
+      for (int x = startX + 30 + jumpX; x < avatarImg.getWidth() + 30 + jumpX; x++) {
+        for (int y = 0 + jumpY; y < avatarImg.getHeight() + jumpY; y++)
+        {
+          if (dvcLine.deviceType(x,y) == 1 && colIsColoured (avatarImg, x -30, y)) {
+            onDevice = true;
+            return 1;
+          } else if (dvcLine.deviceType(x,y) == -1) {
+            onDevice = true;
+            return -1;
+          } else
+            onDevice = false;
         }
-        else if (dvcLine.deviceType(i) == -1){
-          onDevice = true;
-          return -1;
-        }
-        else
-          onDevice = false;
       }
     }
     return 0;

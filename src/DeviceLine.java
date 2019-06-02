@@ -60,25 +60,19 @@ public class DeviceLine extends Image{
             for (int x = 0; x < colours[0].length; x++)
             {
                 if (pixelReader.getColor(x, y).equals(Color.TRANSPARENT)){
-                    colours[x][y] = 0;
+                    colours[y][x] = 0;
                 }
                 else if (effColours.contains(pixelReader.getColor(x, y))){
-                    colours[x][y] = 1;
+                    colours[y][x] = 1;
                 }
                 else{
-                    colours[x][y] = -1;
+                    colours[y][x] = -1;
                 }
             }
         }
     }
-    public int deviceType (int x) {
-        for (int i = 0; i < colours.length; i++){
-            if (colours[i][x] == 1)
-                return 1;
-            else if (colours[i][x] == -1)
-                return -1;
-        }
-        return 0;
+    public int deviceType (int x, int y) {
+        return colours[y][x];
     }
 
     public int getLength ()

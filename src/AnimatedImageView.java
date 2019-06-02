@@ -10,6 +10,7 @@ public class AnimatedImageView
 {
     private String path;
     private int numFrames;
+    private int pathNum;
 
     /**
      * The duration of the animation.
@@ -27,6 +28,7 @@ public class AnimatedImageView
 
     public ImageView getFrame(double time) {
         int index = Math.max((int)((time % (numFrames * duration)) / duration), 1);
+        pathNum = index;
         return new ImageView(path + " (" + index + ").png");
     }
 
@@ -36,5 +38,10 @@ public class AnimatedImageView
 
     public ImageView lastFrame() {
         return new ImageView (path + " (" + (numFrames-1) + ").png");
+    }
+
+    public String getPath ()
+    {
+        return path + " (" + pathNum + ").png";
     }
 }
