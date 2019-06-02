@@ -63,8 +63,7 @@ public class GameChar extends Image
     Image avatarImg = new Image (avatar.getPath());
     if (!onDevice) {
       for (int x = startX + 30 + jumpX; x < avatarImg.getWidth() + 30 + jumpX; x++) {
-        for (int y = 0; y < dvcLine.getHeight(); y++)
-        {
+        for (int y = 0; y < dvcLine.getHeight(); y++) {
           if (dvcLine.deviceType(x,y) == 1 && colIsColoured (avatarImg, x - 30 - jumpX - startX, y - 150 + jumpY)) {
             onDevice = true;
             return 1;
@@ -77,6 +76,44 @@ public class GameChar extends Image
       }
     }
     return 0;
+  }
+
+  public int isTouchingDevice (DeviceLine dvcLine, int startX, int startY, int width, int height)
+  {
+    int type = 0;
+
+    if (!onDevice) {
+      for (int x = startX; x <startX+width; x++) {
+        try {
+          type = dvcLine.deviceType(x, startY);
+        } catch (ArrayIndexOutOfBoundsException e) {}
+        if (type != 0)
+          return type;
+      }
+      for (int x = startX; x <startX+width; x++) {
+        try {
+          type = dvcLine.deviceType(x, startY+height);
+        } catch (ArrayIndexOutOfBoundsException e) {}
+        if (type != 0)
+          return type;
+      }
+      for (int y = startX; y <startY+width; y++) {
+        try {
+          type = dvcLine.deviceType(startX, y);
+        } catch (ArrayIndexOutOfBoundsException e) {}
+        if (type != 0)
+          return type;
+      }
+      for (int y = startX; y <startY+width; y++) {
+        try {
+          type = dvcLine.deviceType(startX+width, y);
+        } catch (ArrayIndexOutOfBoundsException e) {}
+        if (type != 0)
+          return type;
+      }
+    }
+
+    return type;
   }
 
   /**
