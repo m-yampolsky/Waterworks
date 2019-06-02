@@ -22,6 +22,9 @@ public class DeviceLine extends Image{
         PixelReader pixelReader = this.getPixelReader();
         colours = new int [(int)(getHeight())][(int)(getWidth())];
 
+        ineffColours = new ArrayList<Color>();
+        effColours = new ArrayList<Color>();
+
         ineffColours.add(Color.web("#fedd59"));
         ineffColours.add(Color.web("#c8e165"));
         ineffColours.add(Color.web("#a1b554"));
@@ -84,4 +87,9 @@ public class DeviceLine extends Image{
     {
         return colours[0].length;
     }
+
+    public int deviceTouched (){
+        return 0;
+    }
+
 }

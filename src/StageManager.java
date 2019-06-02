@@ -66,6 +66,8 @@ public class StageManager extends Application {
         Resources.add("ontarioToronto", new Image( "elements/game/ontarioToronto.png" ));
         Resources.add("ontarioLogImg", new ImageView ( "elements/game/ontarioLogLine.png" ));
         Resources.add("ontarioLogLine", new LogLine("elements/game/ontarioLogLine.png"));
+        Resources.add("ontarioDeviceImg", new ImageView ( "elements/game/ontarioDeviceLine.png" ));
+        Resources.add("ontarioDeviceLine", new DeviceLine("elements/game/ontarioDeviceLine.png"));
 
         Resources.add("erieLake", new Image( "elements/game/erieLake.png" ));
         Resources.add("erieBack", new Image( "elements/game/erieBack.png" ));
@@ -176,14 +178,14 @@ public class StageManager extends Application {
 
         Sound hotel = (Sound)(Resources.get("hotel"));
         Sound oxford = (Sound)(Resources.get("oxfordComma"));
-        oxford.loop();
-        hotel.loop();
+       oxford.loop();
+       hotel.loop();
 
 
         int c = 0;
         while (c != -1) {
             Menu m = new Menu(stage);
-            hotel.play();
+           hotel.play();
             c = 0;
             try {
                 c = m.getChoice();
@@ -216,8 +218,8 @@ public class StageManager extends Application {
                 if (lvl == -1)
                     continue;
                 else if (lvl >= 1 && lvl <= 3) {
-                    hotel.stop();
-                    oxford.play();
+                   hotel.stop();
+                   oxford.play();
                     while (true) {
                         Game g = new Game(stage, lvl);
                         g.getScore();
@@ -226,7 +228,7 @@ public class StageManager extends Application {
                         else if (g.endStatus == 2)
                             lvl = Math.min(3, lvl+1);
                     }
-                    oxford.stop();
+                 oxford.stop();
                 }
             } else if  (c == 4) {
                 Highscores h = new Highscores(stage);
@@ -243,5 +245,6 @@ public class StageManager extends Application {
                 break;
         }
         stage.close();
+
     }
 }

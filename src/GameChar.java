@@ -63,9 +63,9 @@ public class GameChar extends Image
     Image avatarImg = new Image (avatar.getPath());
     if (!onDevice) {
       for (int x = startX + 30 + jumpX; x < avatarImg.getWidth() + 30 + jumpX; x++) {
-        for (int y = 0 + jumpY; y < avatarImg.getHeight() + jumpY; y++)
+        for (int y = 0; y < dvcLine.getHeight(); y++)
         {
-          if (dvcLine.deviceType(x,y) == 1 && colIsColoured (avatarImg, x -30, y)) {
+          if (dvcLine.deviceType(x,y) == 1 && colIsColoured (avatarImg, x - 30 - jumpX - startX, y - 150 + jumpY)) {
             onDevice = true;
             return 1;
           } else if (dvcLine.deviceType(x,y) == -1) {

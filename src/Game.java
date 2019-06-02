@@ -166,6 +166,8 @@ public class Game extends Window {
         Image lake;
         ImageView logImg;
         LogLine logLine;
+        ImageView deviceImg = (ImageView)(Resources.get("ontarioDeviceImg"));
+        DeviceLine deviceLine = (DeviceLine)(Resources.get ("ontarioDeviceLine"));
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
         ImageView avatar = (ImageView)(Resources.get("avatar"));
         AnimatedImageView walking = (AnimatedImageView)(Resources.get("walking"));
@@ -191,6 +193,8 @@ public class Game extends Window {
 
         avatar.setPreserveRatio(true);
         avatar.setFitHeight(260);
+
+
 
         if (level == 1)
         {
@@ -266,11 +270,15 @@ public class Game extends Window {
                 drawImage( lake, 1, w.getYValue() );
 
                 Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000, 75);
+                Rectangle2D viewportRectDevices = new Rectangle2D((int)(t*40), 0, 1000, deviceLine.getHeight());
                 startX = (int)(t*40);
                 logImg.setViewport(viewportRect);
+                deviceImg.setViewport(viewportRectDevices);
+                remove(deviceImg);
                 remove(logImg);
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
+                drawImage( deviceImg, 0, w.getYValue()-640);
                 //drawImage( avatar, -380, w.getYValue()-490-jumpY );
                 remove(lastFrame);
                 if (frame != null)
@@ -315,6 +323,14 @@ public class Game extends Window {
                     else
                         jumpStart = 0;
                 }
+
+                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX, jumpX, walking, jumpY);
+                if (deviceType == 1)
+                    System.out.println ("efficient ");
+                else if (deviceType == -1)
+                    System.out.println ("inefficient ");
+                else if (deviceType == 0)
+                    System.out.println ("nothing ");
 
                 if (w.getYValue() == 750 || jumpY <= -550) {
                     stop();
