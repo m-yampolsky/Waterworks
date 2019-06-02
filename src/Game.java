@@ -318,6 +318,7 @@ public class Game extends Window {
 
                 if (w.getYValue() == 750 || jumpY <= -550) {
                     stop();
+                    refresh();
                     lose();
                 }
             }
