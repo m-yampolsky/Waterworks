@@ -201,7 +201,6 @@ public class StageManager extends Application {
                 Quiz q = new Quiz (stage);
                 q.display();
                 q.showAndWait();
-                //q.checkScreen();
                 quizScore = q.getScore();
                 if (q.playButtonClicked)
                     c = 3;
