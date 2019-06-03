@@ -1,5 +1,6 @@
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -7,6 +8,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -43,6 +48,7 @@ public class Game extends Window {
     private boolean logTouched;
     private boolean falling;
     private int startX;
+    String name;
 
     public int endStatus = 0;
 
@@ -59,6 +65,7 @@ public class Game extends Window {
         jumpX = 0;
         jumping = false;
         jumpStart = 0;
+        name = "";
     }
 
 
@@ -151,6 +158,16 @@ public class Game extends Window {
         drawImage(menu, -390, 325);
         if (level < 3)
             drawImage(nextLevel, 310, 325);
+
+        Image textField = (Image)(Resources.get("textField"));
+        Image nameLabel = (Image)(Resources.get("nameLabel"));
+        ImageView saveButton = (ImageView)(Resources.get("saveButton"));
+
+
+        drawImage (textField, 40, 510);
+        drawImage (nameLabel, 60, 530);
+        drawImage (saveButton, 352, 185);
+
     }
 
 
@@ -327,16 +344,14 @@ public class Game extends Window {
                 //int deviceType = avatarImg.isTouchingDevice(deviceLine, startX, jumpX, walking, jumpY, w.getYValue()-490-jumpY+375);
                 int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-50, w.getYValue()-640+325-jumpY+65, 100, 250);
                 if (deviceType == 1)
-                    System.out.println ("efficient ");
+                    w.changeHeight(1);
                 else if (deviceType == -1)
-                    System.out.println ("inefficient ");
-                else if (deviceType == 0)
-                    System.out.println ("nothing ");
+                    w.changeHeight(-1);
 
                 if (w.getYValue() == 750 || jumpY <= -550) {
                     stop();
                     refresh();
-                    lose();
+                   lose();
                 }
 
                 if (endStatus == -1) {

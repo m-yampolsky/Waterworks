@@ -115,6 +115,14 @@ public abstract class Window {
         gc.drawImage(img, x, y);
     }
 
+    public void add (Node node, int x, int y){
+        if (!root.getChildren().contains(node)) {
+            node.setTranslateX(x);
+            node.setTranslateY(y);
+            root.getChildren().add(node);
+        }
+    }
+
     /**
      * Clear Stage StackPane of all components, then re-add the Canvas
      */
