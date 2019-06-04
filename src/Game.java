@@ -19,6 +19,8 @@ import javafx.scene.text.FontWeight;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 
@@ -32,7 +34,7 @@ public class Game extends Window {
     /**
      * The user's current level score.
      */
-    private int score;
+    private int score = 0;
 
     /**
      * The level names.
@@ -62,6 +64,7 @@ public class Game extends Window {
     char[] charsName = name.toCharArray();
 
     public int endStatus = 0;
+    final File SCORES_FILE = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
 
 
     /**
@@ -135,7 +138,7 @@ public class Game extends Window {
     public void win() {
         Image back = (Image)(Resources.get("winBack"));
         Image title = (Image)(Resources.get("winTitle"));
-        Image score = (Image)(Resources.get("winScore"));
+        Image scoreImg = (Image)(Resources.get("winScore"));
         ImageView menu = (ImageView)(Resources.get("winMenu"));
         ImageView nextLevel = (ImageView)(Resources.get("winNextLevel"));
         Sound click = (Sound)(Resources.get("click"));
@@ -172,7 +175,7 @@ public class Game extends Window {
 
         drawImage(back, 0, 0);
         drawImage(title, 155, 200);
-        drawImage(score, 225, 400);
+        drawImage(scoreImg, 225, 400);
         drawImage(menu, -390, 325);
 
 
@@ -186,6 +189,7 @@ public class Game extends Window {
         {
             public void handle(MouseEvent event)
             {
+                System.out.print (SCORES_FILE);
                 if (onChar > 0){
                     saved = true;
                     remove (textField);
@@ -202,6 +206,24 @@ public class Game extends Window {
                     });
                     if (level < 3)
                         drawImage(nextLevel, 310, 325);
+                    if (!SCORES_FILE.exists()) {
+                        try {
+                            SCORES_FILE.createNewFile();
+                        } catch (IOException e) {
+                        }
+                    }
+                    PrintWriter output;
+                    try
+                    {
+                        output = new PrintWriter (new BufferedWriter (new FileWriter (SCORES_FILE, true)));
+                        output.println ("level played:" + level);
+                        output.println (name);
+                        output.println (score);
+                        output.close ();
+                    }
+                    catch (IOException e)
+                    {
+                    }
                 }
 
             }
@@ -446,12 +468,11 @@ public class Game extends Window {
                         displayVideo("elements/superiorLose.mp4");
                     lose(false);
                 }
-                //if (jumpY <= -550) {
+                if (jumpY <= -550) {
                     stop();
                     refresh();
-                    //lose(true);
-                    win();
-                //}
+                    lose(true);
+                }
 
                 if (endStatus == -1) {
                     stop();
