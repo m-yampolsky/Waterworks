@@ -14,7 +14,6 @@ import java.util.ArrayList;
  */
 public class SplashScreen extends Window
 {
-    private ArrayList<Integer> doneFrames = new ArrayList<Integer>();
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -36,14 +35,10 @@ public class SplashScreen extends Window
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
 
-                if (splashscreen.frame(t) < 167 && !doneFrames.contains(splashscreen.frame(t))) {
+                if (splashscreen.frame(t) < 167) {
                     clean();
-                    drawImage(splashscreen.getFrame(t), 0, 0);
-                    doneFrames.add(splashscreen.frame(t));
+                    drawImage(splashscreen.getSplashFrame(t), 0, 0);
                 }
-                if (splashscreen.frame(t) >= 167 || t >= 50100000000d)
-                    drawImage(splashscreen.lastFrame(), 0, 0);
-
                 if (splashscreen.frame(t) >= 168) {
                     // load resources
                     Resources.add("standing", new AnimatedImage("elements/standing/standing", 180, 0.050));

@@ -26,12 +26,24 @@ public class AnimatedImage
     }
 
     public Image getFrame(double time) {
-        int index = Math.max((int)((time % (numFrames * duration)) / duration), 1);
-        return new Image(path + " (" + index + ").png");
+        return new Image(path + " (" + Math.max((int)((time % (numFrames * duration)) / duration), 1) + ").png");
     }
 
     public int frame(double time) {
         return (int)((time % (numFrames * duration)) / duration)+1;
+    }
+
+    public Image getSplashFrame(double time) {
+        if (time >= 16) {
+            return lastFrame();
+        }
+        return new Image(path + " (" + Math.max((int)((time % (numFrames * duration)) / duration), 1) + ").png");
+    }
+
+    public int splashFrame(double time) {
+        if (time < 16)
+            return (int)((time % (numFrames * duration)) / duration)+1;
+        return 169;
     }
 
     public Image lastFrame() {

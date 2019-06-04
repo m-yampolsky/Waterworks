@@ -59,6 +59,7 @@ public class Game extends Window {
     private int startX;
     String name;
 
+
     public int endStatus = 0;
 
 
@@ -89,7 +90,7 @@ public class Game extends Window {
     }
 
 
-    public void lose( boolean showBack) {
+    public void lose() {
         Image back = (Image)(Resources.get("loseBack"));
         Image title = (Image)(Resources.get("loseTitle"));
         ImageView menu = (ImageView)(Resources.get("loseMenu"));
@@ -121,10 +122,8 @@ public class Game extends Window {
             setCursor(0);
         });
 
-        if (showBack) {
-            drawImage(back, 0, 0);
-            drawImage(title, 130, 260);
-        }
+        drawImage(back, 0, 0);
+        drawImage(title, 130, 260);
         drawImage(menu, -390, 325);
         drawImage(tryAgain, 310, 325);
     }
@@ -242,7 +241,7 @@ public class Game extends Window {
             lake = (Image)(Resources.get("erieLake"));
             logImg = (ImageView)(Resources.get("erieLogImg"));
             logLine = (LogLine)(Resources.get("erieLogLine"));
-            finalDevice = (AnimatedImageView)(Resources.get("finalTub"));
+            finalDevice = (AnimatedImageView)(Resources.get("finalSink"));
         }
         else
         {
@@ -251,7 +250,7 @@ public class Game extends Window {
             lake = (Image)(Resources.get("superiorLake"));
             logImg = (ImageView)(Resources.get("superiorLogImg"));
             logLine = (LogLine)(Resources.get("superiorLogLine"));
-            finalDevice = (AnimatedImageView)(Resources.get("finalSink"));
+            finalDevice = (AnimatedImageView)(Resources.get("finalTub"));
         }
 
         drawImage(menuBtn, 400, -330);
@@ -368,6 +367,12 @@ public class Game extends Window {
                 if (-380+jumpX >= 9450-(int)(t*40)) {
                     stop();
                     refresh();
+                    if (level == 1)
+                        displayVideo("elements/ontarioLose.mp4");
+                    else if (level == 2)
+                        displayVideo("elements/erieLose.mp4");
+                    else
+                        displayVideo("elements/superiorLose.mp4");
                     win();
                 }
                 if (w.getYValue() == 750) {
@@ -379,12 +384,12 @@ public class Game extends Window {
                         displayVideo("elements/erieLose.mp4");
                     else
                         displayVideo("elements/superiorLose.mp4");
-                    lose(false);
+                    lose();
                 }
                 if (jumpY <= -550) {
                     stop();
                     refresh();
-                    lose(true);
+                    lose();
                 }
 
                 if (endStatus == -1) {
