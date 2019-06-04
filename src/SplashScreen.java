@@ -54,12 +54,18 @@ public class SplashScreen extends Window
                     Resources.add("menuBackground", new Image("elements/menus/background.png"));
                     Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
                     Resources.add("menuTitle", new Image("elements/menus/menuLogo.png"));
-                    Resources.add("learnBtn", new ImageView("elements/menus/menuLearnBtn.png"));
+                    /*Resources.add("learnBtn", new ImageView("elements/menus/menuLearnBtn.png"));
                     Resources.add("quizBtn", new ImageView("elements/menus/menuQuizBtn.png"));
                     Resources.add("playBtn", new ImageView("elements/menus/menuPlayBtn.png"));
                     Resources.add("exitBtn", new ImageView("elements/menus/menuExitBtn.png"));
                     Resources.add("instructionsBtn", new ImageView("elements/menus/menuInstructionsBtn.png"));
-                    Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscoresBtn.png"));
+                    Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscoresBtn.png"));*/
+                    Resources.add("instructionsBtn", new ImageView("elements/menus/menuInstructions.png"));
+                    Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscores.png"));
+                    Resources.add("learnBtn", new ImageView("elements/menus/menuLearn.png"));
+                    Resources.add("quizBtn", new ImageView("elements/menus/menuQuiz.png"));
+                    Resources.add("playBtn", new ImageView("elements/menus/menuPlay.png"));
+                    Resources.add("exitBtn", new ImageView("elements/menus/menuExit.png"));
                     Image[] in = new Image[4];
                     in[0] = new Image("elements/menus/instructions0.png");
                     in[1] = new Image("elements/menus/instructions1.png");

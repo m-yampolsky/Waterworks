@@ -122,12 +122,18 @@ public class Menu extends Window
             setCursor(0);
         });
 
-        drawImage(menuLearnBtn, 40, -50);
+        /*drawImage(menuLearnBtn, 40, -50);
         drawImage(menuQuizBtn, 0, 50);
         drawImage(menuPlayBtn, 20, 150);
         drawImage(menuExitBtn, -40, 235);
         drawImage(menuHighscoresBtn, 330, 340);
-        drawImage(menuInstructionsBtn, -235, -145);
+        drawImage(menuInstructionsBtn, -235, -145);*/
+        drawImage(menuInstructionsBtn, 20, -135);
+        drawImage(menuHighscoresBtn, 40, -45);
+        drawImage(menuLearnBtn, 175 , 45);
+        drawImage(menuQuizBtn, 222, 135);
+        drawImage(menuPlayBtn, 207, 225);
+        drawImage(menuExitBtn, 435, 275);
 
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 
