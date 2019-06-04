@@ -174,8 +174,8 @@ public class SplashScreen extends Window
                     Resources.add("checkMark", new Image("elements/game/checkMark.png"));
                     Resources.add("wrong", new Image("elements/game/wrong.png"));
 
-                    Resources.add("textField", new Image("elements/game/winTextBox.png"));
-                    Resources.add("nameLabel", new Image ("elements/game/winName.png"));
+                    Resources.add("textField", new ImageView("elements/game/winTextBox.png"));
+                    Resources.add("nameLabel", new ImageView ("elements/game/winName.png"));
                     Resources.add("saveButton", new ImageView("elements/game/winSave.png"));
 
                     stop();
