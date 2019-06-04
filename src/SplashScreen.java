@@ -4,6 +4,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 /**
  * The Splashscreen class
  * This class represents the window with an animation that plays at the start of the program.
@@ -12,6 +14,7 @@ import javafx.stage.Stage;
  */
 public class SplashScreen extends Window
 {
+    private ArrayList<Integer> doneFrames = new ArrayList<Integer>();
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -33,22 +36,21 @@ public class SplashScreen extends Window
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
 
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
-
-                if (splashscreen.frame(t) < 167) {
+                if (splashscreen.frame(t) < 167 && !doneFrames.contains(splashscreen.frame(t))) {
                     clean();
                     drawImage(splashscreen.getFrame(t), 0, 0);
-                } else
+                    doneFrames.add(splashscreen.frame(t));
+                }
+                if (splashscreen.frame(t) >= 167 || t >= 50100000000d)
                     drawImage(splashscreen.lastFrame(), 0, 0);
 
                 if (splashscreen.frame(t) >= 168) {
                     // load resources
-                    AnimatedImage standing = new AnimatedImage("elements/standing/standing", 180, 0.100);
-                    Resources.add("standing", standing);
-
-                    AnimatedImageView walking = new AnimatedImageView("elements/walking/walking", 178, 0.070);
-                    Resources.add("walking", walking);
+                    Resources.add("standing", new AnimatedImage("elements/standing/standing", 180, 0.050));
+                    Resources.add("walking", new AnimatedImageView("elements/walking/walking", 178, 0.070));
+                    Resources.add("finalWasher", new AnimatedImageView("elements/washer/washer", 50, 0.050));
+                    Resources.add("finalTub", new AnimatedImageView("elements/tub/tub", 50, 0.100));
+                    Resources.add("finalSink", new AnimatedImageView("elements/sink/sink", 50, 0.100));
                     Resources.add("menuBackground", new Image("elements/menus/background.png"));
                     Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
                     Resources.add("menuTitle", new Image("elements/menus/menuLogo.png"));

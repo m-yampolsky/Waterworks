@@ -43,8 +43,10 @@ public class Game extends Window {
     private double jumpStart;
     private double jumpStop;
     private double t = 0;
-    private ImageView frame;
-    private ImageView lastFrame;
+    private ImageView charFrame;
+    private ImageView lastCharFrame;
+    private ImageView finalDevFrame;
+    private ImageView lastFinalDevFrame;
     private boolean logTouched;
     private boolean falling;
     private int startX;
@@ -183,6 +185,7 @@ public class Game extends Window {
         Image lake;
         ImageView logImg;
         LogLine logLine;
+        AnimatedImageView finalDevice;
         ImageView deviceImg = (ImageView)(Resources.get("ontarioDeviceImg"));
         DeviceLine deviceLine = (DeviceLine)(Resources.get ("ontarioDeviceLine"));
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
@@ -221,6 +224,7 @@ public class Game extends Window {
             lake = (Image)(Resources.get("ontarioLake"));
             logImg = (ImageView)(Resources.get("ontarioLogImg"));
             logLine = (LogLine)(Resources.get("ontarioLogLine"));
+            finalDevice = (AnimatedImageView)(Resources.get("finalWasher"));
         }
         else if (level == 2)
         {
@@ -229,6 +233,7 @@ public class Game extends Window {
             lake = (Image)(Resources.get("erieLake"));
             logImg = (ImageView)(Resources.get("erieLogImg"));
             logLine = (LogLine)(Resources.get("erieLogLine"));
+            finalDevice = (AnimatedImageView)(Resources.get("finalTub"));
         }
         else
         {
@@ -237,6 +242,7 @@ public class Game extends Window {
             lake = (Image)(Resources.get("superiorLake"));
             logImg = (ImageView)(Resources.get("superiorLogImg"));
             logLine = (LogLine)(Resources.get("superiorLogLine"));
+            finalDevice = (AnimatedImageView)(Resources.get("finalSink"));
         }
 
         drawImage(menuBtn, 400, -330);
@@ -302,16 +308,18 @@ public class Game extends Window {
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
                 drawImage( deviceImg, 0, w.getYValue()-640);
-                //drawImage( avatar, -380, w.getYValue()-490-jumpY );
-                remove(lastFrame);
-                if (frame != null)
-                        lastFrame = frame;
-                 frame = walking.getFrame(t);
-                drawImage(frame, -380+jumpX, w.getYValue()-490-jumpY);
+                if (charFrame != null)
+                        lastCharFrame = charFrame;
+                 charFrame = walking.getFrame(t);
+                drawImage(charFrame, -380+jumpX, w.getYValue()-490-jumpY);
+                remove(lastCharFrame);
 
-                remove(lastFrame);
-               // avatarImg.setX (-380 + jumpX);
-
+                if (finalDevFrame != null)
+                    lastFinalDevFrame = finalDevFrame;
+                finalDevFrame = finalDevice.getFrame(t);
+                drawImage(finalDevFrame, 9500-(int)(t*40), w.getYValue()-430);
+                remove(lastFinalDevFrame);
+                
                 if (input.contains("SPACE") && !falling) {
                     if (!jumping && jumpY == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
                         jumping = true;
@@ -322,7 +330,7 @@ public class Game extends Window {
                 if (jumping)
                     if ((t-jumpStart) <= 2) {
                         if (jumpX < 700)
-                            jumpX += 2;
+                            jumpX += 3;
                         jumpY += (int) (3 * (4 - (t - jumpStart)));
                     } else {
                         jumping = false;
@@ -348,10 +356,15 @@ public class Game extends Window {
                 else if (deviceType == -1)
                     w.changeHeight(-1);
 
+                if (-380+jumpX >= 9450-(int)(t*40)) {
+                    stop();
+                    refresh();
+                    win();
+                }
                 if (w.getYValue() == 750 || jumpY <= -550) {
                     stop();
                     refresh();
-                   lose();
+                    lose();
                 }
 
                 if (endStatus == -1) {

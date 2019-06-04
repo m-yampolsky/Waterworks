@@ -36,7 +36,7 @@ public class Water {
      */
     public int getHeight () {
         long elapsedTime = System.nanoTime() - startTime;
-        return (int)(210-(elapsedTime/300000000.0)*level)+heightChange;
+        return (int)(210-(elapsedTime/300000000.0)*(level*0.5))+heightChange;
     }
 
     /**
