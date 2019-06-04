@@ -9,6 +9,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaException;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -45,6 +46,7 @@ public class Game extends Window {
      * The current level selected.
      */
     private int level;
+    private int won = 0;
     int jumpY;
     int jumpX;
     private boolean jumping;
@@ -58,10 +60,11 @@ public class Game extends Window {
     private boolean logTouched;
     private boolean falling;
     private int startX;
-    String name = "          ";
-    int onChar = 0;
-    boolean saved = false;
-    char[] charsName = name.toCharArray();
+    private String name = "          ";
+    private int onChar = 0;
+    private boolean saved = false;
+    private char[] charsName = name.toCharArray();
+
 
 
     public int endStatus = 0;
@@ -91,6 +94,11 @@ public class Game extends Window {
         display();
         showAndWait();
         refresh();
+        if (won > 0)
+            win();
+        else if (won < 0)
+            lose();
+        showAndWait();
         return score;
     }
 
@@ -454,29 +462,39 @@ public class Game extends Window {
                 if (-380+jumpX >= 9450-(int)(t*40)) {
                     stop();
                     refresh();
+                    MediaPlayer p;
                     if (level == 1)
-                        displayVideo("elements/ontarioLose.mp4");
+                        p = displayVideo("elements/ontarioWin.mp4");
                     else if (level == 2)
-                        displayVideo("elements/erieLose.mp4");
+                        p = displayVideo("elements/erieWin.mp4");
                     else
-                        displayVideo("elements/superiorLose.mp4");
-                    win();
+                        p = displayVideo("elements/superiorWin.mp4");
+                    won = 1;
+                    p.setOnEndOfMedia(() -> {
+                        hideStage();
+                    });
                 }
                 if (w.getYValue() == 750) {
                     stop();
                     refresh();
+                    System.out.println("x");
+                    MediaPlayer p;
                     if (level == 1)
-                        displayVideo("elements/ontarioLose.mp4");
+                        p = displayVideo("elements/ontarioLose.mp4");
                     else if (level == 2)
-                        displayVideo("elements/erieLose.mp4");
+                        p = displayVideo("elements/erieLose.mp4");
                     else
-                        displayVideo("elements/superiorLose.mp4");
-                    lose();
+                        p = displayVideo("elements/superiorLose.mp4");
+                    p.setOnEndOfMedia(() -> {
+                        hideStage();
+                    });
+                    won = -1;
                 }
                 if (jumpY <= -550) {
                     stop();
                     refresh();
-                    lose();
+                    won = -1;
+                    hideStage();
                 }
 
                 if (endStatus == -1) {

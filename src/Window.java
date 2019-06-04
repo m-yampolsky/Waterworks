@@ -10,6 +10,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaException;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -150,7 +151,7 @@ public abstract class Window {
         return false;
     }
 
-    public void displayVideo (String path) {
+    public MediaPlayer displayVideo (String path) {
         Media media = null;
         try {
             media = new Media(new File(System.getProperty("user.dir"), "" + "src/"+path).toURI().toURL().toString());
@@ -165,6 +166,7 @@ public abstract class Window {
         root.getChildren().add(viewer);
         player.setRate(0.5);
         player.play();
+        return player;
     }
 
     public Canvas getCanvas(){
