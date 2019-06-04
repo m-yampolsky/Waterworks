@@ -98,7 +98,8 @@ public class Game extends Window {
             win();
         else if (won < 0)
             lose();
-        showAndWait();
+        if (won != 0)
+            showAndWait();
         return score;
     }
 
@@ -291,8 +292,8 @@ public class Game extends Window {
         ImageView logImg;
         LogLine logLine;
         AnimatedImageView finalDevice;
-        ImageView deviceImg = (ImageView)(Resources.get("ontarioDeviceImg"));
-        DeviceLine deviceLine = (DeviceLine)(Resources.get ("ontarioDeviceLine"));
+        ImageView deviceImg;
+        DeviceLine deviceLine;
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
         ImageView avatar = (ImageView)(Resources.get("avatar"));
         AnimatedImageView walking = (AnimatedImageView)(Resources.get("walking"));
@@ -330,6 +331,8 @@ public class Game extends Window {
             logImg = (ImageView)(Resources.get("ontarioLogImg"));
             logLine = (LogLine)(Resources.get("ontarioLogLine"));
             finalDevice = (AnimatedImageView)(Resources.get("finalWasher"));
+            deviceImg = (ImageView)(Resources.get("ontarioDeviceImg"));
+            deviceLine = (DeviceLine)(Resources.get ("ontarioDeviceLine"));
         }
         else if (level == 2)
         {
@@ -339,6 +342,8 @@ public class Game extends Window {
             logImg = (ImageView)(Resources.get("erieLogImg"));
             logLine = (LogLine)(Resources.get("erieLogLine"));
             finalDevice = (AnimatedImageView)(Resources.get("finalSink"));
+            deviceImg = (ImageView)(Resources.get("erieDeviceImg"));
+            deviceLine = (DeviceLine)(Resources.get ("erieDeviceLine"));
         }
         else
         {
@@ -348,6 +353,8 @@ public class Game extends Window {
             logImg = (ImageView)(Resources.get("superiorLogImg"));
             logLine = (LogLine)(Resources.get("superiorLogLine"));
             finalDevice = (AnimatedImageView)(Resources.get("finalTub"));
+            deviceImg = (ImageView)(Resources.get("superiorDeviceImg"));
+            deviceLine = (DeviceLine)(Resources.get ("superiorDeviceLine"));
         }
 
         drawImage(menuBtn, 400, -330);
@@ -410,7 +417,7 @@ public class Game extends Window {
                 remove(logImg);
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
-                drawImage( deviceImg, 0, w.getYValue()-640);
+                drawImage( deviceImg, 0, w.getYValue()-700);
                 if (charFrame != null)
                     lastCharFrame = charFrame;
                 charFrame = walking.getFrame(t);

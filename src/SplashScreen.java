@@ -104,12 +104,16 @@ public class SplashScreen extends Window
                     Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
                     Resources.add("erieLogImg", new ImageView ( "elements/game/erieLogLine.png" ));
                     Resources.add("erieLogLine", new LogLine("elements/game/erieLogLine.png"));
+                    Resources.add("erieDeviceImg", new ImageView ( "elements/game/erieDeviceLine.png" ));
+                    Resources.add("erieDeviceLine", new DeviceLine("elements/game/erieDeviceLine.png"));
 
                     Resources.add("superiorLake", new Image( "elements/game/superiorLake.png" ));
                     Resources.add("superiorBack", new Image( "elements/game/superiorBack.png" ));
                     Resources.add("superiorTrees", new Image("elements/game/superiorTrees.png"));
                     Resources.add("superiorLogImg", new ImageView ( "elements/game/superiorLogLine.png" ));
                     Resources.add("superiorLogLine", new LogLine("elements/game/superiorLogLine.png"));
+                    Resources.add("superiorDeviceImg", new ImageView ( "elements/game/superiorDeviceLine.png" ));
+                    Resources.add("superiorDeviceLine", new DeviceLine("elements/game/superiorDeviceLine.png"));
 
                     Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
                     Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));
