@@ -7,107 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="Lake Erie Graphics and Implementation">
-      <change beforePath="$PROJECT_DIR$/src/SplashScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SplashScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0003.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0004.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0005.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0006.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0008.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0009.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0010.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0011.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0012.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0013.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0014.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0015.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0016.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0017.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0018.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0019.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0020.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0021.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0022.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0023.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0024.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0025.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0026.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0027.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0028.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0029.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0030.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0031.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0032.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0033.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0034.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0035.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0036.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0037.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0038.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0039.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0040.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0041.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0042.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0043.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0044.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0045.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0046.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0047.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0048.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0049.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/sink/sink0050.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0001.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0002.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0003.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0004.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0005.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0006.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0007.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0008.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0009.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0010.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0011.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0012.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0013.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0014.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0015.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0016.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0017.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0018.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0019.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0020.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0021.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0022.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0023.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0024.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0025.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0026.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0027.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0028.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0029.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0030.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0031.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0032.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0033.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0034.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0035.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0036.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0037.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0038.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0039.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0040.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0041.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0042.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0043.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0044.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0045.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0046.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0047.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0048.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0049.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/elements/tub/tub0050.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Window.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Window.java" afterDir="false" />
     </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -167,25 +68,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="508">
-              <caret line="233" column="62" lean-forward="true" selection-start-line="233" selection-start-column="62" selection-end-line="233" selection-end-column="62" />
+            <state relative-caret-position="386">
+              <caret line="380" column="55" selection-start-line="380" selection-start-column="55" selection-end-line="380" selection-end-column="55" />
               <folding>
                 <element signature="e#4866#4874#0" expanded="true" />
-                <element signature="e#8482#12478#0" expanded="true" />
-                <element signature="e#12477#12478#0" expanded="true" />
+                <element signature="e#8796#12983#0" expanded="true" />
+                <element signature="e#12982#12983#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SplashScreen.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="52" column="99" selection-start-line="52" selection-start-column="99" selection-end-line="52" selection-end-column="99" />
+            <state relative-caret-position="500">
+              <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
               <folding>
                 <element signature="e#468#477#0" expanded="true" />
               </folding>
@@ -204,7 +105,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hides</find>
       <find>height</find>
       <find>cursor</find>
       <find>thisCan.</find>
@@ -234,6 +134,7 @@
       <find>lastcharframe</find>
       <find>w.c</find>
       <find>final</find>
+      <find>lose</find>
     </findStrings>
     <replaceStrings>
       <replace>Pressed</replace>
@@ -291,9 +192,10 @@
         <option value="$PROJECT_DIR$/src/DeviceLine.java" />
         <option value="$PROJECT_DIR$/src/StageManager.java" />
         <option value="$PROJECT_DIR$/src/StageManager.java" />
+        <option value="$PROJECT_DIR$/src/SplashScreen.java" />
+        <option value="$PROJECT_DIR$/src/Window.java" />
         <option value="$PROJECT_DIR$/src/Water.java" />
         <option value="$PROJECT_DIR$/src/Game.java" />
-        <option value="$PROJECT_DIR$/src/SplashScreen.java" />
       </list>
     </option>
   </component>
@@ -304,11 +206,10 @@
     </treeState>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-50" />
-    <option name="y" value="20" />
-    <option name="width" value="815" />
-    <option name="height" value="910" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-7" />
+    <option name="width" value="974" />
+    <option name="height" value="1087" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
@@ -332,6 +233,12 @@
               <item name="Waterworks" type="b2602c69:ProjectViewProjectNode" />
               <item name="Waterworks" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Waterworks" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Waterworks" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="elements" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -714,16 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Learn.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-380">
-          <caret line="44" column="25" lean-forward="true" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/elements/menus/instructions0.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -790,20 +687,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Water.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="36" column="20" selection-start-line="36" selection-start-column="20" selection-end-line="36" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Window.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AnimatedImageView.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="443">
@@ -821,24 +704,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/Learn.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="233" column="62" lean-forward="true" selection-start-line="233" selection-start-column="62" selection-end-line="233" selection-end-column="62" />
+        <state relative-caret-position="19">
+          <caret line="44" column="25" lean-forward="true" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
           <folding>
-            <element signature="e#4866#4874#0" expanded="true" />
-            <element signature="e#8482#12478#0" expanded="true" />
-            <element signature="e#12477#12478#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SplashScreen.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="52" column="99" selection-start-line="52" selection-start-column="99" selection-end-line="52" selection-end-column="99" />
+        <state relative-caret-position="500">
+          <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
           <folding>
             <element signature="e#468#477#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Water.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Window.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="165" column="26" selection-start-line="165" selection-start-column="26" selection-end-line="165" selection-end-column="26" />
+          <folding>
+            <element signature="e#5064#5065#0" expanded="true" />
+            <element signature="e#5093#5094#0" expanded="true" />
+            <element signature="e#5136#5137#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="380" column="55" selection-start-line="380" selection-start-column="55" selection-end-line="380" selection-end-column="55" />
+          <folding>
+            <element signature="e#4866#4874#0" expanded="true" />
+            <element signature="e#8796#12983#0" expanded="true" />
+            <element signature="e#12982#12983#0" expanded="true" />
           </folding>
         </state>
       </provider>

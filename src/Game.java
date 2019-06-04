@@ -1,4 +1,6 @@
 import javafx.animation.AnimationTimer;
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
@@ -6,6 +8,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaException;
+import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.scene.control.Button;
@@ -14,6 +19,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
 import javax.swing.*;
+import java.io.File;
+import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 /**
@@ -82,7 +89,7 @@ public class Game extends Window {
     }
 
 
-    public void lose() {
+    public void lose( boolean showBack) {
         Image back = (Image)(Resources.get("loseBack"));
         Image title = (Image)(Resources.get("loseTitle"));
         ImageView menu = (ImageView)(Resources.get("loseMenu"));
@@ -114,8 +121,10 @@ public class Game extends Window {
             setCursor(0);
         });
 
-        drawImage(back, 0, 0);
-        drawImage(title, 130, 260);
+        if (showBack) {
+            drawImage(back, 0, 0);
+            drawImage(title, 130, 260);
+        }
         drawImage(menu, -390, 325);
         drawImage(tryAgain, 310, 325);
     }
@@ -361,10 +370,21 @@ public class Game extends Window {
                     refresh();
                     win();
                 }
-                if (w.getYValue() == 750 || jumpY <= -550) {
+                if (w.getYValue() == 750) {
                     stop();
                     refresh();
-                    lose();
+                    if (level == 1)
+                        displayVideo("elements/ontarioLose.mp4");
+                    else if (level == 2)
+                        displayVideo("elements/erieLose.mp4");
+                    else
+                        displayVideo("elements/superiorLose.mp4");
+                    lose(false);
+                }
+                if (jumpY <= -550) {
+                    stop();
+                    refresh();
+                    lose(true);
                 }
 
                 if (endStatus == -1) {

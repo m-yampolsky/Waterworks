@@ -1,3 +1,5 @@
+import javafx.beans.binding.Bindings;
+import javafx.beans.property.DoubleProperty;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -6,8 +8,14 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaException;
+import javafx.scene.media.MediaView;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.io.File;
+import java.net.MalformedURLException;
 
 /**
  * The Window class
@@ -140,6 +148,23 @@ public abstract class Window {
             return true;
         }
         return false;
+    }
+
+    public void displayVideo (String path) {
+        Media media = null;
+        try {
+            media = new Media(new File(System.getProperty("user.dir"), "" + "src/"+path).toURI().toURL().toString());
+        } catch (MalformedURLException e) { e.printStackTrace(); }
+        catch (MediaException e) {
+            try {
+                media = new Media(new File(System.getProperty("user.dir"), "" + path).toURI().toURL().toString());
+            } catch (MalformedURLException e1) { e1.printStackTrace(); }
+        }
+        javafx.scene.media.MediaPlayer player = new   javafx.scene.media.MediaPlayer(media);
+        MediaView viewer = new MediaView(player);
+        root.getChildren().add(viewer);
+        player.setRate(0.5);
+        player.play();
     }
 
     public Canvas getCanvas(){
