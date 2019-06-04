@@ -2,7 +2,6 @@ import javafx.animation.AnimationTimer;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.event.EventHandler;
-import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -13,10 +12,10 @@ import javafx.scene.media.MediaException;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
-import javafx.scene.control.Label;
-import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 
 import javax.swing.*;
 import java.io.File;
@@ -57,7 +56,10 @@ public class Game extends Window {
     private boolean logTouched;
     private boolean falling;
     private int startX;
-    String name;
+    String name = "          ";
+    int onChar = 0;
+    boolean saved = false;
+    char[] charsName = name.toCharArray();
 
     public int endStatus = 0;
 
@@ -137,6 +139,11 @@ public class Game extends Window {
         ImageView menu = (ImageView)(Resources.get("winMenu"));
         ImageView nextLevel = (ImageView)(Resources.get("winNextLevel"));
         Sound click = (Sound)(Resources.get("click"));
+        ImageView textField = (ImageView)(Resources.get("textField"));
+        ImageView nameLabel = (ImageView)(Resources.get("nameLabel"));
+        ImageView saveButton = (ImageView)(Resources.get("saveButton"));
+        Text output = new Text ();
+
 
         // Listener for MouseClick
         menu.setOnMouseClicked(e -> {
@@ -152,14 +159,14 @@ public class Game extends Window {
         menu.setOnMouseEntered(e -> {
             setCursor(1);
         });
-        nextLevel.setOnMouseEntered(e -> {
+        saveButton.setOnMouseEntered(e -> {
             setCursor(1);
         });
         // Listener for MouseExit
         menu.setOnMouseExited(e -> {
             setCursor(0);
         });
-        nextLevel.setOnMouseExited(e -> {
+        saveButton.setOnMouseExited(e -> {
             setCursor(0);
         });
 
@@ -167,17 +174,77 @@ public class Game extends Window {
         drawImage(title, 155, 200);
         drawImage(score, 225, 400);
         drawImage(menu, -390, 325);
-        if (level < 3)
-            drawImage(nextLevel, 310, 325);
-
-        Image textField = (Image)(Resources.get("textField"));
-        Image nameLabel = (Image)(Resources.get("nameLabel"));
-        ImageView saveButton = (ImageView)(Resources.get("saveButton"));
 
 
-        drawImage (textField, 40, 510);
-        drawImage (nameLabel, 60, 530);
+        output.setFont(Font.font("Consolas", 50));
+
+        drawImage (textField, 0, 185);
+        drawImage (nameLabel, -262, 185);
         drawImage (saveButton, 352, 185);
+
+        saveButton.setOnMouseClicked(new EventHandler <MouseEvent>()
+        {
+            public void handle(MouseEvent event)
+            {
+                if (onChar > 0){
+                    saved = true;
+                    remove (textField);
+                    remove (nameLabel);
+                    remove (saveButton);
+                    remove (output);
+
+
+                    nextLevel.setOnMouseExited(e -> {
+                        setCursor(0);
+                    });
+                    nextLevel.setOnMouseEntered(e -> {
+                        setCursor(1);
+                    });
+                    if (level < 3)
+                        drawImage(nextLevel, 310, 325);
+                }
+
+            }
+        });
+
+
+        getScene().setOnKeyPressed(
+                new EventHandler<KeyEvent>()
+                {
+                    public void handle(KeyEvent e)
+                    {
+                        String code = e.getCode().toString();
+                        if ((code.length() == 1 || e.getCode().isDigitKey()) && onChar <= 9 )
+                        {
+                            if (code.contains("DIGIT"))
+                                charsName[onChar] = code.charAt(code.length()-1);
+                            else
+                                charsName[onChar] = code.charAt(0);
+                            onChar ++;
+                            name = new String (charsName);
+                            output.setText(name);
+                            remove (output);
+                            add (output, 85, 185);
+                        }
+                        else if (code.equals("SPACE") && onChar != 0 && onChar <= 9)
+                        {
+                            onChar ++;
+                            output.setText(name);
+                            remove (output);
+                            add (output, 85, 185); //175
+                        }
+                        else if ((code.equals("DELETE") || code.equals("BACK_SPACE")) && onChar != 0)
+                        {
+                            charsName[onChar - 1] = ' ';
+                            onChar --;
+                            name = new String (charsName);
+                            output.setText(name);
+                            remove (output);
+                            add (output, 85, 185);
+                        }
+                    }
+                });
+
 
     }
 
@@ -262,8 +329,6 @@ public class Game extends Window {
                     public void handle(KeyEvent e)
                     {
                         String code = e.getCode().toString();
-
-                        // only add once... prevent duplicates
                         if ( !input.contains(code) )
                             input.add( code );
                     }
@@ -318,8 +383,8 @@ public class Game extends Window {
                 drawImage( logImg, 0, w.getYValue()-370 );
                 drawImage( deviceImg, 0, w.getYValue()-640);
                 if (charFrame != null)
-                        lastCharFrame = charFrame;
-                 charFrame = walking.getFrame(t);
+                    lastCharFrame = charFrame;
+                charFrame = walking.getFrame(t);
                 drawImage(charFrame, -380+jumpX, w.getYValue()-490-jumpY);
                 remove(lastCharFrame);
 
@@ -328,7 +393,7 @@ public class Game extends Window {
                 finalDevFrame = finalDevice.getFrame(t);
                 drawImage(finalDevFrame, 9500-(int)(t*40), w.getYValue()-430);
                 remove(lastFinalDevFrame);
-                
+
                 if (input.contains("SPACE") && !falling) {
                     if (!jumping && jumpY == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
                         jumping = true;
@@ -348,7 +413,7 @@ public class Game extends Window {
                 else {
                     if (jumpX > 0 && jumpY == 0)
                         jumpX--;
-                   if (falling){
+                    if (falling){
                         jumpY -= 10;
                         //stop();
                     }
@@ -381,11 +446,12 @@ public class Game extends Window {
                         displayVideo("elements/superiorLose.mp4");
                     lose(false);
                 }
-                if (jumpY <= -550) {
+                //if (jumpY <= -550) {
                     stop();
                     refresh();
-                    lose(true);
-                }
+                    //lose(true);
+                    win();
+                //}
 
                 if (endStatus == -1) {
                     stop();
