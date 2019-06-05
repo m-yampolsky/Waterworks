@@ -26,7 +26,7 @@ public class Instructions extends Window {
      */
     public void display()
     {
-        ImageView backButton = (ImageView)(Resources.get("backButton"));
+        ImageView backButton = (ImageView)(Resources.get("menuBtn"));
         Image[] instructions = new Image[4];
         for (int i = 0; i < instructions.length; i++)
             instructions[i] = (Image)(Resources.get("instructions"+i));
