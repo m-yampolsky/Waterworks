@@ -65,7 +65,6 @@ public class Highscores extends Window {
             while (line != null)
             {
                 line = input.readLine ();
-                System.out.println (line);
                 if (line == null) //if statement 1
                     break;
                 else if (line.equals ("level played:1"))
@@ -85,8 +84,7 @@ public class Highscores extends Window {
                 scores [i] = new String [lengths [i]];
                 names [i] = new String [lengths [i]];
             }
-
-            System.out.println (lengths[0] + "level 1");
+            
             input = new BufferedReader (new FileReader (SCORES_FILE));
             line = " ";
             while (line != null)
