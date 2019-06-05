@@ -84,7 +84,7 @@ public class Highscores extends Window {
                 scores [i] = new String [lengths [i]];
                 names [i] = new String [lengths [i]];
             }
-            
+
             input = new BufferedReader (new FileReader (SCORES_FILE));
             line = " ";
             while (line != null)
@@ -124,16 +124,16 @@ public class Highscores extends Window {
                     for (int i = 0 ; i < lengths [y] - 1 - x ; i++) //for loop 2 //sorts the array
                     {
                         try{
-                        if (Integer.parseInt(scores [y][i]) < Integer.parseInt(scores [y] [i + 1])) //if statement 4
-                        {
-                            temp = scores [y] [i + 1];
-                            tempStr = names [y] [i + 1];
-                            scores [y] [i + 1] = scores [y] [i];
-                            names [y] [i + 1] = names [y] [i];
-                            scores [y] [i] = temp;
-                            names [y] [i] = tempStr;
+                            if (Integer.parseInt(scores [y][i]) < Integer.parseInt(scores [y] [i + 1])) //if statement 4
+                            {
+                                temp = scores [y] [i + 1];
+                                tempStr = names [y] [i + 1];
+                                scores [y] [i + 1] = scores [y] [i];
+                                names [y] [i + 1] = names [y] [i];
+                                scores [y] [i] = temp;
+                                names [y] [i] = tempStr;
 
-                        }}
+                            }}
                         catch (NumberFormatException e){}
                     }
                 }
@@ -164,7 +164,28 @@ public class Highscores extends Window {
             }
         }
 
-
+        try{
+            PrintWriter output = new PrintWriter (new BufferedWriter (new FileWriter (SCORES_FILE, false)));
+            for (int i = 0; i < Math.min(lengths[0], 10); i++)
+            {
+                output.println ("level played:" + 1);
+                output.println (names[0][i]);
+                output.println (scores[0][i]);
+            }
+            for (int i = 0; i < Math.min(lengths[1], 10); i++)
+            {
+                output.println ("level played:" + 2);
+                output.println (names[1][i]);
+                output.println (scores[1][i]);
+            }
+            for (int i = 0; i < Math.min(lengths[2], 10); i++)
+            {
+                output.println ("level played:" + 3);
+                output.println (names[2][i]);
+                output.println (scores[2][i]);
+            }
+            output.close ();}
+        catch (IOException e){}
 
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 

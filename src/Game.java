@@ -1,28 +1,17 @@
 import javafx.animation.AnimationTimer;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaException;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
-import javafx.scene.text.FontPosture;
-import javafx.scene.text.FontWeight;
+import javafx.scene.paint.Color;
 
-import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
 
 /**
@@ -154,6 +143,11 @@ public class Game extends Window {
         ImageView nameLabel = (ImageView)(Resources.get("nameLabel"));
         ImageView saveButton = (ImageView)(Resources.get("saveButton"));
         Text output = new Text ();
+        ImageView savedMessage = (ImageView)(Resources.get("savedMsg"));
+        Text scoreTxt = new Text ("" + score);
+
+        scoreTxt.setFont(new Font ("Consolas", 70));
+        scoreTxt.setFill (Color.WHITE);
 
 
         // Listener for MouseClick
@@ -185,6 +179,7 @@ public class Game extends Window {
         drawImage(title, 155, 200);
         drawImage(scoreImg, 225, 400);
         drawImage(menu, -390, 325);
+        add (scoreTxt, 90, 60);
 
 
         output.setFont(Font.font("Consolas", 50));
@@ -197,14 +192,13 @@ public class Game extends Window {
         {
             public void handle(MouseEvent event)
             {
-                System.out.print (SCORES_FILE);
                 if (onChar > 0){
                     saved = true;
                     remove (textField);
                     remove (nameLabel);
                     remove (saveButton);
                     remove (output);
-
+                    drawImage (savedMessage, 0,185);
 
                     nextLevel.setOnMouseExited(e -> {
                         setCursor(0);
@@ -261,7 +255,7 @@ public class Game extends Window {
                             onChar ++;
                             output.setText(name);
                             remove (output);
-                            add (output, 85, 185); //175
+                            add (output, 85, 185);
                         }
                         else if ((code.equals("DELETE") || code.equals("BACK_SPACE")) && onChar != 0)
                         {
@@ -434,6 +428,7 @@ public class Game extends Window {
                     if (!jumping && jumpY == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
                         jumping = true;
                         jumpStart = t;
+                        score -= 1;
                     }
                 }else
                     jumping = false;
@@ -461,10 +456,14 @@ public class Game extends Window {
 
                 //int deviceType = avatarImg.isTouchingDevice(deviceLine, startX, jumpX, walking, jumpY, w.getYValue()-490-jumpY+375);
                 int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-50, w.getYValue()-640+325-jumpY+65, 100, 250);
-                if (deviceType == 1)
+                if (deviceType == 1){
                     w.changeHeight(1);
-                else if (deviceType == -1)
+                    score += 7;
+                }
+                else if (deviceType == -1){
                     w.changeHeight(-1);
+                    score -= 7;
+                }
 
                 if (-380+jumpX >= 9450-(int)(t*40)) {
                     stop();
@@ -484,7 +483,6 @@ public class Game extends Window {
                 if (w.getYValue() == 750) {
                     stop();
                     refresh();
-                    System.out.println("x");
                     MediaPlayer p;
                     if (level == 1)
                         p = displayVideo("elements/ontarioLose.mp4");
