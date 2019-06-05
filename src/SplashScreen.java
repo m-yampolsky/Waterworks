@@ -14,7 +14,6 @@ import java.util.ArrayList;
  */
 public class SplashScreen extends Window
 {
-    private boolean doneFrames = false;
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -36,15 +35,10 @@ public class SplashScreen extends Window
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
 
-                if (splashscreen.frame(t) < 167 && !doneFrames) {
+                if (splashscreen.frame(t) < 167) {
                     clean();
-                    drawImage(splashscreen.getFrame(t), 0, 0);
+                    drawImage(splashscreen.getSplashFrame(t), 0, 0);
                 }
-                if (splashscreen.frame(t) >= 167 || t >= 50100000000d) {
-                    drawImage(splashscreen.lastFrame(), 0, 0);
-                    doneFrames = true;
-                }
-
                 if (splashscreen.frame(t) >= 168) {
                     // load resources
                     Resources.add("standing", new AnimatedImage("elements/standing/standing", 180, 0.050));
@@ -110,12 +104,16 @@ public class SplashScreen extends Window
                     Resources.add("erieCabin", new Image("elements/game/erieWatchCabin.png"));
                     Resources.add("erieLogImg", new ImageView ( "elements/game/erieLogLine.png" ));
                     Resources.add("erieLogLine", new LogLine("elements/game/erieLogLine.png"));
+                    Resources.add("erieDeviceImg", new ImageView ( "elements/game/erieDeviceLine.png" ));
+                    Resources.add("erieDeviceLine", new DeviceLine("elements/game/erieDeviceLine.png"));
 
                     Resources.add("superiorLake", new Image( "elements/game/superiorLake.png" ));
                     Resources.add("superiorBack", new Image( "elements/game/superiorBack.png" ));
                     Resources.add("superiorTrees", new Image("elements/game/superiorTrees.png"));
                     Resources.add("superiorLogImg", new ImageView ( "elements/game/superiorLogLine.png" ));
                     Resources.add("superiorLogLine", new LogLine("elements/game/superiorLogLine.png"));
+                    Resources.add("superiorDeviceImg", new ImageView ( "elements/game/superiorDeviceLine.png" ));
+                    Resources.add("superiorDeviceLine", new DeviceLine("elements/game/superiorDeviceLine.png"));
 
                     Resources.add("avatarImg", new GameChar ("elements/game/backgroundChar.png" ));
                     Resources.add("avatar", new ImageView ((GameChar)(Resources.get("avatarImg"))));

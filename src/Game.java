@@ -9,6 +9,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaException;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -45,6 +46,7 @@ public class Game extends Window {
      * The current level selected.
      */
     private int level;
+    private int won = 0;
     int jumpY;
     int jumpX;
     private boolean jumping;
@@ -58,10 +60,12 @@ public class Game extends Window {
     private boolean logTouched;
     private boolean falling;
     private int startX;
-    String name = "          ";
-    int onChar = 0;
-    boolean saved = false;
-    char[] charsName = name.toCharArray();
+    private String name = "          ";
+    private int onChar = 0;
+    private boolean saved = false;
+    private char[] charsName = name.toCharArray();
+
+
 
     public int endStatus = 0;
     final File SCORES_FILE = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
@@ -90,11 +94,17 @@ public class Game extends Window {
         display();
         showAndWait();
         refresh();
+        if (won > 0)
+            win();
+        else if (won < 0)
+            lose();
+        if (won != 0)
+            showAndWait();
         return score;
     }
 
 
-    public void lose( boolean showBack) {
+    public void lose() {
         Image back = (Image)(Resources.get("loseBack"));
         Image title = (Image)(Resources.get("loseTitle"));
         ImageView menu = (ImageView)(Resources.get("loseMenu"));
@@ -126,10 +136,8 @@ public class Game extends Window {
             setCursor(0);
         });
 
-        if (showBack) {
-            drawImage(back, 0, 0);
-            drawImage(title, 130, 260);
-        }
+        drawImage(back, 0, 0);
+        drawImage(title, 130, 260);
         drawImage(menu, -390, 325);
         drawImage(tryAgain, 310, 325);
     }
@@ -284,8 +292,8 @@ public class Game extends Window {
         ImageView logImg;
         LogLine logLine;
         AnimatedImageView finalDevice;
-        ImageView deviceImg = (ImageView)(Resources.get("ontarioDeviceImg"));
-        DeviceLine deviceLine = (DeviceLine)(Resources.get ("ontarioDeviceLine"));
+        ImageView deviceImg;
+        DeviceLine deviceLine;
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
         ImageView avatar = (ImageView)(Resources.get("avatar"));
         AnimatedImageView walking = (AnimatedImageView)(Resources.get("walking"));
@@ -323,6 +331,8 @@ public class Game extends Window {
             logImg = (ImageView)(Resources.get("ontarioLogImg"));
             logLine = (LogLine)(Resources.get("ontarioLogLine"));
             finalDevice = (AnimatedImageView)(Resources.get("finalWasher"));
+            deviceImg = (ImageView)(Resources.get("ontarioDeviceImg"));
+            deviceLine = (DeviceLine)(Resources.get ("ontarioDeviceLine"));
         }
         else if (level == 2)
         {
@@ -331,7 +341,9 @@ public class Game extends Window {
             lake = (Image)(Resources.get("erieLake"));
             logImg = (ImageView)(Resources.get("erieLogImg"));
             logLine = (LogLine)(Resources.get("erieLogLine"));
-            finalDevice = (AnimatedImageView)(Resources.get("finalTub"));
+            finalDevice = (AnimatedImageView)(Resources.get("finalSink"));
+            deviceImg = (ImageView)(Resources.get("erieDeviceImg"));
+            deviceLine = (DeviceLine)(Resources.get ("erieDeviceLine"));
         }
         else
         {
@@ -340,7 +352,9 @@ public class Game extends Window {
             lake = (Image)(Resources.get("superiorLake"));
             logImg = (ImageView)(Resources.get("superiorLogImg"));
             logLine = (LogLine)(Resources.get("superiorLogLine"));
-            finalDevice = (AnimatedImageView)(Resources.get("finalSink"));
+            finalDevice = (AnimatedImageView)(Resources.get("finalTub"));
+            deviceImg = (ImageView)(Resources.get("superiorDeviceImg"));
+            deviceLine = (DeviceLine)(Resources.get ("superiorDeviceLine"));
         }
 
         drawImage(menuBtn, 400, -330);
@@ -403,7 +417,7 @@ public class Game extends Window {
                 remove(logImg);
                 remove(avatar);
                 drawImage( logImg, 0, w.getYValue()-370 );
-                drawImage( deviceImg, 0, w.getYValue()-640);
+                drawImage( deviceImg, 0, w.getYValue()-700);
                 if (charFrame != null)
                     lastCharFrame = charFrame;
                 charFrame = walking.getFrame(t);
@@ -455,23 +469,39 @@ public class Game extends Window {
                 if (-380+jumpX >= 9450-(int)(t*40)) {
                     stop();
                     refresh();
-                    win();
+                    MediaPlayer p;
+                    if (level == 1)
+                        p = displayVideo("elements/ontarioWin.mp4");
+                    else if (level == 2)
+                        p = displayVideo("elements/erieWin.mp4");
+                    else
+                        p = displayVideo("elements/superiorWin.mp4");
+                    won = 1;
+                    p.setOnEndOfMedia(() -> {
+                        hideStage();
+                    });
                 }
                 if (w.getYValue() == 750) {
                     stop();
                     refresh();
+                    System.out.println("x");
+                    MediaPlayer p;
                     if (level == 1)
-                        displayVideo("elements/ontarioLose.mp4");
+                        p = displayVideo("elements/ontarioLose.mp4");
                     else if (level == 2)
-                        displayVideo("elements/erieLose.mp4");
+                        p = displayVideo("elements/erieLose.mp4");
                     else
-                        displayVideo("elements/superiorLose.mp4");
-                    lose(false);
+                        p = displayVideo("elements/superiorLose.mp4");
+                    p.setOnEndOfMedia(() -> {
+                        hideStage();
+                    });
+                    won = -1;
                 }
                 if (jumpY <= -550) {
                     stop();
                     refresh();
-                    lose(true);
+                    won = -1;
+                    hideStage();
                 }
 
                 if (endStatus == -1) {
