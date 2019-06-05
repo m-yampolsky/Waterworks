@@ -94,6 +94,8 @@ public class Game extends Window {
 
 
     public void lose() {
+        Sound.stopAll();
+
         Image back = (Image)(Resources.get("loseBack"));
         Image title = (Image)(Resources.get("loseTitle"));
         ImageView menu = (ImageView)(Resources.get("loseMenu"));
@@ -460,8 +462,7 @@ public class Game extends Window {
                         jumpStart = 0;
                 }
 
-                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-70, w.getYValue()-640+325-jumpY+65, 120, 220);
-                if (deviceType == 1){
+                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-90, w  .getYValue()-640+325-jumpY+65-100, 130, 240);                if (deviceType == 1){
                     w.changeHeight(1);
                     score += 7;
                 }

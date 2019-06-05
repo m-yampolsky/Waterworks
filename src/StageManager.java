@@ -102,8 +102,8 @@ public class StageManager extends Application {
                     continue;
                 else if (lvl >= 1 && lvl <= 3) {
                    hotel.stop();
-                   oxford.play();
                     while (true) {
+                        oxford.play();
                         Game g = new Game(stage, lvl);
                         g.getScore();
                         if (g.endStatus == 0 || g.endStatus == -1)
