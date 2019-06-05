@@ -94,6 +94,8 @@ public class Game extends Window {
 
 
     public void lose() {
+        Sound.stopAll();
+
         Image back = (Image)(Resources.get("loseBack"));
         Image title = (Image)(Resources.get("loseTitle"));
         ImageView menu = (ImageView)(Resources.get("loseMenu"));
@@ -382,7 +384,7 @@ public class Game extends Window {
         {
             public void handle(long currentNanoTime)
             {
-                t = (currentNanoTime - startNanoTime) / 100000000.0;
+                t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 //falling = jumpStop < jumpStart && !jumping;
                 if (jumpY < 10) {
