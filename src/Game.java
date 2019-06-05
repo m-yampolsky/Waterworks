@@ -66,7 +66,7 @@ public class Game extends Window {
      */
     public Game (Stage stg, int lvl) {
         super(stg, names [lvl - 1]);
-        score = 1000;
+        score = 0;
         level = lvl;
         jumpY = 0;
         jumpX = 0;
@@ -147,6 +147,7 @@ public class Game extends Window {
         Text output = new Text ();
         ImageView savedMessage = (ImageView)(Resources.get("savedMsg"));
         Text scoreTxt = new Text ("" + score);
+        ImageView winInst = (ImageView)(Resources.get("winInst"));
 
         scoreTxt.setFont(new Font ("Consolas", 70));
         scoreTxt.setFill (Color.WHITE);
@@ -154,6 +155,18 @@ public class Game extends Window {
 
         // Listener for MouseClick
         menu.setOnMouseClicked(e -> {
+            if (!saved){
+                name = "USER";
+                PrintWriter output1;
+                try {
+                    output1 = new PrintWriter(new BufferedWriter(new FileWriter(SCORES_FILE, true)));
+                    output1.println("level played:" + level);
+                    output1.println(name);
+                    output1.println(score);
+                    output1.close();
+                } catch (IOException error) {
+                }
+            }
             click.play();
             hideStage();
         });
@@ -181,6 +194,7 @@ public class Game extends Window {
         drawImage(title, 155, 200);
         drawImage(scoreImg, 225, 400);
         drawImage(menu, -390, 325);
+        drawImage(winInst, 150, 315);
         add (scoreTxt, 90, 60);
 
 
@@ -194,42 +208,41 @@ public class Game extends Window {
         {
             public void handle(MouseEvent event)
             {
-                if (onChar > 0){
-                    saved = true;
-                    remove (textField);
-                    remove (nameLabel);
-                    remove (saveButton);
-                    remove (output);
-                    drawImage (savedMessage, 0,185);
+                if (!saved) {
+                    if (onChar > 0) {
+                        saved = true;
+                        remove(textField);
+                        remove(nameLabel);
+                        remove(saveButton);
+                        remove(output);
+                        remove (winInst);
+                        drawImage(savedMessage, 0, 185);
 
-                    nextLevel.setOnMouseExited(e -> {
-                        setCursor(0);
-                    });
-                    nextLevel.setOnMouseEntered(e -> {
-                        setCursor(1);
-                    });
-                    if (level < 3)
-                        drawImage(nextLevel, 310, 325);
-                    if (!SCORES_FILE.exists()) {
+                        nextLevel.setOnMouseExited(e -> {
+                            setCursor(0);
+                        });
+                        nextLevel.setOnMouseEntered(e -> {
+                            setCursor(1);
+                        });
+                        if (level < 3)
+                            drawImage(nextLevel, 310, 325);
+                        if (!SCORES_FILE.exists()) {
+                            try {
+                                SCORES_FILE.createNewFile();
+                            } catch (IOException e) {
+                            }
+                        }
+                        PrintWriter output;
                         try {
-                            SCORES_FILE.createNewFile();
+                            output = new PrintWriter(new BufferedWriter(new FileWriter(SCORES_FILE, true)));
+                            output.println("level played:" + level);
+                            output.println(name);
+                            output.println(score);
+                            output.close();
                         } catch (IOException e) {
                         }
                     }
-                    PrintWriter output;
-                    try
-                    {
-                        output = new PrintWriter (new BufferedWriter (new FileWriter (SCORES_FILE, true)));
-                        output.println ("level played:" + level);
-                        output.println (name);
-                        output.println (score);
-                        output.close ();
-                    }
-                    catch (IOException e)
-                    {
-                    }
                 }
-
             }
         });
 
@@ -237,36 +250,32 @@ public class Game extends Window {
         getScene().setOnKeyPressed(
                 new EventHandler<KeyEvent>()
                 {
-                    public void handle(KeyEvent e)
-                    {
-                        String code = e.getCode().toString();
-                        if ((code.length() == 1 || e.getCode().isDigitKey()) && onChar <= 9 )
-                        {
-                            if (code.contains("DIGIT"))
-                                charsName[onChar] = code.charAt(code.length()-1);
-                            else
-                                charsName[onChar] = code.charAt(0);
-                            onChar ++;
-                            name = new String (charsName);
-                            output.setText(name);
-                            remove (output);
-                            add (output, 85, 185);
-                        }
-                        else if (code.equals("SPACE") && onChar != 0 && onChar <= 9)
-                        {
-                            onChar ++;
-                            output.setText(name);
-                            remove (output);
-                            add (output, 85, 185);
-                        }
-                        else if ((code.equals("DELETE") || code.equals("BACK_SPACE")) && onChar != 0)
-                        {
-                            charsName[onChar - 1] = ' ';
-                            onChar --;
-                            name = new String (charsName);
-                            output.setText(name);
-                            remove (output);
-                            add (output, 85, 185);
+                    public void handle(KeyEvent e) {
+                        if (!saved) {
+                            String code = e.getCode().toString();
+                            if ((code.length() == 1 || e.getCode().isDigitKey()) && onChar <= 9) {
+                                if (code.contains("DIGIT"))
+                                    charsName[onChar] = code.charAt(code.length() - 1);
+                                else
+                                    charsName[onChar] = code.charAt(0);
+                                onChar++;
+                                name = new String(charsName);
+                                output.setText(name);
+                                remove(output);
+                                add(output, 85, 185);
+                            } else if (code.equals("SPACE") && onChar != 0 && onChar <= 9) {
+                                onChar++;
+                                output.setText(name);
+                                remove(output);
+                                add(output, 85, 185);
+                            } else if ((code.equals("DELETE") || code.equals("BACK_SPACE")) && onChar != 0) {
+                                charsName[onChar - 1] = ' ';
+                                onChar--;
+                                name = new String(charsName);
+                                output.setText(name);
+                                remove(output);
+                                add(output, 85, 185);
+                            }
                         }
                     }
                 });
@@ -476,6 +485,7 @@ public class Game extends Window {
                     else
                         p = displayVideo("elements/superiorWin.mp4");
                     won = 1;
+                    score += w.getHeight();
                     p.setOnEndOfMedia(() -> {
                         hideStage();
                     });
