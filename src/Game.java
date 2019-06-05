@@ -454,9 +454,8 @@ public class Game extends Window {
                         jumpStart = 0;
                 }
 
-                //int deviceType = avatarImg.isTouchingDevice(deviceLine, startX, jumpX, walking, jumpY, w.getYValue()-490-jumpY+375);
-                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-50, w.getYValue()-640+325-jumpY+65, 100, 250);
-                if (deviceType == 1){
+                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-70, w.getYValue()-640+325-jumpY+65, 120, 220);
+                if (deviceType == 1)
                     w.changeHeight(1);
                     score += 7;
                 }
