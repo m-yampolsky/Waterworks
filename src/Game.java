@@ -147,6 +147,7 @@ public class Game extends Window {
         Text output = new Text ();
         ImageView savedMessage = (ImageView)(Resources.get("savedMsg"));
         Text scoreTxt = new Text ("" + score);
+        ImageView winInst = (ImageView)(Resources.get("winInst"));
 
         scoreTxt.setFont(new Font ("Consolas", 70));
         scoreTxt.setFill (Color.WHITE);
@@ -193,6 +194,7 @@ public class Game extends Window {
         drawImage(title, 155, 200);
         drawImage(scoreImg, 225, 400);
         drawImage(menu, -390, 325);
+        drawImage(winInst, 150, 315);
         add (scoreTxt, 90, 60);
 
 
@@ -213,6 +215,7 @@ public class Game extends Window {
                         remove(nameLabel);
                         remove(saveButton);
                         remove(output);
+                        remove (winInst);
                         drawImage(savedMessage, 0, 185);
 
                         nextLevel.setOnMouseExited(e -> {

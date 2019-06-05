@@ -182,6 +182,7 @@ public class SplashScreen extends Window
                     Resources.add("nameLabel", new ImageView ("elements/game/winName.png"));
                     Resources.add("saveButton", new ImageView("elements/game/winSave.png"));
                     Resources.add("savedMsg", new ImageView ("elements/game/winSaved.png"));
+                    Resources.add("winInst", new ImageView ("elements/menus/winInstructions.png"));
 
                     stop();
                     hideStage();
