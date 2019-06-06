@@ -27,7 +27,7 @@ public class Instructions extends Window {
     public void display()
     {
         ImageView backButton = (ImageView)(Resources.get("menuBtn"));
-        Image[] instructions = new Image[4];
+        Image[] instructions = new Image[8];
         for (int i = 0; i < instructions.length; i++)
             instructions[i] = (Image)(Resources.get("instructions"+i));
         ImageView instructionsF = (ImageView)(Resources.get("instructionsForward"));
@@ -47,7 +47,7 @@ public class Instructions extends Window {
             drawImage(instructions[page], 0, 0);
 
             drawImage(backButton, -400, -180);
-            if (page < 3)
+            if (page < instructions.length-1)
                 drawImage(instructionsF, 420, 300);
             if (page > 0)
                 drawImage(instructionsB, -425, 300);
