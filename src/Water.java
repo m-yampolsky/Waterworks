@@ -1,8 +1,18 @@
 /**
  * The Water class
- * This class represents the water of the lake from the Wateworks game.
+ * This class represents the water of the lake from the Wateworks game. It stores the water level of the lake, the y coordinate where the top of the water will appear, as well as the level being played.
+ * Depending on what lake you are playing on, the image used to display the water level of the lake will change.
  * @author Maria Yampolsky and Vansh Juneja
  * @version 2 05.27.2019
+ *
+ * <pre>
+ * Version History:
+ * May 16:
+ * Vansh wrote the Water class with the height Change and startTime properties, as well as the getYValue() method.
+ * May 18:
+ * Maria added the level property to class to change the speed the water drops at depending on the lake they are playing on.
+ * Vansh modified the getHeight() method to modify the height at different rates depending on the lake level being played on.
+ * </pre>
  */
 public class Water {
     /**

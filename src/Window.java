@@ -1,5 +1,3 @@
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.scene.Cursor;
 import javafx.scene.Node;
 import javafx.scene.Scene;
@@ -20,9 +18,32 @@ import java.net.MalformedURLException;
 
 /**
  * The Window class
- * This abstract class is the superclass to which all the independent screens of the program belong.
+ * This abstract class is the superclass to which all the independent screens of the program belong. It contains the necessary methods and instance variables for displaying, opening,
+ * closing and erasing the screens of a JavaFX Application. The classes Game, Highscores, Instructions, Learn, LevelSelect, Menu, Splashscreen and Quiz extend this class, as those are all
+ * the various screens of the game.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 2 05.27.2019
+ * @version 5 06.05.2019
+ *
+ * Version History:
+ * May 13:
+ * Vansh created the class and create its instance variables, the constructor, the clean(), hideStage(), showAndWait() and refresh() methods. He also wrote the abstract display() method.
+ * May 19:
+ * Maria wrote the drawImage() methods to display Image objects and ImageView objects on the screen.
+ * May 22:
+ * Vansh wrote the remove(Node e) method to delete and remove an object being displayed on screen.
+ * May 23:
+ * Vansh wrote the setCursor() method to modify the cursor and display different icons for the cursor.
+ * May 24:
+ * Maria wrote the getCanvas() and getScene() methods to access the private canvas and scene fields in other classes.
+ * May 26:
+ * Vansh added an additional option to the setCursor() method by adding another if statement. This one checks if the cursor should be displaying a closed hand, which indicates that an item is being dragged.
+ * June 3:
+ * Maria added the add() method to draw Node objects on to the screen. She wrote it based off of the drawImage() method, but generalising it, so that any Node object could be drawn with it.
+ * She needed this method to draw Text objects on the Highscore and win screens in the Game.
+ * June 4:
+ * Vansh wrote the displayVideo() method to play mp4 files and other video files on the window.
+ * June 5:
+ * Vansh removed the displayVideo() method, as it became unnecessary after we modified the lose and win screens of the program.
  */
 public abstract class Window {
     /**
@@ -46,6 +67,7 @@ public abstract class Window {
     private GraphicsContext gc;
 
     /**
+     * This is the class constructor, and it uses a JavaFX Stage to set up the screen with all of its components. It adds a Canvas to the screen and makes it a blank white Canvas.
      * @param stg The JavaFX Stage to display to.
      * @param name The current Window's name
      */
@@ -65,6 +87,11 @@ public abstract class Window {
         gc.setFill(Color.WHITE);
     }
 
+    /**
+     * This method modifies the cursor being displayed on screen, and it is used throughout the program to show that some items can be clicked. It also shows when an item is being
+     * dragged.
+     * @param state Determines the state that the cursor is in. 1 represents a "CLICKABLE" icon, 2 represents a "DRAGGING" icon, and any other value represents a regular cursor arrow.
+     */
     public void setCursor (int state) {
         if (state == 1)
             stage.getScene().setCursor(Cursor.HAND);
@@ -75,14 +102,14 @@ public abstract class Window {
     }
 
     /**
-     * Draw a white rectangle covering entire GraphicContext.
+     * Draw a white rectangle covering entire GraphicContext. This method is used to clear the screen and erase all the graphics that are on it.
      */
     public void clean() {
         gc.fillRect(0, 0, 1000, 750);
     }
 
     /**
-     * Hide the JavaFX Window Stage.
+     * This method hides the JavaFX Window Stage.
      */
     public void hideStage() {
         stage.hide();
@@ -98,8 +125,9 @@ public abstract class Window {
     }
 
     /**
-     * @param x The X-pos translation of the ImageView Object in the window.
-     * @param y The Y-pos tanslation of the ImageView Object in the window.
+     * This method draws an ImageView object on to the screen. It passes the x and y coordinates of the ImageView object to draw them in the correct place on screen.
+     * @param x The X position of the ImageView Object in the window.
+     * @param y The Y position of the ImageView Object in the window.
      * @param img The ImageView Object to display.
      */
     public void drawImage (ImageView img, int x, int y) {
@@ -110,14 +138,10 @@ public abstract class Window {
         }
     }
 
-    public void drawRect(int startX, int startY, int width, int height) {
-        gc.setFill(Color.RED);
-        gc.fillRect(startX, startY, width, height);
-    }
-
     /**
-     * @param x The X-pos translation of the Image Object in the window.
-     * @param y The Y-pos tanslation of the Image Object in the window.
+     * This method draws an Image object on to the screen. It passes the x and y coordinates of the Image object to draw them in the correct place on screen.
+     * @param x The X position of the Image Object in the window.
+     * @param y The Y position of the Image Object in the window.
      * @param img The Image Object to display.
      */
     public void drawImage (Image img, int x, int y) {
@@ -133,7 +157,7 @@ public abstract class Window {
     }
 
     /**
-     * Clear Stage StackPane of all components, then re-add the Canvas
+     * Clear Stage StackPane of all components, then re-add the Canvas. This clears and resets the screen completely.
      */
     public void refresh () {
         root.getChildren().clear();
@@ -141,7 +165,8 @@ public abstract class Window {
     }
 
     /**
-     * Clear Stage StackPane of all components, then re-add the Canvas
+     * Removes an individual component from the screen.
+     * @param e The Node object to be removed from the screen.
      */
     public boolean remove (Node e) {
         if (root.getChildren().contains(e)) {
@@ -151,6 +176,11 @@ public abstract class Window {
         return false;
     }
 
+    /**
+     * This method displays a video file in the window by passing a parameter of the file path of the video.
+     * @param path The path to the video file to be displayed
+     * @return A MediaPlayer object that is displaying the video that whose path the user passed as a parameter.
+     */
     public MediaPlayer displayVideo (String path) {
         Media media = null;
         try {
@@ -169,16 +199,24 @@ public abstract class Window {
         return player;
     }
 
+    /**
+     * This method returns the Window's Canvas.
+     * @return The window's Canvas object.
+     */
     public Canvas getCanvas(){
         return canvas;
     }
 
+    /**
+     * This method returns the Window's Scene.
+     * @return The window's Scene object.
+     */
     public Scene getScene() {
         return stage.getScene();
     }
 
     /**
-     * Display method that must be implemented by all subclasses containing the Window content.
+     * The abstract display method that must be implemented by all subclasses containing the Window content.
      */
     public abstract void display ();
 }
