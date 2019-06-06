@@ -105,7 +105,7 @@ public class StageManager extends Application {
                     while (true) {
                         oxford.play();
                         Game g = new Game(stage, lvl);
-                        g.getScore();
+                        g.run();
                         if (g.endStatus == 0 || g.endStatus == -1)
                             break;
                         else if (g.endStatus == 2)

@@ -176,33 +176,6 @@ public abstract class Window {
         return false;
     }
 
-    /**
-     * This method displays a video file in the window by passing a parameter of the file path of the video.
-     * @param path The path to the video file to be displayed
-     * @return A MediaPlayer object that is displaying the video that whose path the user passed as a parameter.
-     */
-    public MediaPlayer displayVideo (String path) {
-        Media media = null;
-        try {
-            media = new Media(new File(System.getProperty("user.dir"), "" + "src/"+path).toURI().toURL().toString());
-        } catch (MalformedURLException e) { e.printStackTrace(); }
-        catch (MediaException e) {
-            try {
-                media = new Media(new File(System.getProperty("user.dir"), "" + path).toURI().toURL().toString());
-            } catch (MalformedURLException e1) { e1.printStackTrace(); }
-        }
-        javafx.scene.media.MediaPlayer player = new   javafx.scene.media.MediaPlayer(media);
-        MediaView viewer = new MediaView(player);
-        root.getChildren().add(viewer);
-        player.setRate(0.5);
-        player.play();
-        return player;
-    }
-
-    /**
-     * This method returns the Window's Canvas.
-     * @return The window's Canvas object.
-     */
     public Canvas getCanvas(){
         return canvas;
     }
