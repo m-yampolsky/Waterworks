@@ -540,16 +540,56 @@ public class Game extends Window {
                 if (w.getYValue() >= 750) {
                     stop();
                     refresh();
-                    MediaPlayer p;
-                    if (level == 1)
-                        p = displayVideo("elements/ontarioLose.mp4");
-                    else if (level == 2)
-                        p = displayVideo("elements/erieLose.mp4");
-                    else
-                        p = displayVideo("elements/superiorLose.mp4");
-                    p.setOnEndOfMedia(() -> {
-                        hideStage();
-                    });
+                    if (level == 1) {
+                        ImageView lose = (ImageView)(Resources.get("ontarioLose"));
+                        drawImage(lose, 0, 0);
+                        startNanoTime = System.nanoTime();
+                        new AnimationTimer() {
+                            public void handle(long currentNanoTime) {
+                                t = (currentNanoTime - startNanoTime) / 300000000.0;
+                                if (t >= 7) {
+                                    stop();
+                                    hideStage();
+                                }
+                            }
+                        }.start();
+                    }
+                    else if (level == 2) {
+                        stop();
+                        refresh();
+                        if (level == 1) {
+                            ImageView lose = (ImageView) (Resources.get("erieLose"));
+                            drawImage(lose, 0, 0);
+                            startNanoTime = System.nanoTime();
+                            new AnimationTimer() {
+                                public void handle(long currentNanoTime) {
+                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
+                                    if (t >= 7) {
+                                        stop();
+                                        hideStage();
+                                    }
+                                }
+                            }.start();
+                        }
+                    }
+                    else {
+                        stop();
+                        refresh();
+                        if (level == 1) {
+                            ImageView lose = (ImageView) (Resources.get("erieLose"));
+                            drawImage(lose, 0, 0);
+                            startNanoTime = System.nanoTime();
+                            new AnimationTimer() {
+                                public void handle(long currentNanoTime) {
+                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
+                                    if (t >= 7) {
+                                        stop();
+                                        hideStage();
+                                    }
+                                }
+                            }.start();
+                        }
+                    }
                     won = -1;
                 }
                 if (jumpY <= -550) {
