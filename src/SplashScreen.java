@@ -43,29 +43,29 @@ public class SplashScreen extends Window
                     // load resources
                     Resources.add("standing", new AnimatedImage("elements/standing/standing", 180, 0.050));
                     Resources.add("walking", new AnimatedImageView("elements/walking/walking", 178, 0.070));
+
                     Resources.add("finalWasher", new AnimatedImageView("elements/washer/washer", 50, 0.050));
                     Resources.add("finalTub", new AnimatedImageView("elements/tub/tub", 50, 0.050));
                     Resources.add("finalSink", new AnimatedImageView("elements/sink/sink", 50, 0.050));
+
                     Resources.add("menuBackground", new Image("elements/menus/background.png"));
                     Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
                     Resources.add("menuTitle", new Image("elements/menus/menuLogo.png"));
-                    /*Resources.add("learnBtn", new ImageView("elements/menus/menuLearnBtn.png"));
-                    Resources.add("quizBtn", new ImageView("elements/menus/menuQuizBtn.png"));
-                    Resources.add("playBtn", new ImageView("elements/menus/menuPlayBtn.png"));
-                    Resources.add("exitBtn", new ImageView("elements/menus/menuExitBtn.png"));
-                    Resources.add("instructionsBtn", new ImageView("elements/menus/menuInstructionsBtn.png"));
-                    Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscoresBtn.png"));*/
                     Resources.add("instructionsBtn", new ImageView("elements/menus/menuInstructions.png"));
                     Resources.add("highscoresBtn", new ImageView("elements/menus/menuHighscores.png"));
                     Resources.add("learnBtn", new ImageView("elements/menus/menuLearn.png"));
                     Resources.add("quizBtn", new ImageView("elements/menus/menuQuiz.png"));
                     Resources.add("playBtn", new ImageView("elements/menus/menuPlay.png"));
                     Resources.add("exitBtn", new ImageView("elements/menus/menuExit.png"));
-                    Image[] in = new Image[4];
+                    Image[] in = new Image[8];
                     in[0] = new Image("elements/menus/instructions0.png");
                     in[1] = new Image("elements/menus/instructions1.png");
                     in[2] = new Image("elements/menus/instructions2.png");
                     in[3] = new Image("elements/menus/instructions3.png");
+                    in[4] = new Image("elements/menus/instructions4.png");
+                    in[5] = new Image("elements/menus/instructions5.png");
+                    in[6] = new Image("elements/menus/instructions6.png");
+                    in[7] = new Image("elements/menus/instructions7.png");
                     for (int i = 0; i < in.length; i++)
                         Resources.add("instructions"+i, in[i]);
                     Resources.add("instructionsForward", new ImageView ( "elements/menus/instructionsForward.png" ));
