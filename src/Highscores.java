@@ -34,7 +34,7 @@ public class Highscores extends Window {
         Image highscoresOntario = (Image)(Resources.get("highscoresOntario"));
         Image highscoresErie = (Image)(Resources.get("highscoresErie"));
         Image highscoresSuperior = (Image)(Resources.get("highscoresSuperior"));
-        ImageView backButton = (ImageView)(Resources.get("menuBtn"));
+        ImageView backButton = (ImageView)(Resources.get("backButton"));
         Sound click = (Sound)(Resources.get("click"));
 
         String[][]scores = new String[0][0];

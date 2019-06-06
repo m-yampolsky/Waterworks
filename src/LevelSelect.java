@@ -47,7 +47,7 @@ public class LevelSelect extends Window {
         ImageView lakeOntario = (ImageView)(Resources.get("lakeOntario"));
         ImageView lakeErie = (ImageView)(Resources.get("lakeErie"));
         ImageView lakeSuperior = (ImageView)(Resources.get("lakeSuperior"));
-        ImageView backButton = (ImageView)(Resources.get("menuBtn"));
+        ImageView backButton = (ImageView)(Resources.get("backButton"));
         Sound click = (Sound)(Resources.get("click"));
 
         // Listeners for MouseClick
@@ -109,9 +109,6 @@ public class LevelSelect extends Window {
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
-
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
 
                 // background image clears canvas
                 drawImage(background, 0, 0);
