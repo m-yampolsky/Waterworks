@@ -1,4 +1,5 @@
 import javafx.animation.AnimationTimer;
+import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
@@ -11,6 +12,7 @@ import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
 
+import java.applet.AppletContext;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -53,6 +55,7 @@ public class Game extends Window {
     private int onChar = 0;
     private boolean saved = false;
     private char[] charsName = name.toCharArray();
+    private long startNanoTime;
 
 
 
@@ -388,7 +391,7 @@ public class Game extends Window {
                 });
 
 
-        final long startNanoTime = System.nanoTime();
+        startNanoTime = System.nanoTime();
         new AnimationTimer()
         {
             public void handle(long currentNanoTime)
@@ -477,20 +480,64 @@ public class Game extends Window {
                 if (-380+jumpX >= 9450-(int)(t*40)) {
                     stop();
                     refresh();
-                    MediaPlayer p;
-                    if (level == 1)
-                        p = displayVideo("elements/ontarioWin.mp4");
-                    else if (level == 2)
-                        p = displayVideo("elements/erieWin.mp4");
-                    else
-                        p = displayVideo("elements/superiorWin.mp4");
+                    if (level == 1) {
+                        stop();
+                        refresh();
+                        if (level == 1) {
+                            ImageView lose = (ImageView) (Resources.get("ontarioWin"));
+                            drawImage(lose, 0, 0);
+                            startNanoTime = System.nanoTime();
+                            new AnimationTimer() {
+                                public void handle(long currentNanoTime) {
+                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
+                                    if (t >= 4) {
+                                        stop();
+                                        hideStage();
+                                    }
+                                }
+                            }.start();
+                        }
+                    }
+                    else if (level == 2) {
+                        stop();
+                        refresh();
+                        if (level == 1) {
+                            ImageView lose = (ImageView) (Resources.get("erieWin"));
+                            drawImage(lose, 0, 0);
+                            startNanoTime = System.nanoTime();
+                            new AnimationTimer() {
+                                public void handle(long currentNanoTime) {
+                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
+                                    if (t >= 4) {
+                                        stop();
+                                        hideStage();
+                                    }
+                                }
+                            }.start();
+                        }
+                    }
+                    else {
+                        stop();
+                        refresh();
+                        if (level == 1) {
+                            ImageView lose = (ImageView) (Resources.get("superiorWin"));
+                            drawImage(lose, 0, 0);
+                            startNanoTime = System.nanoTime();
+                            new AnimationTimer() {
+                                public void handle(long currentNanoTime) {
+                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
+                                    if (t >= 4) {
+                                        stop();
+                                        hideStage();
+                                    }
+                                }
+                            }.start();
+                        }
+                    }
                     won = 1;
                     score += w.getHeight();
-                    p.setOnEndOfMedia(() -> {
-                        hideStage();
-                    });
                 }
-                if (w.getYValue() == 750) {
+                if (w.getYValue() >= 750) {
                     stop();
                     refresh();
                     MediaPlayer p;
