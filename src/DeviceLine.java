@@ -5,18 +5,41 @@ import java.util.ArrayList;
 
 /**
  * The DeviceLine class
- * This class stores the image of the list of efficient and inefficient devices appearing on screen during the game.
+ * This class stores the image of the list of efficient and inefficient devices appearing on screen during the game, it stores an array representation of the pixels of the image, storing a 0 where there is no device, a 1 for an efficient device, and a -1 for an inefficient device..
  * @author Maria Yampolsky and Vansh Juneja
- * @version 1 05.27.2019
+ * @version 5 06.05.2019
+ *
+ * <pre>
+ * Version History:
+ * June 1:
+ * Maria wrote the DeviceLine class. She wrote the constructor, where she identified the colours present in efficient and inefficent objects (stored in effColours and ineffColours respectively). She also created a PixelReader object to read the pixels of the Image that every Deviceline object is associated with and to store whether no object, an efficeint object, or an inefficient object is found at that pixel location.
+ * June 2:
+ * Maria wrote the deviceType() method, which uses the colours 2-D array to return what kind of device is at a given pixel location.
+ * June 3:
+ * Maria corrected a bug in this class, by marking a pixel location in the colours 2D array with 0 if a pixel is White or Transparent. Originally, it only marked it with a 0 if it was transparent, but White also indicates the presence of no specific device type.
+ * </pre>
  */
 public class DeviceLine extends Image{
 
-    // 0 is no device, 1 is a good device, -1 is a bad device
+    /**
+     * This 2 dimensional array stores a pixel by pixel representation of the DeviceLine image. At each pixel location, 0 represents there being no device, 1 is an efficient device, -1 is an inefficient device
+     */
     private int[][] colours;
 
+    /**
+     * This stores a list of the colours present in all the efficient devices, used to identify their presence.
+     */
     private ArrayList<Color> effColours;
+
+    /**
+     * This stores a list of the colours present in all the inefficient devices, used to identify their presence.
+     */
     private ArrayList<Color> ineffColours;
 
+    /**
+     * This is the class constructor, it calls the Image class constructor to create an Image to associate with a DeviceLine object. It also determines whihc pixels of the DeviceLine image stores no device, an efficient device, and an inefficient device.
+     * @param path This represents the path location of the file that stores the image for the DeviceLine object.
+     */
     public DeviceLine (String path){
         super (path);
         PixelReader pixelReader = this.getPixelReader();
@@ -78,17 +101,15 @@ public class DeviceLine extends Image{
             }
         }
     }
+
+    /**
+     * This returns an int representation of what kind of device is stored at a particular pixel location in the DeviceLine image, by referencing the colours 2D array.
+     * @param x The x coordinate of the pixel location being searched for
+     * @param y The y coordinate of the pixel location being searched for
+     * @return 0 if no device is stored at the pixel, 1 if an efficient device is stored there, and -1 if an inefficient device is stored there.
+     */
     public int deviceType (int x, int y) {
         return colours[y][x];
-    }
-
-    public int getLength ()
-    {
-        return colours[0].length;
-    }
-
-    public int deviceTouched (){
-        return 0;
     }
 
 }
