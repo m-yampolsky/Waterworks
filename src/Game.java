@@ -156,9 +156,6 @@ public class Game extends Window {
      * This stores the character location in the name String that the user input is on.
      */
     private int onChar = 0;
-    private boolean saved = false;
-    private char[] charsName = name.toCharArray();
-    private long startNanoTime;
 
     /**
      * This stores whether the user input for name has been saved.
