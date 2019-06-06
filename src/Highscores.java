@@ -117,25 +117,23 @@ public class Highscores extends Window {
             String temp;
             String tempStr;
             input.close ();
-            for (int y = 0 ; y < 3 ; y++) //for loop 0
+            for (int y = 0 ; y < 3 ; y++)
             {
-                for (int x = 0 ; x < lengths [y] ; x++) //for loop 1
+                int x;
+                for (int i = 1; i < lengths[y]; i++)
                 {
-                    for (int i = 0 ; i < lengths [y] - 1 - x ; i++) //for loop 2 //sorts the array
+                    temp = scores[y][i];
+                    tempStr = names[y][i];
+                    x = i - 1;
+                    try{
+                    while (x >= 0 && Integer.parseInt(scores[y][x]) < Integer.parseInt(temp))
                     {
-                        try{
-                            if (Integer.parseInt(scores [y][i]) < Integer.parseInt(scores [y] [i + 1])) //if statement 4
-                            {
-                                temp = scores [y] [i + 1];
-                                tempStr = names [y] [i + 1];
-                                scores [y] [i + 1] = scores [y] [i];
-                                names [y] [i + 1] = names [y] [i];
-                                scores [y] [i] = temp;
-                                names [y] [i] = tempStr;
-
-                            }}
-                        catch (NumberFormatException e){}
-                    }
+                        scores[y][x + 1] = scores[y][x];
+                        names[y][x + 1] = names[y][x];
+                        x--;
+                    }}catch (NumberFormatException e){}
+                    scores[y][x + 1] = temp;
+                    names[y][x+1] = tempStr;
                 }
             }
 
@@ -193,9 +191,6 @@ public class Highscores extends Window {
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
-
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
 
                 // background image clears canvas
                 drawImage(background, 0, 0);
