@@ -48,14 +48,6 @@ public class SplashScreen extends Window
                     Resources.add("finalTub", new AnimatedImageView("elements/tub/tub", 50, 0.050));
                     Resources.add("finalSink", new AnimatedImageView("elements/sink/sink", 50, 0.050));
 
-                    Resources.add("ontarioLose", new ImageView("elements/ontarioLose.gif"));
-                    Resources.add("erieLose", new ImageView("elements/erieLose.gif"));
-                    Resources.add("superiorLose", new ImageView("elements/superiorLose.gif"));
-
-                    Resources.add("ontarioWin", new ImageView("elements/ontarioWin.gif"));
-                    Resources.add("erieWin", new ImageView("elements/erieWin.gif"));
-                    Resources.add("superiorWin", new ImageView("elements/superiorWin.gif"));
-
                     Resources.add("menuBackground", new Image("elements/menus/background.png"));
                     Resources.add("backLog", new Image("elements/menus/backgroundLog.png"));
                     Resources.add("menuTitle", new Image("elements/menus/menuLogo.png"));

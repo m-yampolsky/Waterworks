@@ -78,11 +78,6 @@ public class Game extends Window {
     private int level;
 
     /**
-     * This stores whether the user won, and which animation to play, depending on which level they won in.
-     */
-    private int won = 0;
-
-    /**
      * This stores the avatar's height above the water level.
      */
     private int jumpY;
@@ -113,14 +108,19 @@ public class Game extends Window {
     private double t = 0;
 
     /**
-     * This stores the avatar as it is displaying on screen.
+     * This stores the avatar frame as it is displaying on screen.
      */
     private ImageView charFrame;
 
     /**
-     * This stores the final frame of the avatar's walking animation.
+     * This stores the previous frame of the avatar's walking animation.
      */
     private ImageView lastCharFrame;
+
+    /**
+     * This stores the next frame of the avatar's walking animation.
+     */
+    private ImageView nextCharFrame;
 
     /**
      * This stores the frame of the devices where they are located on the screen.
@@ -199,16 +199,10 @@ public class Game extends Window {
     /**
      * This method puts together all the methods of this class to run a game, and play the correct win or lose result, depending on the result of the game. The methods win() and lose() are called to display the correct animations and the correct final screens.
      */
-    public void getScore() {
+    public void run() {
         display();
         showAndWait();
         refresh();
-        if (won > 0)
-            win();
-        else if (won < 0)
-            lose();
-        if (won != 0)
-            showAndWait();
     }
 
 
@@ -411,7 +405,6 @@ public class Game extends Window {
                     }
                 });
 
-
     }
 
 
@@ -563,10 +556,12 @@ public class Game extends Window {
                 drawImage( deviceImg, 0, w.getYValue()-700);
 
                 //character walking animation
+                lastCharFrame = charFrame;
+                if (nextCharFrame != null)
+                    charFrame = nextCharFrame;
+                nextCharFrame = walking.getFrame(t);
                 if (charFrame != null)
-                    lastCharFrame = charFrame;
-                charFrame = walking.getFrame(t); //gets the next frame of the animation
-                drawImage(charFrame, -380+jumpX, w.getYValue()-490-jumpY);
+                    drawImage(charFrame, -380+jumpX, w.getYValue()-490-jumpY);
                 remove(lastCharFrame);
 
                 if (finalDevFrame != null)
@@ -622,124 +617,13 @@ public class Game extends Window {
                 if (-380+jumpX >= 9450-(int)(t*40)) { //stops the game movement, because the player has win
                     stop();
                     refresh();
-                    if (level == 1) {
-                        stop();
-                        refresh();
-                        if (level == 1) {
-                            ImageView lose = (ImageView) (Resources.get("ontarioWin"));
-                            drawImage(lose, 0, 0);
-                            startNanoTime = System.nanoTime();
-                            new AnimationTimer() {
-                                public void handle(long currentNanoTime) {
-                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
-                                    if (t >= 4) {
-                                        stop();
-                                        hideStage();
-                                    }
-                                }
-                            }.start();
-                        }
-                    }
-                    else if (level == 2) {
-                        stop();
-                        refresh();
-                        if (level == 1) {
-                            ImageView lose = (ImageView) (Resources.get("erieWin"));
-                            drawImage(lose, 0, 0);
-                            startNanoTime = System.nanoTime();
-                            new AnimationTimer() {
-                                public void handle(long currentNanoTime) {
-                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
-                                    if (t >= 4) {
-                                        stop();
-                                        hideStage();
-                                    }
-                                }
-                            }.start();
-                        }
-                    }
-                    else {
-                        stop();
-                        refresh();
-                        if (level == 1) {
-                            ImageView lose = (ImageView) (Resources.get("superiorWin"));
-                            drawImage(lose, 0, 0);
-                            startNanoTime = System.nanoTime();
-                            new AnimationTimer() {
-                                public void handle(long currentNanoTime) {
-                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
-                                    if (t >= 4) {
-                                        stop();
-                                        hideStage();
-                                    }
-                                }
-                            }.start();
-                        }
-                    }
-                    won = 1;
+                    win();
                     score += w.getHeight();
                 }
-                if (w.getYValue() >= 750) {
+                if (w.getYValue() >= 750 || jumpY <= -550) { //stops the game movement, because the player has lost
                     stop();
                     refresh();
-                    if (level == 1) {
-                        ImageView lose = (ImageView)(Resources.get("ontarioLose"));
-                        drawImage(lose, 0, 0);
-                        startNanoTime = System.nanoTime();
-                        new AnimationTimer() {
-                            public void handle(long currentNanoTime) {
-                                t = (currentNanoTime - startNanoTime) / 300000000.0;
-                                if (t >= 7) {
-                                    stop();
-                                    hideStage();
-                                }
-                            }
-                        }.start();
-                    }
-                    else if (level == 2) {
-                        stop();
-                        refresh();
-                        if (level == 1) {
-                            ImageView lose = (ImageView) (Resources.get("erieLose"));
-                            drawImage(lose, 0, 0);
-                            startNanoTime = System.nanoTime();
-                            new AnimationTimer() {
-                                public void handle(long currentNanoTime) {
-                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
-                                    if (t >= 7) {
-                                        stop();
-                                        hideStage();
-                                    }
-                                }
-                            }.start();
-                        }
-                    }
-                    else {
-                        stop();
-                        refresh();
-                        if (level == 1) {
-                            ImageView lose = (ImageView) (Resources.get("erieLose"));
-                            drawImage(lose, 0, 0);
-                            startNanoTime = System.nanoTime();
-                            new AnimationTimer() {
-                                public void handle(long currentNanoTime) {
-                                    t = (currentNanoTime - startNanoTime) / 300000000.0;
-                                    if (t >= 7) {
-                                        stop();
-                                        hideStage();
-                                    }
-                                }
-                            }.start();
-                        }
-                    }
-                    won = -1;
-                }
-
-                if (jumpY <= -550) { //stops the game movement, because the player has lost
-                    stop();
-                    refresh();
-                    won = -1;
-                    hideStage();
+                    lose();
                 }
 
                 if (endStatus == -1) { //stops the game movement, because the player has exited
