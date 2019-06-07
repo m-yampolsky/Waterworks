@@ -39,7 +39,7 @@ public class Menu extends Window
     /**
      * This method displays all the graphics of the Menu window
      */
-    private void display() {
+    public void display() {
 
         Image menuBackground = (Image)(Resources.get("menuBackground"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
