@@ -42,6 +42,7 @@ import javafx.stage.WindowEvent;
  * Vansh added Lake Superior and Lake Erie Game graphics to Resources.
  * June 2:
  * Vansh moved all Resource loading to the Splashscreen Window's loading screen
+ * </pre>
  */
 public class StageManager extends Application {
 

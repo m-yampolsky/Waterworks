@@ -55,7 +55,7 @@ public class Learn extends Window {
     private int times = 0;
 
     /**
-     * This stores whether the conveyor belt should be moving, and in which direction. 0 represents not moving, >0 represents moving left, and <0 represents moving right.
+     * This stores whether the conveyor belt should be moving, and in which direction. 0 represents not moving, more than 0 represents moving left, and less than 0 represents moving right.
      */
     private int go = 0;
 
@@ -65,12 +65,12 @@ public class Learn extends Window {
     private boolean right = false;
 
     /**
-     * This stores whether a description is being shown that must be matched, and if so then which one. >0 represents the nth device description, and <0  represents no current description to be matched.
+     * This stores whether a description is being shown that must be matched, and if so then which one. more than 0 represents the nth device description, and less than 0  represents no current description to be matched.
      */
     private int current = -1;
 
     /**
-     * This stores whether the user is done -> all descriptions have been matched with their proper devices.
+     * This stores whether the user is done -- all descriptions have been matched with their proper devices.
      */
     private boolean done = false;
 

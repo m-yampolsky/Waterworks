@@ -160,6 +160,7 @@ abstract class Window {
     /**
      * Removes an individual component from the screen.
      * @param e The Node object to be removed from the screen.
+     * @return true if the Node was removed, false otherwise.
      */
     boolean remove(Node e) {
         if (root.getChildren().contains(e)) {
