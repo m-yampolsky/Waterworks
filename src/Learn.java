@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * <pre>
  * Version History:
- * May 18:
+ * May 17:
  * Vansh created the class.
  * May 20:
  * Vansh implemented Learn as an AniamtedImage where an arrow is pressed to move forward in the animation, and a menu button to go back.
@@ -40,8 +40,7 @@ import javafx.stage.Stage;
  * June 1:
  * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button.
  * June 2:
- * Vansh fixed bug where done boolean became true before user finished matching all descriptions.
- * Vansh added button to go to Quiz when finished matching descriptions.
+ * Vansh fixed bug where done boolean became true before user finished matching all descriptions, and added button to go to Quiz when finished matching descriptions.
  * </pre>
  */
 public class Learn extends Window {

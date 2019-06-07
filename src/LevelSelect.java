@@ -5,9 +5,21 @@ import javafx.scene.image.ImageView;
 
 /**
  * The LevelSelect class
- * This class represents the LevelSelect window where the user will choose which level they want to play.
+ * This class represents the LevelSelect window where the user will choose which level they want to play. Three different ImageView Object buttons showing previews of all 3 levels are displayed.
+ * Clicking on any of these, will take ou to this level in the Game class. There is also an ImageView button under the title to go back to the menu, backButton. There is an AnimatedImage of
+ * Bayou (the cactus) standing happily in the bottom left on the background log, just like the Menu window.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 2 05.27.2019
+ * @version 5 06.06.2019
+ *
+ * <pre>
+ * Version History:
+ * May 17:
+ * Vansh created the class.
+ * May 19:
+ * Maria implemented the title, menu ImageView button, level ImageView buttons, and Bayou's standing animation.
+ * May 23:
+ * Vansh implemented change of cursor to click hand when hovering over buttons.
+ * </pre>
  */
 public class LevelSelect extends Window {
 
@@ -17,6 +29,7 @@ public class LevelSelect extends Window {
     private int choice;
 
     /**
+     * This is the class constructor. It calls the super constructor of the Window class, and sets initial values.
      * @param stg The JavaFX Stage to display to.
      */
     public LevelSelect(Stage stg) {
@@ -25,6 +38,7 @@ public class LevelSelect extends Window {
     }
 
     /**
+     * This is the method that shows the levelSelect graphics, gets the user's choice, and returns it to the StageManager
      * @return The level that the user has chosen to play.
      */
     public int getChoice() {
@@ -35,7 +49,7 @@ public class LevelSelect extends Window {
     }
 
     /**
-     * This method will display all the graphics of the LevelSelect window
+     * This method will display all the graphics of the LevelSelect window. It allows the user to click one of the levels shown, or the back button to return back to the Menu Window.
      */
     private void display()
     {
@@ -48,7 +62,7 @@ public class LevelSelect extends Window {
         ImageView backButton = (ImageView)(Resources.get("backButton"));
         Sound click = (Sound)(Resources.get("click"));
 
-        // Listeners for MouseClick
+        // Listeners for MouseClicked
         backButton.setOnMouseClicked(e -> {
             click.play();
             refresh();
@@ -69,22 +83,24 @@ public class LevelSelect extends Window {
             refresh();
             choice = 3;
         });
-        // Listeners for MouseEnter
+        // Listeners for MouseEntered
         backButton.setOnMouseEntered(e -> setCursor(1));
         lakeOntario.setOnMouseEntered(e -> setCursor(1));
         lakeErie.setOnMouseEntered(e -> setCursor(1));
         lakeSuperior.setOnMouseEntered(e -> setCursor(1));
-        // Listeners for MouseExit
+        // Listeners for MouseExited
         backButton.setOnMouseExited(e -> setCursor(0));
         lakeOntario.setOnMouseExited(e -> setCursor(0));
         lakeErie.setOnMouseExited(e -> setCursor(0));
         lakeSuperior.setOnMouseExited(e -> setCursor(0));
 
+        // draw level buttons and back button
         drawImage(lakeOntario, -30, 100);
         drawImage(lakeErie, 170, 100);
         drawImage(lakeSuperior, 370, 100);
         drawImage(backButton, -380, -160);
 
+        // Bayou standing animation
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
 
         final long startNanoTime = System.nanoTime();
@@ -94,10 +110,12 @@ public class LevelSelect extends Window {
 
                 // background image clears canvas
                 drawImage(background, 0, 0);
+                // background log, standing animation, and title
                 drawImage(menuBackgroundLog, 0, 690);
                 drawImage(playTitle, 40, 30);
                 drawImage(standing.getFrame(t), -90, 275);
 
+                // stop AnimationTimer and execute hideStage method if Window class to trigger stage.showAndWait() in StageManager to continue.
                 if (choice != 0) {
                     stop();
                     hideStage();

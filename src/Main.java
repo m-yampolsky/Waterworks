@@ -6,9 +6,11 @@ import javafx.application.Application;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
+ * <pre>
  * Version History
- * May 18:
- * Maria created Main class with public static void main implementation.
+ * May 17:
+ * Vansh created Main class with public static void main implementation.
+ * </pre>
  */
 class Main {
     /**
