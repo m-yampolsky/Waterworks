@@ -5,7 +5,7 @@ import javafx.stage.Stage;
 
 /**
  * The Learn class
- * This class represents the window that has all the graphics for the first room of the Waterworks program. It extends the abstract Window class to use its basic mechanics methods for displaying, hiding and clearing the screen.
+ * This class represents the window that has all the graphics and the mechanics for the first room of the Waterworks program. It extends the abstract Window class to use its basic mechanics methods for displaying, hiding and clearing the screen.
  * This class starts in an empty spot on a conveyor belt, with all devices to the right. There are devices drawn on the left, to give the illusion that the belt is circular, but the xtime variable that controls the belt position wraps
  * around making it seem like there are actually devices on the left side. The same (reversed), is done when the user presses on the learnLeft and learnRight ImageView buttons to navigate to the farthest right devices on the belt.
  * When the room is entered, there is also a water device description a the top of the window. This description corresponds with the nth device on the belt, where n is represented by the global integer current.
@@ -86,7 +86,7 @@ public class Learn extends Window {
 
 
     /**
-     * This is the class constructor. It calls the super constructor of the Window class, and sets initial values.
+     * This is the class constructor. It calls the super constructor of the Window class.
      * @param stg The JavaFX Stage to display to.
      */
     public Learn(Stage stg) {
