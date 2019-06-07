@@ -5,14 +5,35 @@ import javafx.stage.Stage;
 
 /**
  * The Splashscreen class
- * This class represents the window with an animation that plays at the start of the program.
+ * This class represents the window with an animation that plays at the start of the program with the Pistachio Labs logo, and then loads program Resources to avoid lag during runtime.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 2 05.27.2019
+ * @version 5 06.06.2019
+ *
+ * <pre>
+ * Version History:
+ * May 17:
+ * Vansh created Splashscreen, and implemented the animation inside the constructor.
+ * May 18:
+ * Vansh moved the animation into a display() method.
+ * May 23:
+ * Vansh added the loading screen implementation.
+ * May 26:
+ * Vansh added Resource loading for large aniamtions into the loading screen section.
+ * June 2:
+ * Vansh moved all of the Resource loading from StageManager (before Window was ever shown), to the loading screen section.
+ * June 4:
+ * Vansh fixed bug where Splashscreen would sometimes skip the loading screen and get stuck in an animation loop.
+ * Maria added Resource loading for new win screen elements and added DeviceLine Resource loading.
+ * June 5:
+ * Maria added Resource loading for new win screen instruction text.
+ * Vansh added Resource loading for new instructions Images.
+ * </pre>
  */
 public class SplashScreen extends Window
 {
 
     /**
+     * This is the class constructor. It calls the super constructor of the Window class.
      * @param stg The JavaFX Stage to display to.
      */
     public SplashScreen (Stage stg) {
@@ -20,8 +41,9 @@ public class SplashScreen extends Window
     }
 
     /**
-     * This method displays the animation for a period of time, and then moves on to the Main Menu
+     * This method displays the animation for a period of time, shows the loading screen (last frame of animation), and then moves on to the Main Menu.
      */
+    @Override
     public void display () {
 
         AnimatedImage splashscreen = ((AnimatedImage)Resources.get("splashscreen"));
@@ -32,11 +54,11 @@ public class SplashScreen extends Window
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
 
+                // if the frame being displayed is less than the 167th, then clean the screen, and draw it
                 if (splashscreen.frame(t) < 167) {
                     clean();
                     drawImage(splashscreen.getSplashFrame(t), 0, 0);
-                }
-                if (splashscreen.frame(t) >= 168) {
+                } else { // otherwise, load resources (because the loading screen is being displayed), then stop the AnimationTimer and hide the stage.
                     // load resources
                     Resources.add("standing", new AnimatedImage("elements/standing/standing", 180, 0.050));
                     Resources.add("walking", new AnimatedImageView("elements/walking/walking", 178, 0.070));
