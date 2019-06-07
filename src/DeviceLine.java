@@ -36,9 +36,9 @@ class DeviceLine extends Image{
         colours = new int [(int)(getHeight())][(int)(getWidth())];
 
         // This stores a list of the colours present in all the inefficient devices, used to identify their presence.
-        ArrayList<Color> ineffColours = new ArrayList<>();
+        ArrayList<Color> ineffColours = new ArrayList<Color>();
         // This stores a list of the colours present in all the efficient devices, used to identify their presence.
-        ArrayList<Color> effColours = new ArrayList<>();
+        ArrayList<Color> effColours = new ArrayList<Color>();
 
         ineffColours.add(Color.web("#fedd59"));
         ineffColours.add(Color.web("#c8e165"));

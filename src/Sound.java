@@ -28,7 +28,7 @@ class Sound {
     /**
      * This stores a static List of all AudioClips created from this class.
      */
-    private static final ArrayList<AudioClip> all = new ArrayList<>();
+    private static final ArrayList<AudioClip> all = new ArrayList<AudioClip>();
 
     /**
      * This is the class constructor. It sets the global AudioClip to the Sound at the specified path, then adds it to the static all ArrayList.

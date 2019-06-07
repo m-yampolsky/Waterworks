@@ -404,8 +404,9 @@ public class Game extends Window {
      * There is also a menu button present during this method to allow for the user to return to the main menu. This method also controls scoring. The score is subtracted from everytime the
      * user comes in contact with an inefficient device and everytime the avatar jumps. It is added to every time they come in contact with an efficient water device.
      */
-    private void display() {
-        ArrayList<String> input = new ArrayList<>();
+    @Override
+    public void display() {
+        ArrayList<String> input = new ArrayList<String>();
 
         Image lakeBackground;
         Image dirtBack = (Image)(Resources.get("dirtBack"));
