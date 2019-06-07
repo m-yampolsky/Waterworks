@@ -33,9 +33,9 @@ public class Quiz extends Window {
     private boolean lost = false;
     private int x, y;
     private ImageView device = null;
-    private final ArrayList<ImageView> effDevices;
-    private final ArrayList<ImageView> ineffDevices;
-    private final ImageView background = (ImageView) (Resources.get("quizBack"));
+    private ArrayList<ImageView> effDevices = new ArrayList<ImageView>();;
+    private ArrayList<ImageView> ineffDevices = new ArrayList<ImageView>();;
+    private ImageView background = (ImageView) (Resources.get("quizBack"));
     private ImageView tub = new ImageView ("elements/game/tub.png");
     private ImageView sink = new ImageView ("elements/game/sink.png");
     private ImageView cWasher = new ImageView ("elements/game/washer.png");
@@ -56,8 +56,6 @@ public class Quiz extends Window {
 
     public Quiz(Stage stg) {
         super(stg, "Quiz");
-        effDevices = new ArrayList<>();
-        ineffDevices = new ArrayList<>();
         playButtonClicked = false;
     }
 
@@ -528,8 +526,8 @@ public class Quiz extends Window {
         Image checkBack = (Image)(Resources.get("checkBack"));
         Image checkMark = (Image)(Resources.get("checkMark"));
         Image wrong = (Image)(Resources.get("wrong"));
-        ArrayList<ImageView> correctEff = new ArrayList<>();
-        ArrayList<ImageView> correctIneff = new ArrayList<>();
+        ArrayList<ImageView> correctEff = new ArrayList<ImageView>();
+        ArrayList<ImageView> correctIneff = new ArrayList<ImageView>();
 
         correctEff.add (wCan);
         correctEff.add (shower);

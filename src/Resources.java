@@ -16,7 +16,7 @@ class Resources {
     /**
      * The HashMap storing the relationships between each String identifier, and its corresponding resource Object.
      */
-    private static HashMap<String, Object> resources = new HashMap<>();
+    private static HashMap<String, Object> resources = new HashMap<String, Object>();
 
     /**
      * This method is used to add Objects to the static resources Hashmap with a String identifier, to be retrieved later on.
