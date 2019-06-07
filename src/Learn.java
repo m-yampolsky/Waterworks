@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  *
  * <pre>
  * Version History:
- * May 18:
+ * May 17:
  * Vansh created the class.
  * May 20:
  * Vansh implemented Learn as an AniamtedImage where an arrow is pressed to move forward in the animation, and a menu button to go back.
@@ -40,13 +40,12 @@ import javafx.stage.Stage;
  * June 1:
  * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button.
  * June 2:
- * Vansh fixed bug where done boolean became true before user finished matching all descriptions.
- * Vansh added button to go to Quiz when finished matching descriptions.
+ * Vansh fixed bug where done boolean became true before user finished matching all descriptions, and added button to go to Quiz when finished matching descriptions.
  * </pre>
  */
 public class Learn extends Window {
     /**
-     * This stores the x-axis movement of the conveyer belt, where 0 is the starting position.
+     * This stores the x-axis movement of the conveyor belt, where 0 is the starting position.
      */
     private int xtime = 0;
 
@@ -240,11 +239,11 @@ public class Learn extends Window {
                     }
                 }
 
-                // if conveyer belt is moving, and a wrong symbol can be (and now has been) removed, draw a check button in its place.
+                // if conveyor belt is moving, and a wrong symbol can be (and now has been) removed, draw a check button in its place.
                 if (go != 0 && remove(learnWrong)) {
                     drawImage(learnCheck, -15, 260);
                 }
-                // if conveyer belt is moving left, draw the proper images in the right spots, and remove any that are not needed.
+                // if conveyor belt is moving left, draw the proper images in the right spots, and remove any that are not needed.
                 if (go == 1) {
                     xtime += 12;
                     if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3600) {
@@ -256,7 +255,7 @@ public class Learn extends Window {
                             drawImage(learnCheck, -15, 260);
                         right = times - 1 == current;
                     }
-                // if conveyer belt is moving right, draw the proper images in the right spots, and remove any that are not needed.
+                // if conveyor belt is moving right, draw the proper images in the right spots, and remove any that are not needed.
                 } else if (go == -1) {
                     xtime -= 12;
                     if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3050 || times == 10 && xtime <= 3310 || times == 11 && xtime <= 3600) {

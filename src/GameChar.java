@@ -25,7 +25,7 @@ import javafx.scene.image.Image;
  * Once again, Vansh modified the values used in calculation for the isTouchingDevice() method, as the device detection still had room for improvement.
  * </pre>
  */
-public class GameChar extends Image
+class GameChar extends Image
 {
 
   /**
@@ -71,28 +71,28 @@ public class GameChar extends Image
       for (int x = startX; x <startX+width; x++) {
         try {
           type = dvcLine.deviceType(x, startY); //tests the base of the avatar
-        } catch (ArrayIndexOutOfBoundsException e) {}
+        } catch (ArrayIndexOutOfBoundsException ignored) {}
         if (type != 0) //if type is either an efficient or inefficient device
           return type;
       }
       for (int x = startX; x <startX+width; x++) {
         try {
           type = dvcLine.deviceType(x, startY+height); //tests the top of the avatar
-        } catch (ArrayIndexOutOfBoundsException e) {}
+        } catch (ArrayIndexOutOfBoundsException ignored) {}
         if (type != 0) //if type is either an efficient or inefficient device
           return type;
       }
-      for (int y = startX; y <startY+width; y++) {
+      for (int y = startY; y <startY+width; y++) {
         try {
           type = dvcLine.deviceType(startX, y); //tests the side of the avatar
-        } catch (ArrayIndexOutOfBoundsException e) {}
+        } catch (ArrayIndexOutOfBoundsException ignored) {}
         if (type != 0) //if type is either an efficient or inefficient device
           return type;
       }
-      for (int y = startX; y <startY+width; y++) {
+      for (int y = startY; y <startY+width; y++) {
         try {
           type = dvcLine.deviceType(startX+width, y); //tests the side of the avatar
-        } catch (ArrayIndexOutOfBoundsException e) {}
+        } catch (ArrayIndexOutOfBoundsException ignored) {}
         if (type != 0) //if type is either an efficient or inefficient device
           return type;
       }

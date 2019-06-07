@@ -43,12 +43,12 @@ public class Highscores extends Window {
      */
     private boolean back;
 
-    final File SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
+    private final File SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
 
     /**
      * This stores a backup file location of the high score storing file, in case the directory of SCORES_FILE is inaccessible.
      */
-    final File SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+    private final File SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -63,7 +63,6 @@ public class Highscores extends Window {
      * more than the top ten scores, and to store them in an almost sorted order. The sort used is Insertion sort, because it works well for short lists, especially those that are already partially
      * sorted. This will be the case with the high scores file, as it gets updated with a sorted list every time this method is called.
      */
-    @Override
     public void display()
     {
         Image background = (Image)(Resources.get("menuBackground"));
@@ -87,13 +86,9 @@ public class Highscores extends Window {
             click.play();
         });
         // Listener for MouseEnter
-        backButton.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
+        backButton.setOnMouseEntered(e -> setCursor(1));
         // Listener for MouseExit
-        backButton.setOnMouseExited(e -> {
-            setCursor(0);
-        });
+        backButton.setOnMouseExited(e -> setCursor(0));
 
         drawImage(backButton, -380, -160); //button to return to menu
         String line = "";
@@ -168,14 +163,14 @@ public class Highscores extends Window {
                         scores[y][x + 1] = scores[y][x];
                         names[y][x + 1] = names[y][x];
                         x--;
-                    }}catch (NumberFormatException e){}
+                    }}catch (NumberFormatException ignored){}
                     scores[y][x + 1] = temp;
                     names[y][x+1] = tempStr;
                 }
             }
 
         }
-        catch (IOException e){
+        catch (IOException ignored){
             try{
                 BufferedReader input = new BufferedReader (new FileReader (SCORES_FILE_BACKUP)); //if first file fails, second file will be read
                 while (line != null)
@@ -245,18 +240,18 @@ public class Highscores extends Window {
                                 scores[y][x + 1] = scores[y][x];
                                 names[y][x + 1] = names[y][x];
                                 x--;
-                            }}catch (NumberFormatException error){}
+                            }}catch (NumberFormatException ignored2){}
                         scores[y][x + 1] = temp;
                         names[y][x+1] = tempStr;
                     }
                 }
 
             }
-            catch (IOException error){}
+            catch (IOException ignored2){}
         }
 
-        String text = "";
-        Text list[][] = {new Text[Math.min(lengths[0], 10)], new Text[Math.min(lengths[1], 10)], new Text[Math.min(lengths[0], 10)]}; // 2 dimensional array to store output Text objects for the high score lists
+        StringBuilder text = new StringBuilder();
+        Text[][] list = {new Text[Math.min(lengths[0], 10)], new Text[Math.min(lengths[1], 10)], new Text[Math.min(lengths[0], 10)]}; // 2 dimensional array to store output Text objects for the high score lists
         for (int r = 0; r < list.length; r++)
         {
             for (int c = 0; c < list[r].length; c++)
@@ -264,12 +259,12 @@ public class Highscores extends Window {
                 list [r][c] = new Text();
                 if (r < names.length && c < names[r].length)
                 {
-                    text += names[r][c];
+                    text.append(names[r][c]);
                     for (int i = 0; i < 6 - scores[r][c].length(); i++)
-                        text += " ";
-                    text += scores[r][c]; //combine name and score to form output
-                    list[r][c].setText(text);
-                    text = "";
+                        text.append(" ");
+                    text.append(scores[r][c]); //combine name and score to form output
+                    list[r][c].setText(text.toString());
+                    text = new StringBuilder();
                 }
                 list[r][c].setFont(Font.font("Consolas", 20));
                 list[r][c].setFill(Color.WHITE);
@@ -298,7 +293,7 @@ public class Highscores extends Window {
                 output.println (scores[2][i]);
             }
             output.close ();}
-        catch (IOException e){
+        catch (IOException ignored){
             try{
                 PrintWriter output = new PrintWriter (new BufferedWriter (new FileWriter (SCORES_FILE_BACKUP, false))); //rewrite to the backup file if the first file fails
                 for (int i = 0; i < Math.min(lengths[0], 10); i++)
@@ -320,7 +315,7 @@ public class Highscores extends Window {
                     output.println (scores[2][i]);
                 }
                 output.close ();}
-            catch (IOException error){}
+            catch (IOException ignored2){}
         }
 
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));

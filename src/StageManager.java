@@ -33,8 +33,6 @@ public class StageManager extends Application {
         stage.setMaxHeight(790);
         stage.setMaxWidth(1016);
 
-        int quizScore = 0;
-
         StackPane root = new StackPane();
         Scene scene = new Scene(root, 1000, 750, Color.WHITE);
 
@@ -42,9 +40,7 @@ public class StageManager extends Application {
         Canvas canvas = new Canvas(1000, 750);
         root.getChildren().add(canvas);
 
-        stage.setOnCloseRequest((WindowEvent event1) -> {
-            System.exit(0);
-        });
+        stage.setOnCloseRequest((WindowEvent event1) -> System.exit(0));
 
         stage.setScene(scene);
 
@@ -92,9 +88,7 @@ public class StageManager extends Application {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                if (lvl == -1)
-                    continue;
-                else if (lvl >= 1 && lvl <= 3) {
+                if (lvl >= 1 && lvl <= 3) {
                    hotel.stop();
                     while (true) {
                         oxford.play();

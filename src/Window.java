@@ -38,33 +38,33 @@ import javafx.stage.Stage;
  * June 5:
  * Vansh removed the displayVideo() method, as it became unnecessary after we modified the lose and win screens of the program.
  */
-public abstract class Window {
+abstract class Window {
     /**
      * The Window's JavaFX Stage.
      */
-    private Stage stage;
+    private final Stage stage;
 
     /**
      * The JavaFX Stage's StackPane on which to add components like ImageView Objects, Canvases, etc.
      */
-    private StackPane root;
+    private final StackPane root;
 
     /**
      * The Canvas added to the StackPane, containing the used GraphicContext.
      */
-    private Canvas canvas;
+    private final Canvas canvas;
 
     /**
      * The JavaFX Canvas's GraphicContext on which to draw static images, text, etc.
      */
-    private GraphicsContext gc;
+    private final GraphicsContext gc;
 
     /**
      * This is the class constructor, and it uses a JavaFX Stage to set up the screen with all of its components. It adds a Canvas to the screen and makes it a blank white Canvas.
      * @param stg The JavaFX Stage to display to.
      * @param name The current Window's name
      */
-    public Window (Stage stg, String name) {
+    Window(Stage stg, String name) {
         stage = stg;
 
         stage.setTitle("Waterworks - " + name);
@@ -85,7 +85,7 @@ public abstract class Window {
      * dragged.
      * @param state Determines the state that the cursor is in. 1 represents a "CLICKABLE" icon, 2 represents a "DRAGGING" icon, and any other value represents a regular cursor arrow.
      */
-    public void setCursor (int state) {
+    void setCursor(int state) {
         if (state == 1)
             stage.getScene().setCursor(Cursor.HAND);
         else if (state == 2)
@@ -97,14 +97,14 @@ public abstract class Window {
     /**
      * Draw a white rectangle covering entire GraphicContext. This method is used to clear the screen and erase all the graphics that are on it.
      */
-    public void clean() {
+    void clean() {
         gc.fillRect(0, 0, 1000, 750);
     }
 
     /**
      * This method hides the JavaFX Window Stage.
      */
-    public void hideStage() {
+    void hideStage() {
         stage.hide();
     }
 
@@ -123,7 +123,7 @@ public abstract class Window {
      * @param y The Y position of the ImageView Object in the window.
      * @param img The ImageView Object to display.
      */
-    public void drawImage (ImageView img, int x, int y) {
+    void drawImage(ImageView img, int x, int y) {
         if (!root.getChildren().contains(img)) {
             img.setTranslateX(x);
             img.setTranslateY(y);
@@ -137,11 +137,11 @@ public abstract class Window {
      * @param y The Y position of the Image Object in the window.
      * @param img The Image Object to display.
      */
-    public void drawImage (Image img, int x, int y) {
+    void drawImage(Image img, int x, int y) {
         gc.drawImage(img, x, y);
     }
 
-    public void add (Node node, int x, int y){
+    void add(Node node, int x, int y){
         if (!root.getChildren().contains(node)) {
             node.setTranslateX(x);
             node.setTranslateY(y);
@@ -152,7 +152,7 @@ public abstract class Window {
     /**
      * Clear Stage StackPane of all components, then re-add the Canvas. This clears and resets the screen completely.
      */
-    public void refresh () {
+    void refresh() {
         root.getChildren().clear();
         root.getChildren().add(canvas);
     }
@@ -161,7 +161,7 @@ public abstract class Window {
      * Removes an individual component from the screen.
      * @param e The Node object to be removed from the screen.
      */
-    public boolean remove (Node e) {
+    boolean remove(Node e) {
         if (root.getChildren().contains(e)) {
             root.getChildren().remove(e);
             return true;
@@ -169,7 +169,7 @@ public abstract class Window {
         return false;
     }
 
-    public Canvas getCanvas(){
+    Canvas getCanvas(){
         return canvas;
     }
 
@@ -177,12 +177,8 @@ public abstract class Window {
      * This method returns the Window's Scene.
      * @return The window's Scene object.
      */
-    public Scene getScene() {
+    Scene getScene() {
         return stage.getScene();
     }
 
-    /**
-     * The abstract display method that must be implemented by all subclasses containing the Window content.
-     */
-    public abstract void display ();
 }

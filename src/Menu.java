@@ -3,8 +3,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import javax.swing.*;
-
 /**
  * The Menu class
  * This class stores an object that represents the Menu window of the Waterworks program
@@ -41,7 +39,7 @@ public class Menu extends Window
     /**
      * This method displays all the graphics of the Menu window
      */
-    public void display() {
+    private void display() {
 
         Image menuBackground = (Image)(Resources.get("menuBackground"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
@@ -84,43 +82,19 @@ public class Menu extends Window
             click.play();
         });
         // Listener for MouseEnter
-        menuLearnBtn.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        menuQuizBtn.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        menuPlayBtn.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        menuHighscoresBtn.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        menuExitBtn.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        menuInstructionsBtn.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
+        menuLearnBtn.setOnMouseEntered(e -> setCursor(1));
+        menuQuizBtn.setOnMouseEntered(e -> setCursor(1));
+        menuPlayBtn.setOnMouseEntered(e -> setCursor(1));
+        menuHighscoresBtn.setOnMouseEntered(e -> setCursor(1));
+        menuExitBtn.setOnMouseEntered(e -> setCursor(1));
+        menuInstructionsBtn.setOnMouseEntered(e -> setCursor(1));
         // Listener for MouseExit
-        menuLearnBtn.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        menuQuizBtn.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        menuPlayBtn.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        menuHighscoresBtn.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        menuExitBtn.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        menuInstructionsBtn.setOnMouseExited(e -> {
-            setCursor(0);
-        });
+        menuLearnBtn.setOnMouseExited(e -> setCursor(0));
+        menuQuizBtn.setOnMouseExited(e -> setCursor(0));
+        menuPlayBtn.setOnMouseExited(e -> setCursor(0));
+        menuHighscoresBtn.setOnMouseExited(e -> setCursor(0));
+        menuExitBtn.setOnMouseExited(e -> setCursor(0));
+        menuInstructionsBtn.setOnMouseExited(e -> setCursor(0));
 
         /*drawImage(menuLearnBtn, 40, -50);
         drawImage(menuQuizBtn, 0, 50);
@@ -141,9 +115,6 @@ public class Menu extends Window
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
-
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
 
                 // background image clears canvas
                 drawImage(menuBackground, 0, 0);
