@@ -42,9 +42,7 @@ public class StageManager extends Application {
         Canvas canvas = new Canvas(1000, 750);
         root.getChildren().add(canvas);
 
-        stage.setOnCloseRequest((WindowEvent event1) -> {
-            System.exit(0);
-        });
+        stage.setOnCloseRequest((WindowEvent event1) -> System.exit(0));
 
         stage.setScene(scene);
 
@@ -92,8 +90,8 @@ public class StageManager extends Application {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                if (lvl == -1)
-                    continue;
+                if (lvl == -1) {
+                }
                 else if (lvl >= 1 && lvl <= 3) {
                    hotel.stop();
                     while (true) {

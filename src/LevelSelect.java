@@ -3,8 +3,6 @@ import javafx.stage.Stage;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
-import javax.swing.*;
-
 /**
  * The LevelSelect class
  * This class represents the LevelSelect window where the user will choose which level they want to play.
@@ -72,31 +70,15 @@ public class LevelSelect extends Window {
             choice = 3;
         });
         // Listeners for MouseEnter
-        backButton.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        lakeOntario.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        lakeErie.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        lakeSuperior.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
+        backButton.setOnMouseEntered(e -> setCursor(1));
+        lakeOntario.setOnMouseEntered(e -> setCursor(1));
+        lakeErie.setOnMouseEntered(e -> setCursor(1));
+        lakeSuperior.setOnMouseEntered(e -> setCursor(1));
         // Listeners for MouseExit
-        backButton.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        lakeOntario.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        lakeErie.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        lakeSuperior.setOnMouseExited(e -> {
-            setCursor(0);
-        });
+        backButton.setOnMouseExited(e -> setCursor(0));
+        lakeOntario.setOnMouseExited(e -> setCursor(0));
+        lakeErie.setOnMouseExited(e -> setCursor(0));
+        lakeSuperior.setOnMouseExited(e -> setCursor(0));
 
         drawImage(lakeOntario, -30, 100);
         drawImage(lakeErie, 170, 100);

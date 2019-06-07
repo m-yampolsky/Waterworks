@@ -1,10 +1,7 @@
 import javafx.animation.AnimationTimer;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-
-import java.util.ArrayList;
 
 /**
  * The Splashscreen class

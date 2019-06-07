@@ -3,8 +3,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
-import java.util.Arrays;
-
 public class Instructions extends Window {
     /**
      * The choice selected for the game level that the user wishes to play.
@@ -65,25 +63,13 @@ public class Instructions extends Window {
                 drawImage(instructionsB, -425, 300);
         });
         // Listeners for MouseEnter
-        backButton.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        instructionsF.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        instructionsB.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
+        backButton.setOnMouseEntered(e -> setCursor(1));
+        instructionsF.setOnMouseEntered(e -> setCursor(1));
+        instructionsB.setOnMouseEntered(e -> setCursor(1));
         // Listeners for MouseExit
-        backButton.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        instructionsF.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        instructionsB.setOnMouseExited(e -> {
-            setCursor(0);
-        });
+        backButton.setOnMouseExited(e -> setCursor(0));
+        instructionsF.setOnMouseExited(e -> setCursor(0));
+        instructionsB.setOnMouseExited(e -> setCursor(0));
 
         drawImage(backButton, -400, -180);
         drawImage(instructions[0], 0, 0);
