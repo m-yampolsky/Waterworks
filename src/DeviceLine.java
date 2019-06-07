@@ -19,22 +19,12 @@ import java.util.ArrayList;
  * Maria corrected a bug in this class, by marking a pixel location in the colours 2D array with 0 if a pixel is White or Transparent. Originally, it only marked it with a 0 if it was transparent, but White also indicates the presence of no specific device type.
  * </pre>
  */
-public class DeviceLine extends Image{
+class DeviceLine extends Image{
 
     /**
      * This 2 dimensional array stores a pixel by pixel representation of the DeviceLine image. At each pixel location, 0 represents there being no device, 1 is an efficient device, -1 is an inefficient device
      */
     private int[][] colours;
-
-    /**
-     * This stores a list of the colours present in all the efficient devices, used to identify their presence.
-     */
-    private ArrayList<Color> effColours;
-
-    /**
-     * This stores a list of the colours present in all the inefficient devices, used to identify their presence.
-     */
-    private ArrayList<Color> ineffColours;
 
     /**
      * This is the class constructor, it calls the Image class constructor to create an Image to associate with a DeviceLine object. It also determines whihc pixels of the DeviceLine image stores no device, an efficient device, and an inefficient device.
@@ -45,8 +35,10 @@ public class DeviceLine extends Image{
         PixelReader pixelReader = this.getPixelReader();
         colours = new int [(int)(getHeight())][(int)(getWidth())];
 
-        ineffColours = new ArrayList<Color>();
-        effColours = new ArrayList<Color>();
+        // This stores a list of the colours present in all the inefficient devices, used to identify their presence.
+        ArrayList<Color> ineffColours = new ArrayList<Color>();
+        // This stores a list of the colours present in all the efficient devices, used to identify their presence.
+        ArrayList<Color> effColours = new ArrayList<Color>();
 
         ineffColours.add(Color.web("#fedd59"));
         ineffColours.add(Color.web("#c8e165"));

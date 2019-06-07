@@ -8,7 +8,7 @@ import javafx.scene.paint.Color;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 2 05.27.2019
  */
-public class GameChar extends Image
+class GameChar extends Image
 {
   /**
    * The coordinates of the avatars location.

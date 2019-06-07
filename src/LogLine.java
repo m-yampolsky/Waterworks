@@ -10,7 +10,7 @@ import java.util.Arrays;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 2 05.27.2019
  */
-public class LogLine extends Image
+class LogLine extends Image
 {
   /**
    * This array stores whether or not each pixel of the image has a colour at a spot or not

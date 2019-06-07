@@ -15,7 +15,7 @@ import javafx.scene.image.ImageView;
  *
  * </pre>
  */
-public class AnimatedImageView
+class AnimatedImageView
 {
 
     /**

@@ -506,7 +506,7 @@ public class Quiz extends Window {
         }.start();
     }
 
-    public void removeMouse (ImageView img)
+    private void removeMouse(ImageView img)
     {
         img.setOnMouseEntered(new EventHandler<MouseEvent>()
         {
@@ -570,7 +570,7 @@ public class Quiz extends Window {
         });
     }
 
-    public void resetMouse (ImageView img)
+    private void resetMouse(ImageView img)
     {
         img.setOnMouseEntered(new EventHandler<MouseEvent>()
         {
@@ -685,7 +685,7 @@ public class Quiz extends Window {
         });
     }
 
-    public void check ()
+    private void check()
     {
         refresh();
         Image checkBack = (Image)(Resources.get("checkBack"));

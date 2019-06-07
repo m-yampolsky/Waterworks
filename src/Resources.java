@@ -6,7 +6,7 @@ import java.util.HashMap;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 2 05.27.2019
  */
-public class Resources {
+class Resources {
     /**
      * The HashMap storing the relationships between each String identifier, and its corresponding resource Object.
      */

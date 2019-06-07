@@ -176,7 +176,7 @@ public class Game extends Window {
     /**
      * This stores the file location of the high score storing file.
      */
-    final File SCORES_FILE = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+    private final File SCORES_FILE = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
 
 
     /**
@@ -209,7 +209,7 @@ public class Game extends Window {
     /**
      * This method displays the result of the level if the user loses. It displays two buttons, allowing for the user to choose to return to the Main Menu or to try the same Game level again.
      */
-    public void lose() {
+    private void lose() {
         Sound.stopAll(); //stops all the sounds playing
 
         Image back = (Image)(Resources.get("loseBack"));
@@ -257,7 +257,7 @@ public class Game extends Window {
      * the next level once they have entered their name. If they return to menu without saving their name, their score is saved with the name "USER".
      * Their name must be no longer than 10 characters, and it cannot begin with a space.
      */
-    public void win() {
+    private void win() {
         Image back = (Image)(Resources.get("winBack"));
         Image title = (Image)(Resources.get("winTitle"));
         Image scoreImg = (Image)(Resources.get("winScore"));

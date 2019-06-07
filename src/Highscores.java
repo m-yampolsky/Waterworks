@@ -13,7 +13,7 @@ public class Highscores extends Window {
      * The choice selected for the game level that the user wishes to play.
      */
     private boolean back;
-    final File SCORES_FILE = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+    private final File SCORES_FILE = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -141,7 +141,7 @@ public class Highscores extends Window {
         catch (IOException e){}
 
         String text = "";
-        Text list[][] = {new Text[Math.min(lengths[0], 10)], new Text[Math.min(lengths[1], 10)], new Text[Math.min(lengths[0], 10)]};
+        Text[][] list = {new Text[Math.min(lengths[0], 10)], new Text[Math.min(lengths[1], 10)], new Text[Math.min(lengths[0], 10)]};
         for (int r = 0; r < list.length; r++)
         {
             for (int c = 0; c < list[r].length; c++)
