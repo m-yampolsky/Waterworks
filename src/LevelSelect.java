@@ -37,7 +37,7 @@ public class LevelSelect extends Window {
     /**
      * This method will display all the graphics of the LevelSelect window
      */
-    public void display()
+    private void display()
     {
         Image background = (Image)(Resources.get("menuBackground"));
         Image playTitle = (Image)(Resources.get("playTitle"));

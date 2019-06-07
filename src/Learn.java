@@ -97,7 +97,6 @@ public class Learn extends Window {
     /**
      * This method will display all the graphics, and manage all the mechanics of the Window including navigating the conveyor belt, matching descriptions with devices, and moving to the Quiz Window at the end.
      */
-    @Override
     public void display()
     {
         // This is a boolean Array storing which devices have had their descriptions matched properly

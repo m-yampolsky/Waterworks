@@ -42,22 +42,22 @@ abstract class Window {
     /**
      * The Window's JavaFX Stage.
      */
-    private Stage stage;
+    private final Stage stage;
 
     /**
      * The JavaFX Stage's StackPane on which to add components like ImageView Objects, Canvases, etc.
      */
-    private StackPane root;
+    private final StackPane root;
 
     /**
      * The Canvas added to the StackPane, containing the used GraphicContext.
      */
-    private Canvas canvas;
+    private final Canvas canvas;
 
     /**
      * The JavaFX Canvas's GraphicContext on which to draw static images, text, etc.
      */
-    private GraphicsContext gc;
+    private final GraphicsContext gc;
 
     /**
      * This is the class constructor, and it uses a JavaFX Stage to set up the screen with all of its components. It adds a Canvas to the screen and makes it a blank white Canvas.
@@ -181,8 +181,4 @@ abstract class Window {
         return stage.getScene();
     }
 
-    /**
-     * The abstract display method that must be implemented by all subclasses containing the Window content.
-     */
-    public abstract void display ();
 }

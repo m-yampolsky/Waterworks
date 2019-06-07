@@ -39,7 +39,7 @@ public class Menu extends Window
     /**
      * This method displays all the graphics of the Menu window
      */
-    public void display() {
+    private void display() {
 
         Image menuBackground = (Image)(Resources.get("menuBackground"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
@@ -115,9 +115,6 @@ public class Menu extends Window
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
                 double t = (currentNanoTime - startNanoTime) / 300000000.0;
-
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
 
                 // background image clears canvas
                 drawImage(menuBackground, 0, 0);

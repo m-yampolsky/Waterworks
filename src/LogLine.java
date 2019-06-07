@@ -14,12 +14,7 @@ class LogLine extends Image
   /**
    * This array stores whether or not each pixel of the image has a colour at a spot or not
    */
-  private boolean[][] isColoured;
-
-  /**
-   * The coordinates of the top left corner
-   */
-  private int xCoord, yCoord; 
+  private final boolean[][] isColoured;
 
   /**
    * @param pic

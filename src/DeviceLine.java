@@ -24,7 +24,7 @@ class DeviceLine extends Image{
     /**
      * This 2 dimensional array stores a pixel by pixel representation of the DeviceLine image. At each pixel location, 0 represents there being no device, 1 is an efficient device, -1 is an inefficient device
      */
-    private int[][] colours;
+    private final int[][] colours;
 
     /**
      * This is the class constructor, it calls the Image class constructor to create an Image to associate with a DeviceLine object. It also determines whihc pixels of the DeviceLine image stores no device, an efficient device, and an inefficient device.

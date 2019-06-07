@@ -33,9 +33,9 @@ public class Quiz extends Window {
     private boolean lost = false;
     private int x, y;
     private ImageView device = null;
-    private ArrayList<ImageView> effDevices;
-    private ArrayList<ImageView> ineffDevices;
-    private ImageView background = (ImageView) (Resources.get("quizBack"));
+    private final ArrayList<ImageView> effDevices;
+    private final ArrayList<ImageView> ineffDevices;
+    private final ImageView background = (ImageView) (Resources.get("quizBack"));
     private ImageView tub = new ImageView ("elements/game/tub.png");
     private ImageView sink = new ImageView ("elements/game/sink.png");
     private ImageView cWasher = new ImageView ("elements/game/washer.png");
@@ -45,12 +45,12 @@ public class Quiz extends Window {
     private ImageView dSponge = new ImageView ("elements/game/dish.png");
     private ImageView hose = new ImageView ("elements/game/hose.png");
     private ImageView shower = new ImageView ("elements/game/shower.png");
-    private ImageView border = new ImageView ("elements/game/border.png");
-    private ImageView eBox = (ImageView)(Resources.get("effBox"));
-    private ImageView iBox = (ImageView)(Resources.get("ineffBox"));
-    private ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
-    private ImageView play = (ImageView)(Resources.get("checkPlay"));
-    private Sound click = (Sound)(Resources.get("click"));
+    private final ImageView border = new ImageView ("elements/game/border.png");
+    private final ImageView eBox = (ImageView)(Resources.get("effBox"));
+    private final ImageView iBox = (ImageView)(Resources.get("ineffBox"));
+    private final ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+    private final ImageView play = (ImageView)(Resources.get("checkPlay"));
+    private final Sound click = (Sound)(Resources.get("click"));
 
     public boolean playButtonClicked;
 
@@ -273,10 +273,8 @@ public class Quiz extends Window {
         menuBtn.setOnMouseEntered(event -> setCursor(1));
         menuBtn.setOnMouseExited(event -> setCursor(0));
 
-        final long startNanoTime = System.nanoTime();
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
-                double t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 if (isDragged && device != null && !lost) {
                     remove(device);

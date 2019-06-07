@@ -19,7 +19,7 @@ class Water {
      * The number of elapsed nanoseconds since the beginning of runtime
      * up until the creation of the current Water Object.
      */
-    private long startTime;
+    private final long startTime;
 
     /**
      * The amount of difference in height adjusted accordingly in the Game
@@ -30,7 +30,7 @@ class Water {
     /**
      * The Game level currently being played, used to calculate the score.
      */
-    private int level;
+    private final int level;
 
     /**
      * @param lvl The Game level currently being played.

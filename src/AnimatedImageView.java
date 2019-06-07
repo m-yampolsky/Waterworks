@@ -21,22 +21,17 @@ class AnimatedImageView
     /**
      * The path location of the files in which the frames of the animation are stored.
      */
-    private String path;
+    private final String path;
 
     /**
      * The number of frames in the animation.
      */
-    private int numFrames;
-
-    /**
-     * The number used in the url of the file storing the frame of the animation.
-     */
-    private int pathNum;
+    private final int numFrames;
 
     /**
      * The duration of the animation.
      */
-    private double duration;
+    private final double duration;
 
     /**
      * The constructor of the AnimatedImageView class, which creates an object of the class.
@@ -57,35 +52,7 @@ class AnimatedImageView
      */
     public ImageView getFrame(double time) {
         int index = Math.max((int)((time % (numFrames * duration)) / duration), 1);
-        pathNum = index;
         return new ImageView(path + " (" + index + ").png");
     }
 
-    /**
-     * The frame() method, which returns the number of the frame of an animation based off of the time entered.
-     * @param time The time into the animation, determines which frame the animation is on
-     * @return An int that represents the number of the frame that the animation is on
-     */
-    public int frame(double time) {
-        return (int)((time % (numFrames * duration)) / duration)+1;
-    }
-
-    /**
-     * The lasrFrame() method, which returns the last frame of an animation.
-     * @return An ImageView object that represents the last frame in an animation.
-     */
-    public ImageView lastFrame() {
-
-        return new ImageView (path + " (" + (numFrames-1) + ").png");
-    }
-
-    /**
-     * The getPath() method, which returns the path to a frame of the animation.
-     * @return A String representing the path to the file containing the frame of the animation.
-     */
-    public String getPath ()
-    {
-
-        return path + " (" + pathNum + ").png";
-    }
 }

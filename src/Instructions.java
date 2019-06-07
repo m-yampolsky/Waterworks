@@ -75,13 +75,8 @@ public class Instructions extends Window {
         drawImage(instructions[0], 0, 0);
         drawImage(instructionsF, 420, 300);
 
-        final long startNanoTime = System.nanoTime();
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
-                double t = (currentNanoTime - startNanoTime) / 300000000.0;
-
-                double x = 232 + 128 * Math.cos(t);
-                double y = 232 + 128 * Math.sin(t);
 
                 if (back) {
                     stop();

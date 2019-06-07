@@ -1,10 +1,7 @@
 import javafx.animation.AnimationTimer;
-import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
@@ -70,12 +67,12 @@ public class Game extends Window {
     /**
      * The level names.
      */
-    private static String[] names = {"Lake Ontario", "Lake Erie", "Lake Superior"};
+    private static final String[] names = {"Lake Ontario", "Lake Erie", "Lake Superior"};
 
     /**
      * The current level selected.
      */
-    private int level;
+    private final int level;
 
     /**
      * This stores the avatar's height above the water level.
@@ -166,7 +163,7 @@ public class Game extends Window {
     /**
      * This stores a character representation of the user's name input.
      */
-    private char[] charsName = name.toCharArray();
+    private final char[] charsName = name.toCharArray();
 
     /**
      * This stores the end status of the level that the user has just completed.
@@ -181,7 +178,7 @@ public class Game extends Window {
     /**
      * This stores a backup file location of the high score storing file, in case the directory of SCORES_FILE is inaccessible.
      */
-    final File SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+    private final File SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
 
     /**
      * This is the class constructor. It sets initial values for the variables, and calls the super constructor of the Window class.
@@ -317,7 +314,7 @@ public class Game extends Window {
         drawImage (nameLabel, -262, 185);
         drawImage (saveButton, 352, 185);
 
-        saveButton.setOnMouseClicked((EventHandler<MouseEvent>) event -> {
+        saveButton.setOnMouseClicked(event -> {
             if (!saved) {
                 if (onChar > 0) { //if they have entered at least one character, their name will be saved
                     saved = true;
@@ -328,22 +325,18 @@ public class Game extends Window {
                     remove (winInst);
                     drawImage(savedMessage, 0, 185); //informs the user that their score has been saved
 
-                    nextLevel.setOnMouseExited(e -> {
-                        setCursor(0);
-                    });
-                    nextLevel.setOnMouseEntered(e -> {
-                        setCursor(1);
-                    });
+                    nextLevel.setOnMouseExited(e -> setCursor(0));
+                    nextLevel.setOnMouseEntered(e -> setCursor(1));
                     if (level < 3)
                         drawImage(nextLevel, 310, 325);
                     if (!SCORES_FILE.exists()) {
                         try {
                             SCORES_FILE.createNewFile(); //if the file does not exist on the computer yet, a new one is created
-                        } catch (IOException ignored) {
+                        } catch (IOException e) {
                             if (!SCORES_FILE_BACKUP.exists()) {
                                 try {
                                     SCORES_FILE_BACKUP.createNewFile(); //if the file does not exist on the computer yet, a new one is created
-                                } catch (IOException error) {
+                                } catch (IOException ignored) {
                                 }
                             }
                         }
@@ -355,14 +348,14 @@ public class Game extends Window {
                         output12.println(name);
                         output12.println(score);
                         output12.close();
-                    } catch (IOException ignored) {
+                    } catch (IOException e) {
                         try {
                             output12 = new PrintWriter(new BufferedWriter(new FileWriter(SCORES_FILE_BACKUP, true))); //this writes their score and name to a file
                             output12.println("level played:" + level);
                             output12.println(name);
                             output12.println(score);
                             output12.close();
-                        } catch (IOException error) {
+                        } catch (IOException ignored) {
                         }
                     }
                 }
@@ -371,7 +364,7 @@ public class Game extends Window {
 
         //collecting input for the user's name
         getScene().setOnKeyPressed(
-                (EventHandler<KeyEvent>) e -> {
+                e -> {
                     if (!saved) {
                         String code = e.getCode().toString();
                         if ((code.length() == 1 || e.getCode().isDigitKey()) && onChar <= 9) { //checks if the user enters a key with a number on it
@@ -411,7 +404,7 @@ public class Game extends Window {
      * There is also a menu button present during this method to allow for the user to return to the main menu. This method also controls scoring. The score is subtracted from everytime the
      * user comes in contact with an inefficient device and everytime the avatar jumps. It is added to every time they come in contact with an efficient water device.
      */
-    public void display () {
+    private void display() {
         ArrayList<String> input = new ArrayList<>();
 
         Image lakeBackground;
@@ -487,7 +480,7 @@ public class Game extends Window {
 
         //checks if user is pressing down on key input
         getScene().setOnKeyPressed(
-                (EventHandler<KeyEvent>) e -> {
+                e -> {
                     String code = e.getCode().toString();
                     if ( !input.contains(code) )
                         input.add( code );
@@ -495,7 +488,7 @@ public class Game extends Window {
 
         //checks if user is releasing key input
         getScene().setOnKeyReleased(
-                (EventHandler<KeyEvent>) e -> {
+                e -> {
                     String code = e.getCode().toString();
                     input.remove( code );
                     if (code.equals("SPACE") && jumping)

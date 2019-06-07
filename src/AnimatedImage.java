@@ -18,22 +18,22 @@ import javafx.scene.image.Image;
  * Vansh wrote the getSplashFrame() and splashFrame() methods to return the correct frame for the Splashscreen animation and to return the number of the frame that the Splashscreen animation is on, respectively.
  * </pre>
  */
-public class AnimatedImage
+class AnimatedImage
 {
     /**
      * The path location of the files in which the frames of the animation are stored.
      */
-    private String path;
+    private final String path;
 
     /**
      * The number of frames in the animation.
      */
-    private int numFrames;
+    private final int numFrames;
 
     /**
      * The duration of the animation.
      */
-    private double duration;
+    private final double duration;
 
     /**
      * The constructor of the AnimatedImage class, which creates an object of the class.
@@ -78,21 +78,10 @@ public class AnimatedImage
     }
 
     /**
-     * The splashFrame() method, which returns the number of the frame of an animation based off of the time entered.
-     * @param time The time into the animation, determines which frame the Splashscreen animation is on
-     * @return An int that represents the number of the frame that the Splashscreen animation is on
-     */
-    public int splashFrame(double time) {
-        if (time < 16)
-            return (int)((time % (numFrames * duration)) / duration)+1;
-        return 169;
-    }
-
-    /**
      * The lasrFrame() method, which returns the last frame of an animation.
      * @return An Image object that represents the last frame in an animation.
      */
-    public Image lastFrame() {
+    private Image lastFrame() {
         return new Image (path + " (" + (numFrames-1) + ").png");
     }
 }
