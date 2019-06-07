@@ -181,4 +181,9 @@ abstract class Window {
         return stage.getScene();
     }
 
+    /**
+     * The abstract display method that must be implemented by all subclasses containing the Window content.
+     */
+    public abstract void display ();
+
 }
