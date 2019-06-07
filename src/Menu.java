@@ -5,42 +5,63 @@ import javafx.stage.Stage;
 
 /**
  * The Menu class
- * This class stores an object that represents the Menu window of the Waterworks program
+ * This class represents the Window that has all the graphics and mechanics for the main menu of the Waterworks program. It extends the abstract Window class to use its basic mechanics methods for displaying, hiding and clearing the screen.
+ * The class allows the user to press ImageView buttons to indicate which Window they wish to enter. This indication of their choice is returned to the StageManager through the getChoice method, which also manages and drives all the class methods.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 2 05.27.2019
+ * @version 5 06.06.2019
+ *
+ * Version History:
+ * May 17:
+ * Vansh created class.
+ * May 18:
+ * Vansh added and implemented display method including background, and buttons, etc.
+ * May 19:
+ * Vansh added and implemented exit button, and created getChoice() method to drive class and return chosen option number to StageManager.
+ * May 20:
+ * Vansh changed ImageView buttons to be assigned from Resources class.
+ * May 22:
+ * Vansh implemented InstructionsBtn ImageView button.
+ * Maria implemented QuizBtn ImageView button.
+ * May 23:
+ * Vansh made ccursor change to click hand when hovering over buttons.
+ * Vansh imeplemted LearnBtn ImageView class.
+ * May 27:
+ * Vansh added clicking sounds for the ImageView buttons.
+ * June 3:
+ * Vansh redesigned Menu button placement, and implemented a new exit ImageView button.
+ * June 6:
+ * Vansh converted ImageView property settings to lambda functions.
  */
 public class Menu extends Window
 {
     /**
      * The chosen menu option.
      */
-    private int choice;
+    private int choice = 0;
 
     /**
+     * The class constructor. It calls the super constructor of the Window class.
      * @param stg The JavaFX Stage to display to.
      */
     public Menu (Stage stg) {
         super(stg, "Main Menu");
-        choice = 0;
     }
 
     /**
+     * This method drives the class by running the appropriate methods at the right times, and returning the chosen option to StageManager.
      * @return The menu option chosen by the user.
      */
     public int getChoice() {
         display();
         showAndWait();
         refresh();
-        int value = choice;
-        choice = 0;
-        return value;
+        return choice;
     }
 
     /**
-     * This method displays all the graphics of the Menu window
+     * This method displays all the graphics, and implements all the buttons of the Menu window.
      */
     public void display() {
-
         Image menuBackground = (Image)(Resources.get("menuBackground"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
         Image menuTitle = (Image)(Resources.get("menuTitle"));
@@ -96,12 +117,6 @@ public class Menu extends Window
         menuExitBtn.setOnMouseExited(e -> setCursor(0));
         menuInstructionsBtn.setOnMouseExited(e -> setCursor(0));
 
-        /*drawImage(menuLearnBtn, 40, -50);
-        drawImage(menuQuizBtn, 0, 50);
-        drawImage(menuPlayBtn, 20, 150);
-        drawImage(menuExitBtn, -40, 235);
-        drawImage(menuHighscoresBtn, 330, 340);
-        drawImage(menuInstructionsBtn, -235, -145);*/
         drawImage(menuInstructionsBtn, 20, -135);
         drawImage(menuHighscoresBtn, 40, -45);
         drawImage(menuLearnBtn, 175 , 45);
