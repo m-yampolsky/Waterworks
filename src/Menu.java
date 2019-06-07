@@ -10,6 +10,7 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
+ * <pre>
  * Version History:
  * May 17:
  * Vansh created class.
@@ -31,6 +32,7 @@ import javafx.stage.Stage;
  * Vansh redesigned Menu button placement, and implemented a new exit ImageView button.
  * June 6:
  * Vansh converted ImageView property settings to lambda functions.
+ * </pre>
  */
 public class Menu extends Window
 {
