@@ -5,50 +5,106 @@ import javafx.stage.Stage;
 
 /**
  * The Learn class
- * This class will store an object that represents the window where the user will be learning about dealing with water overusage.
+ * This class represents the window that has all the graphics for the first room of the Waterworks program. It extends the abstract Window class to use its basic mechanics methods for displaying, hiding and clearing the screen.
+ * This class starts in an empty spot on a conveyor belt, with all devices to the right. There are devices drawn on the left, to give the illusion that the belt is circular, but the xtime variable that controls the belt position wraps
+ * around making it seem like there are actually devices on the left side. The same (reversed), is done when the user presses on the learnLeft and learnRight ImageView buttons to navigate to the farthest right devices on the belt.
+ * When the room is entered, there is also a water device description a the top of the window. This description corresponds with the nth device on the belt, where n is represented by the global integer current.
+ * The current value starts at -1, representing that no current description has been found as of yet. When the class sees that the current variable is -1 and the user is not done, it finds a current description at random from the local
+ * descriptions ImageView array. Once a current description is shown, the user must navigate to the corresponding device and click the down-facing ImageView arrow learnCheck. The global boolean right is true when the current description
+ * matches the device currently selected (center of screen). If the device does correspond, the description will move down to the screen and the user can move onto matching the next description if they are not done. If they match is incorrect,
+ * the learnCheck ImageView button will be removed and a red 'x' ImageView Object learnWrong will be draw in its place. This will be removed and replaced again by the learnCheck ImageView when a nav arrow is clicked. The global numDone
+ * integer represents the number of descriptions matched, and the local boolean Array states stores which specific devices have been matched with their corresponding description (updated every time that a description is matched).
+ * When navigating through previously matched devices (the states array element in the device number's index is true), their descriptions are re-drawn to the screen, and removed when navigating a to a different device. Once, the numDone integer
+ * reaches 11, the done boolean is set to true. This triggers the learnQuiz ImageView button to be drawn in the bottom-left which stops the AnimationTimer and sets the global public boolean quizButtonClicked to be set to true. The stage is then
+ * hidden in order to trigger the Stage.showAndWait() call in the StageManager class to move forward.
  * @author Maria Yampolsky and Vansh Juneja
- * @version 2 05.27.2019
+ * @version 5 06.06.2019
+ *
+ * <pre>
+ * Version History:
+ * May 18:
+ * Vansh created the class.
+ * May 20:
+ * Vansh implemented Learn as an AniamtedImage where an arrow is pressed to move forward in the animation, and a menu button to go back.
+ * May 24:
+ * Vansh removed the AnimatedImage completely, and remade the animation in JavaFX using Image view Objects for the washer, barrel, watering can, shower head, tub, dish washer, hand washing, hose, and the sink. If statements and variables were
+ * also made to allow wrapping around when moving too far to the right of the conveyor belt.
+ * May 25:
+ * Vansh made the Event properties to make the cursor change to a click hand when hovering over the right arrow button.
+ * May 27:
+ * Vansh added clicking sounds when buttons are pressed.
+ * May 29:
+ * Vansh completely revamped the Learn window to make it more interactive with description matching, and made arrows to navigate left as well as right.
+ * May 31:
+ * Vansh implemented new well and icecap images into the conveyor belt, and fixed bugs with description image sizing when matching with the correct device.
+ * June 1:
+ * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button.
+ * June 2:
+ * Vansh fixed bug where done boolean became true before user finished matching all descriptions.
+ * Vansh added button to go to Quiz when finished matching descriptions.
+ * </pre>
  */
 public class Learn extends Window {
-
     /**
-     * The choice selected for the game level that the user wishes to play.
+     * This stores the x-axis movement of the conveyer belt, where 0 is the starting position.
      */
-    private boolean back;
-
     private int xtime = 0;
 
+    /**
+     * This stores the item number currently selected (center-screen), where 1 is the first item and in ascending order.
+     */
     private int times = 0;
 
+    /**
+     * This stores whether the conveyor belt should be moving, and in which direction. 0 represents not moving, >0 represents moving left, and <0 represents moving right.
+     */
     private int go = 0;
 
+    /**
+     * This stores whether the currently selected device (center-screen) is the correct match for the current description to be matched.
+     */
     private boolean right = false;
 
+    /**
+     * This stores whether a description is being shown that must be matched, and if so then which one. >0 represents the nth device description, and <0  represents no current description to be matched.
+     */
     private int current = -1;
 
+    /**
+     * This stores whether the user is done -> all descriptions have been matched with their proper devices.
+     */
     private boolean done = false;
 
+    /**
+     * This stores whether the quiz button has been clicked.
+     */
     public boolean quizButtonClicked = false;
 
+    /**
+     * This stores how many descriptions have been matched with their proper devices.
+     */
     private int numDone = 0;
 
 
     /**
+     * This is the class constructor. It calls the super constructor of the Window class, and sets initial values.
      * @param stg The JavaFX Stage to display to.
      */
     public Learn(Stage stg) {
         super(stg, "Highscores");
-        back = false;
     }
 
     /**
-     * This method will display all the graphics of the Highscores window
+     * This method will display all the graphics, and manage all the mechanics of the Window including navigating the conveyor belt, matching descriptions with devices, and moving to the Quiz Window at the end.
      */
     public void display()
     {
+        // This is a boolean Array storing which devices have had their descriptions matched properly
         boolean[] states = new boolean[11];
+        // This is an ImageView array holding the descriptions of all the devices.
         ImageView[] descriptions = {(ImageView)(Resources.get("washerD")), (ImageView)(Resources.get("barrelD")), (ImageView)(Resources.get("canD")), (ImageView)(Resources.get("showerD")) , (ImageView)(Resources.get("iceD")), (ImageView)(Resources.get("wellD")), (ImageView)(Resources.get("tubD")), (ImageView)(Resources.get("dwasherD")), (ImageView)(Resources.get("dishD")), (ImageView)(Resources.get("hoseD")), (ImageView)(Resources.get("sinkD"))};
 
+        // buttons
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
         Image menuBack = (Image)(Resources.get("menuBackground"));
         Image learnBack = (Image)(Resources.get("learnBack"));
@@ -59,6 +115,7 @@ public class Learn extends Window {
         ImageView learnWrong = (ImageView)(Resources.get("learnWrong"));
         ImageView quiz = (ImageView)(Resources.get("learnQuiz"));
 
+        // conveyor belt item Images
         ImageView hose2 = (ImageView)(Resources.get("learnHose2"));
         ImageView sink2 = (ImageView)(Resources.get("learnSink2"));
         ImageView washer = (ImageView)(Resources.get("learnWasher"));
@@ -75,9 +132,10 @@ public class Learn extends Window {
         ImageView washer2 = (ImageView)(Resources.get("learnWasher2"));
         ImageView barrel2 = (ImageView)(Resources.get("learnBarrel2"));
 
+        // click sound
         Sound click = (Sound)(Resources.get("click"));
 
-        // Listeners for MouseClick
+        // Listeners for MouseClicked
         menuBtn.setOnMouseClicked(e -> {
             hideStage();
             click.play();
@@ -85,8 +143,8 @@ public class Learn extends Window {
         learnLeft.setOnMouseClicked(e -> {
             if (times > 0 && times < 12)
                 remove(descriptions[times-1]);
-            if (go != 2) {
-                go = 2;
+            if (go != -1) {
+                go = -1;
                 times--;
             }
             if (times > 0 && states[times-1]) {
@@ -132,33 +190,18 @@ public class Learn extends Window {
                 drawImage(learnWrong, -15, 255);
             }
         });
-        // Listeners for MouseEnter
-        menuBtn.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        learnLeft.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        learnRight.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        learnCheck.setOnMouseEntered(e -> {
-            setCursor(1);
-        });
-        // Listeners for MouseExit
-        menuBtn.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        learnLeft.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        learnRight.setOnMouseExited(e -> {
-            setCursor(0);
-        });
-        learnCheck.setOnMouseExited(e -> {
-            setCursor(0);
-        });
+        // Listeners for MouseEntered
+        menuBtn.setOnMouseEntered(e -> setCursor(1));
+        learnLeft.setOnMouseEntered(e -> setCursor(1));
+        learnRight.setOnMouseEntered(e -> setCursor(1));
+        learnCheck.setOnMouseEntered(e -> setCursor(1));
+        // Listeners for MouseExited
+        menuBtn.setOnMouseExited(e -> setCursor(0));
+        learnLeft.setOnMouseExited(e -> setCursor(0));
+        learnRight.setOnMouseExited(e -> setCursor(0));
+        learnCheck.setOnMouseExited(e -> setCursor(0));
 
+        // draw all of background and buttons
         drawImage(menuBack, 0, 0);
         drawImage(learnBack, 0, 385);
         drawImage(menuBtn, 400, -330);
@@ -168,7 +211,7 @@ public class Learn extends Window {
 
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
-
+                // if done variable is not true, then check if it should be (set to true if every element of states array are true)
                 if (!done) {
                     boolean d = true;
                     for (boolean s : states)
@@ -181,12 +224,15 @@ public class Learn extends Window {
                     }
                 }
 
+                // if not done...
                 if (!done) {
-                    while (current == -1 && !done && numDone < 11) {
+                    // ...while a current description is not set, set one at random until the one selected is not of state done.
+                    while (current == -1 && numDone < 11) {
                         int tmp = (int) (Math.random() * 11);
                         if (!states[tmp])
                             current = tmp;
                     }
+                    // ...and if a description is set, draw the description at the proper position with the proper dimensions.
                     if (current != -1 && current != -2) {
                         descriptions[current].setPreserveRatio(true);
                         descriptions[current].setFitHeight(170);
@@ -194,9 +240,11 @@ public class Learn extends Window {
                     }
                 }
 
+                // if conveyer belt is moving, and a wrong symbol can be (and now has been) removed, draw a check button in its place.
                 if (go != 0 && remove(learnWrong)) {
                     drawImage(learnCheck, -15, 260);
                 }
+                // if conveyer belt is moving left, draw the proper images in the right spots, and remove any that are not needed.
                 if (go == 1) {
                     xtime += 12;
                     if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3600) {
@@ -206,12 +254,10 @@ public class Learn extends Window {
                             remove(learnCheck);
                         } else
                             drawImage(learnCheck, -15, 260);
-                        if (times-1 == current)
-                            right = true;
-                        else
-                            right = false;
+                        right = times - 1 == current;
                     }
-                } else if (go == 2) {
+                // if conveyer belt is moving right, draw the proper images in the right spots, and remove any that are not needed.
+                } else if (go == -1) {
                     xtime -= 12;
                     if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3050 || times == 10 && xtime <= 3310 || times == 11 && xtime <= 3600) {
                         go = 0;
@@ -220,14 +266,11 @@ public class Learn extends Window {
                             remove(learnCheck);
                         } else
                             drawImage(learnCheck, -15, 260);
-                        if (times-1 == current)
-                            right = true;
-                        else
-                            right = false;
+                        right = times - 1 == current;
                     }
                 }
 
-                // background image clears canvas
+                // remove all device images, and redraw them at the right position.
                 remove(hose2);
                 remove(sink2);
                 remove(washer);
@@ -259,19 +302,17 @@ public class Learn extends Window {
                 drawImage(washer2, 4600-xtime, -50);
                 drawImage(barrel2, 4850-xtime, -30);
 
+                // wrap around when moving conveyor belt to the left.
                 if (xtime >= 4310) {
                     xtime = 0;
                     times = 1;
+                // wrap around when moving conveyor belt to the right.
                 } else if (xtime <= -450) {
                     xtime = 3840;
                     times = 11;
                 }
 
-                if (back) {
-                    stop();
-                    hideStage();
-                }
-
+                // if done matching all descriptions, show button to move on to quiz screen.
                 if (done) {
                     drawImage(quiz, 400, 325);
 
@@ -279,12 +320,8 @@ public class Learn extends Window {
                         quizButtonClicked = true;
                         hideStage();
                     });
-                    quiz.setOnMouseEntered(e -> {
-                        setCursor(1);
-                    });
-                    quiz.setOnMouseExited(e -> {
-                        setCursor(0);
-                    });
+                    quiz.setOnMouseEntered(e -> setCursor(1));
+                    quiz.setOnMouseExited(e -> setCursor(0));
                 }
             }
         }.start();
