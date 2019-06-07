@@ -10,7 +10,7 @@ class Resources {
     /**
      * The HashMap storing the relationships between each String identifier, and its corresponding resource Object.
      */
-    private static final HashMap<String, Object> resources = new HashMap<>();
+    private static HashMap<String, Object> resources = new HashMap<>();
 
     /**
      * @param name The String identifier for the resource Object.
