@@ -6,7 +6,8 @@ import java.util.Arrays;
 
 /**
  * The LogLine class
- * This class stores an object that represents the logs that the avatar will have to run across during the game
+ * This class stores an object that represents the logs that the avatar will have to run across during the game. It stores a 2 dimensional array representation of the pixels of the Log image.
+ * The pixels 
  * @author Maria Yampolsky and Vansh Juneja
  * @version 2 05.27.2019
  */

@@ -1,19 +1,15 @@
 import javafx.animation.AnimationTimer;
-import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.media.MediaPlayer;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 import javafx.scene.text.Font;
 import javafx.scene.paint.Color;
-
-import java.applet.AppletContext;
 import java.io.*;
 import java.util.ArrayList;
 
@@ -59,6 +55,9 @@ import java.util.ArrayList;
  * Maria modified the win() method to include simple instructions for user input. She added a image that explicitly states how many characters they can enter, and that a blank name cannot be saved.
  * Maria also added a default "USER" name, if the user chooses to return to Main Menu without saving their score. This change was also made in the win() method.
  * Vansh corrected an error in the collision detection, as the parameter being passed into the isTouchingDevice() method called in the display() method for the startY value was being calculated incorrectly.
+ * June 6:
+ * Maria modifed the SCORE_FILE variable to store the location of the User's Desktop folder, to write the high scores file there. She also created the SCORES_FILE_BACKUP to store the original file location,
+ * which will be used in the case that the user has blocked access to their Desktop. She also changed the win method to try and write to the Desktop first, and if that fails, to write to the user's home directory.
  * </pre>
  */
 public class Game extends Window {
@@ -176,8 +175,12 @@ public class Game extends Window {
     /**
      * This stores the file location of the high score storing file.
      */
-    private final File SCORES_FILE = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+    private final File SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
 
+    /**
+     * This stores a backup file location of the high score storing file, in case the directory of SCORES_FILE is inaccessible.
+     */
+    final File SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
 
     /**
      * This is the class constructor. It sets initial values for the variables, and calls the super constructor of the Window class.
@@ -186,7 +189,7 @@ public class Game extends Window {
      */
     public Game (Stage stg, int lvl) {
         super(stg, names [lvl - 1]);
-        score = 0;
+        score = 1000;
         level = lvl;
         jumpY = 0;
         jumpX = 0;
@@ -355,6 +358,12 @@ public class Game extends Window {
                             try {
                                 SCORES_FILE.createNewFile(); //if the file does not exist on the computer yet, a new one is created
                             } catch (IOException e) {
+                                if (!SCORES_FILE_BACKUP.exists()) {
+                                    try {
+                                        SCORES_FILE_BACKUP.createNewFile(); //if the file does not exist on the computer yet, a new one is created
+                                    } catch (IOException error) {
+                                    }
+                                }
                             }
                         }
                         PrintWriter output;
@@ -365,6 +374,14 @@ public class Game extends Window {
                             output.println(score);
                             output.close();
                         } catch (IOException e) {
+                            try {
+                                output = new PrintWriter(new BufferedWriter(new FileWriter(SCORES_FILE_BACKUP, true))); //this writes their score and name to a file
+                                output.println("level played:" + level);
+                                output.println(name);
+                                output.println(score);
+                                output.close();
+                            } catch (IOException error) {
+                            }
                         }
                     }
                 }
@@ -607,18 +624,18 @@ public class Game extends Window {
                 int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-90, w.getYValue()-640+325-jumpY+65-100, 130, 240);
                 if (deviceType == 1){
                     w.changeHeight(1); //change in response to an efficient device
-                    score += 7;
+                    score += 5;
                 }
                 else if (deviceType == -1){
                     w.changeHeight(-1); //change in response to an inefficient device
-                    score -= 7;
+                    score -= 5;
                 }
 
                 if (-380+jumpX >= 9450-(int)(t*40)) { //stops the game movement, because the player has win
                     stop();
+                    score += w.getHeight();
                     refresh();
                     win();
-                    score += w.getHeight();
                 }
                 if (w.getYValue() >= 750 || jumpY <= -550) { //stops the game movement, because the player has lost
                     stop();
