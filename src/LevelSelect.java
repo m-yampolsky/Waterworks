@@ -60,26 +60,21 @@ public class LevelSelect extends Window {
         ImageView lakeErie = (ImageView)(Resources.get("lakeErie"));
         ImageView lakeSuperior = (ImageView)(Resources.get("lakeSuperior"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
-        Sound click = (Sound)(Resources.get("click"));
 
         // Listeners for MouseClicked
         backButton.setOnMouseClicked(e -> {
-            click.play();
             refresh();
             choice = -1;
         });
         lakeOntario.setOnMouseClicked(e -> {
-            click.play();
             refresh();
             choice = 1;
         });
         lakeErie.setOnMouseClicked(e -> {
-            click.play();
             refresh();
             choice = 2;
         });
         lakeSuperior.setOnMouseClicked(e -> {
-            click.play();
             refresh();
             choice = 3;
         });

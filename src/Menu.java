@@ -81,29 +81,23 @@ public class Menu extends Window
         menuPlayBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 3;
-            click.play();
         });
         menuQuizBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 2;
-            click.play();
         });
         menuInstructionsBtn.setOnMouseClicked(e -> {
             choice = 5;
-            click.play();
         });
         menuHighscoresBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 4;
-            click.play();
         });
         menuLearnBtn.setOnMouseClicked(e -> {
             choice = 1;
-            click.play();
         });
         menuExitBtn.setOnMouseClicked(e -> {
             choice = -1;
-            click.play();
         });
         // Listener for MouseEnter
         menuLearnBtn.setOnMouseEntered(e -> setCursor(1));

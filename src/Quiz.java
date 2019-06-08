@@ -158,7 +158,7 @@ public class Quiz extends Window {
     /**
      * This stores the click sound.
      */
-    private Sound click;
+    private Sound box;
 
     /**
      * This stores whether or not the play button has been clicked.
@@ -192,8 +192,7 @@ public class Quiz extends Window {
         iBox = (ImageView)(Resources.get("ineffBox"));
         menuBtn = (ImageView)(Resources.get("menuBtn"));
         play = (ImageView)(Resources.get("checkPlay"));
-        click = (Sound)(Resources.get("click"));
-
+        box = (Sound)(Resources.get("box"));
     }
 
     /**
@@ -207,7 +206,6 @@ public class Quiz extends Window {
         ImageView boxBack2 = (ImageView)(Resources.get("boxBack2"));
 
         menuBtn.setOnMouseClicked(e -> { //the menu button allowing you to return to MAin Menu
-            click.play();
             hideStage();
         });
 
@@ -386,8 +384,8 @@ public class Quiz extends Window {
         });
         boxBack2.setOnMouseDragReleased(event -> {
             setCursor(0);
-            if (device != null)
-            {remove (device);
+            if (device != null){
+                remove (device);
                 drawImage (device, 360, 150);
                 removeMouse (device);
                 remove (iBox);
@@ -535,7 +533,6 @@ public class Quiz extends Window {
                     drawImage(check, 20, -60);
                     check.setOnMouseClicked(e -> {
                         refresh();
-                        click.play();
                         check();
                     });
                     check.setOnMouseEntered(e -> setCursor(1));
@@ -687,7 +684,7 @@ public class Quiz extends Window {
         int quizScore = 0;
         Image checkBack = (Image)(Resources.get("checkBack"));
         Image checkMark = (Image)(Resources.get("checkMark"));
-        Image wrong = (Image)(Resources.get("wrong"));
+        Image wrong = (Image)(Resources.get("checkWrong"));
         ArrayList<ImageView> correctEff = new ArrayList<ImageView>(); //creates a list of efficient devices
         ArrayList<ImageView> correctIneff = new ArrayList<ImageView>(); //creates a list of inefficient devices
 
@@ -705,7 +702,6 @@ public class Quiz extends Window {
         drawImage (checkBack, 0, 0);
         drawImage (menuBtn, 400, -330);
         menuBtn.setOnMouseClicked(e -> { //return to the Main Menu
-            click.play();
             hideStage();
         });
         int coord = 0;
@@ -823,13 +819,11 @@ public class Quiz extends Window {
 
         play.setOnMouseClicked(e -> { //take the user to the play level
             playButtonClicked = true;
-            click.play();
             hideStage();
         });
         play.setOnMouseEntered(e -> setCursor(1));
         play.setOnMouseExited(e -> setCursor(0));
         menuBtn.setOnMouseClicked(event -> {
-            click.play();
             hideStage();
         });
     }

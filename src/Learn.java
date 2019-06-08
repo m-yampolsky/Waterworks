@@ -41,6 +41,8 @@ import javafx.stage.Stage;
  * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button.
  * June 2:
  * Vansh fixed bug where done boolean became true before user finished matching all descriptions, and added button to go to Quiz when finished matching descriptions.
+ * June 8:
+ * Vansh added sounds for right, wrong, and device navigation.
  * </pre>
  */
 public class Learn extends Window {
@@ -62,7 +64,7 @@ public class Learn extends Window {
     /**
      * This stores whether the currently selected device (center-screen) is the correct match for the current description to be matched.
      */
-    private boolean right;
+    private boolean correct;
 
     /**
      * This stores whether a description is being shown that must be matched, and if so then which one. more than 0 represents the nth device description, and less than 0  represents no current description to be matched.
@@ -93,7 +95,7 @@ public class Learn extends Window {
         xtime = 0;
         times = 0;
         go = 0;
-        right = false;
+        correct = false;
         current = -1;
         done = false;
         quizButtonClicked = false;
@@ -140,11 +142,12 @@ public class Learn extends Window {
 
         // click sound
         Sound click = (Sound)(Resources.get("click"));
+        Sound right = (Sound)(Resources.get("right"));
+        Sound wrong = (Sound)(Resources.get("wrong"));
 
         // Listeners for MouseClicked
         menuBtn.setOnMouseClicked(e -> {
             hideStage();
-            click.play();
         });
         learnLeft.setOnMouseClicked(e -> {
             if (times > 0 && times < 12)
@@ -179,7 +182,8 @@ public class Learn extends Window {
             click.play();
         });
         learnCheck.setOnMouseClicked(e -> {
-            if (right) {
+            if (correct) {
+                right.play();
                 remove(descriptions[current]);
                 remove(learnCheck);
                 descriptions[current].setPreserveRatio(true);
@@ -192,6 +196,7 @@ public class Learn extends Window {
                 } else
                     current = -1;
             } else {
+                wrong.play();
                 remove(learnCheck);
                 drawImage(learnWrong, -15, 255);
             }
@@ -250,7 +255,7 @@ public class Learn extends Window {
                 if (go != 0 && remove(learnWrong)) {
                     drawImage(learnCheck, -15, 260);
                 }
-                // if conveyor belt is moving left, draw the proper images in the right spots, and remove any that are not needed.
+                // if conveyor belt is moving left, draw the proper images in the correct spots, and remove any that are not needed.
                 if (go == 1) {
                     xtime += 12;
                     if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3600) {
@@ -260,7 +265,7 @@ public class Learn extends Window {
                             remove(learnCheck);
                         } else
                             drawImage(learnCheck, -15, 260);
-                        right = times - 1 == current;
+                        correct = times - 1 == current;
                     }
                 // if conveyor belt is moving right, draw the proper images in the right spots, and remove any that are not needed.
                 } else if (go == -1) {
@@ -272,7 +277,7 @@ public class Learn extends Window {
                             remove(learnCheck);
                         } else
                             drawImage(learnCheck, -15, 260);
-                        right = times - 1 == current;
+                        correct = times - 1 == current;
                     }
                 }
 

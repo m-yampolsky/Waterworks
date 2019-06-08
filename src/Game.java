@@ -427,13 +427,11 @@ public class Game extends Window {
         ImageView avatar = (ImageView)(Resources.get("avatar"));
         AnimatedImageView walking = (AnimatedImageView)(Resources.get("walking"));
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
-        Sound click = (Sound)(Resources.get("click"));
 
         Water w = new Water(1);
 
         // Listener for MouseClick
         menuBtn.setOnMouseClicked(e -> {
-            click.play();
             endStatus = -1;
             hideStage();
         });

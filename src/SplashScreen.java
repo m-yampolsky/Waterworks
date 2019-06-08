@@ -27,6 +27,8 @@ import javafx.stage.Stage;
  * June 5:
  * Maria added Resource loading for new win screen instruction text.
  * Vansh added Resource loading for new instructions Images.
+ * June 8:
+ * Vansh added Resource loading for the Learn Window's right and wrong sounds, clicking sounds, the Quiz Window's box sound and the Lake Erie + Superior Music
  * </pre>
  */
 public class SplashScreen extends Window
@@ -46,7 +48,7 @@ public class SplashScreen extends Window
     @Override
     public void display () {
 
-        AnimatedImage splashscreen = ((AnimatedImage)Resources.get("splashscreen"));
+        AnimatedImage splashscreen = new AnimatedImage("elements/splash/splash", 170, 0.100);
 
         final long startNanoTime = System.nanoTime();
 
@@ -195,7 +197,7 @@ public class SplashScreen extends Window
                     Resources.add("checkBack", new Image("elements/game/checkBack.png"));
                     Resources.add("checkPlay", new ImageView("elements/game/checkPlay.png"));
                     Resources.add("checkMark", new Image("elements/game/checkMark.png"));
-                    Resources.add("wrong", new Image("elements/game/wrong.png"));
+                    Resources.add("checkWrong", new Image("elements/game/wrong.png"));
 
                     Resources.add("textField", new ImageView("elements/game/winTextBox.png"));
                     Resources.add("nameLabel", new ImageView ("elements/game/winName.png"));

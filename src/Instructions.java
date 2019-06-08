@@ -66,16 +66,15 @@ public class Instructions extends Window {
         for (int i = 0; i < instructions.length; i++)
             instructions[i] = (Image)(Resources.get("instructions"+i));
         // click sound
-        Sound click = (Sound)(Resources.get("click"));
+        Sound flip = (Sound)(Resources.get("box"));
 
         // Listeners for MouseClicked
         backButton.setOnMouseClicked(e -> {
-            click.play();
             refresh();
             back = true;
         });
         instructionsF.setOnMouseClicked(e -> {
-            click.play();
+            flip.play();
             page++;
             refresh();
             drawImage(instructions[page], 0, 0);
@@ -88,7 +87,7 @@ public class Instructions extends Window {
         });
         // update graphics to go back 1 page in the instructions (add needed)
         instructionsB.setOnMouseClicked(e -> {
-            click.play();
+            flip.play();
             page--;
             refresh();
             drawImage(instructions[page], 0, 0);

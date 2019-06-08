@@ -47,16 +47,16 @@ import javafx.stage.WindowEvent;
 public class StageManager extends Application {
 
     /**
-     * This method will load all the necessary Splashscreen and Sound resources into the Resources class, open all the necessary windows and will control the program's flow.
+     * This method will load all the necessary Sound resources into the Resources class, open all the necessary windows and will control the program's flow.
      * @param stg The JavaFX Stage to display to.
      */
     public void start(Stage stg) {
         // load resources
-        AnimatedImage splashscreen = new AnimatedImage("elements/splash/splash", 170, 0.100);
-        Resources.add("splashscreen", splashscreen);
-
         Resources.add("oxfordComma", new Sound("elements/oxfordComma.mp3"));
         Resources.add("hotel", new Sound("elements/hotel.mp3"));
+        Resources.add("right", new Sound("elements/right.mp3"));
+        Resources.add("wrong", new Sound ("elements/wrong.mp3"));
+        Resources.add("box", new Sound ("elements/box.mp3"));
         Resources.add("click", new Sound ("elements/click.mp3"));
 
         // Stage, Stage title, and sizing contraints
