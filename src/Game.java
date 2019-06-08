@@ -181,6 +181,11 @@ public class Game extends Window {
     private final File SCORES_FILE_BACKUP;
 
     /**
+     * This stores the time at which the player has reached the point where they have won, and the win animation should play.
+     */
+    private double won;
+
+    /**
      * This is the class constructor. It sets initial values for the variables, and calls the super constructor of the Window class.
      * @param stg The JavaFX Stage to display to.
      * @param lvl The selected game level.
@@ -200,6 +205,7 @@ public class Game extends Window {
         endStatus = 0;
         SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
         SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+        won = 0;
     }
 
 
@@ -426,6 +432,7 @@ public class Game extends Window {
         GameChar avatarImg = (GameChar)(Resources.get("avatarImg"));
         ImageView avatar = (ImageView)(Resources.get("avatar"));
         AnimatedImageView walking = (AnimatedImageView)(Resources.get("walking"));
+        AnimatedImageView win = (AnimatedImageView)(Resources.get("win"));
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
 
         Water w = new Water(1);
@@ -504,55 +511,80 @@ public class Game extends Window {
         startNanoTime = System.nanoTime();
         new AnimationTimer()
         {
-            public void handle(long currentNanoTime)
-            {
+            public void handle(long currentNanoTime) {
                 t = (currentNanoTime - startNanoTime) / 300000000.0;
 
-                if (jumpY < 10) {
-                    logTouched = avatarImg.isTouchingLog (logLine, startX, jumpX);
+                if (jumpY < 10 && won == 0) {
+                    logTouched = avatarImg.isTouchingLog(logLine, startX, jumpX);
                     if (!logTouched)
                         falling = true;
                 }
 
                 // background image clears canvas
-                drawImage( lakeBackground, 0, 0 );
+                drawImage(lakeBackground, 0, 0);
                 if (level == 1)
-                    drawImage( cityBack, 480-(int)(t*3), 249 ); //draws the correct backgground depending on the lake being played
+                    if (won == 0)
+                        drawImage(cityBack, 480 - (int) (t * 3), 249); //draws the correct backgground depending on the lake being played, and correct position based on whether winning animation is playing
+                    else
+                        drawImage(cityBack, 480 - (int) (won * 3), 249);
                 else if (level == 2)
-                    drawImage( cityBack, 580-(int)(t*3), 304 );
+                    if (won == 0)
+                        drawImage(cityBack, 580 - (int) (t * 3), 304);
+                    else
+                        drawImage(cityBack, 580 - (int) (won * 3), 304);
+                else if (won == 0)
+                    drawImage(cityBack, 480 - (int) (t * 3), 20);
                 else
-                    drawImage( cityBack, 480-(int)(t*3), 20 );
-                drawImage( dirtBack, 0, 542 );
-                drawImage( lake, 1, w.getYValue() );
+                    drawImage(cityBack, 580 - (int) (won * 3), 304);
+                drawImage(dirtBack, 0, 542);
+                drawImage(lake, 1, w.getYValue());
 
-                Rectangle2D viewportRect = new Rectangle2D((int)(t*40), 0, 1000, 75); //sets the viewport for the log image
-                Rectangle2D viewportRectDevices = new Rectangle2D((int)(t*40), 0, 1000, deviceLine.getHeight()); //sets the viewport for the device image
-                startX = (int)(t*40);
+                Rectangle2D viewportRect = new Rectangle2D((int) (t * 40), 0, 1000, 75); //sets the viewport for the log image
+                Rectangle2D viewportRectDevices = new Rectangle2D((int) (t * 40), 0, 1000, deviceLine.getHeight()); //sets the viewport for the device image
+                if (won != 0) {
+                    viewportRect = new Rectangle2D((int) (won * 40), 0, 1000, 75); //sets the viewport for the log image
+                    viewportRectDevices = new Rectangle2D((int) (won * 40), 0, 1000, deviceLine.getHeight()); //sets the viewport for the device image
+                }
+                startX = (int) (t * 40);
                 logImg.setViewport(viewportRect);
                 deviceImg.setViewport(viewportRectDevices);
                 remove(deviceImg);
                 remove(logImg);
                 remove(avatar);
-                drawImage( logImg, 0, w.getYValue()-370 );
-                drawImage( deviceImg, 0, w.getYValue()-700);
+                drawImage(logImg, 0, w.getYValue() - 370);
+                drawImage(deviceImg, 0, w.getYValue() - 700);
 
                 //character walking animation
                 lastCharFrame = charFrame;
                 if (nextCharFrame != null)
                     charFrame = nextCharFrame;
-                nextCharFrame = walking.getFrame(t);
-                if (charFrame != null)
-                    drawImage(charFrame, -380+jumpX, w.getYValue()-490-jumpY);
+                if (won == 0)
+                    nextCharFrame = walking.getFrame(t);
+                else
+                    nextCharFrame = win.getFrame(t - won);
+                if (charFrame != null && won == 0)
+                    drawImage(charFrame, -380 + jumpX, w.getYValue() - 490 - jumpY);
+                if (won != 0)
+                    drawImage(charFrame, -380 + jumpX, w.getYValue() - 490);
                 remove(lastCharFrame);
 
                 if (finalDevFrame != null)
                     lastFinalDevFrame = finalDevFrame;
-                finalDevFrame = finalDevice.getFrame(t);
-                drawImage(finalDevFrame, 9500-(int)(t*40), w.getYValue()-430);
-                remove(lastFinalDevFrame);
+                if (won == 0) {
+                    finalDevFrame = finalDevice.getFrame(t);
+                    remove(lastFinalDevFrame);
+                    drawImage(finalDevFrame, 9500 - (int) (t * 40), w.getYValue() - 430);
+                } else if (win.frame(t-won) <= 115) {
+                    finalDevFrame = finalDevice.getFrame(t);
+                    remove(lastFinalDevFrame);
+                    drawImage(finalDevFrame, 9500 - (int) (won * 40), w.getYValue() - 430);
+                }else {
+                    remove(lastFinalDevFrame);
+                    drawImage(finalDevFrame, 9500 - (int) (won * 40), w.getYValue() - 430);
+                }
 
                 //checks if user has inputted information to make the avatar jump
-                if (input.contains("SPACE") && !falling) {
+                if (input.contains("SPACE") && !falling && won == 0) {
                     if (!jumping && jumpY == 0 && (currentNanoTime - jumpStop) / 300000000.0 > 2) {
                         jumping = true;
                         jumpStart = t;
@@ -572,7 +604,7 @@ public class Game extends Window {
                         jumpStop = System.nanoTime();
                     }
                 else {
-                    if (jumpX > 0 && jumpY == 0) //if user is not jumping, and position is not at default, decrease it to return to the default position
+                    if (jumpX > 0 && jumpY == 0 && won == 0) //if user is not jumping, and position is not at default, decrease it to return to the default position
                         jumpX--;
                     if (falling)
                     {
@@ -595,7 +627,9 @@ public class Game extends Window {
                     score -= 5;
                 }
 
-                if (-380+jumpX >= 9450-(int)(t*40)) { //stops the game movement, because the player has win
+                if (-380+jumpX >= 9200-(int)(t*40) && won == 0)
+                    won = t;
+                if (won != 0 && win.frame(t-won) >= 177 && t-won >= 2) { //stops the game movement, because the player has win
                     stop();
                     score += w.getHeight();
                     refresh();

@@ -64,6 +64,7 @@ public class SplashScreen extends Window
                     // load resources
                     Resources.add("standing", new AnimatedImage("elements/standing/standing", 180, 0.050));
                     Resources.add("walking", new AnimatedImageView("elements/walking/walking", 178, 0.070));
+                    Resources.add("win", new AnimatedImageView("elements/win/win", 179, 0.10));
 
                     Resources.add("finalWasher", new AnimatedImageView("elements/washer/washer", 50, 0.050));
                     Resources.add("finalTub", new AnimatedImageView("elements/tub/tub", 50, 0.050));

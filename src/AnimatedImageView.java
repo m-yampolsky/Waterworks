@@ -55,4 +55,12 @@ class AnimatedImageView
         return new ImageView(path + " (" + index + ").png");
     }
 
+    /**
+     * The frame() method, which returns the frame number of an animation based off of the time entered.
+     * @param time The time into the animation, determines which frame the animation is on
+     * @return An integer that represents the frame number that the animation is currently on
+     */
+    public int frame(double time) {
+        return Math.max((int)((time % (numFrames * duration)) / duration), 1);
+    }
 }
