@@ -108,7 +108,7 @@ public class Instructions extends Window {
         instructionsB.setOnMouseExited(e -> setCursor(0));
 
         // draw buttons
-        drawImage(backButton, -400, -180);
+        drawImage(backButton, -410, -195);
         drawImage(instructions[0], 0, 0);
         drawImage(instructionsF, 420, 300);
 

@@ -128,9 +128,9 @@ public class StageManager extends Application {
                         oxford.play();
                         Game g = new Game(stage, lvl);
                         g.run();
-                        if (g.endStatus == 0 || g.endStatus == -1)
+                        if (g.getEndStatus() == 0 || g.getEndStatus() == -1)
                             break;
-                        else if (g.endStatus == 2)
+                        else if (g.getEndStatus() == 2)
                             lvl = Math.min(3, lvl+1);
                     }
                  oxford.stop();

@@ -155,6 +155,10 @@ public class Game extends Window {
      * This stores the character location in the name String that the user input is on.
      */
     private int onChar;
+
+    /**
+     * Store the current time in nanoseconds.
+     */
     private long startNanoTime;
 
     /**
@@ -170,7 +174,7 @@ public class Game extends Window {
     /**
      * This stores the end status of the level that the user has just completed.
      */
-    public int endStatus;
+    private int endStatus;
 
     /**
      * This stores the file location of the high score storing file.
@@ -651,4 +655,12 @@ public class Game extends Window {
         }.start();
     }
 
+    /**
+     * This method returns the value of the program's end status.
+     * @return the value of the endStatus variable
+     */
+    public int getEndStatus()
+    {
+        return endStatus;
+    }
 }
