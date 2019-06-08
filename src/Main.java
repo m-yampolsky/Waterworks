@@ -15,7 +15,7 @@ import javafx.application.Application;
 class Main {
     /**
     * The main method of the class which launches the StageManager Application class.
-    * @param args The program
+    * @param args The program arguments.
     */
     public static void main(String[] args) {
         Application.launch(StageManager.class, args);
