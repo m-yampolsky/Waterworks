@@ -104,14 +104,14 @@ public class StageManager extends Application {
                 Learn l = new Learn(stage);
                 l.display();
                 stage.showAndWait();
-                if (l.quizButtonClicked)
+                if (l.getQuizButtonClicked())
                     c = 2;
             }
             if (c == 2) {
                 Quiz q = new Quiz (stage);
                 q.display();
                 q.showAndWait();
-                if (q.playButtonClicked)
+                if (q.getPlayButtonClicked())
                     c = 3;
             }
             if (c == 3) {

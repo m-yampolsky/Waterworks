@@ -163,7 +163,7 @@ public class Quiz extends Window {
     /**
      * This stores whether or not the play button has been clicked.
      */
-    public boolean playButtonClicked;
+    private boolean playButtonClicked;
 
     /**
      * This is the class constructor. It calls the super constructor of the Window class and sets initial values.
@@ -341,6 +341,7 @@ public class Quiz extends Window {
         //detect if a Mouse Drag has been released
         eBox.setOnMouseDragReleased(event -> {
             if (device != null){
+                box.play();
                 setCursor(0);
                 remove (device);
                 drawImage (device, -350, 150);
@@ -357,6 +358,7 @@ public class Quiz extends Window {
         iBox.setOnMouseDragReleased(event -> {
             setCursor(0);
             if (device != null){
+                box.play();
                 remove (device);
                 drawImage (device, 360, 150);
                 removeMouse (device);
@@ -371,6 +373,7 @@ public class Quiz extends Window {
         boxBack1.setOnMouseDragReleased(event -> {
             setCursor(0);
             if (device != null){
+                box.play();
                 remove (device);
                 drawImage (device, -350, 150);
                 removeMouse (device);
@@ -385,6 +388,7 @@ public class Quiz extends Window {
         boxBack2.setOnMouseDragReleased(event -> {
             setCursor(0);
             if (device != null){
+                box.play();
                 remove (device);
                 drawImage (device, 360, 150);
                 removeMouse (device);
@@ -641,6 +645,7 @@ public class Quiz extends Window {
             if (device.equals(img)) {
                 if (x >= 48 && x <= 252 && y >= 465 && y <= 670) //efficient box
                 {
+                    box.play();
                     remove(device);
                     drawImage(device, -350, 150);
                     removeMouse (device);
@@ -652,6 +657,7 @@ public class Quiz extends Window {
                     lost = false;
                 } else if (x >= 748 && x <= 962 && y >= 465 && y <= 670) //inefficient box
                 {
+                    box.play();
                     remove(device);
                     drawImage(device, 360, 150);
                     removeMouse (device);
@@ -826,6 +832,15 @@ public class Quiz extends Window {
         menuBtn.setOnMouseClicked(event -> {
             hideStage();
         });
+    }
+
+    /**
+     * This method returns the value of the playButtonClicked variable, which stores whether or not the Play button to move on to the next room has been clicked.
+     * @return true if the play Button has been clicked, and false if it has not been
+     */
+    public boolean getPlayButtonClicked()
+    {
+        return playButtonClicked;
     }
 
 }

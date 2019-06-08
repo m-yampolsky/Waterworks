@@ -79,7 +79,7 @@ public class Learn extends Window {
     /**
      * This stores whether the quiz button has been clicked.
      */
-    public boolean quizButtonClicked;
+    private boolean quizButtonClicked;
 
     /**
      * This stores how many descriptions have been matched with their proper devices.
@@ -338,4 +338,12 @@ public class Learn extends Window {
         }.start();
     }
 
+    /**
+     * This method returns the value of the quizButtonClickedProperty, determining if the Quiz button has been clicked.
+     * @return true if the Quix button has been clicked, and false if it has not
+     */
+    public boolean getQuizButtonClicked()
+    {
+        return quizButtonClicked;
+    }
 }
