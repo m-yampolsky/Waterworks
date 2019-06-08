@@ -341,6 +341,7 @@ public class Quiz extends Window {
         //detect if a Mouse Drag has been released
         eBox.setOnMouseDragReleased(event -> {
             if (device != null){
+                box.play();
                 setCursor(0);
                 remove (device);
                 drawImage (device, -350, 150);
@@ -357,6 +358,7 @@ public class Quiz extends Window {
         iBox.setOnMouseDragReleased(event -> {
             setCursor(0);
             if (device != null){
+                box.play();
                 remove (device);
                 drawImage (device, 360, 150);
                 removeMouse (device);
@@ -371,6 +373,7 @@ public class Quiz extends Window {
         boxBack1.setOnMouseDragReleased(event -> {
             setCursor(0);
             if (device != null){
+                box.play();
                 remove (device);
                 drawImage (device, -350, 150);
                 removeMouse (device);
@@ -385,6 +388,7 @@ public class Quiz extends Window {
         boxBack2.setOnMouseDragReleased(event -> {
             setCursor(0);
             if (device != null){
+                box.play();
                 remove (device);
                 drawImage (device, 360, 150);
                 removeMouse (device);
@@ -641,6 +645,7 @@ public class Quiz extends Window {
             if (device.equals(img)) {
                 if (x >= 48 && x <= 252 && y >= 465 && y <= 670) //efficient box
                 {
+                    box.play();
                     remove(device);
                     drawImage(device, -350, 150);
                     removeMouse (device);
@@ -652,6 +657,7 @@ public class Quiz extends Window {
                     lost = false;
                 } else if (x >= 748 && x <= 962 && y >= 465 && y <= 670) //inefficient box
                 {
+                    box.play();
                     remove(device);
                     drawImage(device, 360, 150);
                     removeMouse (device);
