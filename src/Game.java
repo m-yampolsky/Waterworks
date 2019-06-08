@@ -163,7 +163,7 @@ public class Game extends Window {
     /**
      * This stores a character representation of the user's name input.
      */
-    private final char[] charsName = name.toCharArray();
+    private final char[] charsName;
 
     /**
      * This stores the end status of the level that the user has just completed.
@@ -195,6 +195,7 @@ public class Game extends Window {
         jumpStart = 0;
         name = "          ";
         saved = false;
+        charsName = name.toCharArray();
         onChar = 0;
         endStatus = 0;
         SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
@@ -586,7 +587,7 @@ public class Game extends Window {
                 }
 
                 //detects whether the character is in contact with a device
-                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-90, w.getYValue()-640+325-jumpY+65-100, 130, 240);
+                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-60, w.getYValue()-640+325-jumpY+65-40, 130, 240);
                 if (deviceType == 1){
                     w.changeHeight(1); //change in response to an efficient device
                     score += 5;
