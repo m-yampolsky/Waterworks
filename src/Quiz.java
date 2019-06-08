@@ -163,7 +163,7 @@ public class Quiz extends Window {
     /**
      * This stores whether or not the play button has been clicked.
      */
-    public boolean playButtonClicked;
+    private boolean playButtonClicked;
 
     /**
      * This is the class constructor. It calls the super constructor of the Window class and sets initial values.
@@ -832,6 +832,15 @@ public class Quiz extends Window {
         menuBtn.setOnMouseClicked(event -> {
             hideStage();
         });
+    }
+
+    /**
+     * This method returns the value of the playButtonClicked variable, which stores whether or not the Play button to move on to the next room has been clicked.
+     * @return true if the play Button has been clicked, and false if it has not been
+     */
+    public boolean getPlayButtonClicked()
+    {
+        return playButtonClicked;
     }
 
 }
