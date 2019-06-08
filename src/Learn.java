@@ -47,49 +47,57 @@ public class Learn extends Window {
     /**
      * This stores the x-axis movement of the conveyor belt, where 0 is the starting position.
      */
-    private int xtime = 0;
+    private int xtime;
 
     /**
      * This stores the item number currently selected (center-screen), where 1 is the first item and in ascending order.
      */
-    private int times = 0;
+    private int times;
 
     /**
      * This stores whether the conveyor belt should be moving, and in which direction. 0 represents not moving, more than 0 represents moving left, and less than 0 represents moving right.
      */
-    private int go = 0;
+    private int go;
 
     /**
      * This stores whether the currently selected device (center-screen) is the correct match for the current description to be matched.
      */
-    private boolean right = false;
+    private boolean right;
 
     /**
      * This stores whether a description is being shown that must be matched, and if so then which one. more than 0 represents the nth device description, and less than 0  represents no current description to be matched.
      */
-    private int current = -1;
+    private int current;
 
     /**
      * This stores whether the user is done -- all descriptions have been matched with their proper devices.
      */
-    private boolean done = false;
+    private boolean done;
 
     /**
      * This stores whether the quiz button has been clicked.
      */
-    public boolean quizButtonClicked = false;
+    public boolean quizButtonClicked;
 
     /**
      * This stores how many descriptions have been matched with their proper devices.
      */
-    private int numDone = 0;
+    private int numDone;
 
     /**
-     * This is the class constructor. It calls the super constructor of the Window class.
+     * This is the class constructor. It calls the super constructor of the Window class and sets initial values.
      * @param stg The JavaFX Stage to display to.
      */
     public Learn(Stage stg) {
         super(stg, "Highscores");
+        xtime = 0;
+        times = 0;
+        go = 0;
+        right = false;
+        current = -1;
+        done = false;
+        quizButtonClicked = false;
+        numDone = 0;
     }
 
     /**

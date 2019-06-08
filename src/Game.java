@@ -147,18 +147,18 @@ public class Game extends Window {
     /**
      * This stores whether the user's name.
      */
-    private String name = "          ";
+    private String name;
 
     /**
      * This stores the character location in the name String that the user input is on.
      */
-    private int onChar = 0;
+    private int onChar;
     private long startNanoTime;
 
     /**
      * This stores whether the user input for name has been saved.
      */
-    private boolean saved = false;
+    private boolean saved;
 
     /**
      * This stores a character representation of the user's name input.
@@ -168,17 +168,17 @@ public class Game extends Window {
     /**
      * This stores the end status of the level that the user has just completed.
      */
-    public int endStatus = 0;
+    public int endStatus;
 
     /**
      * This stores the file location of the high score storing file.
      */
-    private final File SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
+    private final File SCORES_FILE;
 
     /**
      * This stores a backup file location of the high score storing file, in case the directory of SCORES_FILE is inaccessible.
      */
-    private final File SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+    private final File SCORES_FILE_BACKUP;
 
     /**
      * This is the class constructor. It sets initial values for the variables, and calls the super constructor of the Window class.
@@ -193,7 +193,12 @@ public class Game extends Window {
         jumpX = 0;
         jumping = false;
         jumpStart = 0;
-        name = "";
+        name = "          ";
+        saved = false;
+        onChar = 0;
+        endStatus = 0;
+        SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
+        SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
     }
 
 

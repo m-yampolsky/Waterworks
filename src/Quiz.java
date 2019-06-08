@@ -53,12 +53,12 @@ public class Quiz extends Window {
     /**
      * This stores whether there is a device being dragged at that moment.
      */
-    private boolean isDragged = false;
+    private boolean isDragged;
 
     /**
      * This stores whether a device has been released above a spot that is not a box.
      */
-    private boolean lost = false;
+    private boolean lost;
 
     /**
      * This stores the coordinates of the cursor.
@@ -68,97 +68,97 @@ public class Quiz extends Window {
     /**
      * This stores the device the user has selected at that moment.
      */
-    private ImageView device = null;
+    private ImageView device;
 
     /**
      * This stores the list of devices the user places in the efficient box.
      */
-    private ArrayList<ImageView> effDevices = new ArrayList<ImageView>();
+    private ArrayList<ImageView> effDevices;
 
     /**
      * This stores the list of devices the user places in the inefficient box.
      */
-    private ArrayList<ImageView> ineffDevices = new ArrayList<ImageView>();
+    private ArrayList<ImageView> ineffDevices;
 
     /**
      * This stores the scene's background.
      */
-    private ImageView background = (ImageView) (Resources.get("quizBack"));
+    private ImageView background;
 
     /**
      * This stores the bathtub device.
      */
-    private ImageView tub = new ImageView ("elements/game/tub.png");
+    private ImageView tub;
 
     /**
      * This stores the sink device.
      */
-    private ImageView sink = new ImageView ("elements/game/sink.png");
+    private ImageView sink;
 
     /**
      * This stores the washing machine device.
      */
-    private ImageView cWasher = new ImageView ("elements/game/washer.png");
+    private ImageView cWasher;
 
     /**
      * This stores the dish washer device.
      */
-    private ImageView dWasher = new ImageView ("elements/game/dishwasher.png");
+    private ImageView dWasher;
 
     /**
      * This stores the watering can device.
      */
-    private ImageView wCan = new ImageView ("elements/game/watercan.png");
+    private ImageView wCan;
 
     /**
      * This stores the rain barrel device.
      */
-    private ImageView barrel = new ImageView ("elements/game/barrel.png");
+    private ImageView barrel;
 
     /**
      * This stores the handwashing dishes image.
      */
-    private ImageView dSponge = new ImageView ("elements/game/dish.png");
+    private ImageView dSponge;
 
     /**
      * This stores the hose device.
      */
-    private ImageView hose = new ImageView ("elements/game/hose.png");
+    private ImageView hose;
 
     /**
      * This stores the shower device.
      */
-    private ImageView shower = new ImageView ("elements/game/shower.png");
+    private ImageView shower;
 
     /**
      * This stores the scene's border.
      */
-    private ImageView border = new ImageView ("elements/game/border.png");
+    private ImageView border;
 
     /**
      * This stores the efficient box.
      */
-    private ImageView eBox = (ImageView)(Resources.get("effBox"));
+    private ImageView eBox;
 
     /**
      * This stores the inefficient box.
      */
-    private ImageView iBox = (ImageView)(Resources.get("ineffBox"));
+    private ImageView iBox;
 
     /**
      * This stores the menu button.
      */
-    private ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
+    private ImageView menuBtn;
 
     /**
      * This stores the play button.
      */
-    private ImageView play = (ImageView)(Resources.get("checkPlay"));
+    private ImageView play;
 
     /**
      * This stores the click sound.
      */
-    private Sound click = (Sound)(Resources.get("click"));
+    private Sound click;
 
     /**
      * This stores whether or not the play button has been clicked.
@@ -166,12 +166,34 @@ public class Quiz extends Window {
     public boolean playButtonClicked;
 
     /**
-     * This is the class constructor. It creates new instances of necessary objects.
+     * This is the class constructor. It calls the super constructor of the Window class and sets initial values.
      * @param stg The JavaFX stage that all the graphics will be displayed on.
      */
     public Quiz(Stage stg) {
         super(stg, "Quiz");
         playButtonClicked = false;
+        isDragged = false;
+        lost = false;
+        device = null;
+        effDevices = new ArrayList<ImageView>();
+        ineffDevices = new ArrayList<ImageView>();
+        background = (ImageView) (Resources.get("quizBack"));
+        tub = new ImageView ("elements/game/tub.png");
+        sink = new ImageView ("elements/game/sink.png");
+        cWasher = new ImageView ("elements/game/washer.png");
+        dWasher = new ImageView ("elements/game/dishwasher.png");
+        wCan = new ImageView ("elements/game/watercan.png");
+        barrel = new ImageView ("elements/game/barrel.png");
+        dSponge = new ImageView ("elements/game/dish.png");
+        hose = new ImageView ("elements/game/hose.png");
+        shower = new ImageView ("elements/game/shower.png");
+        border = new ImageView ("elements/game/border.png");
+        eBox = (ImageView)(Resources.get("effBox"));
+        iBox = (ImageView)(Resources.get("ineffBox"));
+        menuBtn = (ImageView)(Resources.get("menuBtn"));
+        play = (ImageView)(Resources.get("checkPlay"));
+        click = (Sound)(Resources.get("click"));
+
     }
 
     /**

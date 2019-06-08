@@ -43,12 +43,15 @@ public class Highscores extends Window {
      */
     private boolean back;
 
-    private final File SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
+    /**
+     * This stores a file location of the highscores file.
+     */
+    private final File SCORES_FILE;
 
     /**
-     * This stores a backup file location of the high score storing file, in case the directory of SCORES_FILE is inaccessible.
+     * This stores a backup file location of the highscorse storing file, in case the directory of SCORES_FILE is inaccessible.
      */
-    private final File SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
+    private final File SCORES_FILE_BACKUP;
 
     /**
      * @param stg The JavaFX Stage to display to.
@@ -56,6 +59,8 @@ public class Highscores extends Window {
     public Highscores(Stage stg) {
         super(stg, "Highscores");
         back = false;
+        SCORES_FILE = new File (System.getProperty("user.home") + "/Desktop/highScoresFile.wtr");
+        SCORES_FILE_BACKUP = new File (System.getProperty("user.home") + "/highScoresFile.wtr");
     }
 
     /**

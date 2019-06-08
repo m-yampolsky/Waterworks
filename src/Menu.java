@@ -39,14 +39,15 @@ public class Menu extends Window
     /**
      * The chosen menu option.
      */
-    private int choice = 0;
+    private int choice;
 
     /**
-     * The class constructor. It calls the super constructor of the Window class.
+     * The class constructor. It calls the super constructor of the Window class and sets initial values.
      * @param stg The JavaFX Stage to display to.
      */
     public Menu (Stage stg) {
         super(stg, "Main Menu");
+        choice = 0;
     }
 
     /**

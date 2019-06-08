@@ -39,7 +39,7 @@ public class Instructions extends Window {
     /**
      * The page that the user is currently on of the instructions.
      */
-    private int page = 0;
+    private int page;
 
 
     /**
@@ -49,6 +49,7 @@ public class Instructions extends Window {
     public Instructions(Stage stg) {
         super(stg, "Highscores");
         back = false;
+        page = 0;
     }
 
     /**
