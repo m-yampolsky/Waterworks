@@ -95,7 +95,7 @@ public class Highscores extends Window {
         // Listener for MouseExit
         backButton.setOnMouseExited(e -> setCursor(0));
 
-        drawImage(backButton, -380, -160); //button to return to menu
+        drawImage(backButton, -410, -195); //button to return to menu
         String line = "";
 
         //read the High Scores file
@@ -265,7 +265,7 @@ public class Highscores extends Window {
                 if (r < names.length && c < names[r].length)
                 {
                     text.append(names[r][c]);
-                    for (int i = 0; i < 6 - scores[r][c].length(); i++)
+                    for (int i = 0; i < 6 - scores[r][c].length() + 10 - names[r][c].length(); i++)
                         text.append(" ");
                     text.append(scores[r][c]); //combine name and score to form output
                     list[r][c].setText(text.toString());

@@ -93,7 +93,7 @@ public class LevelSelect extends Window {
         drawImage(lakeOntario, -30, 100);
         drawImage(lakeErie, 170, 100);
         drawImage(lakeSuperior, 370, 100);
-        drawImage(backButton, -380, -160);
+        drawImage(backButton, -410, -195);
 
         // Bayou standing animation
         AnimatedImage standing = (AnimatedImage)(Resources.get("standing"));
