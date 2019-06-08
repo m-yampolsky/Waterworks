@@ -27,7 +27,7 @@ import javafx.stage.Stage;
  * May 20:
  * Vansh implemented Learn as an AniamtedImage where an arrow is pressed to move forward in the animation, and a menu button to go back.
  * May 24:
- * Vansh removed the AnimatedImage completely, and remade the animation in JavaFX using Image view Objects for the washer, barrel, watering can, shower head, tub, dish washer, hand washing, hose, and the sink. If statements and variables were
+ * Vansh removed the AnimatedImage completely, and remade the animation in JavaFX using Image view Objects for the washer, barrel, watering can, shower head, tub, dish washer, hand washing, hose, aquifer, and the sink. If statements and variables were
  * also made to allow wrapping around when moving too far to the right of the conveyor belt.
  * May 25:
  * Vansh made the Event properties to make the cursor change to a click hand when hovering over the right arrow button.
@@ -42,7 +42,7 @@ import javafx.stage.Stage;
  * June 2:
  * Vansh fixed bug where done boolean became true before user finished matching all descriptions, and added button to go to Quiz when finished matching descriptions.
  * June 8:
- * Vansh added sounds for right, wrong, and device navigation.
+ * Vansh implemented the aquifer device, and added sounds for right, wrong, and device navigation.
  * </pre>
  */
 public class Learn extends Window {
@@ -108,9 +108,9 @@ public class Learn extends Window {
     public void display()
     {
         // This is a boolean Array storing which devices have had their descriptions matched properly
-        boolean[] states = new boolean[11];
+        boolean[] states = new boolean[12];
         // This is an ImageView array holding the descriptions of all the devices.
-        ImageView[] descriptions = {(ImageView)(Resources.get("washerD")), (ImageView)(Resources.get("barrelD")), (ImageView)(Resources.get("canD")), (ImageView)(Resources.get("showerD")) , (ImageView)(Resources.get("iceD")), (ImageView)(Resources.get("wellD")), (ImageView)(Resources.get("tubD")), (ImageView)(Resources.get("dwasherD")), (ImageView)(Resources.get("dishD")), (ImageView)(Resources.get("hoseD")), (ImageView)(Resources.get("sinkD"))};
+        ImageView[] descriptions = {(ImageView)(Resources.get("washerD")), (ImageView)(Resources.get("barrelD")), (ImageView)(Resources.get("canD")), (ImageView)(Resources.get("showerD")) , (ImageView)(Resources.get("iceD")), (ImageView)(Resources.get("wellD")), (ImageView)(Resources.get("tubD")), (ImageView)(Resources.get("dwasherD")), (ImageView)(Resources.get("dishD")), (ImageView)(Resources.get("hoseD")), (ImageView)(Resources.get("aquiferD")), (ImageView)(Resources.get("sinkD"))};
 
         // buttons
         ImageView menuBtn = (ImageView)(Resources.get("menuBtn"));
@@ -124,7 +124,7 @@ public class Learn extends Window {
         ImageView quiz = (ImageView)(Resources.get("learnQuiz"));
 
         // conveyor belt item Images
-        ImageView hose2 = (ImageView)(Resources.get("learnHose2"));
+        ImageView aquifer2 = (ImageView)(Resources.get("learnAquifer2"));
         ImageView sink2 = (ImageView)(Resources.get("learnSink2"));
         ImageView washer = (ImageView)(Resources.get("learnWasher"));
         ImageView barrel = (ImageView)(Resources.get("learnBarrel"));
@@ -137,6 +137,7 @@ public class Learn extends Window {
         ImageView dish = (ImageView)(Resources.get("learnDish"));
         ImageView hose = (ImageView)(Resources.get("learnHose"));
         ImageView sink = (ImageView)(Resources.get("learnSink"));
+        ImageView aquifer = (ImageView)(Resources.get("learnAquifer"));
         ImageView washer2 = (ImageView)(Resources.get("learnWasher2"));
         ImageView barrel2 = (ImageView)(Resources.get("learnBarrel2"));
 
@@ -150,7 +151,7 @@ public class Learn extends Window {
             hideStage();
         });
         learnLeft.setOnMouseClicked(e -> {
-            if (times > 0 && times < 12)
+            if (times > 0 && times < 13)
                 remove(descriptions[times-1]);
             if (go != -1) {
                 go = -1;
@@ -166,13 +167,13 @@ public class Learn extends Window {
             click.play();
         });
         learnRight.setOnMouseClicked(e -> {
-            if (times > 0 && times < 12)
+            if (times > 0 && times < 13)
                 remove(descriptions[times-1]);
             if (go != 1) {
                 go = 1;
                 times++;
             }
-            if (times < 11 && states[times-1]) {
+            if (times < 12 && states[times-1]) {
                 remove(learnCheck);
                 drawImage(learnScreen, 284, 523);
             } else {
@@ -238,8 +239,8 @@ public class Learn extends Window {
                 // if not done...
                 if (!done) {
                     // ...while a current description is not set, set one at random until the one selected is not of state done.
-                    while (current == -1 && numDone < 11) {
-                        int tmp = (int) (Math.random() * 11);
+                    while (current == -1 && numDone < 12) {
+                        int tmp = (int) (Math.random() * 12);
                         if (!states[tmp])
                             current = tmp;
                     }
@@ -258,7 +259,7 @@ public class Learn extends Window {
                 // if conveyor belt is moving left, draw the proper images in the correct spots, and remove any that are not needed.
                 if (go == 1) {
                     xtime += 12;
-                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3600) {
+                    if (times == 1 && xtime >= 300 || times == 2 && xtime >= 550 || times == 3 && xtime >= 850 || times == 4 && xtime >= 1170 || times == 5 && xtime >= 1550 || times == 6 && xtime >= 1910 || times == 7 && xtime >= 2310 || times == 8 && xtime >= 2750 || times == 9 && xtime >= 3050 || times == 10 && xtime >= 3310 || times == 11 && xtime >= 3550 || times == 12 && xtime >= 3810) {
                         go = 0;
                         if (states[times-1]) {
                             drawImage(descriptions[times - 1], -13, 256);
@@ -270,7 +271,7 @@ public class Learn extends Window {
                 // if conveyor belt is moving right, draw the proper images in the right spots, and remove any that are not needed.
                 } else if (go == -1) {
                     xtime -= 12;
-                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3050 || times == 10 && xtime <= 3310 || times == 11 && xtime <= 3600) {
+                    if (times == 1 && xtime <= 300 || times == 2 && xtime <= 550 || times == 3 && xtime <= 850 || times == 4 && xtime <= 1170 || times == 5 && xtime <= 1550 || times == 6 && xtime <= 1910 || times == 7 && xtime <= 2310 || times == 8 && xtime <= 2750 || times == 9 && xtime <= 3050 || times == 10 && xtime <= 3310 || times == 11 && xtime <= 3550 || times == 12 && xtime <= 3810) {
                         go = 0;
                         if (states[times-1]) {
                             drawImage(descriptions[times - 1], -13, 256);
@@ -282,7 +283,7 @@ public class Learn extends Window {
                 }
 
                 // remove all device images, and redraw them at the right position.
-                remove(hose2);
+                remove(aquifer2);
                 remove(sink2);
                 remove(washer);
                 remove(barrel);
@@ -294,10 +295,11 @@ public class Learn extends Window {
                 remove(dwasher);
                 remove(dish);
                 remove(hose);
+                remove(aquifer);
                 remove(sink);
                 remove(washer2);
                 remove(barrel2);
-                drawImage(hose2, -990-xtime, 0);
+                drawImage(aquifer2, -960-xtime, -30);
                 drawImage(sink2, -700-xtime, 0);
                 drawImage(washer, 290-xtime, -50);
                 drawImage(barrel, 540-xtime, -30);
@@ -309,18 +311,19 @@ public class Learn extends Window {
                 drawImage(dwasher, 2740-xtime, -30);
                 drawImage(dish, 3040-xtime, -30);
                 drawImage(hose, 3300-xtime, 0);
-                drawImage(sink, 3590-xtime, 0);
-                drawImage(washer2, 4600-xtime, -50);
-                drawImage(barrel2, 4850-xtime, -30);
+                drawImage(aquifer, 3540-xtime, -30);
+                drawImage(sink, 3800-xtime, 0);
+                drawImage(washer2, 4810-xtime, -50);
+                drawImage(barrel2, 5060-xtime, -30);
 
                 // wrap around when moving conveyor belt to the left.
-                if (xtime >= 4310) {
+                if (xtime >= 4520) {
                     xtime = 0;
                     times = 1;
                 // wrap around when moving conveyor belt to the right.
                 } else if (xtime <= -450) {
-                    xtime = 3840;
-                    times = 11;
+                    xtime = 4050;
+                    times = 12;
                 }
 
                 // if done matching all descriptions, show button to move on to quiz screen.

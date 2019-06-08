@@ -167,7 +167,7 @@ public class SplashScreen extends Window
                     Resources.add("learnWrong", new ImageView ("elements/game/learnWrong.png"));
                     Resources.add("learnQuiz", new ImageView ("elements/game/learnQuiz.png"));
 
-                    Resources.add("learnHose2", new ImageView ("elements/game/learnHose.png"));
+                    Resources.add("learnAquifer2", new ImageView ("elements/game/learnAquifer.png"));
                     Resources.add("learnSink2", new ImageView ("elements/game/learnSink.png"));
                     Resources.add("learnWasher", new ImageView ("elements/game/learnWasher.png"));
                     Resources.add("learnBarrel", new ImageView ("elements/game/learnBarrel.png"));
@@ -179,6 +179,7 @@ public class SplashScreen extends Window
                     Resources.add("learnDWasher", new ImageView ("elements/game/learnDWasher.png"));
                     Resources.add("learnDish", new ImageView ("elements/game/learnDish.png"));
                     Resources.add("learnHose", new ImageView ("elements/game/learnHose.png"));
+                    Resources.add("learnAquifer", new ImageView ("elements/game/learnAquifer.png"));
                     Resources.add("learnSink", new ImageView ("elements/game/learnSink.png"));
                     Resources.add("learnWasher2", new ImageView ("elements/game/learnWasher.png"));
                     Resources.add("learnBarrel2", new ImageView ("elements/game/learnBarrel.png"));
@@ -193,6 +194,7 @@ public class SplashScreen extends Window
                     Resources.add("dwasherD", new ImageView ("elements/game/descriptions/dwasher.png"));
                     Resources.add("dishD", new ImageView ("elements/game/descriptions/dish.png"));
                     Resources.add("hoseD", new ImageView ("elements/game/descriptions/hose.png"));
+                    Resources.add("aquiferD", new ImageView ("elements/game/descriptions/aquifer.png"));
                     Resources.add("sinkD", new ImageView ("elements/game/descriptions/sink.png"));
 
                     Resources.add("checkBack", new Image("elements/game/checkBack.png"));
