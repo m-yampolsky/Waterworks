@@ -100,7 +100,7 @@ public class Highscores extends Window {
         // Listener for MouseExit
         backButton.setOnMouseExited(e -> setCursor(0));
 
-        drawImage(backButton, -410, -195); //button to return to menu
+        drawImage(backButton, -380, -160); //button to return to menu
         String line = "";
 
         //read the High Scores file

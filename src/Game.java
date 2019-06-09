@@ -61,7 +61,9 @@ import java.util.ArrayList;
  * Maria modifed the SCORE_FILE variable to store the location of the User's Desktop folder, to write the high scores file there. She also created the SCORES_FILE_BACKUP to store the original file location,
  * which will be used in the case that the user has blocked access to their Desktop. She also changed the win method to try and write to the Desktop first, and if that fails, to write to the user's home directory.
  * June 8:
- * Vansh adjusted the call to avatarImg.isTouchingDevice() in order to make collision detection more accurate
+ * Vansh adjusted the call to avatarImg.isTouchingDevice() in order to make collision detection more accurate.
+ * June 9:
+ * Vansh adjusted collision detection and redrew menuBtn after the deviceLine so that it wouldn't be covered up.
  * </pre>
  */
 public class Game extends Window {
@@ -498,8 +500,6 @@ public class Game extends Window {
             deviceLine = (DeviceLine)(Resources.get ("superiorDeviceLine"));
         }
 
-        drawImage(menuBtn, 400, -330); //draws the Menu button
-
         //checks if user is pressing down on key input
         getScene().setOnKeyPressed(
                 e -> {
@@ -562,8 +562,11 @@ public class Game extends Window {
                 remove(deviceImg);
                 remove(logImg);
                 remove(avatar);
+                remove(menuBtn);
                 drawImage(logImg, 0, w.getYValue() - 370);
-                drawImage(deviceImg, 0, w.getYValue() - 700);
+                drawImage(deviceImg, 0, w.getYValue() - 640);
+
+                drawImage(menuBtn, 400, -330); //draws the Menu button
 
                 //character walking animation
                 lastCharFrame = charFrame;
@@ -628,7 +631,7 @@ public class Game extends Window {
                 }
 
                 //detects whether the character is in contact with a device
-                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-60, w.getYValue()-640+325-jumpY+65-40, 130, 240);
+                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-65, w.getYValue()-640+325-jumpY+65+10, 120, 220);
                 if (deviceType == 1){
                     w.changeHeight(1); //change in response to an efficient device
                     score += 5;
@@ -638,7 +641,7 @@ public class Game extends Window {
                     score -= 5;
                 }
 
-                if (-380+jumpX >= 9200-(int)(t*40) && won == 0)
+                if (-380+jumpX >= 9100-(int)(t*40) && won == 0)
                     won = t;
                 if (won != 0 && win.frame(t-won) >= 177 && t-won >= 2) { //stops the game movement, because the player has win
                     stop();
