@@ -632,7 +632,7 @@ public class Game extends Window {
                 }
 
                 //detects whether the character is in contact with a device
-                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-65, w.getYValue()-640+325-jumpY+65+10, 120, 220);
+                int deviceType = avatarImg.isTouchingDevice(deviceLine, startX+jumpX+120-65, w.getYValue()-640+325-jumpY+65+10, 120, 200);
                 if (deviceType == 1){
                     w.changeHeight(1); //change in response to an efficient device
                     score += 5;

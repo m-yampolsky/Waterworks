@@ -40,6 +40,7 @@ import java.io.*;
  * June 5:
  * Maria modified the display() method and added the SCORES_FILE_BACKUP to write to another file in case writing to the first file fails. This gives the program the opportunity to write to another directory, in case
  * the user has blocked access to the first directory they will try writing to. -- 2 hours
+ * Vansh removed the clicking sound as it was annoying. -- 0 hours
  * </pre>
  */
 
@@ -84,7 +85,6 @@ public class Highscores extends Window {
         Image highscoresErie = (Image)(Resources.get("highscoresErie"));
         Image highscoresSuperior = (Image)(Resources.get("highscoresSuperior"));
         ImageView backButton = (ImageView)(Resources.get("backButton"));
-        Sound click = (Sound)(Resources.get("click"));
 
         String[][]scores = new String[0][0];
         String[][] names = new String[0][0];
@@ -95,7 +95,6 @@ public class Highscores extends Window {
         backButton.setOnMouseClicked(e -> {
             refresh();
             back = true;
-            click.play();
         });
         // Listener for MouseEnter
         backButton.setOnMouseEntered(e -> setCursor(1));
