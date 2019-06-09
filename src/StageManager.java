@@ -18,29 +18,31 @@ import javafx.stage.WindowEvent;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
+ * <h2>Total Time Spent: </h2>
+ *
  * <pre>
  * Version History:
  * May 17:
  * Vansh created StageManager class and implemented Stage setup + Menu and Splashscreen implementation.
  * May 19:
- * Maria implemented LevelSelect and Game Windows.
+ * Maria implemented LevelSelect and Game Windows. 0.25 hours
  * May 20:
  * Vansh implemented Resource Loading and Menu Music.
  * May 21:
  * Vansh implemented Highscores Window.
- * Maria implemented the back buttons to go back to Menu from other rooms and added resources for LogLines.
+ * Maria implemented the back buttons to go back to Menu from other rooms and added resources for LogLines. 0.25 hours
  * May 22:
  * Vansh moved the playing of Game level music, into StageManager and implemented the Instrucitons Window (and its Resources).
- * Maria implemented the Quiz Window and Quiz + more Game Resources.
+ * Maria implemented the Quiz Window and Quiz + more Game Resources. 0.5 hours
  * May 23:
  * Vansh implemented Learn Window + Learn Resources.
- * Maria added Quiz Resources.
+ * Maria added Quiz Resources. 0.25 hours
  * May 24:
  * Vansh added Stage constraints so that the Window cannot be resized.
  * May 27:
  * Vansh added a Click Sound to Resources.
  * May 29:
- * Maria added Resources for the Quiz Check screen.
+ * Maria added Resources for the Quiz Check screen. 0.25 hours
  * May 31:
  * Vansh added 2 new Learn screen Device graphics to Resources.
  * June 1:
