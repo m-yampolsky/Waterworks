@@ -18,7 +18,7 @@ import javafx.application.Application;
  * Vansh created Main class with public static void main implementation. -- 0.15 hours
  * </pre>
  */
-class Main {
+public class Main {
     /**
     * The main method of the class which launches the StageManager Application class.
     * @param args The program arguments.

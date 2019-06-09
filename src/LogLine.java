@@ -25,7 +25,7 @@ import javafx.scene.image.PixelReader;
  * Maria wrote the isColoured() and length() methods to use them in the methods of the GameChar class to allow the avatar to detect whether it is touching a log. -- 2.5 hours
  * </pre>
  */
-class LogLine extends Image
+public class LogLine extends Image
 {
   /**
    * This array stores whether or not each pixel of the image has a colour at a pixel or not.

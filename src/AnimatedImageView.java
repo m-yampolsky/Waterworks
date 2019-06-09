@@ -20,7 +20,7 @@ import javafx.scene.image.ImageView;
  * Vansh redid the class to no longer store an array of ImageView objects, but to store a path location and a frame number. The instance methods and constructor were rewritten to accomodate for this change, and now do not return items using indexes of an array, but return items using the path location. -- 1 hour
  * </pre>
  */
-class AnimatedImageView
+public class AnimatedImageView
 {
 
     /**

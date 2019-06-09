@@ -26,7 +26,7 @@ import java.util.ArrayList;
  * Maria corrected a bug in this class, by marking a pixel location in the colours 2D array with 0 if a pixel is White or Transparent. Originally, it only marked it with a 0 if it was transparent, but White also indicates the presence of no specific device type. -- 1 hour
  * </pre>
  */
-class DeviceLine extends Image{
+public class DeviceLine extends Image{
 
     /**
      * This 2 dimensional array stores a pixel by pixel representation of the DeviceLine image. At each pixel location, 0 represents there being no device, 1 is an efficient device, -1 is an inefficient device

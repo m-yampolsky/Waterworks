@@ -37,7 +37,7 @@ import java.util.ArrayList;
  * Vansh added the Rectangular Viewports in the display() method to only have to load a portion of an Image at a time to save RAM. -- 2 hours
  * May 20:
  * Maria added the avatar to the game, using an ImageView representation of the character, as well as a GameChar representation. -- 1.5 hours
- * Vansh removed all the Image & ImageView loading from the class, and added that instead to the Resources class. Now, the Images and ImageView objects are accessed from the Resources class. -- 1 hour
+ * Vansh removed all the Image and ImageView loading from the class, and added that instead to the Resources class. Now, the Images and ImageView objects are accessed from the Resources class. -- 1 hour
  * May 26:
  * Vansh added an animation of the avatar walking into the display() method, by using the AnimatedImageView class. He also added the jumping animation,
  * writing the portion of the display() method that checks for keyboard input and responds by moving the avatar up screen. -- 4 hours

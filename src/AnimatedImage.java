@@ -24,7 +24,7 @@ import javafx.scene.image.Image;
  * Vansh wrote the getSplashFrame() and splashFrame() methods to return the correct frame for the Splashscreen animation and to return the number of the frame that the Splashscreen animation is on, respectively. -- 1 hour
  * </pre>
  */
-class AnimatedImage
+public class AnimatedImage
 {
     /**
      * The path location of the files in which the frames of the animation are stored.

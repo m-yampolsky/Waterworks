@@ -31,7 +31,7 @@ import javafx.scene.image.Image;
  * Vansh once again modified the values used in calculation for the isTouchingDevice() method, as the device detection still had room for improvement. -- 3 hours
  * </pre>
  */
-class GameChar extends Image
+public class GameChar extends Image
 {
 
   /**

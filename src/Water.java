@@ -20,7 +20,7 @@
  * Vansh modified the getHeight() method to modify the height at different rates depending on the lake level being played on. -- 0.15 hours
  * </pre>
  */
-class Water {
+public class Water {
     /**
      * The number of elapsed nanoseconds since the beginning of runtime
      * up until the creation of the current Water Object.

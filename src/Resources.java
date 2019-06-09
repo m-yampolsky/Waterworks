@@ -18,7 +18,7 @@ import java.util.HashMap;
  * Vansh created the class, as well as all the implementation including the global static HashMap resources as well as the static add and get methods. -- 0.5 hours
  * </pre>
  */
-class Resources {
+public class Resources {
     /**
      * The HashMap storing the relationships between each String identifier, and its corresponding resource Object.
      */

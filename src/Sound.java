@@ -24,7 +24,7 @@ import java.util.ArrayList;
  * Vansh created static AudioClip ArrayList all to store all AudioClips made by the class, and static stopAll method to stop all Sounds. -- 0.5 hours
  * </pre>
  */
-class Sound {
+public class Sound {
     /**
      * This stores the AudioClip itself, at the path specified in the constructor.
      */
