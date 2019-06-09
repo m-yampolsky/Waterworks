@@ -2,6 +2,10 @@
  * The Water class
  * This class represents the water of the lake from the Wateworks game. It stores the water level of the lake, the y coordinate where the top of the water will appear, as well as the level being played.
  * Depending on what lake you are playing on, the image used to display the water level of the lake will change.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

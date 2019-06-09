@@ -17,6 +17,10 @@ import javafx.stage.Stage;
  * When navigating through previously matched devices (the states array element in the device number's index is true), their descriptions are re-drawn to the screen, and removed when navigating a to a different device. Once, the numDone integer
  * reaches 11, the done boolean is set to true. This triggers the learnQuiz ImageView button to be drawn in the bottom-left which stops the AnimationTimer and sets the global public boolean quizButtonClicked to be set to true. The stage is then
  * hidden in order to trigger the Stage.showAndWait() call in the StageManager class to move forward.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *

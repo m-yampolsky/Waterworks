@@ -5,6 +5,10 @@ import javafx.scene.image.Image;
  * This class stores the object that represents the in game avatar that the user will be controlling to play. It extends the Image class to store an image representation of the avatar.
  * THis class will be used to detect if the avatar is touching devices and logs. It used in the third room only, and irs methods are used in calculating the user's score and for modifying the water
  * level of the lakes.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

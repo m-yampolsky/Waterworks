@@ -1,6 +1,7 @@
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -10,6 +11,10 @@ import javafx.stage.WindowEvent;
  * The StageManager class
  * This class puts together all the windows of the program, and organises the program flow. It does this by loading the splashscreen AnimatedImage as well as the Sound objects used in the class.
  * The class then sets-up the JavaFX Stage, and runs the proper methods of specific classes to show and hide Windows, whilst stopping and playing the music Sound Objects.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
@@ -76,6 +81,7 @@ public class StageManager extends Application {
         root.getChildren().add(canvas);
 
         stage.setOnCloseRequest((WindowEvent event1) -> System.exit(0));
+        stage.getIcons().add(new Image("elements/game/backgroundChar.png"));
         stage.setScene(scene);
 
 

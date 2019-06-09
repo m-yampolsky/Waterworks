@@ -7,6 +7,10 @@ import javafx.scene.image.PixelReader;
  * This class stores an object that represents the logs that the avatar will have to run across during the game. It stores a 2 dimensional array representation of the pixels of the Log image.
  * At each pixel, a boolean value is stored, indicating whether that pixel is transparent or coloured. The coloured pixels are located where the logs are in the image. The transparent pixels
  * identify where there are no logs. This class is used in the third room to help the avatar detect whether it is on a log or not.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

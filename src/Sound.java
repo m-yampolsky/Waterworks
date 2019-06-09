@@ -5,6 +5,10 @@ import java.util.ArrayList;
 /**
  * The Sound class
  * This class stores sound media, and allows specific AudioClips to be played, stopped, and looped. It also allows the stopping of all AudioClips created with this class, due to its static ArrayList all and static method stopAll().
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *

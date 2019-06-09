@@ -19,6 +19,10 @@ import java.util.ArrayList;
  * From the lose screen, they can press a button to return to Main Menu, or they can press a button to try the same level again. If they miss the jump between two logs, they will also lose, and the same lose screen is shown with the same two options.
  * If they make it to the end of the logs, they will reach a turned on inefficient water devices, and an animation of the avatar turning off the device will play. The win screen will then be displayed, where the user will be prompted to enter their name.
  * They are limited to ten characters, and they must press the save button to save their name and score. They can press a button to return to main menu, and if they are on the first two lakes, after saving, a button will also appear to continue to the next lake.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

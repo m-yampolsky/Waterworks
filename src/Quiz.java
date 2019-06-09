@@ -17,6 +17,10 @@ import javafx.scene.canvas.Canvas;
  * correct object placements in the boxes. They will also see a count for how many of the objects out of nine they placed correctly. And, where it display which objects they
  * placed in which boxes, check marks and x's will appear underneath the correctly placed objects and incorrectly place objects, respectively. From this screen, the user can return
  * to the Main Menu or continue on to the third room To go back to the Menu, the user must click on the Menu button. To go on to the third room, they must click on the Play button.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

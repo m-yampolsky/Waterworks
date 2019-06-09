@@ -3,6 +3,10 @@ import javafx.scene.image.Image;
 /**
  * The AnimatedImage Class
  * This class stores an animated image, by storing the path to the location where the frames of the animation are stored. This is used in the WaterWorks program for the Splashscreen animation.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

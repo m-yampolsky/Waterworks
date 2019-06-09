@@ -8,6 +8,10 @@ import javafx.scene.image.ImageView;
  * This class represents the LevelSelect window where the user will choose which level they want to play. Three different ImageView Object buttons showing previews of all 3 levels are displayed.
  * Clicking on any of these, will take ou to this level in the Game class. There is also an ImageView button under the title to go back to the menu, backButton. There is an AnimatedImage of
  * Bayou (the cactus) standing happily in the bottom left on the background log, just like the Menu window.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *

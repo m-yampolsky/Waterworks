@@ -14,6 +14,10 @@ import java.io.*;
  * This class writes to the high scores storage file to update it. It reads from the file to get the high scores with their names to then output them. It sorts the scores and organises them based off of which lake
  * the score is from. It then outputs them in three different columns. The names are on the left of each column, and the scores are on the right. Only the top ten scores are displayed, unless there are less than ten scores
  * saved, in that case, all the scores are displayed. There will be a Menu button on screen that the user will be able to press at any point to return to the Main Menu.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

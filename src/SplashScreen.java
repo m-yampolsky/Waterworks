@@ -6,6 +6,10 @@ import javafx.stage.Stage;
 /**
  * The Splashscreen class
  * This class represents the window with an animation that plays at the start of the program with the Pistachio Labs logo, and then loads program Resources to avoid lag during runtime.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *

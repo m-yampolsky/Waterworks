@@ -6,6 +6,9 @@ import javafx.scene.image.ImageView;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * <pre>
  * Version History:
  * May 26:

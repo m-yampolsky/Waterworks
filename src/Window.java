@@ -14,6 +14,10 @@ import javafx.stage.Stage;
  * This abstract class is the superclass to which all the independent screens of the program belong. It contains the necessary methods and instance variables for displaying, opening,
  * closing and erasing the screens of a JavaFX Application. The classes Game, Highscores, Instructions, Learn, LevelSelect, Menu, Splashscreen and Quiz extend this class, as those are all
  * the various screens of the game.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *

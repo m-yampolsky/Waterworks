@@ -8,6 +8,10 @@ import javafx.stage.Stage;
  * This class represents the window that has all the graphics and mechanics of the instructions Window.It extends the abstract Window class to use its basic mechanics methods for displaying, hiding and clearing the screen.
  * The Window starts on the first page of the instructions, and can navigate through the pages (current page stored in the global integer page) with the left and right ImageView arrow buttons that appear at the bottom of
  * the Window. These arrows appear and disappear automatically. For example, if you are on the first page, the left back arrow won't show up, and if you are on the last page, the right forward arrow won't.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *

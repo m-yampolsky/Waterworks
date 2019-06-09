@@ -7,6 +7,10 @@ import javafx.stage.Stage;
  * The Menu class
  * This class represents the Window that has all the graphics and mechanics for the main menu of the Waterworks program. It extends the abstract Window class to use its basic mechanics methods for displaying, hiding and clearing the screen.
  * The class allows the user to press ImageView buttons to indicate which Window they wish to enter. This indication of their choice is returned to the StageManager through the getChoice method, which also manages and drives all the class methods.
+ *
+ * <h2>Course Information:</h2>
+ * ICS4U0 with Krasteva, V.
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
