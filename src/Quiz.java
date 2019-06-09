@@ -204,6 +204,7 @@ public class Quiz extends Window {
      * to the Main Menu. It stores which objects are placed into the two different boxes, and it shows the Check button when all of them have been placed in the boxes. If the button is pressed
      * the check() method is called to then display the results screen.
      */
+    @Override
     public void display() {
         Canvas thisCan = getCanvas();
         ImageView boxBack1 = (ImageView)(Resources.get("boxBack"));

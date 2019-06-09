@@ -72,6 +72,7 @@ public class Highscores extends Window {
      * more than the top ten scores, and to store them in an almost sorted order. The sort used is Insertion sort, because it works well for short lists, especially those that are already partially
      * sorted. This will be the case with the high scores file, as it gets updated with a sorted list every time this method is called.
      */
+    @Override
     public void display()
     {
         Image background = (Image)(Resources.get("menuBackground"));

@@ -59,6 +59,7 @@ public class Instructions extends Window {
     /**
      * This method will display all the graphics of the Highscores window, and implement the mechanics of the left and right arrows, as well as the back button to the menu.
      */
+    @Override
     public void display()
     {
         // buttons

@@ -55,6 +55,7 @@ public class LevelSelect extends Window {
     /**
      * This method will display all the graphics of the LevelSelect window. It allows the user to click one of the levels shown, or the back button to return back to the Menu Window.
      */
+    @Override
     public void display()
     {
         Image background = (Image)(Resources.get("menuBackground"));

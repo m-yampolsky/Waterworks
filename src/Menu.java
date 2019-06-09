@@ -68,6 +68,7 @@ public class Menu extends Window
     /**
      * This method displays all the graphics, and implements all the buttons of the Menu window.
      */
+    @Override
     public void display() {
         Image menuBackground = (Image)(Resources.get("menuBackground"));
         Image menuBackgroundLog = (Image)(Resources.get("backLog"));
