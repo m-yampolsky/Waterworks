@@ -14,6 +14,8 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
+ * <h2>Total Time Spent: </h2>
+ *
  * <pre>
  * Version History:
  * May 17:

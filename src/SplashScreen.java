@@ -13,6 +13,8 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
+ * <h2>Total Time Spent: </h2>
+ *
  * <pre>
  * Version History:
  * May 17:
@@ -27,9 +29,9 @@ import javafx.stage.Stage;
  * Vansh moved all of the Resource loading from StageManager (before Window was ever shown), to the loading screen section.
  * June 4:
  * Vansh fixed bug where Splashscreen would sometimes skip the loading screen and get stuck in an animation loop.
- * Maria added Resource loading for new win screen elements and added DeviceLine Resource loading.
+ * Maria added Resource loading for new win screen elements and added DeviceLine Resource loading. 0.25 hours
  * June 5:
- * Maria added Resource loading for new win screen instruction text.
+ * Maria added Resource loading for new win screen instruction text. 0.25 hours
  * Vansh added Resource loading for new instructions Images.
  * June 8:
  * Vansh added Resource loading for the Learn Window's right and wrong sounds, clicking sounds, the Quiz Window's box sound and the Lake Erie + Superior Music

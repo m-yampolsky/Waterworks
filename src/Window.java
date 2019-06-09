@@ -21,22 +21,24 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
+ * <h2>Total Time Spent: </h2>
+ *
  * Version History:
  * May 13:
  * Vansh created the class and create its instance variables, the constructor, the clean(), hideStage(), showAndWait() and refresh() methods. He also wrote the abstract display() method.
  * May 19:
- * Maria wrote the drawImage() methods to display Image objects and ImageView objects on the screen.
+ * Maria wrote the drawImage() methods to display Image objects and ImageView objects on the screen. 0.5 hours
  * May 22:
  * Vansh wrote the remove(Node e) method to delete and remove an object being displayed on screen.
  * May 23:
  * Vansh wrote the setCursor() method to modify the cursor and display different icons for the cursor.
  * May 24:
- * Maria wrote the getCanvas() and getScene() methods to access the private canvas and scene fields in other classes.
+ * Maria wrote the getCanvas() and getScene() methods to access the private canvas and scene fields in other classes. 0.25 hours
  * May 26:
  * Vansh added an additional option to the setCursor() method by adding another if statement. This one checks if the cursor should be displaying a closed hand, which indicates that an item is being dragged.
  * June 3:
  * Maria added the add() method to draw Node objects on to the screen. She wrote it based off of the drawImage() method, but generalising it, so that any Node object could be drawn with it.
- * She needed this method to draw Text objects on the Highscore and win screens in the Game.
+ * She needed this method to draw Text objects on the Highscore and win screens in the Game. 0.5 hours
  * June 4:
  * Vansh wrote the displayVideo() method to play mp4 files and other video files on the window.
  * June 5:
