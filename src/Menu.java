@@ -81,7 +81,6 @@ public class Menu extends Window
         ImageView menuExitBtn = (ImageView)(Resources.get("exitBtn"));
         ImageView menuInstructionsBtn = (ImageView)(Resources.get("instructionsBtn"));
         ImageView menuHighscoresBtn = (ImageView)(Resources.get("highscoresBtn"));
-        Sound click = (Sound)(Resources.get("click"));
 
 
         // Listener for MouseClick
@@ -93,19 +92,13 @@ public class Menu extends Window
             refresh();
             choice = 2;
         });
-        menuInstructionsBtn.setOnMouseClicked(e -> {
-            choice = 5;
-        });
+        menuInstructionsBtn.setOnMouseClicked(e -> choice = 5);
         menuHighscoresBtn.setOnMouseClicked(e -> {
             refresh();
             choice = 4;
         });
-        menuLearnBtn.setOnMouseClicked(e -> {
-            choice = 1;
-        });
-        menuExitBtn.setOnMouseClicked(e -> {
-            choice = -1;
-        });
+        menuLearnBtn.setOnMouseClicked(e -> choice = 1);
+        menuExitBtn.setOnMouseClicked(e -> choice = -1);
         // Listener for MouseEnter
         menuLearnBtn.setOnMouseEntered(e -> setCursor(1));
         menuQuizBtn.setOnMouseEntered(e -> setCursor(1));

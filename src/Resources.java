@@ -22,7 +22,7 @@ class Resources {
     /**
      * The HashMap storing the relationships between each String identifier, and its corresponding resource Object.
      */
-    private static HashMap<String, Object> resources = new HashMap<String, Object>();
+    private static final HashMap<String, Object> resources = new HashMap<String, Object>();
 
     /**
      * This method is used to add Objects to the static resources Hashmap with a String identifier, to be retrieved later on.
@@ -34,7 +34,7 @@ class Resources {
     }
 
     /**
-     * This method is used to retrieve an Obejct added to the Hashmap during loading with its String identifier.
+     * This method is used to retrieve an Object added to the Hashmap during loading with its String identifier.
      * @param name The String identifier of a corresponding resource Object.
      * @return The corresponding resource Object from the private resources HashMap.
      */

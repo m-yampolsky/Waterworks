@@ -154,9 +154,7 @@ public class Learn extends Window {
         Sound wrong = (Sound)(Resources.get("wrong"));
 
         // Listeners for MouseClicked
-        menuBtn.setOnMouseClicked(e -> {
-            hideStage();
-        });
+        menuBtn.setOnMouseClicked(e -> hideStage());
         learnLeft.setOnMouseClicked(e -> {
             if (times > 0 && times < 13)
                 remove(descriptions[times-1]);
@@ -350,7 +348,7 @@ public class Learn extends Window {
 
     /**
      * This method returns the value of the quizButtonClickedProperty, determining if the Quiz button has been clicked.
-     * @return true if the Quix button has been clicked, and false if it has not
+     * @return true if the Quiz button has been clicked, and false if it has not
      */
     public boolean getQuizButtonClicked()
     {

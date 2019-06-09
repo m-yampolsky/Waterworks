@@ -44,7 +44,7 @@ import javafx.stage.Stage;
  * June 5:
  * Vansh removed the displayVideo() method, as it became unnecessary after we modified the lose and win screens of the program. -- 0.15 hours
  */
-abstract class Window {
+public abstract class Window {
     /**
      * The Window's JavaFX Stage.
      */

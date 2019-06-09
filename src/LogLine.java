@@ -35,7 +35,7 @@ class LogLine extends Image
   /**
    * This is the constructor for this class. It calls the super() constructor from the Image class to create a new image to display. It also initializes the 2 dimensional array that
    * stores its pixels. The constructor uses a PixelReader to find the pixels of the image. It then loops through the PixelReader to check which pixels are coloured and which are transparent.
-   * The transparent pixels are then assigned false in the isColoured array, and the coloured pixels are asssigned true.
+   * The transparent pixels are then assigned false in the isColoured array, and the coloured pixels are assigned true.
    * @param pic The path to the image file from which the LogLine will be created.
    */
   public LogLine (String pic)
@@ -56,7 +56,7 @@ class LogLine extends Image
   /**
    * This method returns whether or not one of the pixels in the LogLine with the x coordinate passed by the user is coloured. The method searches a column of the isColoured array,
    * and if it finds at least one pixel which is coloured, it returns true.
-   * @param x
+   * @param x x-value to check for a colored pixel
    * @return true if the pixel at that coordinate is coloured, or false if it is transparent
    */
   public boolean isColoured (int x) {

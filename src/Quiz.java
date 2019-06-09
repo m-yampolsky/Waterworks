@@ -79,17 +79,17 @@ public class Quiz extends Window {
     /**
      * This stores the list of devices the user places in the efficient box.
      */
-    private ArrayList<ImageView> effDevices;
+    private final ArrayList<ImageView> effDevices;
 
     /**
      * This stores the list of devices the user places in the inefficient box.
      */
-    private ArrayList<ImageView> ineffDevices;
+    private final ArrayList<ImageView> ineffDevices;
 
     /**
      * This stores the scene's background.
      */
-    private ImageView background;
+    private final ImageView background;
 
     /**
      * This stores the bathtub device.
@@ -139,32 +139,32 @@ public class Quiz extends Window {
     /**
      * This stores the scene's border.
      */
-    private ImageView border;
+    private final ImageView border;
 
     /**
      * This stores the efficient box.
      */
-    private ImageView eBox;
+    private final ImageView eBox;
 
     /**
      * This stores the inefficient box.
      */
-    private ImageView iBox;
+    private final ImageView iBox;
 
     /**
      * This stores the menu button.
      */
-    private ImageView menuBtn;
+    private final ImageView menuBtn;
 
     /**
      * This stores the play button.
      */
-    private ImageView play;
+    private final ImageView play;
 
     /**
      * This stores the click sound.
      */
-    private Sound box;
+    private final Sound box;
 
     /**
      * This stores whether or not the play button has been clicked.
@@ -426,7 +426,6 @@ public class Quiz extends Window {
         menuBtn.setOnMouseExited(event -> setCursor(0));
 
         //animation to redraw the devices as they move across screen
-        final long startNanoTime = System.nanoTime();
         new AnimationTimer() {
             public void handle(long currentNanoTime) {
 
@@ -557,7 +556,7 @@ public class Quiz extends Window {
      * This method resets the Mouse detection of the ImageView object passed.
      * @param img The ImageView object whose mouse detection is being reset.
      */
-    public void removeMouse (ImageView img)
+    private void removeMouse(ImageView img)
     {
         img.setOnMouseEntered(event -> setCursor(0));
         img.setOnMouseExited(event -> setCursor(0));
@@ -595,7 +594,7 @@ public class Quiz extends Window {
      * This method removes the Mouse detection of the ImageView object passed.
      * @param img The ImageView object whose mouse detection is being removed.
      */
-    public void resetMouse (ImageView img)
+    private void resetMouse(ImageView img)
     {
         img.setOnMouseEntered(event -> setCursor(1));
         img.setOnMouseExited(event -> setCursor(0));
@@ -691,7 +690,7 @@ public class Quiz extends Window {
      * to the Main Menu by clicking the Menu button. This method compares the lists that stores the answers of the user to the lists that store the correct answers to determine whether
      * a device is placed correctly or incorrectly.
      */
-    public void check ()
+    private void check()
     {
         refresh();
         int quizScore = 0;
@@ -836,9 +835,7 @@ public class Quiz extends Window {
         });
         play.setOnMouseEntered(e -> setCursor(1));
         play.setOnMouseExited(e -> setCursor(0));
-        menuBtn.setOnMouseClicked(event -> {
-            hideStage();
-        });
+        menuBtn.setOnMouseClicked(event -> hideStage());
     }
 
     /**

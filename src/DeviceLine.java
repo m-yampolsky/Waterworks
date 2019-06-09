@@ -34,7 +34,7 @@ class DeviceLine extends Image{
     private final int[][] colours;
 
     /**
-     * This is the class constructor, it calls the Image class constructor to create an Image to associate with a DeviceLine object. It also determines whihc pixels of the DeviceLine image stores no device, an efficient device, and an inefficient device.
+     * This is the class constructor, it calls the Image class constructor to create an Image to associate with a DeviceLine object. It also determines which pixels of the DeviceLine image stores no device, an efficient device, and an inefficient device.
      * @param path This represents the path location of the file that stores the image for the DeviceLine object.
      */
     public DeviceLine (String path){

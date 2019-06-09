@@ -60,7 +60,7 @@ import java.util.ArrayList;
  * Maria also added a default "USER" name, if the user chooses to return to Main Menu without saving their score. This change was also made in the win() method. -- 0.25 hours
  * Vansh corrected an error in the collision detection, as the parameter being passed into the isTouchingDevice() method called in the display() method for the startY value was being calculated incorrectly. -- 0.5 hours
  * June 6:
- * Maria modifed the SCORE_FILE variable to store the location of the User's Desktop folder, to write the high scores file there. She also created the SCORES_FILE_BACKUP to store the original file location,
+ * Maria modified the SCORE_FILE variable to store the location of the User's Desktop folder, to write the high scores file there. She also created the SCORES_FILE_BACKUP to store the original file location,
  * which will be used in the case that the user has blocked access to their Desktop. She also changed the win method to try and write to the Desktop first, and if that fails, to write to the user's home directory. -- 1 hours
  * June 8:
  * Vansh adjusted the call to avatarImg.isTouchingDevice() in order to make collision detection more accurate. -- 1.5 hours
@@ -427,7 +427,7 @@ public class Game extends Window {
      * user to move the avatar across the screen by clicking the space bar and making it jump. This method processes the location of devices and logs on screen to determine if the avatar is
      * touching an inefficient device, an efficient device, or a log. This method also monitors the water level during game play, dropping it throughout the animation, and dropping it
      * if an inefficient device is detected. It also detects the presence of logs, and if the avatar is not jumping and is not on a log, the avatar will fall and the game will end.
-     * There is also a menu button present during this method to allow for the user to return to the main menu. This method also controls scoring. The score is subtracted from everytime the
+     * There is also a menu button present during this method to allow for the user to return to the main menu. This method also controls scoring. The score is subtracted from every time the
      * user comes in contact with an inefficient device and everytime the avatar jumps. It is added to every time they come in contact with an efficient water device.
      */
     @Override

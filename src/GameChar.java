@@ -35,7 +35,7 @@ class GameChar extends Image
 {
 
   /**
-   * This is the class constructor, and it creates an Image object that represents the avatr, using the super constructor from the Image class.
+   * This is the class constructor, and it creates an Image object that represents the avatar, using the super constructor from the Image class.
    * @param pic The path to the image that the GameChar object will be associated with.
    */
   public GameChar(String pic)

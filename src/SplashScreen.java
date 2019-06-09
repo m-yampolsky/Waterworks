@@ -24,7 +24,7 @@ import javafx.stage.Stage;
  * May 23:
  * Vansh added the loading screen implementation. -- 1 hour
  * May 26:
- * Vansh added Resource loading for large aniamtions into the loading screen section. -- 0.25 hours
+ * Vansh added Resource loading for large animations into the loading screen section. -- 0.25 hours
  * June 2:
  * Vansh moved all of the Resource loading from StageManager (before Window is ever shown), to the loading screen section. -- 0.5 hours
  * June 4:

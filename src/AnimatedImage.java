@@ -84,7 +84,7 @@ class AnimatedImage
     }
 
     /**
-     * The lasrFrame() method, which returns the last frame of an animation.
+     * The lastFrame() method, which returns the last frame of an animation.
      * @return An Image object that represents the last frame in an animation.
      */
     private Image lastFrame() {
