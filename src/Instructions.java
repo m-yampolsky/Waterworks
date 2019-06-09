@@ -51,7 +51,7 @@ public class Instructions extends Window {
      * @param stg The JavaFX Stage to display to.
      */
     public Instructions(Stage stg) {
-        super(stg, "Highscores");
+        super(stg, "Instructions");
         back = false;
         page = 0;
     }

@@ -95,7 +95,7 @@ public class Learn extends Window {
      * @param stg The JavaFX Stage to display to.
      */
     public Learn(Stage stg) {
-        super(stg, "Highscores");
+        super(stg, "Learn");
         xtime = 0;
         times = 0;
         go = 0;
@@ -197,7 +197,7 @@ public class Learn extends Window {
                 drawImage(descriptions[current], -13, 257);
                 states[current] = true;
                 numDone++;
-                if (numDone >= 11) {
+                if (numDone >= 12) {
                     current = -2;
                 } else
                     current = -1;
