@@ -14,30 +14,30 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent:</h2> 2.9 hours
  *
  * <pre>
  * Version History:
  * May 17:
- * Vansh created class.
+ * Vansh created class. -- 0.15 hours
  * May 18:
- * Vansh added and implemented display method including background, and buttons, etc.
+ * Vansh added and implemented display method including background, and buttons, etc. -- 0.75 hours
  * May 19:
- * Vansh added and implemented exit button, and created getChoice() method to drive class and return chosen option number to StageManager.
+ * Vansh added and implemented exit button, and created getChoice() method to drive class and return chosen option number to StageManager. -- 0.5 hours
  * May 20:
- * Vansh changed ImageView buttons to be assigned from Resources class.
+ * Vansh changed ImageView buttons to be assigned from Resources class. -- 0.25 hours
  * May 22:
- * Vansh implemented InstructionsBtn ImageView button.
- * Maria implemented QuizBtn ImageView button.
+ * Vansh implemented ImageView button InstructionsBtn. -- 0.2 hours
+ * Maria implemented QuizBtn ImageView button. -- 0.2 hours
  * May 23:
- * Vansh made ccursor change to click hand when hovering over buttons.
- * Vansh imeplemted LearnBtn ImageView class.
+ * Vansh made cursor change to click hand when hovering over buttons.
+ * Vansh implemented ImageView Button LearnBtn. -- 0.2 hours
  * May 27:
- * Vansh added clicking sounds for the ImageView buttons.
+ * Vansh added clicking sounds for the ImageView buttons. -- 0.1 hours
  * June 3:
- * Vansh redesigned Menu button placement, and implemented a new exit ImageView button.
+ * Vansh redesigned Menu button placement, and implemented a new exit ImageView button. -- 0.5 hours
  * June 6:
- * Vansh converted ImageView property settings to lambda functions.
+ * Vansh converted ImageView property settings to lambda functions. -- 0.2 hours
  * </pre>
  */
 public class Menu extends Window

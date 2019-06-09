@@ -42,7 +42,7 @@ import javafx.stage.Stage;
  * May 31:
  * Vansh implemented new well and icecap images into the conveyor belt, and fixed bugs with description image sizing when matching with the correct device. -- 2 hours
  * June 1:
- * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button. -- 1.5 hour
+ * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button. -- 1.5 hours
  * June 2:
  * Vansh fixed bug where done boolean became true before user finished matching all descriptions, and added button to go to Quiz when finished matching descriptions. -- 1 hours
  * June 8:

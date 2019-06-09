@@ -18,37 +18,37 @@ import javafx.stage.WindowEvent;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent:</h2> 7 hours
  *
  * <pre>
  * Version History:
  * May 17:
- * Vansh created StageManager class and implemented Stage setup + Menu and Splashscreen implementation.
+ * Vansh created StageManager class and implemented Stage setup + Menu and Splashscreen. -- 1.5 hours
  * May 19:
- * Maria implemented LevelSelect and Game Windows. 0.25 hours
+ * Maria implemented LevelSelect and Game Windows. -- 0.25 hours
  * May 20:
- * Vansh implemented Resource Loading and Menu Music.
+ * Vansh implemented Resource Loading and Menu Music. -- 0.5 hours
  * May 21:
- * Vansh implemented Highscores Window.
- * Maria implemented the back buttons to go back to Menu from other rooms and added resources for LogLines. 0.25 hours
+ * Vansh implemented Highscores Window. -- 0.25 hours
+ * Maria implemented the back buttons to go back to Menu from other rooms and added resources for LogLines. -- 0.25 hours
  * May 22:
- * Vansh moved the playing of Game level music, into StageManager and implemented the Instrucitons Window (and its Resources).
- * Maria implemented the Quiz Window and Quiz + more Game Resources. 0.5 hours
+ * Vansh moved the playing of Game level music, into StageManager and implemented the Instructions Window (as well as its Resources). -- 0.75 hours
+ * Maria implemented the Quiz Window and Quiz + more Game Resources. -- 0.5 hours
  * May 23:
- * Vansh implemented Learn Window + Learn Resources.
- * Maria added Quiz Resources. 0.25 hours
+ * Vansh implemented Learn Window + Learn Resources. -- 0.25 hours
+ * Maria added Quiz Resources. -- 0.25 hours
  * May 24:
- * Vansh added Stage constraints so that the Window cannot be resized.
+ * Vansh added Stage constraints so that the Window cannot be resized, and fixed bug where border would show up around window when Window set to unresizable. -- 1.5 hour
  * May 27:
- * Vansh added a Click Sound to Resources.
+ * Vansh added a click Sound to Resources. -- 0.1 hours
  * May 29:
- * Maria added Resources for the Quiz Check screen. 0.25 hours
+ * Maria added Resources for the Quiz Check screen. -- 0.25 hours
  * May 31:
- * Vansh added 2 new Learn screen Device graphics to Resources.
+ * Vansh added 2 new Learn screen Device graphics to Resources. -- 0.15 hours
  * June 1:
- * Vansh added Lake Superior and Lake Erie Game graphics to Resources.
+ * Vansh added Lake Superior and Lake Erie Game graphics to Resources. -- 0.25 hours
  * June 2:
- * Vansh moved all Resource loading to the Splashscreen Window's loading screen
+ * Vansh moved all Resource loading to the Splashscreen Window's loading screen -- 0.25 hours
  * </pre>
  */
 public class StageManager extends Application {

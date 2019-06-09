@@ -13,28 +13,28 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent:</h2> 4.5 hours
  *
  * <pre>
  * Version History:
  * May 17:
- * Vansh created Splashscreen, and implemented the animation inside the constructor.
+ * Vansh created Splashscreen, and implemented the animation inside the constructor. -- 1.5 hours
  * May 18:
- * Vansh moved the animation into a display() method.
+ * Vansh moved the animation into a display() method. -- 0.1 hours
  * May 23:
- * Vansh added the loading screen implementation.
+ * Vansh added the loading screen implementation. -- 1 hour
  * May 26:
- * Vansh added Resource loading for large aniamtions into the loading screen section.
+ * Vansh added Resource loading for large aniamtions into the loading screen section. -- 0.25 hours
  * June 2:
- * Vansh moved all of the Resource loading from StageManager (before Window was ever shown), to the loading screen section.
+ * Vansh moved all of the Resource loading from StageManager (before Window is ever shown), to the loading screen section. -- 0.5 hours
  * June 4:
- * Vansh fixed bug where Splashscreen would sometimes skip the loading screen and get stuck in an animation loop.
- * Maria added Resource loading for new win screen elements and added DeviceLine Resource loading. 0.25 hours
+ * Vansh fixed bug where Splashscreen would sometimes skip the loading screen and get stuck in an animation loop. -- 0.5 hours
+ * Maria added Resource loading for new win screen elements and added DeviceLine Resource loading. -- 0.25 hours
  * June 5:
- * Maria added Resource loading for new win screen instruction text. 0.25 hours
- * Vansh added Resource loading for new instructions Images.
+ * Maria added Resource loading for new win screen instruction text. -- 0.1 hours
+ * Vansh added Resource loading for new instructions Images. -- 0.1 hours
  * June 8:
- * Vansh added Resource loading for the Learn Window's right and wrong sounds, clicking sounds, the Quiz Window's box sound and the Lake Erie + Superior Music
+ * Vansh added Resource loading for the Learn Window's right and wrong sounds, clicking sounds, the Quiz Window's box sound and the Lake Erie + Superior Music. -- 0.20 hours
  * </pre>
  */
 public class SplashScreen extends Window

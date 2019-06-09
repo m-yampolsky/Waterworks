@@ -9,15 +9,15 @@
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent:</h2> 1.3 hours
  *
  * <pre>
  * Version History:
  * May 16:
- * Vansh wrote the Water class with the height Change and startTime properties, as well as the getYValue() method. He also wrote the changeHeight() method to modify the height of the water level.
+ * Vansh wrote the Water class with the height Change and startTime properties, as well as the getYValue() method. He also wrote the changeHeight() method to modify the height of the water level. -- 1 hour
  * May 18:
- * Maria added the level property to class to change the speed the water drops at depending on the lake they are playing on. 0.15 hours
- * Vansh modified the getHeight() method to modify the height at different rates depending on the lake level being played on.
+ * Maria added the level property to class to change the speed the water drops at depending on the lake they are playing on. -- 0.15 hours
+ * Vansh modified the getHeight() method to modify the height at different rates depending on the lake level being played on. -- 0.15 hours
  * </pre>
  */
 class Water {

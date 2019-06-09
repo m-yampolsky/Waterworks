@@ -21,28 +21,28 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent: 6.55 hours</h2>
  *
  * Version History:
  * May 13:
- * Vansh created the class and create its instance variables, the constructor, the clean(), hideStage(), showAndWait() and refresh() methods. He also wrote the abstract display() method.
+ * Vansh created the class and create its instance variables, the constructor, the clean(), hideStage(), showAndWait() and refresh() methods. He also wrote the abstract display() method. -- 1.5 hours
  * May 19:
- * Maria wrote the drawImage() methods to display Image objects and ImageView objects on the screen. 0.5 hours
+ * Maria wrote the drawImage() methods to display Image objects and ImageView objects on the screen. -- 0.5 hours
  * May 22:
- * Vansh wrote the remove(Node e) method to delete and remove an object being displayed on screen.
+ * Vansh wrote the remove(Node e) method to delete and remove an object being displayed on screen. -- 0.15 hours
  * May 23:
- * Vansh wrote the setCursor() method to modify the cursor and display different icons for the cursor.
+ * Vansh wrote the setCursor() method to modify the cursor and display different icons for the cursor. -- 0.5 hours
  * May 24:
- * Maria wrote the getCanvas() and getScene() methods to access the private canvas and scene fields in other classes. 0.25 hours
+ * Maria wrote the getCanvas() and getScene() methods to access the private canvas and scene fields in other classes. -- 0.25 hours
  * May 26:
- * Vansh added an additional option to the setCursor() method by adding another if statement. This one checks if the cursor should be displaying a closed hand, which indicates that an item is being dragged.
+ * Vansh added an additional option to the setCursor() method by adding another if statement. This one checks if the cursor should be displaying a closed hand, which indicates that an item is being dragged. -- 0.5 hours
  * June 3:
  * Maria added the add() method to draw Node objects on to the screen. She wrote it based off of the drawImage() method, but generalising it, so that any Node object could be drawn with it.
- * She needed this method to draw Text objects on the Highscore and win screens in the Game. 0.5 hours
+ * She needed this method to draw Text objects on the Highscore and win screens in the Game. -- 0.5 hours
  * June 4:
- * Vansh wrote the displayVideo() method to play mp4 files and other video files on the window.
+ * Vansh wrote the displayVideo() method to play mp4 files and other video files on the window. -- 2.5 hours
  * June 5:
- * Vansh removed the displayVideo() method, as it became unnecessary after we modified the lose and win screens of the program.
+ * Vansh removed the displayVideo() method, as it became unnecessary after we modified the lose and win screens of the program. -- 0.15 hours
  */
 abstract class Window {
     /**

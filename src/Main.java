@@ -10,12 +10,12 @@ import javafx.application.Application;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent:</h2> 0.15 hours
  *
  * <pre>
  * Version History
  * May 17:
- * Vansh created Main class with public static void main implementation.
+ * Vansh created Main class with public static void main implementation. -- 0.15 hours
  * </pre>
  */
 class Main {

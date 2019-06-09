@@ -21,7 +21,7 @@ import javafx.scene.canvas.Canvas;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * <h2>Total Time Spent: </h2> 25.5 hours
+ * <h2>Total Time Spent:</h2> 25.5 hours
  *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
@@ -29,29 +29,29 @@ import javafx.scene.canvas.Canvas;
  * <pre>
  * Version History:
  * May 16:
- * Maria wrote the general frame of the class. She added a display() method that just left the screen, to properly extend the Window class, but without the graphics having been set up yet. 1 hour
+ * Maria wrote the general frame of the class. She added a display() method that just left the screen, to properly extend the Window class, but without the graphics having been set up yet. -- 1 hour
  * May 19:
- * Maria added the Menu button to allow the user to return to the Main Menu from this screen. 1.5 hours
+ * Maria added the Menu button to allow the user to return to the Main Menu from this screen. -- 1.5 hours
  * May 22:
  * Maria added the general graphics for the screen. She added the background and the boxes. She also added all nine devices used in the class. She spaced out the devices on the shelves
- * to ensure that they all fit on the shelf. All these additions were made in the display() method. 2.5 hours
+ * to ensure that they all fit on the shelf. All these additions were made in the display() method. -- 2.5 hours
  * May 23:
  * Maria added the ability of all the devices in the class to be dragged. She added an array of devices, and in a for loop, she used the .setOnMousePressed() and .setOnMouseReleased() methods to them
  * to allow them to be dragged. She also used the same .setOnMousePressed() and .setOnMouseReleased() methods to set a reaction for the background and teh boxes. She also added an AnimationTimer object
  * to redraw the objects as they are being dragged. She used the .setOnMouseDragOver() and .setOnMouseDragEntered() methods to export the x and y coordinates of the cursor and redraw the device at that location.
- * She also changed the .setOnMouseReleased() method call to send the devices back to the shelf if they are released in the wrong place. 4.5 hours
+ * She also changed the .setOnMouseReleased() method call to send the devices back to the shelf if they are released in the wrong place. -- 4.5 hours
  * May 24:
- * Maria added the "dropping" element of the drag and drop game, by using .setOnDragReleased() to check whether the coordinates were located above the box, and then redrawing the device in the box. 4 hours
+ * Maria added the "dropping" element of the drag and drop game, by using .setOnDragReleased() to check whether the coordinates were located above the box, and then redrawing the device in the box. -- 4 hours
  * May 25:
  * Maria fixed two bugs in the class by adding the removeMouse() and resetMouse() buttons. She used the resetMouse() button to reset the ability to be clicked of devices stuck on the border when the
- * cursor left the screen very rapidly. She used the removeMouse() method to prevent objects redrawn inside of the boxes from being removed and moved. 4.5 hours
+ * cursor left the screen very rapidly. She used the removeMouse() method to prevent objects redrawn inside of the boxes from being removed and moved. -- 4.5 hours
  * May 29:
  * Maria added the Check button, which appears after the user has placed all the objects in the boxes. She also added the check() method, which would display the contents of the screen where the results
- * from this room are located. She added the background of the screen with the results, as well as for loops that display the contents of both boxes. 4.5 hours
+ * from this room are located. She added the background of the screen with the results, as well as for loops that display the contents of both boxes. -- 4.5 hours
  * May 30:
  * Maria completed the results screen by using if statements in the check() method to determine where to place the devices, which devices the user placed correctly and which devices they placed incorrectly.
  * She also added a Play button to appear on that screen, allowing the user to move on to the third room. Additionally, she added a mark out of 9, displayed on the screen to show the user
- * how many objects they placed correctly. 3 hours
+ * how many objects they placed correctly. -- 3 hours
  * </pre>
  */
 public class Quiz extends Window {

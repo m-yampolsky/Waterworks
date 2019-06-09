@@ -12,16 +12,16 @@ import java.util.ArrayList;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent:</h2> 1.25 hours
  *
  * <pre>
  * Version History:
  * May 18:
- * Vansh created the class.
+ * Vansh created the class. -- 0.25 hours
  * May 27:
- * Vansh created constructor, play method and stop method.
+ * Vansh created constructor, play method and stop method. -- 0.5 hour
  * June 5:
- * Vansh created static AudioClip ArrayList all to store all AudioClips made by the class, and static stopAll method to stop all Sounds.
+ * Vansh created static AudioClip ArrayList all to store all AudioClips made by the class, and static stopAll method to stop all Sounds. -- 0.5 hours
  * </pre>
  */
 class Sound {

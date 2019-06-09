@@ -10,12 +10,12 @@ import java.util.HashMap;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
- * <h2>Total Time Spent: </h2>
+ * <h2>Total Time Spent:</h2> 0.5 hours
  *
  * <pre>
  * Version History:
  * May 20:
- * Vansh created the class, as well as all the implementation including the global static HashMap resources as well as the static add and get methods.
+ * Vansh created the class, as well as all the implementation including the global static HashMap resources as well as the static add and get methods. -- 0.5 hours
  * </pre>
  */
 class Resources {
