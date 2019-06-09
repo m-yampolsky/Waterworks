@@ -459,6 +459,7 @@ public class Game extends Window {
         menuBtn.setOnMouseEntered(e -> setCursor(1));
         // Listener for MouseExit
         menuBtn.setOnMouseExited(e -> setCursor(0));
+        drawImage(menuBtn, 400, -330); //draws the Menu button
 
 
         avatar.setPreserveRatio(true);
@@ -562,11 +563,9 @@ public class Game extends Window {
                 remove(deviceImg);
                 remove(logImg);
                 remove(avatar);
-                remove(menuBtn);
                 drawImage(logImg, 0, w.getYValue() - 370);
                 drawImage(deviceImg, 0, w.getYValue() - 640);
 
-                drawImage(menuBtn, 400, -330); //draws the Menu button
 
                 //character walking animation
                 lastCharFrame = charFrame;
