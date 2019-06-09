@@ -11,21 +11,21 @@ import javafx.stage.Stage;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * @author Maria Yampolsky and Vansh Juneja
- * @version 5 06.06.2019
+ * <h2>Total Time Spent: 3 hours</h2>
  *
- * <h2>Total Time Spent:</h2> 2.9 hours
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 6 06.09.2019
  *
  * <pre>
  * Version History:
  * May 17:
- * Vansh created class. -- 0.15 hours
+ * Vansh created class. -- 0.2 hours
  * May 18:
  * Vansh added and implemented display method including background, and buttons, etc. -- 0.75 hours
  * May 19:
  * Vansh added and implemented exit button, and created getChoice() method to drive class and return chosen option number to StageManager. -- 0.5 hours
  * May 20:
- * Vansh changed ImageView buttons to be assigned from Resources class. -- 0.25 hours
+ * Vansh changed ImageView buttons to be assigned from Resources class. -- 0.3 hours
  * May 22:
  * Vansh implemented ImageView button InstructionsBtn. -- 0.2 hours
  * Maria implemented QuizBtn ImageView button. -- 0.2 hours

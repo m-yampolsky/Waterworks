@@ -11,10 +11,10 @@ import javafx.scene.image.PixelReader;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * @author Maria Yampolsky and Vansh Juneja
- * @version 5 06.05.2019
+ * <h2>Total Time Spent: 6 hours</h2>
  *
- * <h2>Total Time Spent: </h2> 6 hours
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 6 06.09.2019
  *
  * <pre>
  * Version History:

@@ -3,13 +3,14 @@ import javafx.scene.image.ImageView;
 /**
  * The AnimatedImageView Class
  * This class stores an animation, by storing many frames of a picture. This is used in the WaterWorks program to show animations of the character moving on the spot.
- * @author Maria Yampolsky and Vansh Juneja
- * @version 5 06.05.2019
  *
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * <h2>Total Time Spent: </h2> 1.5 hours
+ * <h2>Total Time Spent: 1.5 hours</h2>
+ *
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 6 06.09.2019
  *
  * <pre>
  * Version History:

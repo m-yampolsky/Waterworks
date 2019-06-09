@@ -6,13 +6,14 @@ import java.util.ArrayList;
 /**
  * The DeviceLine class
  * This class stores the image of the list of efficient and inefficient devices appearing on screen during the game, it stores an array representation of the pixels of the image, storing a 0 where there is no device, a 1 for an efficient device, and a -1 for an inefficient device..
- * @author Maria Yampolsky and Vansh Juneja
- * @version 5 06.05.2019
  *
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * <h2>Total Time Spent: </h2> 5 hours
+ * <h2>Total Time Spent: 5 hours</h2>
+ *
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 6 06.09.2019
  *
  * <pre>
  * Version History:

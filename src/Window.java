@@ -18,10 +18,10 @@ import javafx.stage.Stage;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * @author Maria Yampolsky and Vansh Juneja
- * @version 5 06.05.2019
+ * <h2>Total Time Spent: 6.5 hours</h2>
  *
- * <h2>Total Time Spent: 6.55 hours</h2>
+ * @author Maria Yampolsky and Vansh Juneja
+ * @version 6 06.09.2019
  *
  * Version History:
  * May 13:
@@ -33,7 +33,7 @@ import javafx.stage.Stage;
  * May 23:
  * Vansh wrote the setCursor() method to modify the cursor and display different icons for the cursor. -- 0.5 hours
  * May 24:
- * Maria wrote the getCanvas() and getScene() methods to access the private canvas and scene fields in other classes. -- 0.25 hours
+ * Maria wrote the getCanvas() and getScene() methods to access the private canvas and scene fields in other classes. -- 0.2 hours
  * May 26:
  * Vansh added an additional option to the setCursor() method by adding another if statement. This one checks if the cursor should be displaying a closed hand, which indicates that an item is being dragged. -- 0.5 hours
  * June 3:

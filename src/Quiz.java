@@ -21,10 +21,10 @@ import javafx.scene.canvas.Canvas;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
- * <h2>Total Time Spent:</h2> 25.5 hours
+ * <h2>Total Time Spent: 25.5 hours</h2>
  *
  * @author Maria Yampolsky and Vansh Juneja
- * @version 5 06.05.2019
+ * @version 6 06.09.2019
  *
  * <pre>
  * Version History:
