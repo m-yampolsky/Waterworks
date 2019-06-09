@@ -12,6 +12,8 @@ import javafx.scene.image.ImageView;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
+ * <h2>Total Time Spent: </h2> 3 hours
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
@@ -20,9 +22,9 @@ import javafx.scene.image.ImageView;
  * May 17:
  * Vansh created the class. -- 0.5 hours
  * May 19:
- * Maria implemented the title, menu ImageView button, level ImageView buttons, and Bayou's standing animation.
+ * Maria implemented the title, menu ImageView button, level ImageView buttons, and Bayou's standing animation. -- 2 hours
  * May 23:
- * Vansh implemented change of cursor to click hand when hovering over button -- 0.5 hours.
+ * Vansh implemented change of cursor to click hand when hovering over button -- 0.5 hours
  * </pre>
  */
 public class LevelSelect extends Window {

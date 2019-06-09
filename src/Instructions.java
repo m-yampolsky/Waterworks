@@ -15,6 +15,8 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.06.2019
  *
+ * <h2>Total Time Spent: </h2> 12.25 hours
+ *
  * <pre>
  * Version History:
  * May 22:
@@ -26,10 +28,10 @@ import javafx.stage.Stage;
  * June 2:
  * Vansh removed old instructions, and implemented new 3 page instructions. -- 2.5 hours
  * June 4:
- * Maria changed the back buttons to menu buttons to avoid confusion.
+ * Maria changed the back buttons to menu buttons to avoid confusion. -- 0.25
  * June 5:
  * Vansh removed all instructions again, and implemented much more detailed and visually-appealing 8-page instructions. -- 3.5 hours
- * Maria implemented new Menu button with new placement, that works better with new instructions design.
+ * Maria implemented new Menu button with new placement, that works better with new instructions design. -- 0.5 hours
  * June 6:
  * Vansh got rid of unnecessary time, x, and y variables in the AnimationTimer, and converted the clicking button property settings to lambda functions. -- 1 hours
  * </pre>

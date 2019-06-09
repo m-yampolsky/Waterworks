@@ -9,6 +9,8 @@ import javafx.scene.image.ImageView;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
+ * <h2>Total Time Spent: </h2> 1.5 hours
+ *
  * <pre>
  * Version History:
  * May 26:

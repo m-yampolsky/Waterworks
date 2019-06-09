@@ -10,6 +10,8 @@ import javafx.scene.image.Image;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
+ * <h2>Total Time Spent: </h2> 5 hours
+ *
  * <pre>
  * Version History:
  * May 17:

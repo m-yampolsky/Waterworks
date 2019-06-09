@@ -14,13 +14,15 @@ import javafx.scene.image.PixelReader;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
+ * <h2>Total Time Spent: </h2> 6 hours
+ *
  * <pre>
  * Version History:
  * May 18:
  * Maria wrote the class and created the isColoured variable, as well as the class constructor. She used PixelReader to loop through the pixels of the image and to create the
- * isColoured array with the correct values.
+ * isColoured array with the correct values. -- 3.5 hours
  * May 25:
- * Maria wrote the isColoured() and length() methods to use them in the methods of the GameChar class to allow the avatar to detect whether it is touching a log.
+ * Maria wrote the isColoured() and length() methods to use them in the methods of the GameChar class to allow the avatar to detect whether it is touching a log. -- 2.5 hours
  * </pre>
  */
 class LogLine extends Image
