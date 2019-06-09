@@ -21,23 +21,25 @@ import java.io.*;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
+ * <h2>Total Time Spent: </h2> 12.75 hours
+ *
  * <pre>
  * Version History:
  * May 21:
- * Maria created the Highscores class and set up the graphics components. She added the boxes for the high scores lists, the background, the title, the Menu button, and the character animation.
+ * Maria created the Highscores class and set up the graphics components. She added the boxes for the high scores lists, the background, the title, the Menu button, and the character animation. -- 1.5 hours
  * May 23:
  * Vansh added the cursor changes when the mouse hovers over the menu button. He also added the clicking sound when the button is clicked. -- 0.5 hours
  * June 2:
- * Maria added the SCORES_FILE variable to store the path location of the file where high scores will be stored.
+ * Maria added the SCORES_FILE variable to store the path location of the file where high scores will be stored. -- 0.25 hours
  * June 3:
  * Maria added the portion of the display() method that uses a FileReader object to read from the high scores file. She added the scores[][], names[][], positions[] and lengths[] local variables in the display method
- * to store the information read from the file. She also added the portion of the code that outputs the high scores in the display() method by adding the list[][] array, which stores the Text objects.
+ * to store the information read from the file. She also added the portion of the code that outputs the high scores in the display() method by adding the list[][] array, which stores the Text objects. -- 5 hours
  * June 4:
  * Maria added the portion of the display() method that sorts the high scores, using an insertion sort. She also added the portion of the code that uses PrintWriter to output the list of high scores
- * into the high score file.
+ * into the high score file. -- 3.5 hours
  * June 5:
  * Maria modified the display() method and added the SCORES_FILE_BACKUP to write to another file in case writing to the first file fails. This gives the program the opportunity to write to another directory, in case
- * the user has blocked access to the first directory they will try writing to.
+ * the user has blocked access to the first directory they will try writing to. -- 2 hours
  * </pre>
  */
 

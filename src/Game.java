@@ -23,6 +23,8 @@ import java.util.ArrayList;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
+ * <h2>Total Time Spent: </h2> 41.5 hours
+ *
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
@@ -31,35 +33,35 @@ import java.util.ArrayList;
  * May 17:
  * Vansh added the background, water, and logs for the Ontario level, and added the animation that moved them across the screen. -- 4 hours
  * May 19:
- * Maria added the level property to the game, adding the set of if statements in display() that check for the different levels, and change the images displayed based on the level.
+ * Maria added the level property to the game, adding the set of if statements in display() that check for the different levels, and change the images displayed based on the level. -- 1 hour
  * Vansh added the Rectangular Viewports in the display() method to only have to load a portion of an Image at a time to save RAM. -- 2 hours
  * May 20:
- * Maria added the avatar to the game, using an ImageView representation of the character, as well as a GameChar representation.
+ * Maria added the avatar to the game, using an ImageView representation of the character, as well as a GameChar representation. -- 1.5 hours
  * Vansh removed all the Image & ImageView loading from the class, and added that instead to the Resources class. Now, the Images and ImageView objects are accessed from the Resources class. -- 1 hour
  * May 26:
  * Vansh added an animation of the avatar walking into the display() method, by using the AnimatedImageView class. He also added the jumping animation,
  * writing the portion of the display() method that checks for keyboard input and responds by moving the avatar up screen. -- 4 hours
  * May 31:
- * Maria wrote the collision detection for the logs. She wrote the portion of the display() method that determines if the avatar is or is not touching a kg.
+ * Maria wrote the collision detection for the logs. She wrote the portion of the display() method that determines if the avatar is or is not touching a log. -- 5 hours
  * June 1:
  * Vansh added graphics for Lake Erie and Lake Superior by using different files for each lake in the display() method. -- 1 hour
  * June 2:
- * Maria added the falling avatar animation in the display() method to the user missing a log. She also made the first call to the isTouchingDevice() method, however that collision detection was not yet working.
+ * Maria added the falling avatar animation in the display() method to the user missing a log. She also made the first call to the isTouchingDevice() method, however that collision detection was not yet working. -- 2 hours
  * Vansh wrote a second call to the isTouchingDevice() method, and was able to improve the Collision Detection by correcting errors in calculation, however it was still not working perfectly. -- 3 hours
  * Vansh also added the win and lose screens. -- 2.5 hours
  * June 3:
- * Maria added the user input related elements to the screen (without any activity yet). She set up the Image and ImageView objects used in the win() method.
+ * Maria added the user input related elements to the screen (without any activity yet). She set up the Image and ImageView objects used in the win() method. -- 1 hour
  * June 4:
- * Maria added user input to the win() method to ask for the user's name. She also created the SCORES_FILE variable, and imported java.io.* classes to write and read from the highs scores storing file.
- * She wrote the portion of the win() method that writes to the high scores file. She also added the actual score to the win screen.
+ * Maria added user input to the win() method to ask for the user's name. She also created the SCORES_FILE variable, and imported java.io.* classes to write and read from the highs scores storing file. -- 3.5 hours
+ * She wrote the portion of the win() method that writes to the high scores file. She also added the actual score to the win screen. -- 0.5 hours
  * Vansh made the music stop when the user goes to the lose screen. He also added the lose animation and the win animations that are displayed when the user loses or wins. -- 3.5 hours
  * June 5:
- * Maria modified the win() method to include simple instructions for user input. She added a image that explicitly states how many characters they can enter, and that a blank name cannot be saved.
- * Maria also added a default "USER" name, if the user chooses to return to Main Menu without saving their score. This change was also made in the win() method.
+ * Maria modified the win() method to include simple instructions for user input. She added a image that explicitly states how many characters they can enter, and that a blank name cannot be saved. -- 0.5 hours
+ * Maria also added a default "USER" name, if the user chooses to return to Main Menu without saving their score. This change was also made in the win() method. -- 0.25 hours
  * Vansh corrected an error in the collision detection, as the parameter being passed into the isTouchingDevice() method called in the display() method for the startY value was being calculated incorrectly. -- 0.5 hours
  * June 6:
  * Maria modifed the SCORE_FILE variable to store the location of the User's Desktop folder, to write the high scores file there. She also created the SCORES_FILE_BACKUP to store the original file location,
- * which will be used in the case that the user has blocked access to their Desktop. She also changed the win method to try and write to the Desktop first, and if that fails, to write to the user's home directory.
+ * which will be used in the case that the user has blocked access to their Desktop. She also changed the win method to try and write to the Desktop first, and if that fails, to write to the user's home directory. -- 1 hours
  * June 8:
  * Vansh adjusted the call to avatarImg.isTouchingDevice() in order to make collision detection more accurate. -- 1.5 hours
  * June 9:

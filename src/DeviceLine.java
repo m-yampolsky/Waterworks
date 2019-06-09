@@ -12,14 +12,17 @@ import java.util.ArrayList;
  * <h2>Course Information:</h2>
  * ICS4U0 with Krasteva, V.
  *
+ * <h2>Total Time Spent: </h2> 5 hours
+ *
  * <pre>
  * Version History:
  * June 1:
- * Maria wrote the DeviceLine class. She wrote the constructor, where she identified the colours present in efficient and inefficient objects (stored in effColours and ineffColours respectively). She also created a PixelReader object to read the pixels of the Image that every Deviceline object is associated with and to store whether no object, an efficient object, or an inefficient object is found at that pixel location.
+ * Maria wrote the DeviceLine class. She wrote the constructor, where she identified the colours present in efficient and inefficient objects (stored in effColours and ineffColours respectively). She also created a PixelReader object to read the pixels of the Image that every
+ * Deviceline object is associated with and to store whether no object, an efficient object, or an inefficient object is found at that pixel location. -- 1.5 hours
  * June 2:
- * Maria wrote the deviceType() method, which uses the colours 2-D array to return what kind of device is at a given pixel location.
+ * Maria wrote the deviceType() method, which uses the colours 2-D array to return what kind of device is at a given pixel location. -- 2.5 hours
  * June 3:
- * Maria corrected a bug in this class, by marking a pixel location in the colours 2D array with 0 if a pixel is White or Transparent. Originally, it only marked it with a 0 if it was transparent, but White also indicates the presence of no specific device type.
+ * Maria corrected a bug in this class, by marking a pixel location in the colours 2D array with 0 if a pixel is White or Transparent. Originally, it only marked it with a 0 if it was transparent, but White also indicates the presence of no specific device type. -- 1 hour
  * </pre>
  */
 class DeviceLine extends Image{

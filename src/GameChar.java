@@ -12,21 +12,23 @@ import javafx.scene.image.Image;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 5 06.05.2019
  *
+ * <h2>Total Time Spent: </h2> 10 hours
+ *
  * <pre>
  * Version History:
  * May 18:
- * Maria created the class with xCoord, yCoord and WIDTH properties. She made it extend the Image class and added a class constructor.
+ * Maria created the class with xCoord, yCoord and WIDTH properties. She made it extend the Image class and added a class constructor. -- 2 hours
  * May 31:
  * Maria wrote the isTouchingLog() method to detect the presence of the avatar on a log. The method returns true if the avatar is on a log, and it returns false if it is not on a log.
- * She used the isColoured() method from the LogLine class to properly detect whether the avatar is on the log or not.
+ * She used the isColoured() method from the LogLine class to properly detect whether the avatar is on the log or not. -- 3 hours
  * June 1:
  * Maria modified the isTouchingLog() method. She changed the for loop to calculate slightly different values, since before, the log detection was some pixels off from where it should have been.
- * She also wrote an isTouchingDevice() method, based off of the isTouchingLog() method, however, it was not working properly yet.
+ * She also wrote an isTouchingDevice() method, based off of the isTouchingLog() method, however, it was not working properly yet. -- 2.5 hours
  * June 2:
  * Vansh changed the isTouchingDevice() method to properly detect the presence of a device in the path of the avatar. He changed the method parameters and calculated slightly
  * different values to make it work properly. -- 2.5 hours
  * June 4:
- * Vansh once again modified the values used in calculation for the isTouchingDevice() method, as the device detection still had room for improvement. -- 1.5 hour
+ * Vansh once again modified the values used in calculation for the isTouchingDevice() method, as the device detection still had room for improvement. -- 3 hours
  * </pre>
  */
 class GameChar extends Image
