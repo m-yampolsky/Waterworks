@@ -60,6 +60,8 @@ import java.util.ArrayList;
  * June 6:
  * Maria modifed the SCORE_FILE variable to store the location of the User's Desktop folder, to write the high scores file there. She also created the SCORES_FILE_BACKUP to store the original file location,
  * which will be used in the case that the user has blocked access to their Desktop. She also changed the win method to try and write to the Desktop first, and if that fails, to write to the user's home directory.
+ * June 8:
+ * Vansh adjusted the call to avatarImg.isTouchingDevice() in order to make collision detection more accurate
  * </pre>
  */
 public class Game extends Window {
@@ -530,9 +532,10 @@ public class Game extends Window {
 
                 // background image clears canvas
                 drawImage(lakeBackground, 0, 0);
+                // draws the correct background depending on the lake being played, and correct position based on whether winning animation is playing
                 if (level == 1)
                     if (won == 0)
-                        drawImage(cityBack, 480 - (int) (t * 3), 249); //draws the correct backgground depending on the lake being played, and correct position based on whether winning animation is playing
+                        drawImage(cityBack, 480 - (int) (t * 3), 249);
                     else
                         drawImage(cityBack, 480 - (int) (won * 3), 249);
                 else if (level == 2)
