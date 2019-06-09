@@ -79,7 +79,7 @@ public class Instructions extends Window {
             refresh();
             drawImage(instructions[page], 0, 0);
 
-            drawImage(backButton, -400, -180);
+            drawImage(backButton, -410, -195);
             if (page < instructions.length-1)
                 drawImage(instructionsF, 420, 300);
             if (page > 0)
@@ -92,7 +92,7 @@ public class Instructions extends Window {
             refresh();
             drawImage(instructions[page], 0, 0);
 
-            drawImage(backButton, -400, -180);
+            drawImage(backButton, -410, -195);
             if (page < instructions.length-1)
                 drawImage(instructionsF, 420, 300);
             if (page > 0)
