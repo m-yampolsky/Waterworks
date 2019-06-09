@@ -12,10 +12,9 @@ import javafx.scene.image.ImageView;
  * <pre>
  * Version History:
  * May 26:
- * This class was written by copying the AnimatedImage class but returning ImageView objects from the getFrame() and lastFrame() objects.
+ * This class was written by copying the AnimatedImage class but returning ImageView objects from the getFrame() and lastFrame() objects. -- 0.5 hours
  * May 29:
- * Vansh redid the class to no longer store an array of ImageView objects, but to store a path location and a frame number. The instance methods and constructor were rewritten to accomodate for this change, and now do not return items using indexes of an array, but return items using the path location.
- *
+ * Vansh redid the class to no longer store an array of ImageView objects, but to store a path location and a frame number. The instance methods and constructor were rewritten to accomodate for this change, and now do not return items using indexes of an array, but return items using the path location. -- 1 hour
  * </pre>
  */
 class AnimatedImageView

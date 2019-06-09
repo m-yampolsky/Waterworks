@@ -18,20 +18,20 @@ import javafx.stage.Stage;
  * <pre>
  * Version History:
  * May 22:
- * Vansh created the class and implemented the 2 instructions pages.
+ * Vansh created the class and implemented the 2 instructions pages. -- 2.5 hours
  * May 23:
- * Vansh fixed the title so it says Instructions instead of Highscores, and made the cursor change to a click hand when buttons are hovered over.
+ * Vansh fixed the title so it says Instructions instead of Highscores, and made the cursor change to a click hand when buttons are hovered over. -- 1 hour
  * May 27:
- * Vansh added clicking sounds when buttons are pressed.
+ * Vansh added clicking sounds when buttons are pressed. -- 1 hours
  * June 2:
- * Vansh removed old instructions, and implemented new 3 page instructions.
+ * Vansh removed old instructions, and implemented new 3 page instructions. -- 2.5 hours
  * June 4:
  * Maria changed the back buttons to menu buttons to avoid confusion.
  * June 5:
- * Vansh removed all instructions again, and implemented much more detailed and visually-appealing 8-page instructions.
+ * Vansh removed all instructions again, and implemented much more detailed and visually-appealing 8-page instructions. -- 3.5 hours
  * Maria implemented new Menu button with new placement, that works better with new instructions design.
  * June 6:
- * Vansh got rid of unnecessary time, x, and y variables in the AnimationTimer, and converted the clicking button property settings to lambda functions.
+ * Vansh got rid of unnecessary time, x, and y variables in the AnimationTimer, and converted the clicking button property settings to lambda functions. -- 1 hours
  * </pre>
  */
 public class Instructions extends Window {

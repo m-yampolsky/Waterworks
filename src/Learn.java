@@ -27,26 +27,26 @@ import javafx.stage.Stage;
  * <pre>
  * Version History:
  * May 17:
- * Vansh created the class.
+ * Vansh created the class. -- 0.5 hours
  * May 20:
- * Vansh implemented Learn as an AniamtedImage where an arrow is pressed to move forward in the animation, and a menu button to go back.
+ * Vansh implemented Learn as an AnimatedImage where an arrow is pressed to move forward in the animation, and a menu button to go back. -- 3 hours
  * May 24:
  * Vansh removed the AnimatedImage completely, and remade the animation in JavaFX using Image view Objects for the washer, barrel, watering can, shower head, tub, dish washer, hand washing, hose, aquifer, and the sink. If statements and variables were
- * also made to allow wrapping around when moving too far to the right of the conveyor belt.
+ * also made to allow wrapping around when moving too far to the right of the conveyor belt. -- 4.5 hours
  * May 25:
- * Vansh made the Event properties to make the cursor change to a click hand when hovering over the right arrow button.
+ * Vansh made the Event properties to make the cursor change to a click hand when hovering over the right arrow button. -- 0.5 hours
  * May 27:
- * Vansh added clicking sounds when buttons are pressed.
+ * Vansh added clicking sounds when buttons are pressed. -- 0.5 hours
  * May 29:
- * Vansh completely revamped the Learn window to make it more interactive with description matching, and made arrows to navigate left as well as right.
+ * Vansh completely revamped the Learn window to make it more interactive with description matching, and made arrows to navigate left as well as right. -- 4 hours
  * May 31:
- * Vansh implemented new well and icecap images into the conveyor belt, and fixed bugs with description image sizing when matching with the correct device.
+ * Vansh implemented new well and icecap images into the conveyor belt, and fixed bugs with description image sizing when matching with the correct device. -- 2 hours
  * June 1:
- * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button.
+ * Vansh fixed bug where Window crashed when finishing matching descriptions and pressing certain button. -- 1.5 hour
  * June 2:
- * Vansh fixed bug where done boolean became true before user finished matching all descriptions, and added button to go to Quiz when finished matching descriptions.
+ * Vansh fixed bug where done boolean became true before user finished matching all descriptions, and added button to go to Quiz when finished matching descriptions. -- 1 hours
  * June 8:
- * Vansh implemented the aquifer device, and added sounds for right, wrong, and device navigation.
+ * Vansh implemented the aquifer device, and added sounds for right, wrong, and device navigation. -- 2 hours
  * </pre>
  */
 public class Learn extends Window {

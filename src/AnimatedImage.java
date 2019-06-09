@@ -13,13 +13,13 @@ import javafx.scene.image.Image;
  * <pre>
  * Version History:
  * May 17:
- * Vansh wrote the class to store an array of Image objects and a duration variable to represent length of time that an animation lasts. He wrote a getFrame() method that returned the correct frame depending on the time and the duration of the animation.
+ * Vansh wrote the class to store an array of Image objects and a duration variable to represent length of time that an animation lasts. He wrote a getFrame() method that returned the correct frame depending on the time and the duration of the animation. -- 1.5 hours
  * May 23:
- * Vansh changed the getFrame() method to return the frame the animation was on based off of a parameter passed, and not the time. He also wrote the frame() method which returns a frame based off of the time passed by the uer. He also wrote the lastFrame() method, which returns the last frame of the animation.
+ * Vansh changed the getFrame() method to return the frame the animation was on based off of a parameter passed, and not the time. He also wrote the frame() method which returns a frame based off of the time passed by the uer. He also wrote the lastFrame() method, which returns the last frame of the animation. -- 1 hour
  * May 29:
- * Vansh redid the class to no longer store an array of Images, but to store a path location and a frame number. The instance methods and constructor were rewritten to accomodate for this change, and now do not return items using indexes of an array, but return items using the path location.
+ * Vansh redid the class to no longer store an array of Images, but to store a path location and a frame number. The instance methods and constructor were rewritten to accomodate for this change, and now do not return items using indexes of an array, but return items using the path location. -- 1.5 hours
  * June 4:
- * Vansh wrote the getSplashFrame() and splashFrame() methods to return the correct frame for the Splashscreen animation and to return the number of the frame that the Splashscreen animation is on, respectively.
+ * Vansh wrote the getSplashFrame() and splashFrame() methods to return the correct frame for the Splashscreen animation and to return the number of the frame that the Splashscreen animation is on, respectively. -- 1 hour
  * </pre>
  */
 class AnimatedImage

@@ -18,11 +18,11 @@ import javafx.scene.image.ImageView;
  * <pre>
  * Version History:
  * May 17:
- * Vansh created the class.
+ * Vansh created the class. -- 0.5 hours
  * May 19:
  * Maria implemented the title, menu ImageView button, level ImageView buttons, and Bayou's standing animation.
  * May 23:
- * Vansh implemented change of cursor to click hand when hovering over buttons.
+ * Vansh implemented change of cursor to click hand when hovering over button -- 0.5 hours.
  * </pre>
  */
 public class LevelSelect extends Window {

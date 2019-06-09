@@ -24,9 +24,9 @@ import javafx.scene.image.Image;
  * She also wrote an isTouchingDevice() method, based off of the isTouchingLog() method, however, it was not working properly yet.
  * June 2:
  * Vansh changed the isTouchingDevice() method to properly detect the presence of a device in the path of the avatar. He changed the method parameters and calculated slightly
- * different values to make it work properly.
+ * different values to make it work properly. -- 2.5 hours
  * June 4:
- * Once again, Vansh modified the values used in calculation for the isTouchingDevice() method, as the device detection still had room for improvement.
+ * Vansh once again modified the values used in calculation for the isTouchingDevice() method, as the device detection still had room for improvement. -- 1.5 hour
  * </pre>
  */
 class GameChar extends Image

@@ -26,7 +26,7 @@ import java.io.*;
  * May 21:
  * Maria created the Highscores class and set up the graphics components. She added the boxes for the high scores lists, the background, the title, the Menu button, and the character animation.
  * May 23:
- * Vansh added the cursor changes when the mouse hovers over the menu button. He also added the clicking sound when the button is clicked.
+ * Vansh added the cursor changes when the mouse hovers over the menu button. He also added the clicking sound when the button is clicked. -- 0.5 hours
  * June 2:
  * Maria added the SCORES_FILE variable to store the path location of the file where high scores will be stored.
  * June 3:
