@@ -525,7 +525,7 @@ public class Game extends Window {
         new AnimationTimer()
         {
             public void handle(long currentNanoTime) {
-                t = 180+(currentNanoTime - startNanoTime) / 300000000.0;
+                t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 if (jumpY < 10 && won == 0) {
                     logTouched = avatarImg.isTouchingLog(logLine, startX, jumpX);

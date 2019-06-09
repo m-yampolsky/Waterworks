@@ -98,16 +98,11 @@ public class StageManager extends Application {
         hotel.loop();
 
 
-        int c = 0;
+        int c = 0; // choice variable
         while (c != -1) {
             Menu m = new Menu(stage);
             hotel.play();
-            c = 0;
-            try {
-                c = m.getChoice();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            c = m.getChoice();
             if (c == 1) {
                 Learn l = new Learn(stage);
                 l.display();
@@ -125,13 +120,9 @@ public class StageManager extends Application {
             if (c == 3) {
                 LevelSelect l = new LevelSelect(stage);
                 int lvl = 0;
-                try {
-                    lvl = l.getChoice();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                lvl = l.getChoice();
                 if (lvl >= 1 && lvl <= 3) {
-                   hotel.stop();
+                    hotel.stop();
                     while (true) {
                         oxford.play();
                         Game g = new Game(stage, lvl);
@@ -141,7 +132,7 @@ public class StageManager extends Application {
                         else if (g.getEndStatus() == 2)
                             lvl = Math.min(3, lvl+1);
                     }
-                 oxford.stop();
+                    oxford.stop();
                 }
             } else if  (c == 4) {
                 Highscores h = new Highscores(stage);
