@@ -81,7 +81,7 @@ public class StageManager extends Application {
         root.getChildren().add(canvas);
 
         stage.setOnCloseRequest((WindowEvent event1) -> System.exit(0));
-        stage.getIcons().add(new Image("elements/game/backgroundChar.png"));
+        stage.getIcons().add(new Image("elements/icon.png"));
         stage.setScene(scene);
 
 
