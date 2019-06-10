@@ -65,7 +65,7 @@ import java.util.ArrayList;
  * June 8:
  * Vansh adjusted the call to avatarImg.isTouchingDevice() in order to make collision detection more accurate. -- 1.5 hours
  * June 9:
- * Vansh adjusted collision detection and redrew menuBtn after the deviceLine so that it wouldn't be covered up. - 1.5 hours
+ * Vansh adjusted collision detection and winning animation coordinates to be more accurate and fix a bug where it misplaced bayou when he jumped to far to the right. - 1.5 hours
  * </pre>
  */
 public class Game extends Window {
@@ -519,7 +519,7 @@ public class Game extends Window {
         new AnimationTimer()
         {
             public void handle(long currentNanoTime) {
-                t = 185+(currentNanoTime - startNanoTime) / 300000000.0;
+                t = (currentNanoTime - startNanoTime) / 300000000.0;
 
                 if (jumpY < 10 && won == 0) {
                     logTouched = avatarImg.isTouchingLog(logLine, startX, jumpX);
