@@ -23,6 +23,7 @@ import javafx.stage.Stage;
  * @author Maria Yampolsky and Vansh Juneja
  * @version 6 06.09.2019
  *
+ * <pre>
  * Version History:
  * May 13:
  * Vansh created the class and create its instance variables, the constructor, the clean(), hideStage(), showAndWait() and refresh() methods. He also wrote the abstract display() method. -- 1.5 hours
@@ -43,6 +44,7 @@ import javafx.stage.Stage;
  * Vansh wrote the displayVideo() method to play mp4 files and other video files on the window. -- 2.5 hours
  * June 5:
  * Vansh removed the displayVideo() method, as it became unnecessary after we modified the lose and win screens of the program. -- 0.15 hours
+ * </pre>
  */
 public abstract class Window {
     /**
