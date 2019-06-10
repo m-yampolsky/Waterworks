@@ -59,7 +59,7 @@ public class AnimatedImage
      * @return An Image object that represents the frame that the animation is currently on
      */
     public Image getFrame(double time) {
-        return new Image(path + " (" + Math.max((int)((time % (numFrames * duration)) / duration), 1) + ").png");
+        return new Image(Resources.getPath(path + " (" + Math.max((int)((time % (numFrames * duration)) / duration), 1) + ").png"));
     }
 
     /**
@@ -80,7 +80,7 @@ public class AnimatedImage
         if (time >= 16) {
             return lastFrame();
         }
-        return new Image(path + " (" + Math.max((int)((time % (numFrames * duration)) / duration), 1) + ").png");
+        return new Image(Resources.getPath(path + " (" + Math.max((int)((time % (numFrames * duration)) / duration), 1) + ").png"));
     }
 
     /**
@@ -88,6 +88,6 @@ public class AnimatedImage
      * @return An Image object that represents the last frame in an animation.
      */
     private Image lastFrame() {
-        return new Image (path + " (" + (numFrames-1) + ").png");
+        return new Image (Resources.getPath(path + " (" + (numFrames-1) + ").png"));
     }
 }

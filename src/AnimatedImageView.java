@@ -1,3 +1,4 @@
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 /**
@@ -57,7 +58,7 @@ public class AnimatedImageView
      */
     public ImageView getFrame(double time) {
         int index = Math.max((int)((time % (numFrames * duration)) / duration), 1);
-        return new ImageView(path + " (" + index + ").png");
+        return new ImageView(new Image(Resources.getPath(path + " (" + index + ").png")));
     }
 
     /**

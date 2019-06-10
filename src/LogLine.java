@@ -2,6 +2,8 @@ import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.scene.image.PixelReader;
 
+import java.io.InputStream;
+
 /**
  * The LogLine class
  * This class stores an object that represents the logs that the avatar will have to run across during the game. It stores a 2 dimensional array representation of the pixels of the Log image.
@@ -38,7 +40,7 @@ public class LogLine extends Image
    * The transparent pixels are then assigned false in the isColoured array, and the coloured pixels are assigned true.
    * @param pic The path to the image file from which the LogLine will be created.
    */
-  public LogLine (String pic)
+  public LogLine (InputStream pic)
   {
     super (pic);
     PixelReader pixelReader = this.getPixelReader(); 

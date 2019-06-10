@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.io.*;
 
 /**
  * The Resources class
@@ -41,4 +42,10 @@ public class Resources {
     public static Object get (String name) {
         return resources.get(name);
     }
+
+    public static InputStream getPath(String path)
+    {
+        return Resources.class.getClassLoader().getResourceAsStream(path);
+    }
+
 }

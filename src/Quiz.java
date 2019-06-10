@@ -184,16 +184,16 @@ public class Quiz extends Window {
         effDevices = new ArrayList<ImageView>();
         ineffDevices = new ArrayList<ImageView>();
         background = (ImageView) (Resources.get("quizBack"));
-        tub = new ImageView ("elements/game/tub.png");
-        sink = new ImageView ("elements/game/sink.png");
-        cWasher = new ImageView ("elements/game/washer.png");
-        dWasher = new ImageView ("elements/game/dishwasher.png");
-        wCan = new ImageView ("elements/game/watercan.png");
-        barrel = new ImageView ("elements/game/barrel.png");
-        dSponge = new ImageView ("elements/game/dish.png");
-        hose = new ImageView ("elements/game/hose.png");
-        shower = new ImageView ("elements/game/shower.png");
-        border = new ImageView ("elements/game/border.png");
+        tub = new ImageView (new Image(Resources.getPath("elements/game/tub.png")));
+        sink = new ImageView (new Image(Resources.getPath("elements/game/sink.png")));
+        cWasher = new ImageView (new Image(Resources.getPath("elements/game/washer.png")));
+        dWasher = new ImageView (new Image(Resources.getPath("elements/game/dishwasher.png")));
+        wCan = new ImageView (new Image(Resources.getPath("elements/game/watercan.png")));
+        barrel = new ImageView (new Image(Resources.getPath("elements/game/barrel.png")));
+        dSponge = new ImageView (new Image(Resources.getPath("elements/game/dish.png")));
+        hose = new ImageView (new Image(Resources.getPath("elements/game/hose.png")));
+        shower = new ImageView (new Image(Resources.getPath("elements/game/shower.png")));
+        border = new ImageView (new Image(Resources.getPath("elements/game/border.png")));
         eBox = (ImageView)(Resources.get("effBox"));
         iBox = (ImageView)(Resources.get("ineffBox"));
         menuBtn = (ImageView)(Resources.get("menuBtn"));
@@ -433,32 +433,32 @@ public class Quiz extends Window {
                     remove(device);
 
                     if (device.equals(dSponge)){
-                        dSponge = new ImageView ("elements/game/dish.png");
+                        dSponge = new ImageView (new Image(Resources.getPath("elements/game/dish.png")));
                         device = dSponge;
                     }
                     else if (device.equals(sink)){
-                        sink = new ImageView ("elements/game/sink.png");
+                        sink = new ImageView (new Image(Resources.getPath("elements/game/sink.png")));
                         device = sink;}
                     else if (device.equals(shower)){
-                        shower = new ImageView ("elements/game/shower.png");
+                        shower = new ImageView (new Image(Resources.getPath("elements/game/shower.png")));
                         device = shower;}
                     else if (device.equals(wCan)){
-                        wCan = new ImageView ("elements/game/watercan.png");
+                        wCan = new ImageView (new Image(Resources.getPath("elements/game/watercan.png")));
                         device = wCan;}
                     else if (device.equals(barrel)){
-                        barrel = new ImageView ("elements/game/barrel.png");
+                        barrel = new ImageView (new Image(Resources.getPath("elements/game/barrel.png")));
                         device = barrel;}
                     else if (device.equals(hose)){
-                        hose = new ImageView ("elements/game/hose.png");
+                        hose = new ImageView (new Image(Resources.getPath("elements/game/hose.png")));
                         device = hose;}
                     else if (device.equals(cWasher)){
-                        cWasher = new ImageView ("elements/game/washer.png");
+                        cWasher = new ImageView (new Image(Resources.getPath("elements/game/washer.png")));
                         device = cWasher;}
                     else if (device.equals(tub)){
-                        tub = new ImageView ("elements/game/tub.png");
+                        tub = new ImageView (new Image(Resources.getPath("elements/game/tub.png")));
                         device = tub;}
                     else if (device.equals(dWasher)){
-                        dWasher = new ImageView ("elements/game/dishwasher.png");
+                        dWasher = new ImageView (new Image(Resources.getPath("elements/game/dishwasher.png")));
                         device = dWasher;}
 
                     if (x <= 1000 && x >= 0 && y >= 0 && y <= 750) {
@@ -496,40 +496,40 @@ public class Quiz extends Window {
                 {
                     remove (device);
                     if (device.equals(dSponge)){
-                        dSponge = new ImageView ("elements/game/dish.png");
+                        dSponge = new ImageView (new Image(Resources.getPath("elements/game/dish.png")));
                         drawImage (dSponge, -110, -185 );
                         resetMouse (dSponge);
                     }
                     else if (device.equals(sink)){
-                        sink = new ImageView ("elements/game/sink.png");
+                        sink = new ImageView (new Image(Resources.getPath("elements/game/sink.png")));
                         drawImage (sink,17, -179 );
                         resetMouse (sink);}
                     else if (device.equals(shower)){
-                        shower = new ImageView ("elements/game/shower.png");
+                        shower = new ImageView (new Image(Resources.getPath("elements/game/shower.png")));
                         drawImage (shower, 128, -188);
                         resetMouse (shower);}
                     else if (device.equals(wCan)){
-                        wCan = new ImageView ("elements/game/watercan.png");
+                        wCan = new ImageView (new Image(Resources.getPath("elements/game/watercan.png")));
                         drawImage (wCan, -90, -52);
                         resetMouse (wCan);}
                     else if (device.equals(barrel)){
-                        barrel = new ImageView ("elements/game/barrel.png");
+                        barrel = new ImageView (new Image(Resources.getPath("elements/game/barrel.png")));
                         drawImage (barrel, 37, -52);
                         resetMouse (barrel);}
                     else if (device.equals(hose)){
-                        hose = new ImageView ("elements/game/hose.png");
+                        hose = new ImageView (new Image(Resources.getPath("elements/game/hose.png")));
                         drawImage (hose, 138, -48);
                         resetMouse (hose);}
                     else if (device.equals(cWasher)){
-                        cWasher = new ImageView ("elements/game/washer.png");
+                        cWasher = new ImageView (new Image(Resources.getPath("elements/game/washer.png")));
                         drawImage (cWasher, -130, 75);
                         resetMouse (cWasher);}
                     else if (device.equals(tub)){
-                        tub = new ImageView ("elements/game/tub.png");
+                        tub = new ImageView (new Image(Resources.getPath("elements/game/tub.png")));
                         drawImage (tub, 5, 82);
                         resetMouse (tub);}
                     else if (device.equals(dWasher)){
-                        dWasher = new ImageView ("elements/game/dishwasher.png");
+                        dWasher = new ImageView (new Image(Resources.getPath("elements/game/dishwasher.png")));
                         drawImage (dWasher, 145, 76);
                         resetMouse (dWasher);}
                     lost = false;
