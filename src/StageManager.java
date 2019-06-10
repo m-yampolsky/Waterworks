@@ -94,8 +94,6 @@ public class StageManager extends Application {
 
         Sound hotel = (Sound)(Resources.get("hotel"));
         Sound oxford = (Sound)(Resources.get("oxfordComma"));
-        oxford.loop();
-        hotel.loop();
 
 
         int c = 0; // choice variable
