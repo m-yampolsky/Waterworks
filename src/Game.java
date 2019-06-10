@@ -519,7 +519,7 @@ public class Game extends Window {
         new AnimationTimer()
         {
             public void handle(long currentNanoTime) {
-                t = (currentNanoTime - startNanoTime) / 300000000.0;
+                t = 185+(currentNanoTime - startNanoTime) / 300000000.0;
 
                 if (jumpY < 10 && won == 0) {
                     logTouched = avatarImg.isTouchingLog(logLine, startX, jumpX);
@@ -574,7 +574,7 @@ public class Game extends Window {
                 if (charFrame != null && won == 0)
                     drawImage(charFrame, -380 + jumpX, w.getYValue() - 490 - jumpY);
                 if (won != 0)
-                    drawImage(charFrame, -380 + jumpX, w.getYValue() - 490);
+                    drawImage(charFrame,  0, w.getYValue() - 490);
                 remove(lastCharFrame);
 
                 if (finalDevFrame != null)
