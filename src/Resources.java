@@ -17,6 +17,7 @@ import java.io.*;
  * Version History:
  * May 20:
  * Vansh created the class, as well as all the implementation including the global static HashMap resources as well as the static add and get methods. -- 0.5 hours
+ * Maria created the getPath method and worked out its kinks -- 1 hour
  * </pre>
  */
 public class Resources {
@@ -43,6 +44,11 @@ public class Resources {
         return resources.get(name);
     }
 
+    /**
+     * This method converts paths to files to the a form which will work on all computers without errors.
+     * @param path the path to convert.
+     * @return the converted path in the form of an InputStream Object.
+     */
     public static InputStream getPath(String path)
     {
         return Resources.class.getClassLoader().getResourceAsStream(path);
