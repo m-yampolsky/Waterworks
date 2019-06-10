@@ -262,7 +262,7 @@ public class Highscores extends Window {
         }
 
         StringBuilder text = new StringBuilder();
-        Text[][] list = {new Text[Math.min(lengths[0], 10)], new Text[Math.min(lengths[1], 10)], new Text[Math.min(lengths[0], 10)]}; // 2 dimensional array to store output Text objects for the high score lists
+        Text[][] list = {new Text[Math.min(lengths[0], 10)], new Text[Math.min(lengths[1], 10)], new Text[Math.min(lengths[2], 10)]}; // 2 dimensional array to store output Text objects for the high score lists
         for (int r = 0; r < list.length; r++)
         {
             for (int c = 0; c < list[r].length; c++)

@@ -636,9 +636,9 @@ public class Game extends Window {
                     score -= 5;
                 }
 
-                if (-380+jumpX >= 9100-(int)(t*40) && won == 0)
+                if (-380+jumpX >= 9360-(int)(t*40) && won == 0)
                     won = t;
-                if (won != 0 && win.frame(t-won) >= 177 && t-won >= 2) { //stops the game movement, because the player has win
+                if (won != 0) { //stops the game movement, because the player has win
                     stop();
                     score += w.getHeight();
                     refresh();
