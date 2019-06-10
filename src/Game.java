@@ -65,7 +65,7 @@ import java.util.ArrayList;
  * June 8:
  * Vansh adjusted the call to avatarImg.isTouchingDevice() in order to make collision detection more accurate. -- 1.5 hours
  * June 9:
- * Vansh adjusted collision detection and redrew menuBtn after the deviceLine so that it wouldn't be covered up. - 1.5 hours
+ * Vansh adjusted collision detection and winning animation coordinates to be more accurate and fix a bug where it misplaced bayou when he jumped to far to the right. - 1.5 hours
  * </pre>
  */
 public class Game extends Window {
@@ -243,15 +243,12 @@ public class Game extends Window {
         Image title = (Image)(Resources.get("loseTitle"));
         ImageView menu = (ImageView)(Resources.get("loseMenu"));
         ImageView tryAgain = (ImageView)(Resources.get("loseTryAgain"));
-        Sound click = (Sound)(Resources.get("click"));
 
         // Listener for MouseClick
         menu.setOnMouseClicked(e -> {
-            click.play();
             hideStage();
         });
         tryAgain.setOnMouseClicked(e -> {
-            click.play();
             endStatus = 1;
             hideStage();
         });
@@ -282,7 +279,6 @@ public class Game extends Window {
         Image scoreImg = (Image)(Resources.get("winScore"));
         ImageView menu = (ImageView)(Resources.get("winMenu"));
         ImageView nextLevel = (ImageView)(Resources.get("winNextLevel"));
-        Sound click = (Sound)(Resources.get("click"));
         ImageView textField = (ImageView)(Resources.get("textField"));
         ImageView nameLabel = (ImageView)(Resources.get("nameLabel"));
         ImageView saveButton = (ImageView)(Resources.get("saveButton"));
@@ -309,11 +305,9 @@ public class Game extends Window {
                 } catch (IOException ignored) {
                 }
             }
-            click.play();
             hideStage();
         });
         nextLevel.setOnMouseClicked(e -> {
-            click.play();
             endStatus = 2;
             hideStage(); //this brings them on to the next lake of the game
         });
@@ -540,24 +534,24 @@ public class Game extends Window {
                     if (won == 0)
                         drawImage(cityBack, 480 - (int) (t * 3), 249);
                     else
-                        drawImage(cityBack, 480 - (int) (229.5 * 3), 249);
+                        drawImage(cityBack, 480 - (int) (231 * 3), 249);
                 else if (level == 2)
                     if (won == 0)
                         drawImage(cityBack, 580 - (int) (t * 3), 304);
                     else
-                        drawImage(cityBack, 580 - (int) (229.5 * 3), 304);
+                        drawImage(cityBack, 580 - (int) (231 * 3), 304);
                 else if (won == 0)
                     drawImage(cityBack, 480 - (int) (t * 3), 20);
                 else
-                    drawImage(cityBack, 580 - (int) (229.5 * 3), 304);
+                    drawImage(cityBack, 580 - (int) (231 * 3), 304);
                 drawImage(dirtBack, 0, 542);
                 drawImage(lake, 1, w.getYValue());
 
                 Rectangle2D viewportRect = new Rectangle2D((int) (t * 40), 0, 1000, 75); //sets the viewport for the log image
                 Rectangle2D viewportRectDevices = new Rectangle2D((int) (t * 40), 0, 1000, deviceLine.getHeight()); //sets the viewport for the device image
                 if (won != 0) {
-                    viewportRect = new Rectangle2D((int) (229.5 * 40), 0, 1000, 75); //sets the viewport for the log image
-                    viewportRectDevices = new Rectangle2D((int) (229.5 * 40), 0, 1000, deviceLine.getHeight()); //sets the viewport for the device image
+                    viewportRect = new Rectangle2D((int) (231 * 40), 0, 1000, 75); //sets the viewport for the log image
+                    viewportRectDevices = new Rectangle2D((int) (231 * 40), 0, 1000, deviceLine.getHeight()); //sets the viewport for the device image
                 }
                 startX = (int) (t * 40);
                 logImg.setViewport(viewportRect);
@@ -580,7 +574,7 @@ public class Game extends Window {
                 if (charFrame != null && won == 0)
                     drawImage(charFrame, -380 + jumpX, w.getYValue() - 490 - jumpY);
                 if (won != 0)
-                    drawImage(charFrame, -380 + jumpX, w.getYValue() - 490);
+                    drawImage(charFrame,  0, w.getYValue() - 490);
                 remove(lastCharFrame);
 
                 if (finalDevFrame != null)
@@ -592,10 +586,10 @@ public class Game extends Window {
                 } else if (win.frame(t-won) <= 115) {
                     finalDevFrame = finalDevice.getFrame(t);
                     remove(lastFinalDevFrame);
-                    drawImage(finalDevFrame, 9500 - (int) (229.5 * 40), w.getYValue() - 430);
+                    drawImage(finalDevFrame, 9500 - (int) (231 * 40), w.getYValue() - 430);
                 }else {
                     remove(lastFinalDevFrame);
-                    drawImage(finalDevFrame, 9500 - (int) (229.5 * 40), w.getYValue() - 430);
+                    drawImage(finalDevFrame, 9500 - (int) (231 * 40), w.getYValue() - 430);
                 }
 
                 //checks if user has inputted information to make the avatar jump
