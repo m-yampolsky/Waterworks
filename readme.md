@@ -27,14 +27,20 @@
 - Paste `java -jar Waterworks.jar` and hit Enter
 - Enjoy.
 
+<br/>
+
 # Built With:
 - Java JDK 1.8.0_201
 - IntelliJ IDEA Community Edition
 - Adobe Illustrator CC
 
+<br/>
+
 # Authors:
 - Vansh Juneja
 - Maria Yampolsky
+
+<br/>
 
 # Acknowledgments:
 - Toby Fox, Vampire Weekend (Music)
